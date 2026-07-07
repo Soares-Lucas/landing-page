@@ -1,0 +1,679 @@
+﻿<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Landing page profissional de Lucas Soares, desenvolvedor de software full stack com foco em sistemas corporativos, integrações, ERP, dados e automação.">
+    <title>Lucas Soares | Desenvolvedor de Software</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --bg: #f7f8f6;
+        --surface: #ffffff;
+        --surface-2: #eef2ec;
+        --ink: #141a18;
+        --muted: #53615b;
+        --line: #dce3dd;
+        --accent: #0f6b5f;
+        --accent-2: #154b70;
+        --accent-soft: #dff0eb;
+        --shadow: 0 18px 50px rgba(20, 26, 24, .10);
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .site-shell {
+        min-height: 100vh;
+        overflow: hidden;
+      }
+
+      .nav {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        width: 100%;
+        padding: 1rem clamp(1rem, 5vw, 4.5rem);
+        background: rgba(247, 248, 246, .84);
+        border-bottom: 1px solid rgba(220, 227, 221, .82);
+        backdrop-filter: blur(18px);
+      }
+
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: .7rem;
+        font-weight: 750;
+        letter-spacing: 0;
+      }
+
+      .brand-mark {
+        display: grid;
+        width: 2.35rem;
+        height: 2.35rem;
+        place-items: center;
+        border-radius: 8px;
+        background: var(--ink);
+        color: #fff;
+        font-size: .92rem;
+      }
+
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: clamp(.7rem, 2vw, 1.5rem);
+        color: var(--muted);
+        font-size: .94rem;
+      }
+
+      .nav-links a:hover {
+        color: var(--ink);
+      }
+
+      .hero {
+        position: relative;
+        display: grid;
+        min-height: calc(100vh - 73px);
+        grid-template-columns: minmax(0, 1.02fr) minmax(320px, .8fr);
+        gap: clamp(2rem, 5vw, 5rem);
+        align-items: center;
+        padding: clamp(3.5rem, 8vw, 7rem) clamp(1rem, 5vw, 4.5rem);
+      }
+
+      .hero::before {
+        position: absolute;
+        inset: 0;
+        z-index: -2;
+        content: "";
+        background:
+          linear-gradient(115deg, rgba(15, 107, 95, .13), transparent 35%),
+          linear-gradient(245deg, rgba(21, 75, 112, .12), transparent 38%),
+          repeating-linear-gradient(90deg, rgba(20, 26, 24, .045) 0 1px, transparent 1px 120px),
+          repeating-linear-gradient(0deg, rgba(20, 26, 24, .035) 0 1px, transparent 1px 120px);
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        width: fit-content;
+        gap: .5rem;
+        margin: 0 0 1.2rem;
+        padding: .45rem .7rem;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        background: rgba(255, 255, 255, .72);
+        color: var(--accent);
+        font-size: .84rem;
+        font-weight: 700;
+      }
+
+      .eyebrow::before {
+        width: .5rem;
+        height: .5rem;
+        border-radius: 999px;
+        background: var(--accent);
+        content: "";
+      }
+
+      h1 {
+        max-width: 12ch;
+        margin: 0;
+        font-size: clamp(3rem, 8vw, 7.2rem);
+        line-height: .9;
+        letter-spacing: 0;
+      }
+
+      .hero-copy {
+        max-width: 43rem;
+        margin: 1.5rem 0 0;
+        color: var(--muted);
+        font-size: clamp(1.05rem, 1.6vw, 1.28rem);
+        line-height: 1.65;
+      }
+
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: .85rem;
+        margin-top: 2rem;
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 3rem;
+        padding: .86rem 1.1rem;
+        border: 1px solid var(--ink);
+        border-radius: 8px;
+        font-weight: 750;
+      }
+
+      .button.primary {
+        background: var(--ink);
+        color: #fff;
+      }
+
+      .button.secondary {
+        background: rgba(255, 255, 255, .74);
+        color: var(--ink);
+      }
+
+      .hero-metrics {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: .75rem;
+        max-width: 42rem;
+        margin-top: 2.3rem;
+      }
+
+      .metric {
+        padding: 1rem;
+        border: 1px solid rgba(220, 227, 221, .9);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, .62);
+      }
+
+      .metric strong {
+        display: block;
+        font-size: 1.35rem;
+      }
+
+      .metric span {
+        display: block;
+        margin-top: .35rem;
+        color: var(--muted);
+        font-size: .88rem;
+        line-height: 1.35;
+      }
+
+      .terminal {
+        position: relative;
+        border: 1px solid rgba(20, 26, 24, .14);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, .78);
+        box-shadow: var(--shadow);
+        overflow: hidden;
+      }
+
+      .terminal-top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: .78rem .95rem;
+        border-bottom: 1px solid var(--line);
+        background: #fbfcfa;
+        color: var(--muted);
+        font-size: .8rem;
+      }
+
+      .dots {
+        display: flex;
+        gap: .4rem;
+      }
+
+      .dots span {
+        width: .65rem;
+        height: .65rem;
+        border-radius: 999px;
+        background: var(--line);
+      }
+
+      .terminal-body {
+        padding: clamp(1rem, 3vw, 1.5rem);
+        font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+        font-size: clamp(.82rem, 1.4vw, .95rem);
+        line-height: 1.8;
+      }
+
+      .terminal-body p {
+        margin: 0;
+        color: #2b3330;
+      }
+
+      .code-key {
+        color: var(--accent-2);
+      }
+
+      .code-value {
+        color: var(--accent);
+      }
+
+      .stack-strip {
+        display: flex;
+        flex-wrap: wrap;
+        gap: .55rem;
+        margin-top: 1.2rem;
+      }
+
+      .tag {
+        display: inline-flex;
+        align-items: center;
+        min-height: 2rem;
+        padding: .35rem .62rem;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        background: var(--surface);
+        color: var(--muted);
+        font-size: .86rem;
+        font-weight: 650;
+      }
+
+      section {
+        padding: clamp(3rem, 6vw, 5.5rem) clamp(1rem, 5vw, 4.5rem);
+      }
+
+      .section-head {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        gap: 1.5rem;
+        max-width: 72rem;
+        margin: 0 auto 1.6rem;
+      }
+
+      .section-head h2 {
+        max-width: 13ch;
+        margin: 0;
+        font-size: clamp(2rem, 4vw, 3.2rem);
+        line-height: 1;
+      }
+
+      .section-head p {
+        max-width: 33rem;
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.6;
+      }
+
+      .grid {
+        display: grid;
+        max-width: 72rem;
+        margin: 0 auto;
+        gap: 1rem;
+      }
+
+      .grid.cards {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .card {
+        padding: 1.2rem;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--surface);
+      }
+
+      .card h3 {
+        margin: 0 0 .75rem;
+        font-size: 1.05rem;
+      }
+
+      .card p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.55;
+      }
+
+      .projects {
+        background: #ffffff;
+      }
+
+      .project-list {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1rem;
+      }
+
+      .project {
+        display: grid;
+        min-height: 18rem;
+        align-content: space-between;
+        padding: 1.25rem;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background:
+          linear-gradient(135deg, rgba(15, 107, 95, .09), transparent 42%),
+          var(--bg);
+      }
+
+      .project h3 {
+        margin: 0 0 .65rem;
+        font-size: 1.3rem;
+      }
+
+      .project p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.6;
+      }
+
+      .project-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: .5rem;
+        margin-top: 1.4rem;
+      }
+
+      .timeline {
+        display: grid;
+        max-width: 72rem;
+        margin: 0 auto;
+        gap: .75rem;
+      }
+
+      .timeline-item {
+        display: grid;
+        grid-template-columns: 12rem minmax(0, 1fr);
+        gap: 1.25rem;
+        padding: 1.1rem;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--surface);
+      }
+
+      .timeline-date {
+        color: var(--accent);
+        font-weight: 750;
+      }
+
+      .timeline-item h3 {
+        margin: 0 0 .4rem;
+      }
+
+      .timeline-item p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.6;
+      }
+
+      .contact {
+        background: var(--ink);
+        color: #fff;
+      }
+
+      .contact .section-head p,
+      .contact .tag {
+        color: rgba(255, 255, 255, .72);
+      }
+
+      .contact .tag {
+        border-color: rgba(255, 255, 255, .18);
+        background: rgba(255, 255, 255, .08);
+      }
+
+      .contact-panel {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        align-items: center;
+        gap: 1.5rem;
+        max-width: 72rem;
+        margin: 0 auto;
+        padding: 1.2rem;
+        border: 1px solid rgba(255, 255, 255, .16);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, .06);
+      }
+
+      .contact-panel p {
+        margin: .45rem 0 0;
+        color: rgba(255, 255, 255, .7);
+      }
+
+      .contact .button {
+        border-color: #fff;
+        background: #fff;
+        color: var(--ink);
+      }
+
+      footer {
+        padding: 1.2rem clamp(1rem, 5vw, 4.5rem);
+        background: var(--ink);
+        color: rgba(255, 255, 255, .62);
+        font-size: .9rem;
+      }
+
+      @media (max-width: 900px) {
+        .nav {
+          align-items: flex-start;
+        }
+
+        .nav-links {
+          display: none;
+        }
+
+        .hero {
+          grid-template-columns: 1fr;
+          min-height: auto;
+        }
+
+        .hero-metrics,
+        .grid.cards,
+        .project-list {
+          grid-template-columns: 1fr;
+        }
+
+        .section-head,
+        .contact-panel {
+          display: grid;
+        }
+
+        .timeline-item {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 520px) {
+        .hero {
+          padding-top: 2.5rem;
+        }
+
+        h1 {
+          font-size: 3.15rem;
+        }
+
+        .hero-actions,
+        .button {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="nav" aria-label="Navegação principal">
+        <a class="brand" href="#top" aria-label="Lucas Soares">
+          <span class="brand-mark">LS</span>
+          <span>Lucas Soares</span>
+        </a>
+        <nav class="nav-links" aria-label="Seções">
+          <a href="#especialidades">Especialidades</a>
+          <a href="#projetos">Projetos</a>
+          <a href="#experiencia">Experiência</a>
+          <a href="#contato">Contato</a>
+        </nav>
+      </header>
+
+      <main id="top">
+        <section class="hero" aria-labelledby="hero-title">
+          <div>
+            <p class="eyebrow">Desenvolvedor Full Stack</p>
+            <h1 id="hero-title">Software para operação real.</h1>
+            <p class="hero-copy">
+              Sou Lucas Soares, desenvolvedor com foco em sistemas corporativos,
+              integrações, ERP, dados e automações que aproximam tecnologia das
+              decisões do negócio.
+            </p>
+            <div class="hero-actions">
+              <a class="button primary" href="mailto:soares-lucas94@hotmail.com">Falar sobre um projeto</a>
+              <a class="button secondary" href="#projetos">Ver trabalhos</a>
+            </div>
+            <div class="hero-metrics" aria-label="Resumo profissional">
+              <div class="metric">
+                <strong>6+</strong>
+                <span>anos criando e mantendo sistemas</span>
+              </div>
+              <div class="metric">
+                <strong>ERP</strong>
+                <span>rotinas administrativas, financeiras e operacionais</span>
+              </div>
+              <div class="metric">
+                <strong>APIs</strong>
+                <span>integrações, webhooks e dados consistentes</span>
+              </div>
+            </div>
+          </div>
+
+          <aside class="terminal" aria-label="Resumo técnico">
+            <div class="terminal-top">
+              <div class="dots" aria-hidden="true"><span></span><span></span><span></span></div>
+              <span>perfil.dev</span>
+            </div>
+            <div class="terminal-body">
+              <p><span class="code-key">const</span> profissional = {</p>
+              <p>&nbsp;&nbsp;nome: <span class="code-value">"Lucas Soares"</span>,</p>
+              <p>&nbsp;&nbsp;foco: <span class="code-value">"Sistemas corporativos"</span>,</p>
+              <p>&nbsp;&nbsp;stack: [<span class="code-value">"PHP"</span>, <span class="code-value">"Laravel"</span>, <span class="code-value">"CodeIgniter"</span>, <span class="code-value">"MySQL"</span>],</p>
+              <p>&nbsp;&nbsp;entrega: <span class="code-value">"Código, dados e clareza operacional"</span></p>
+              <p>};</p>
+              <div class="stack-strip" aria-label="Tecnologias">
+                <span class="tag">PHP</span>
+                <span class="tag">Laravel</span>
+                <span class="tag">CodeIgniter</span>
+                <span class="tag">JavaScript</span>
+                <span class="tag">MySQL</span>
+                <span class="tag">Docker</span>
+                <span class="tag">REST APIs</span>
+              </div>
+            </div>
+          </aside>
+        </section>
+
+        <section id="especialidades" aria-labelledby="especialidades-title">
+          <div class="section-head">
+            <h2 id="especialidades-title">Onde gero valor</h2>
+            <p>Atuação técnica com leitura de negócio: entender o problema, analisar dados, integrar sistemas e entregar soluções que sobrevivem ao uso diário.</p>
+          </div>
+          <div class="grid cards">
+            <article class="card">
+              <h3>Sistemas corporativos e ERP</h3>
+              <p>Desenvolvimento, sustentação e evolução de rotinas administrativas, financeiras e operacionais em ambientes com regras de negócio complexas.</p>
+            </article>
+            <article class="card">
+              <h3>Integrações e webhooks</h3>
+              <p>APIs REST, serviços externos, gateways de pagamento, sincronização de dados, idempotência e tratamento de falhas entre plataformas.</p>
+            </article>
+            <article class="card">
+              <h3>Dados e relatórios</h3>
+              <p>Consultas SQL, modelagem, extrações, troubleshooting e relatórios para apoiar áreas de negócio com informação confiável.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="projects" id="projetos" aria-labelledby="projetos-title">
+          <div class="section-head">
+            <h2 id="projetos-title">Projetos em destaque</h2>
+            <p>Exemplos de posicionamento para apresentar experiência técnica, visão de produto e maturidade em integrações.</p>
+          </div>
+          <div class="grid project-list">
+            <article class="project">
+              <div>
+                <h3>Lumus Data Engine</h3>
+                <p>Motor de relatórios com Python, Docker e exportação de dados em CSV, Excel e futuramente PDF, pensado para operar junto a sistemas PHP existentes.</p>
+              </div>
+              <div class="project-meta">
+                <span class="tag">Python</span>
+                <span class="tag">Docker</span>
+                <span class="tag">Relatórios</span>
+              </div>
+            </article>
+            <article class="project">
+              <div>
+                <h3>Integrações de pagamento</h3>
+                <p>Arquitetura para webhooks, consistência de eventos, segurança, tratamento de reprocessamento e evolução para múltiplos provedores.</p>
+              </div>
+              <div class="project-meta">
+                <span class="tag">APIs</span>
+                <span class="tag">Webhooks</span>
+                <span class="tag">Segurança</span>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section id="experiencia" aria-labelledby="experiencia-title">
+          <div class="section-head">
+            <h2 id="experiencia-title">Experiência</h2>
+            <p>Uma trajetória construída em sistemas legados, manutenção produtiva, novas funcionalidades, integrações e colaboração com áreas de negócio.</p>
+          </div>
+          <div class="timeline">
+            <article class="timeline-item">
+              <div class="timeline-date">Atual</div>
+              <div>
+                <h3>Analista Desenvolvedor / Full Stack</h3>
+                <p>Atuação em sistemas internos, análise de requisitos, melhoria de processos, integrações e apoio técnico em ambientes corporativos.</p>
+              </div>
+            </article>
+            <article class="timeline-item">
+              <div class="timeline-date">2019 - 2024</div>
+              <div>
+                <h3>Desenvolvedor Full Stack - ERP</h3>
+                <p>Manutenção e evolução de ERP com PHP, CodeIgniter/Laravel, JavaScript, jQuery e MySQL, incluindo relatórios, integrações e suporte técnico.</p>
+              </div>
+            </article>
+            <article class="timeline-item">
+              <div class="timeline-date">Base técnica</div>
+              <div>
+                <h3>Stack principal</h3>
+                <p>PHP, Laravel, CodeIgniter, JavaScript, jQuery, MySQL, PostgreSQL, Docker, Git, APIs REST, modelagem de dados e metodologias ágeis.</p>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="contact" id="contato" aria-labelledby="contato-title">
+          <div class="section-head">
+            <h2 id="contato-title">Vamos conversar?</h2>
+            <p>Disponível para oportunidades, projetos e conversas sobre sistemas corporativos, integrações, relatórios e evolução de produtos digitais.</p>
+          </div>
+          <div class="contact-panel">
+            <div>
+              <strong>Lucas Soares da Silva</strong>
+              <p>Rio de Janeiro, Brasil · Desenvolvedor Full Stack</p>
+              <div class="stack-strip">
+                <a class="tag" href="mailto:soares-lucas94@hotmail.com">soares-lucas94@hotmail.com</a>
+                <a class="tag" href="https://www.linkedin.com/in/lucas-soares-4a01a631b">LinkedIn</a>
+              </div>
+            </div>
+            <a class="button" href="mailto:soares-lucas94@hotmail.com">Enviar mensagem</a>
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        <span>© 2026 Lucas Soares. Landing page profissional criada para apresentação de software, integrações e sistemas corporativos.</span>
+      </footer>
+    </div>
+  </body>
+</html>
