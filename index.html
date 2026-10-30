@@ -1,679 +1,1215 @@
 ﻿<!doctype html>
-<html lang="pt-BR">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Landing page profissional de Lucas Soares, desenvolvedor de software full stack com foco em sistemas corporativos, integrações, ERP, dados e automação.">
-    <title>Lucas Soares | Desenvolvedor de Software</title>
-    <style>
-      :root {
-        color-scheme: light;
-        --bg: #f7f8f6;
-        --surface: #ffffff;
-        --surface-2: #eef2ec;
-        --ink: #141a18;
-        --muted: #53615b;
-        --line: #dce3dd;
-        --accent: #0f6b5f;
-        --accent-2: #154b70;
-        --accent-soft: #dff0eb;
-        --shadow: 0 18px 50px rgba(20, 26, 24, .10);
-        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      }
-
-      * {
-        box-sizing: border-box;
-      }
-
-      html {
-        scroll-behavior: smooth;
-      }
-
-      body {
-        margin: 0;
-        background: var(--bg);
-        color: var(--ink);
-      }
-
-      a {
-        color: inherit;
-        text-decoration: none;
-      }
-
-      .site-shell {
-        min-height: 100vh;
-        overflow: hidden;
-      }
-
-      .nav {
-        position: sticky;
-        top: 0;
-        z-index: 10;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 1rem;
-        width: 100%;
-        padding: 1rem clamp(1rem, 5vw, 4.5rem);
-        background: rgba(247, 248, 246, .84);
-        border-bottom: 1px solid rgba(220, 227, 221, .82);
-        backdrop-filter: blur(18px);
-      }
-
-      .brand {
-        display: inline-flex;
-        align-items: center;
-        gap: .7rem;
-        font-weight: 750;
-        letter-spacing: 0;
-      }
-
-      .brand-mark {
-        display: grid;
-        width: 2.35rem;
-        height: 2.35rem;
-        place-items: center;
-        border-radius: 8px;
-        background: var(--ink);
-        color: #fff;
-        font-size: .92rem;
-      }
-
-      .nav-links {
-        display: flex;
-        align-items: center;
-        gap: clamp(.7rem, 2vw, 1.5rem);
-        color: var(--muted);
-        font-size: .94rem;
-      }
-
-      .nav-links a:hover {
-        color: var(--ink);
-      }
-
-      .hero {
-        position: relative;
-        display: grid;
-        min-height: calc(100vh - 73px);
-        grid-template-columns: minmax(0, 1.02fr) minmax(320px, .8fr);
-        gap: clamp(2rem, 5vw, 5rem);
-        align-items: center;
-        padding: clamp(3.5rem, 8vw, 7rem) clamp(1rem, 5vw, 4.5rem);
-      }
-
-      .hero::before {
-        position: absolute;
-        inset: 0;
-        z-index: -2;
-        content: "";
-        background:
-          linear-gradient(115deg, rgba(15, 107, 95, .13), transparent 35%),
-          linear-gradient(245deg, rgba(21, 75, 112, .12), transparent 38%),
-          repeating-linear-gradient(90deg, rgba(20, 26, 24, .045) 0 1px, transparent 1px 120px),
-          repeating-linear-gradient(0deg, rgba(20, 26, 24, .035) 0 1px, transparent 1px 120px);
-      }
-
-      .eyebrow {
-        display: inline-flex;
-        align-items: center;
-        width: fit-content;
-        gap: .5rem;
-        margin: 0 0 1.2rem;
-        padding: .45rem .7rem;
-        border: 1px solid var(--line);
-        border-radius: 999px;
-        background: rgba(255, 255, 255, .72);
-        color: var(--accent);
-        font-size: .84rem;
-        font-weight: 700;
-      }
-
-      .eyebrow::before {
-        width: .5rem;
-        height: .5rem;
-        border-radius: 999px;
-        background: var(--accent);
-        content: "";
-      }
-
-      h1 {
-        max-width: 12ch;
-        margin: 0;
-        font-size: clamp(3rem, 8vw, 7.2rem);
-        line-height: .9;
-        letter-spacing: 0;
-      }
-
-      .hero-copy {
-        max-width: 43rem;
-        margin: 1.5rem 0 0;
-        color: var(--muted);
-        font-size: clamp(1.05rem, 1.6vw, 1.28rem);
-        line-height: 1.65;
-      }
-
-      .hero-actions {
-        display: flex;
-        flex-wrap: wrap;
-        gap: .85rem;
-        margin-top: 2rem;
-      }
-
-      .button {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        min-height: 3rem;
-        padding: .86rem 1.1rem;
-        border: 1px solid var(--ink);
-        border-radius: 8px;
-        font-weight: 750;
-      }
-
-      .button.primary {
-        background: var(--ink);
-        color: #fff;
-      }
-
-      .button.secondary {
-        background: rgba(255, 255, 255, .74);
-        color: var(--ink);
-      }
-
-      .hero-metrics {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: .75rem;
-        max-width: 42rem;
-        margin-top: 2.3rem;
-      }
-
-      .metric {
-        padding: 1rem;
-        border: 1px solid rgba(220, 227, 221, .9);
-        border-radius: 8px;
-        background: rgba(255, 255, 255, .62);
-      }
-
-      .metric strong {
-        display: block;
-        font-size: 1.35rem;
-      }
-
-      .metric span {
-        display: block;
-        margin-top: .35rem;
-        color: var(--muted);
-        font-size: .88rem;
-        line-height: 1.35;
-      }
-
-      .terminal {
-        position: relative;
-        border: 1px solid rgba(20, 26, 24, .14);
-        border-radius: 8px;
-        background: rgba(255, 255, 255, .78);
-        box-shadow: var(--shadow);
-        overflow: hidden;
-      }
-
-      .terminal-top {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: .78rem .95rem;
-        border-bottom: 1px solid var(--line);
-        background: #fbfcfa;
-        color: var(--muted);
-        font-size: .8rem;
-      }
-
-      .dots {
-        display: flex;
-        gap: .4rem;
-      }
-
-      .dots span {
-        width: .65rem;
-        height: .65rem;
-        border-radius: 999px;
-        background: var(--line);
-      }
-
-      .terminal-body {
-        padding: clamp(1rem, 3vw, 1.5rem);
-        font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
-        font-size: clamp(.82rem, 1.4vw, .95rem);
-        line-height: 1.8;
-      }
-
-      .terminal-body p {
-        margin: 0;
-        color: #2b3330;
-      }
-
-      .code-key {
-        color: var(--accent-2);
-      }
-
-      .code-value {
-        color: var(--accent);
-      }
-
-      .stack-strip {
-        display: flex;
-        flex-wrap: wrap;
-        gap: .55rem;
-        margin-top: 1.2rem;
-      }
-
-      .tag {
-        display: inline-flex;
-        align-items: center;
-        min-height: 2rem;
-        padding: .35rem .62rem;
-        border: 1px solid var(--line);
-        border-radius: 999px;
-        background: var(--surface);
-        color: var(--muted);
-        font-size: .86rem;
-        font-weight: 650;
-      }
-
-      section {
-        padding: clamp(3rem, 6vw, 5.5rem) clamp(1rem, 5vw, 4.5rem);
-      }
-
-      .section-head {
-        display: flex;
-        align-items: end;
-        justify-content: space-between;
-        gap: 1.5rem;
-        max-width: 72rem;
-        margin: 0 auto 1.6rem;
-      }
-
-      .section-head h2 {
-        max-width: 13ch;
-        margin: 0;
-        font-size: clamp(2rem, 4vw, 3.2rem);
-        line-height: 1;
-      }
-
-      .section-head p {
-        max-width: 33rem;
-        margin: 0;
-        color: var(--muted);
-        line-height: 1.6;
-      }
-
-      .grid {
-        display: grid;
-        max-width: 72rem;
-        margin: 0 auto;
-        gap: 1rem;
-      }
-
-      .grid.cards {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-      }
-
-      .card {
-        padding: 1.2rem;
-        border: 1px solid var(--line);
-        border-radius: 8px;
-        background: var(--surface);
-      }
-
-      .card h3 {
-        margin: 0 0 .75rem;
-        font-size: 1.05rem;
-      }
-
-      .card p {
-        margin: 0;
-        color: var(--muted);
-        line-height: 1.55;
-      }
-
-      .projects {
-        background: #ffffff;
-      }
-
-      .project-list {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 1rem;
-      }
-
-      .project {
-        display: grid;
-        min-height: 18rem;
-        align-content: space-between;
-        padding: 1.25rem;
-        border: 1px solid var(--line);
-        border-radius: 8px;
-        background:
-          linear-gradient(135deg, rgba(15, 107, 95, .09), transparent 42%),
-          var(--bg);
-      }
-
-      .project h3 {
-        margin: 0 0 .65rem;
-        font-size: 1.3rem;
-      }
-
-      .project p {
-        margin: 0;
-        color: var(--muted);
-        line-height: 1.6;
-      }
-
-      .project-meta {
-        display: flex;
-        flex-wrap: wrap;
-        gap: .5rem;
-        margin-top: 1.4rem;
-      }
-
-      .timeline {
-        display: grid;
-        max-width: 72rem;
-        margin: 0 auto;
-        gap: .75rem;
-      }
-
-      .timeline-item {
-        display: grid;
-        grid-template-columns: 12rem minmax(0, 1fr);
-        gap: 1.25rem;
-        padding: 1.1rem;
-        border: 1px solid var(--line);
-        border-radius: 8px;
-        background: var(--surface);
-      }
-
-      .timeline-date {
-        color: var(--accent);
-        font-weight: 750;
-      }
-
-      .timeline-item h3 {
-        margin: 0 0 .4rem;
-      }
-
-      .timeline-item p {
-        margin: 0;
-        color: var(--muted);
-        line-height: 1.6;
-      }
-
-      .contact {
-        background: var(--ink);
-        color: #fff;
-      }
-
-      .contact .section-head p,
-      .contact .tag {
-        color: rgba(255, 255, 255, .72);
-      }
-
-      .contact .tag {
-        border-color: rgba(255, 255, 255, .18);
-        background: rgba(255, 255, 255, .08);
-      }
-
-      .contact-panel {
-        display: grid;
-        grid-template-columns: minmax(0, 1fr) auto;
-        align-items: center;
-        gap: 1.5rem;
-        max-width: 72rem;
-        margin: 0 auto;
-        padding: 1.2rem;
-        border: 1px solid rgba(255, 255, 255, .16);
-        border-radius: 8px;
-        background: rgba(255, 255, 255, .06);
-      }
-
-      .contact-panel p {
-        margin: .45rem 0 0;
-        color: rgba(255, 255, 255, .7);
-      }
-
-      .contact .button {
-        border-color: #fff;
-        background: #fff;
-        color: var(--ink);
-      }
-
-      footer {
-        padding: 1.2rem clamp(1rem, 5vw, 4.5rem);
-        background: var(--ink);
-        color: rgba(255, 255, 255, .62);
-        font-size: .9rem;
-      }
-
-      @media (max-width: 900px) {
-        .nav {
-          align-items: flex-start;
-        }
-
-        .nav-links {
-          display: none;
-        }
-
-        .hero {
-          grid-template-columns: 1fr;
-          min-height: auto;
-        }
-
-        .hero-metrics,
-        .grid.cards,
-        .project-list {
-          grid-template-columns: 1fr;
-        }
-
-        .section-head,
-        .contact-panel {
-          display: grid;
-        }
-
-        .timeline-item {
-          grid-template-columns: 1fr;
-        }
-      }
-
-      @media (max-width: 520px) {
-        .hero {
-          padding-top: 2.5rem;
-        }
-
-        h1 {
-          font-size: 3.15rem;
-        }
-
-        .hero-actions,
-        .button {
-          width: 100%;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <div class="site-shell">
-      <header class="nav" aria-label="Navegação principal">
-        <a class="brand" href="#top" aria-label="Lucas Soares">
-          <span class="brand-mark">LS</span>
-          <span>Lucas Soares</span>
-        </a>
-        <nav class="nav-links" aria-label="Seções">
-          <a href="#especialidades">Especialidades</a>
-          <a href="#projetos">Projetos</a>
-          <a href="#experiencia">Experiência</a>
-          <a href="#contato">Contato</a>
-        </nav>
-      </header>
-
-      <main id="top">
-        <section class="hero" aria-labelledby="hero-title">
-          <div>
-            <p class="eyebrow">Desenvolvedor Full Stack</p>
-            <h1 id="hero-title">Software para operação real.</h1>
-            <p class="hero-copy">
-              Sou Lucas Soares, desenvolvedor com foco em sistemas corporativos,
-              integrações, ERP, dados e automações que aproximam tecnologia das
-              decisões do negócio.
-            </p>
-            <div class="hero-actions">
-              <a class="button primary" href="https://wa.me/qr/QWVIBVNIY3G7M1" target="_blank" rel="noopener noreferrer">Falar sobre um projeto</a>
-              <a class="button secondary" href="#projetos">Ver trabalhos</a>
-            </div>
-            <div class="hero-metrics" aria-label="Resumo profissional">
-              <div class="metric">
-                <strong>6+</strong>
-                <span>anos criando e mantendo sistemas</span>
-              </div>
-              <div class="metric">
-                <strong>ERP</strong>
-                <span>rotinas administrativas, financeiras e operacionais</span>
-              </div>
-              <div class="metric">
-                <strong>APIs</strong>
-                <span>integrações, webhooks e dados consistentes</span>
-              </div>
-            </div>
+<html lang="pt-BR" data-theme="spatial">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lucas Soares | Desenvolvedor Full Stack</title>
+  <meta name="description" content="Landing page profissional de Lucas Soares, Desenvolvedor Full Stack focado em sistemas corporativos, integrações e dados." />
+  <meta property="og:title" content="Lucas Soares | Desenvolvedor Full Stack" />
+  <meta property="og:description" content="Desenvolvedor Full Stack focado em sistemas corporativos, integrações, ERP, dados e automações." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    // Aplica o tema salvo antes da renderização para evitar "piscar".
+    try {
+      var savedTheme = localStorage.getItem('theme');
+      if (savedTheme === 'classic' || savedTheme === 'spatial') {
+        document.documentElement.setAttribute('data-theme', savedTheme);
+      }
+    } catch (e) {}
+  </script>
+  <style>
+    /* ---------- Tokens: modo Clássico (claro) ---------- */
+    :root,
+    :root[data-theme="classic"] {
+      --bg: #f7f8f6;
+      --bg-alt: #ffffff;
+      --surface: #ffffff;
+      --surface-alt: #f7f8f6;
+      --surface-2: #eef2ec;
+      --ink: #141a18;
+      --muted: #53615b;
+      --line: #dce3dd;
+      --line-hover: rgba(15, 107, 95, 0.45);
+      --accent: #0f6b5f;
+      --accent-2: #154b70;
+      --accent-soft: #dff0eb;
+      --on-accent: #ffffff;
+      --chip-bg: #eef2ec;
+      --chip-ink: #141a18;
+      --chip-line: transparent;
+      --nav-bg: rgba(247, 248, 246, 0.85);
+      --grid-line: rgba(15, 107, 95, 0.05);
+      --grid-size: 36px;
+      --glow-1: rgba(223, 240, 235, 0.6);
+      --glow-2: rgba(21, 75, 112, 0.05);
+      --card-shadow: 0 1px 2px rgba(20, 26, 24, 0.05);
+      --card-shadow-hover: 0 12px 30px rgba(20, 26, 24, 0.08);
+      --btn-primary-bg: #141a18;
+      --btn-primary-ink: #ffffff;
+      --btn-primary-hover: #0f6b5f;
+      --btn-secondary-bg: #ffffff;
+      --btn-secondary-hover: #eef2ec;
+      --logo-bg: #141a18;
+      --logo-ink: #f7f8f6;
+      --contact-bg: #141a18;
+      --contact-panel: #1c2421;
+      --contact-line: rgba(255, 255, 255, 0.1);
+      --contact-cta-bg: #ffffff;
+      --contact-cta-ink: #141a18;
+      --footer-bg: #101514;
+      --footer-ink: #86948f;
+      --scroll-thumb: rgba(15, 107, 95, 0.25);
+      color-scheme: light;
+    }
+
+    /* ---------- Tokens: modo Espacial (escuro) ---------- */
+    :root[data-theme="spatial"] {
+      --bg: #090e13;
+      --bg-alt: #0b1219;
+      --surface: rgba(15, 23, 42, 0.6);
+      --surface-alt: rgba(15, 23, 42, 0.5);
+      --surface-2: rgba(23, 34, 48, 0.6);
+      --ink: #eef5f4;
+      --muted: #cbd5e1;
+      --line: rgba(45, 212, 191, 0.2);
+      --line-hover: rgba(34, 211, 238, 0.6);
+      --accent: #22d3ee;
+      --accent-2: #38bdf8;
+      --accent-soft: rgba(8, 51, 68, 0.8);
+      --on-accent: #020617;
+      --chip-bg: rgba(8, 51, 68, 0.6);
+      --chip-ink: #67e8f9;
+      --chip-line: rgba(21, 94, 117, 0.6);
+      --nav-bg: rgba(9, 14, 19, 0.8);
+      --grid-line: rgba(45, 212, 191, 0.07);
+      --grid-size: 40px;
+      --glow-1: rgba(6, 182, 212, 0.1);
+      --glow-2: rgba(14, 165, 233, 0.1);
+      --card-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+      --card-shadow-hover: 0 14px 34px rgba(6, 182, 212, 0.12);
+      --btn-primary-bg: #06b6d4;
+      --btn-primary-ink: #020617;
+      --btn-primary-hover: #22d3ee;
+      --btn-secondary-bg: rgba(15, 23, 42, 0.6);
+      --btn-secondary-hover: rgba(30, 41, 59, 0.8);
+      --logo-bg: linear-gradient(135deg, #06b6d4, #0284c7);
+      --logo-ink: #020617;
+      --contact-bg: #070b10;
+      --contact-panel: rgba(14, 22, 32, 0.8);
+      --contact-line: rgba(34, 211, 238, 0.3);
+      --contact-cta-bg: linear-gradient(90deg, #22d3ee, #2dd4bf);
+      --contact-cta-ink: #020617;
+      --footer-bg: #05080c;
+      --footer-ink: #94a3b8;
+      --scroll-thumb: rgba(34, 211, 238, 0.25);
+      color-scheme: dark;
+    }
+
+    /* ---------- Base ---------- */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      transition: background-color .3s, color .3s;
+    }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
+    ul { list-style: none; }
+    .mono { font-family: 'JetBrains Mono', ui-monospace, Consolas, monospace; }
+    .icon { width: 1rem; height: 1rem; flex-shrink: 0; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .icon-lg { width: 1.5rem; height: 1.5rem; }
+    .container { max-width: 72rem; margin: 0 auto; padding: 0 1.5rem; }
+    :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 6px; }
+    ::-webkit-scrollbar { width: 7px; height: 7px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: var(--scroll-thumb); border-radius: 4px; }
+
+    /* ---------- Navegação ---------- */
+    .nav {
+      position: sticky; top: 0; z-index: 40;
+      background: var(--nav-bg);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav-inner { height: 4rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+    .logo { display: flex; align-items: center; gap: .75rem; }
+    .logo-badge {
+      width: 2.25rem; height: 2.25rem; border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      background: var(--logo-bg); color: var(--logo-ink);
+      font-weight: 700; font-size: .875rem; letter-spacing: .05em;
+      transition: transform .3s;
+    }
+    .logo:hover .logo-badge { transform: scale(1.05); }
+    .logo-text { display: flex; flex-direction: column; line-height: 1.1; }
+    .logo-name { font-weight: 600; font-size: .875rem; }
+    .logo-role { font-size: .6875rem; color: var(--accent); margin-top: .15rem; }
+    :root[data-theme="classic"] .logo-role { color: var(--muted); }
+    .nav-links { display: flex; gap: 1.75rem; font-size: .875rem; font-weight: 500; }
+    .nav-links a { color: var(--muted); transition: color .2s; }
+    .nav-links a:hover { color: var(--accent); }
+    .nav-actions { display: flex; align-items: center; gap: .5rem; }
+    .theme-toggle {
+      display: inline-flex; align-items: center; gap: .4rem;
+      padding: .4rem .75rem; border-radius: 8px; font-size: .75rem; font-weight: 500;
+      border: 1px solid var(--line); background: var(--surface);
+      transition: border-color .2s, background-color .2s;
+    }
+    .theme-toggle .icon { width: .875rem; height: .875rem; color: var(--accent); }
+    .theme-toggle:hover { border-color: var(--line-hover); }
+    :root[data-theme="spatial"] .theme-toggle { color: #67e8f9; box-shadow: 0 1px 6px rgba(6, 182, 212, .2); }
+    .menu-btn { display: none; padding: .5rem; border-radius: 8px; }
+    .menu-btn .icon { width: 1.25rem; height: 1.25rem; }
+    .menu-btn .icon-close, .nav.open .menu-btn .icon-open { display: none; }
+    .nav.open .menu-btn .icon-close { display: block; }
+    .mobile-menu { display: none; border-top: 1px solid var(--line); padding: .5rem 1rem 1rem; background: var(--bg); }
+    .mobile-menu a { display: block; padding: .5rem .75rem; border-radius: 8px; font-size: .875rem; font-weight: 500; }
+    .mobile-menu a:hover { background: var(--surface-2); }
+
+    /* ---------- Hero ---------- */
+    .hero {
+      position: relative; overflow: hidden;
+      padding: 5rem 0 7rem;
+      background-color: var(--bg);
+      background-size: var(--grid-size) var(--grid-size);
+      background-image:
+        linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+        linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+    }
+    .glow { position: absolute; border-radius: 9999px; pointer-events: none; filter: blur(120px); }
+    .glow-1 { width: 24rem; height: 24rem; top: 10%; left: 5%; background: var(--glow-1); }
+    .glow-2 { width: 24rem; height: 24rem; top: 25%; right: 15%; background: var(--glow-2); }
+    .hud {
+      position: absolute; top: 1.5rem; right: 2rem; z-index: 2;
+      display: none; align-items: center; gap: .75rem;
+      padding: .25rem .75rem; border-radius: 9999px;
+      background: rgba(15, 23, 42, .8); border: 1px solid rgba(34, 211, 238, .3);
+      color: rgba(103, 232, 249, .8); font-size: .6875rem;
+      backdrop-filter: blur(8px);
+    }
+    .hud-dot { position: relative; width: .5rem; height: .5rem; }
+    .hud-dot::before, .hud-dot::after { content: ""; position: absolute; inset: 0; border-radius: 9999px; background: #22d3ee; }
+    .hud-dot::after { animation: ping 1.5s cubic-bezier(0, 0, .2, 1) infinite; }
+    @keyframes ping { 75%, 100% { transform: scale(2.2); opacity: 0; } }
+    @media (min-width: 1024px) { :root[data-theme="spatial"] .hud { display: flex; } }
+    .hero-grid { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: .4rem; align-self: flex-start;
+      padding: .25rem .75rem; margin-bottom: 1rem; border-radius: 9999px;
+      background: var(--accent-soft); color: var(--accent);
+      font-size: .75rem; font-weight: 600; letter-spacing: .03em; text-transform: uppercase;
+    }
+    .eyebrow .icon { width: .875rem; height: .875rem; }
+    :root[data-theme="spatial"] .eyebrow { color: #67e8f9; border: 1px solid rgba(34, 211, 238, .3); box-shadow: 0 1px 6px rgba(6, 182, 212, .2); }
+    h1 {
+      font-size: clamp(2.25rem, 5vw, 3.75rem); font-weight: 800; line-height: 1.08;
+      letter-spacing: -0.02em; margin-bottom: 1.5rem;
+    }
+    :root[data-theme="spatial"] h1 {
+      background: linear-gradient(90deg, #ffffff, #cffafe, #7dd3fc);
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+    }
+    .hero-copy { font-size: 1.125rem; color: var(--muted); max-width: 36rem; margin-bottom: 2rem; }
+    .btn-group { display: flex; flex-wrap: wrap; gap: .875rem; margin-bottom: 2.5rem; }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: .5rem;
+      padding: .875rem 1.5rem; border-radius: 12px; font-size: .875rem; font-weight: 600;
+      transition: background-color .2s, border-color .2s, transform .2s, box-shadow .2s;
+    }
+    .btn:hover { transform: translateY(-1px); }
+    .btn-primary { background: var(--btn-primary-bg); color: var(--btn-primary-ink); box-shadow: 0 6px 16px rgba(0, 0, 0, .12); }
+    .btn-primary:hover { background: var(--btn-primary-hover); }
+    :root[data-theme="spatial"] .btn-primary { box-shadow: 0 6px 18px rgba(6, 182, 212, .25); }
+    .btn-secondary { background: var(--btn-secondary-bg); border: 1px solid var(--line); }
+    .btn-secondary:hover { background: var(--btn-secondary-hover); border-color: var(--line-hover); }
+    .btn .icon-fill { fill: currentColor; }
+    .btn .icon-muted { opacity: .75; }
+    .metrics { display: grid; grid-template-columns: repeat(3, 1fr); gap: .875rem; padding-top: 1rem; border-top: 1px solid var(--line); }
+    .metric-card {
+      padding: .875rem; border-radius: 12px;
+      background: var(--surface); border: 1px solid var(--line);
+      backdrop-filter: blur(4px); transition: border-color .2s;
+    }
+    .metric-card:hover { border-color: var(--line-hover); }
+    .metric-num { font-size: 1.5rem; font-weight: 700; color: var(--accent); letter-spacing: -0.02em; }
+    .metric-label { font-size: .75rem; color: var(--muted); margin-top: .25rem; line-height: 1.35; }
+    :root[data-theme="spatial"] .metric-label { color: #94a3b8; }
+
+    /* ---------- Terminal ---------- */
+    .terminal-wrap { transition: transform .15s ease-out; will-change: transform; }
+    .terminal {
+      position: relative; overflow: hidden; border-radius: 16px;
+      background: #141a18; color: #f7f8f6;
+      border: 1px solid rgba(220, 227, 221, .2);
+      box-shadow: 0 25px 50px rgba(0, 0, 0, .25);
+      font-family: 'JetBrains Mono', ui-monospace, Consolas, monospace;
+    }
+    :root[data-theme="spatial"] .terminal {
+      background: rgba(15, 23, 34, .85); border-color: rgba(6, 182, 212, .25);
+      box-shadow: 0 20px 50px rgba(45, 212, 191, .12);
+      backdrop-filter: blur(24px);
+    }
+    .terminal-glow { display: none; position: absolute; top: -4rem; right: -4rem; width: 12rem; height: 12rem; border-radius: 9999px; background: rgba(6, 182, 212, .15); filter: blur(48px); pointer-events: none; }
+    :root[data-theme="spatial"] .terminal-glow { display: block; }
+    .terminal-bar {
+      position: relative; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .5rem;
+      padding: .75rem 1rem; font-size: .75rem;
+      background: #1b2220; border-bottom: 1px solid rgba(255, 255, 255, .1); color: #dce3dd;
+    }
+    :root[data-theme="spatial"] .terminal-bar { background: rgba(19, 31, 45, .9); border-color: rgba(6, 182, 212, .2); }
+    .terminal-title { display: flex; align-items: center; gap: .5rem; color: rgba(255, 255, 255, .7); }
+    .terminal-title .icon { width: .875rem; height: .875rem; color: #34d399; }
+    .lights { display: flex; gap: .375rem; margin-right: .25rem; }
+    .lights span { width: .75rem; height: .75rem; border-radius: 9999px; }
+    .lights span:nth-child(1) { background: #f87171; }
+    .lights span:nth-child(2) { background: #fbbf24; }
+    .lights span:nth-child(3) { background: #34d399; }
+    .terminal-tabs { display: flex; gap: .25rem; }
+    .terminal-tab {
+      padding: .25rem .625rem; border-radius: 4px; font-size: .75rem;
+      color: rgba(255, 255, 255, .6); border: 1px solid transparent;
+      transition: color .2s, background-color .2s;
+    }
+    .terminal-tab:hover { color: #fff; background: rgba(255, 255, 255, .05); }
+    .terminal-tab[aria-selected="true"] { background: rgba(255, 255, 255, .15); color: #fff; font-weight: 600; }
+    :root[data-theme="spatial"] .terminal-tab[aria-selected="true"] { background: rgba(6, 182, 212, .2); color: #67e8f9; border-color: rgba(6, 182, 212, .4); }
+    .terminal-actions { display: flex; align-items: center; gap: .375rem; }
+    .run-btn {
+      display: inline-flex; align-items: center; gap: .25rem;
+      padding: .25rem .625rem; border-radius: 4px;
+      font-family: 'Inter', system-ui, sans-serif; font-size: .75rem; font-weight: 600;
+      background: #059669; color: #fff; transition: background-color .2s;
+    }
+    .run-btn:hover { background: #10b981; }
+    :root[data-theme="spatial"] .run-btn { background: #0891b2; color: #000; }
+    :root[data-theme="spatial"] .run-btn:hover { background: #06b6d4; }
+    .run-btn .icon { width: .75rem; height: .75rem; fill: currentColor; }
+    .run-btn[disabled] { opacity: .7; cursor: progress; }
+    .icon-btn { padding: .375rem; border-radius: 4px; color: rgba(255, 255, 255, .7); transition: color .2s, background-color .2s; }
+    .icon-btn:hover { color: #fff; background: rgba(255, 255, 255, .1); }
+    .icon-btn .icon { width: .875rem; height: .875rem; }
+    .icon-btn .icon-done, .icon-btn.copied .icon-copy { display: none; }
+    .icon-btn.copied .icon-done { display: block; color: #34d399; }
+    .terminal-body { position: relative; padding: 1.25rem; min-height: 220px; overflow-x: auto; font-size: .875rem; line-height: 1.7; }
+    .terminal-body pre { font-family: inherit; }
+    .terminal-panel[hidden] { display: none; }
+    .tk-key { color: #38bdf8; font-weight: 600; }
+    .tk-var { color: #6ee7b7; }
+    .tk-prop { color: rgba(255, 255, 255, .8); }
+    .tk-str { color: #fcd34d; }
+    .tk-teal { color: #5eead4; }
+    .tk-brace { color: #d8b4fe; }
+    .tk-jkey { color: #7dd3fc; }
+    .tk-ok { color: #34d399; }
+    .tk-com { color: #94a3b8; }
+    .terminal-output {
+      margin-top: 1rem; padding: .625rem; border-radius: 8px; font-size: .75rem;
+      background: rgba(2, 44, 34, .6); border: 1px solid rgba(16, 185, 129, .3); color: #6ee7b7;
+      animation: fade-in .2s ease-out;
+    }
+    @keyframes fade-in { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: none; } }
+    .terminal-stack {
+      display: flex; flex-wrap: wrap; align-items: center; gap: .5rem;
+      padding: .875rem 1.25rem; font-size: .75rem;
+      background: #18201d; border-top: 1px solid rgba(255, 255, 255, .05);
+    }
+    :root[data-theme="spatial"] .terminal-stack { background: rgba(17, 26, 38, .9); border-color: rgba(6, 182, 212, .2); }
+    .stack-label { font-family: 'Inter', system-ui, sans-serif; font-size: .6875rem; letter-spacing: .08em; text-transform: uppercase; color: rgba(255, 255, 255, .4); margin-right: .25rem; }
+    .stack-tag { padding: .25rem .625rem; border-radius: 6px; font-weight: 500; background: rgba(255, 255, 255, .1); color: rgba(255, 255, 255, .9); border: 1px solid transparent; transition: border-color .2s; }
+    :root[data-theme="spatial"] .stack-tag { background: rgba(8, 51, 68, .7); color: #67e8f9; border-color: rgba(21, 94, 117, .6); }
+    :root[data-theme="spatial"] .stack-tag:hover { border-color: #22d3ee; }
+
+    /* ---------- Seções ---------- */
+    .section { padding: 7rem 0; border-top: 1px solid var(--line); background: var(--bg); }
+    .section-alt { background: var(--bg-alt); }
+    .section-head { max-width: 42rem; margin-bottom: 3.5rem; }
+    .kicker { display: inline-block; margin-bottom: .75rem; font-size: .75rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); }
+    .section-head h2 { font-size: clamp(1.875rem, 4vw, 2.25rem); font-weight: 700; letter-spacing: -0.02em; line-height: 1.15; margin-bottom: 1rem; }
+    .section-head p { font-size: 1.0625rem; color: var(--muted); }
+    .chip {
+      display: inline-block; padding: .25rem .625rem; border-radius: 6px;
+      font-size: .75rem; font-weight: 500;
+      background: var(--chip-bg); color: var(--chip-ink); border: 1px solid var(--chip-line);
+    }
+    .chip-list { display: flex; flex-wrap: wrap; gap: .5rem; }
+
+    /* Cards (especialidades e projetos) */
+    .card {
+      position: relative; display: flex; flex-direction: column; justify-content: space-between;
+      padding: 1.75rem; border-radius: 16px;
+      background: var(--surface-alt); border: 1px solid var(--line);
+      box-shadow: var(--card-shadow);
+      backdrop-filter: blur(12px);
+      transition: transform .3s, border-color .3s, box-shadow .3s;
+    }
+    .card:hover { transform: translateY(-4px); border-color: var(--line-hover); box-shadow: var(--card-shadow-hover); }
+    .card-shine { display: none; position: absolute; top: 0; left: 2rem; right: 2rem; height: 1px; background: linear-gradient(90deg, transparent, rgba(34, 211, 238, .4), transparent); }
+    :root[data-theme="spatial"] .card-shine { display: block; }
+    .card-icon {
+      width: 3rem; height: 3rem; border-radius: 12px; margin-bottom: 1.5rem;
+      display: flex; align-items: center; justify-content: center;
+      background: var(--surface); color: var(--accent); border: 1px solid var(--line);
+      transition: transform .3s;
+    }
+    :root[data-theme="spatial"] .card-icon { background: rgba(8, 51, 68, .8); border-color: rgba(6, 182, 212, .3); }
+    .card:hover .card-icon { transform: scale(1.1); }
+    .card h3 { font-size: 1.25rem; font-weight: 700; letter-spacing: -0.01em; margin-bottom: .75rem; }
+    .card-desc { font-size: .875rem; color: var(--muted); margin-bottom: 1.5rem; }
+    .checklist { display: grid; gap: .5rem; padding-top: 1rem; margin-bottom: 1.5rem; border-top: 1px solid var(--line); font-size: .75rem; }
+    .checklist li { display: flex; align-items: flex-start; gap: .5rem; }
+    .checklist .icon { color: var(--accent); margin-top: .1rem; }
+    .card-foot { display: flex; align-items: center; justify-content: space-between; gap: .5rem; padding-top: .75rem; font-size: .75rem; }
+    .card-foot .chip { background: var(--surface); color: var(--accent); border-color: var(--line); }
+    .card-foot-note { color: var(--muted); }
+    :root[data-theme="spatial"] .card-foot-note { color: rgba(34, 211, 238, .8); }
+    .cards-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+
+    /* Projetos */
+    .projects-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+    .project { padding: 2rem; background: var(--surface); }
+    .project-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.5rem; }
+    .project-top .card-icon { margin-bottom: 0; background: var(--surface-2); border-color: transparent; }
+    :root[data-theme="spatial"] .project-top .card-icon { background: rgba(8, 51, 68, .8); border-color: rgba(6, 182, 212, .3); }
+    .ghost-btn {
+      display: inline-flex; align-items: center; gap: .375rem;
+      padding: .375rem .75rem; border-radius: 8px; font-size: .75rem; font-weight: 500;
+      background: var(--surface-alt); color: var(--accent); border: 1px solid var(--line);
+      transition: background-color .2s;
+    }
+    .ghost-btn:hover { background: var(--surface-2); }
+    .ghost-btn .icon { width: .875rem; height: .875rem; }
+    .project h3 { font-size: 1.5rem; }
+    .project .card-desc { font-size: 1rem; }
+    .impact {
+      padding: .875rem; margin-bottom: 1.5rem; border-radius: 12px; font-size: .75rem;
+      background: var(--surface-alt); border: 1px solid var(--line);
+    }
+    :root[data-theme="spatial"] .impact { background: rgba(2, 6, 23, .7); color: rgba(165, 243, 252, .9); }
+    .impact-label { display: flex; align-items: center; gap: .375rem; font-weight: 700; opacity: .75; margin-bottom: .25rem; }
+    .impact-label .icon { width: .875rem; height: .875rem; color: #10b981; }
+    .project-foot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .75rem; padding-top: 1.5rem; border-top: 1px solid var(--line); }
+    .link-btn { font-size: .75rem; font-weight: 600; color: var(--accent); }
+    .link-btn:hover { text-decoration: underline; }
+
+    /* Linha do tempo */
+    .timeline { position: relative; margin-left: 9rem; border-left: 2px solid var(--line); display: grid; gap: 3rem; }
+    .timeline-item { position: relative; padding-left: 2.5rem; }
+    .timeline-node {
+      position: absolute; left: -9px; top: .375rem; width: 1rem; height: 1rem; border-radius: 9999px;
+      background: var(--bg-alt); border: 2px solid var(--accent); transition: transform .3s;
+    }
+    .timeline-item:hover .timeline-node { transform: scale(1.25); }
+    .timeline-item.is-current .timeline-node { background: var(--accent); border-color: var(--bg-alt); box-shadow: 0 0 0 3px rgba(15, 107, 95, .3); }
+    :root[data-theme="spatial"] .timeline-node { background: #1e293b; border-color: rgba(34, 211, 238, .5); }
+    :root[data-theme="spatial"] .timeline-item.is-current .timeline-node { background: #22d3ee; border-color: #0f172a; box-shadow: 0 0 10px rgba(34, 211, 238, .5); }
+    .timeline-period { position: absolute; left: -11rem; top: .25rem; width: 9rem; text-align: right; }
+    .period { display: inline-block; padding: .125rem .625rem; border-radius: 9999px; font-size: .75rem; font-weight: 600; color: var(--muted); }
+    :root[data-theme="spatial"] .period { color: #94a3b8; }
+    .is-current .period { background: var(--accent-soft); color: var(--accent); }
+    :root[data-theme="spatial"] .is-current .period { color: #67e8f9; border: 1px solid rgba(34, 211, 238, .4); }
+    .timeline-card {
+      padding: 1.5rem; border-radius: 16px;
+      background: var(--surface-alt); border: 1px solid var(--line);
+      backdrop-filter: blur(12px); transition: border-color .2s;
+    }
+    .timeline-card:hover { border-color: var(--line-hover); }
+    .timeline-card h3 { font-size: 1.25rem; font-weight: 700; letter-spacing: -0.01em; margin-bottom: .5rem; }
+    .timeline-card p { color: var(--muted); margin-bottom: 1rem; }
+    .timeline-card .chip { padding: .125rem .5rem; border-radius: 4px; background: var(--surface); border-color: var(--line); }
+    :root[data-theme="spatial"] .timeline-card .chip { background: rgba(30, 41, 59, .8); color: rgba(103, 232, 249, .9); border-color: rgba(22, 78, 99, .4); }
+
+    /* Contato */
+    .contact { position: relative; overflow: hidden; padding: 7rem 0; background: var(--contact-bg); color: #f7f8f6; border-top: 1px solid var(--line); }
+    .contact-glow { position: absolute; top: 50%; left: 50%; width: 37.5rem; height: 25rem; transform: translate(-50%, -50%); border-radius: 9999px; background: linear-gradient(90deg, rgba(6, 182, 212, .1), rgba(20, 184, 166, .1)); filter: blur(140px); pointer-events: none; }
+    .contact-panel {
+      position: relative; max-width: 56rem; margin: 0 auto; padding: 3rem;
+      border-radius: 24px; background: var(--contact-panel); border: 1px solid var(--contact-line);
+      box-shadow: 0 25px 60px rgba(0, 0, 0, .5); backdrop-filter: blur(24px);
+    }
+    .contact-head { max-width: 36rem; margin: 0 auto 2.5rem; text-align: center; }
+    .contact-head .kicker { padding: .25rem .75rem; border-radius: 9999px; margin-bottom: 1rem; background: rgba(255, 255, 255, .1); color: #6ee7b7; }
+    :root[data-theme="spatial"] .contact-head .kicker { background: rgba(8, 51, 68, .8); color: #67e8f9; border: 1px solid rgba(34, 211, 238, .3); }
+    .contact-head h2 { font-size: clamp(1.875rem, 5vw, 3rem); font-weight: 800; letter-spacing: -0.02em; line-height: 1.1; margin-bottom: 1rem; }
+    .contact-head p { color: #cbd5e1; }
+    .contact-profile { text-align: center; padding-bottom: 2rem; margin-bottom: 2rem; border-bottom: 1px solid rgba(255, 255, 255, .1); }
+    .contact-name { font-size: 1.125rem; font-weight: 600; color: #fff; }
+    .contact-loc { display: flex; align-items: center; justify-content: center; gap: .375rem; margin-top: .25rem; font-size: .875rem; color: #94a3b8; }
+    .contact-loc .icon { color: #34d399; }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; max-width: 36rem; margin: 0 auto 2rem; }
+    .contact-item {
+      display: flex; align-items: center; justify-content: space-between; gap: .5rem; min-width: 0;
+      padding: 1rem; border-radius: 12px; background: rgba(255, 255, 255, .05); border: 1px solid rgba(255, 255, 255, .1);
+      transition: border-color .2s;
+    }
+    .contact-item:hover { border-color: rgba(16, 185, 129, .4); }
+    .contact-item.linkedin:hover { border-color: rgba(59, 130, 246, .4); }
+    .contact-link { display: flex; align-items: center; gap: .75rem; min-width: 0; font-size: .875rem; font-weight: 500; color: #e2e8f0; }
+    .contact-link span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .contact-item:hover .contact-link { color: #fff; }
+    .contact-icon { width: 2.25rem; height: 2.25rem; border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; background: rgba(16, 185, 129, .2); color: #34d399; }
+    .linkedin .contact-icon { background: rgba(59, 130, 246, .2); color: #60a5fa; }
+    .contact-item .icon-btn { color: #94a3b8; }
+    .contact-item .arrow { color: #94a3b8; transition: transform .2s, color .2s; }
+    .contact-item:hover .arrow { color: #fff; transform: translate(2px, -2px); }
+    .contact-cta-wrap { text-align: center; }
+    .contact-cta {
+      display: inline-flex; align-items: center; gap: .625rem; padding: 1rem 2rem; border-radius: 12px;
+      font-size: 1rem; font-weight: 700; background: var(--contact-cta-bg); color: var(--contact-cta-ink);
+      box-shadow: 0 20px 25px rgba(0, 0, 0, .15); transition: transform .2s, filter .2s;
+    }
+    .contact-cta:hover { transform: scale(1.02); filter: brightness(1.05); }
+    .contact-cta .icon { width: 1.25rem; height: 1.25rem; }
+    .contact-cta .icon-fill { fill: currentColor; }
+
+    /* Rodapé */
+    footer { padding: 3rem 0; background: var(--footer-bg); color: var(--footer-ink); border-top: 1px solid var(--line); font-size: .75rem; }
+    .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; }
+    .footer-inner p { max-width: 36rem; }
+    .top-link {
+      display: inline-flex; align-items: center; gap: .375rem; flex-shrink: 0;
+      padding: .5rem; border-radius: 8px; font-size: .6875rem;
+      background: rgba(255, 255, 255, .05); border: 1px solid rgba(255, 255, 255, .1); color: #fff;
+      transition: background-color .2s;
+    }
+    .top-link:hover { background: rgba(255, 255, 255, .1); }
+    :root[data-theme="spatial"] .top-link { background: #0f172a; border-color: rgba(6, 182, 212, .2); color: #67e8f9; }
+    .top-link .icon { width: .875rem; height: .875rem; }
+
+    /* Modal de arquitetura */
+    .modal {
+      width: min(42rem, calc(100% - 2rem)); max-height: 90vh; margin: auto; padding: 0;
+      border: 1px solid rgba(6, 182, 212, .3); border-radius: 16px;
+      background: #0f1722; color: #f1f5f9; box-shadow: 0 25px 50px rgba(0, 0, 0, .5);
+      overflow: hidden;
+    }
+    .modal[open] { display: flex; flex-direction: column; animation: fade-in .2s ease-out; }
+    .modal::backdrop { background: rgba(0, 0, 0, .8); backdrop-filter: blur(4px); }
+    .modal-head, .modal-foot { display: flex; align-items: center; justify-content: space-between; padding: 1rem 1.5rem; background: #131f2d; }
+    .modal-head { border-bottom: 1px solid rgba(6, 182, 212, .2); }
+    .modal-foot { justify-content: flex-end; border-top: 1px solid rgba(6, 182, 212, .2); }
+    .modal-title { display: flex; align-items: center; gap: .75rem; }
+    .modal-title h3 { font-size: 1rem; font-weight: 700; color: #fff; }
+    .modal-title p { font-size: .75rem; color: #94a3b8; }
+    .modal-badge { width: 2.25rem; height: 2.25rem; border-radius: 8px; display: flex; align-items: center; justify-content: center; background: rgba(6, 182, 212, .2); color: #22d3ee; }
+    .modal-badge .icon { width: 1.25rem; height: 1.25rem; }
+    .modal-close { padding: .375rem; border-radius: 8px; color: #94a3b8; }
+    .modal-close:hover { color: #fff; background: rgba(255, 255, 255, .1); }
+    .modal-close .icon { width: 1.25rem; height: 1.25rem; }
+    .modal-body { padding: 1.5rem; overflow-y: auto; display: grid; gap: 1.5rem; font-size: .875rem; }
+    .modal-body h4 { margin-bottom: .5rem; font-size: .875rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: #22d3ee; }
+    .modal-body p { color: #cbd5e1; }
+    .flow { padding: 1rem; border-radius: 12px; background: rgba(0, 0, 0, .5); border: 1px solid rgba(6, 182, 212, .2); font-size: .75rem; }
+    .flow-label { margin-bottom: .75rem; font-size: .6875rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: #94a3b8; }
+    .flow-steps { display: flex; align-items: center; justify-content: space-between; gap: .5rem; text-align: center; }
+    .flow-step { flex: 1; padding: .625rem; border-radius: 8px; background: rgba(30, 41, 59, .8); border: 1px solid rgba(255, 255, 255, .1); }
+    .flow-step small { display: block; font-size: .625rem; color: #94a3b8; }
+    .flow-step strong { color: #34d399; }
+    .flow-step.mid { background: rgba(8, 51, 68, .8); border-color: rgba(6, 182, 212, .4); }
+    .flow-step.mid small { color: #67e8f9; }
+    .flow-step.mid strong { color: #fff; }
+    .flow-step.end strong { color: #38bdf8; }
+    .flow-steps > .icon { color: #22d3ee; }
+    .modal .checklist { border-top: 0; padding-top: 0; margin: 1rem 0 0; color: #cbd5e1; }
+    .modal .checklist .icon { color: #22d3ee; }
+    .success { display: flex; align-items: center; gap: .75rem; padding: .875rem; border-radius: 12px; background: rgba(8, 51, 68, .4); border: 1px solid rgba(6, 182, 212, .3); }
+    .success > .icon { width: 1.25rem; height: 1.25rem; color: #34d399; }
+    .success small { display: block; font-size: .6875rem; color: #67e8f9; }
+    .success strong { color: #fff; }
+    .modal-ok { padding: .5rem 1rem; border-radius: 12px; font-size: .75rem; font-weight: 600; background: #06b6d4; color: #000; }
+    .modal-ok:hover { background: #22d3ee; }
+
+    /* ---------- Responsivo ---------- */
+    @media (max-width: 1023px) {
+      .hero-grid, .projects-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 900px) {
+      .nav-links { display: none; }
+      .menu-btn { display: block; }
+      .nav.open .mobile-menu { display: block; }
+      .cards-grid { grid-template-columns: 1fr; }
+      .timeline { margin-left: 1rem; }
+      .timeline-period { position: static; width: auto; text-align: left; margin-bottom: .5rem; }
+      .timeline-item { padding-left: 2rem; }
+    }
+    @media (max-width: 640px) {
+      .container { padding: 0 1rem; }
+      .hero { padding: 3rem 0 5rem; }
+      .section, .contact { padding: 5rem 0; }
+      .theme-label { display: none; }
+      .btn-group { flex-direction: column; align-items: stretch; }
+      .metrics, .contact-grid { grid-template-columns: 1fr; }
+      .terminal-bar { justify-content: flex-start; }
+      .run-label { display: none; }
+      .terminal-body { font-size: .75rem; }
+      .contact-panel { padding: 2rem 1.25rem; }
+      .flow-steps { flex-direction: column; }
+      .flow-step { width: 100%; }
+      .flow-steps > .icon { transform: rotate(90deg); }
+      .footer-inner { flex-direction: column; text-align: center; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation: none !important; transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Ícones (baseados no conjunto Lucide) -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-sparkles" viewBox="0 0 24 24"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/><path d="M20 3v4M22 5h-4M4 17v2M5 18H3"/></symbol>
+    <symbol id="i-message" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></symbol>
+    <symbol id="i-arrow-up-right" viewBox="0 0 24 24"><path d="M7 7h10v10M7 17 17 7"/></symbol>
+    <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></symbol>
+    <symbol id="i-arrow-up" viewBox="0 0 24 24"><path d="m5 12 7-7 7 7M12 19V5"/></symbol>
+    <symbol id="i-layers" viewBox="0 0 24 24"><path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65M22 12.65l-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"/></symbol>
+    <symbol id="i-network" viewBox="0 0 24 24"><rect x="16" y="16" width="6" height="6" rx="1"/><rect x="2" y="16" width="6" height="6" rx="1"/><rect x="9" y="2" width="6" height="6" rx="1"/><path d="M5 16v-3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3M12 12V8"/></symbol>
+    <symbol id="i-database" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5M3 12a9 3 0 0 0 18 0"/></symbol>
+    <symbol id="i-check-circle" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+    <symbol id="i-sheet" viewBox="0 0 24 24"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4M8 13h2M14 13h2M8 17h2M14 17h2"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></symbol>
+    <symbol id="i-activity" viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></symbol>
+    <symbol id="i-cpu" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6" rx="1"/><path d="M15 2v2M15 20v2M2 15h2M2 9h2M20 15h2M20 9h2M9 2v2M9 20v2"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></symbol>
+    <symbol id="i-linkedin" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></symbol>
+    <symbol id="i-copy" viewBox="0 0 24 24"><rect x="8" y="8" width="14" height="14" rx="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></symbol>
+    <symbol id="i-terminal" viewBox="0 0 24 24"><path d="m4 17 6-6-6-6M12 19h8"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path d="M6 3 20 12 6 21z"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+  </svg>
+
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a class="logo" href="#top" aria-label="Ir para o topo da página de Lucas Soares">
+        <span class="logo-badge">LS</span>
+        <span class="logo-text">
+          <span class="logo-name">Lucas Soares</span>
+          <span class="logo-role mono">Full Stack Dev</span>
+        </span>
+      </a>
+
+      <nav aria-label="Navegação principal">
+        <ul class="nav-links">
+          <li><a href="#especialidades">Especialidades</a></li>
+          <li><a href="#projetos">Projetos</a></li>
+          <li><a href="#experiencia">Experiência</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="theme-toggle" id="theme-toggle" type="button" aria-pressed="true" title="Alternar entre modo Clássico e modo Espacial">
+          <svg class="icon"><use href="#i-sparkles"/></svg>
+          <span class="theme-label">Modo Espacial</span>
+        </button>
+        <button class="menu-btn" id="menu-btn" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu">
+          <svg class="icon icon-open"><use href="#i-menu"/></svg>
+          <svg class="icon icon-close"><use href="#i-x"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="#especialidades">Especialidades</a>
+      <a href="#projetos">Projetos</a>
+      <a href="#experiencia">Experiência</a>
+      <a href="#contato">Contato</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- Hero -->
+    <section class="hero" id="hero" aria-labelledby="hero-title">
+      <div class="glow glow-1" aria-hidden="true"></div>
+      <div class="glow glow-2" aria-hidden="true"></div>
+      <div class="hud mono" aria-hidden="true">
+        <span class="hud-dot"></span>
+        <span id="hud-coords">COORD X: 0° | Y: 0° | Z: +14px DEPTH</span>
+      </div>
+
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">
+            <svg class="icon"><use href="#i-sparkles"/></svg>
+            Desenvolvedor Full Stack
+          </span>
+          <h1 id="hero-title">Software para operação real.</h1>
+          <p class="hero-copy">Foco em sistemas corporativos, integrações, ERP, dados e automações. Soluções projetadas para estabilidade operacional, pipelines consistentes e alta performance em ambientes de missão crítica.</p>
+
+          <div class="btn-group">
+            <a class="btn btn-primary" href="https://wa.me/qr/QWVIBVNIY3G7M1" target="_blank" rel="noopener noreferrer">
+              <svg class="icon icon-fill"><use href="#i-message"/></svg>
+              <span>Falar sobre um projeto</span>
+              <svg class="icon icon-muted"><use href="#i-arrow-up-right"/></svg>
+            </a>
+            <a class="btn btn-secondary" href="#projetos">Ver trabalhos</a>
           </div>
 
-          <aside class="terminal" aria-label="Resumo técnico">
-            <div class="terminal-top">
-              <div class="dots" aria-hidden="true"><span></span><span></span><span></span></div>
-              <span>perfil.dev</span>
+          <div class="metrics" aria-label="Resumo profissional">
+            <div class="metric-card">
+              <div class="metric-num mono">6+</div>
+              <div class="metric-label">anos criando e mantendo sistemas</div>
             </div>
-            <div class="terminal-body">
-              <p><span class="code-key">const</span> profissional = {</p>
-              <p>&nbsp;&nbsp;nome: <span class="code-value">"Lucas Soares"</span>,</p>
-              <p>&nbsp;&nbsp;foco: <span class="code-value">"Sistemas corporativos"</span>,</p>
-              <p>&nbsp;&nbsp;stack: [<span class="code-value">"PHP"</span>, <span class="code-value">"Laravel"</span>, <span class="code-value">"CodeIgniter"</span>, <span class="code-value">"MySQL"</span>],</p>
-              <p>&nbsp;&nbsp;entrega: <span class="code-value">"Código, dados e clareza operacional"</span></p>
-              <p>};</p>
-              <div class="stack-strip" aria-label="Tecnologias">
-                <span class="tag">PHP</span>
-                <span class="tag">Laravel</span>
-                <span class="tag">CodeIgniter</span>
-                <span class="tag">JavaScript</span>
-                <span class="tag">MySQL</span>
-                <span class="tag">Docker</span>
-                <span class="tag">REST APIs</span>
+            <div class="metric-card">
+              <div class="metric-num mono">ERP</div>
+              <div class="metric-label">rotinas administrativas, financeiras e operacionais</div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-num mono">APIs</div>
+              <div class="metric-label">integrações, webhooks e dados consistentes</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="terminal-wrap" id="terminal-wrap">
+          <aside class="terminal" aria-label="Editor de código de perfil profissional">
+            <div class="terminal-glow" aria-hidden="true"></div>
+
+            <div class="terminal-bar">
+              <div class="terminal-title">
+                <span class="lights" aria-hidden="true"><span></span><span></span><span></span></span>
+                <svg class="icon"><use href="#i-terminal"/></svg>
+                <span>lucas-soares / workspace</span>
               </div>
+
+              <div class="terminal-tabs" role="tablist" aria-label="Arquivos">
+                <button class="terminal-tab" type="button" role="tab" id="tab-perfil" aria-controls="panel-perfil" aria-selected="true">perfil.dev</button>
+                <button class="terminal-tab" type="button" role="tab" id="tab-arquitetura" aria-controls="panel-arquitetura" aria-selected="false" tabindex="-1">arquitetura.json</button>
+                <button class="terminal-tab" type="button" role="tab" id="tab-stack" aria-controls="panel-stack" aria-selected="false" tabindex="-1">stack.ts</button>
+              </div>
+
+              <div class="terminal-actions">
+                <button class="run-btn" id="run-btn" type="button" title="Executar simulação">
+                  <svg class="icon"><use href="#i-play"/></svg>
+                  <span class="run-label">Executar</span>
+                </button>
+                <button class="icon-btn" id="copy-code" type="button" title="Copiar código" aria-label="Copiar código do terminal">
+                  <svg class="icon icon-copy"><use href="#i-copy"/></svg>
+                  <svg class="icon icon-done"><use href="#i-check"/></svg>
+                </button>
+              </div>
+            </div>
+
+            <div class="terminal-body">
+              <pre class="terminal-panel" role="tabpanel" id="panel-perfil" aria-labelledby="tab-perfil" data-output="✓ Operação real validada: Sistemas conectados e prontos para produção."><code><span class="tk-key">const</span> <span class="tk-var">profissional</span> = {
+  <span class="tk-prop">nome</span>: <span class="tk-str">"Lucas Soares"</span>,
+  <span class="tk-prop">foco</span>: <span class="tk-str">"Sistemas corporativos"</span>,
+  <span class="tk-prop">stack</span>: [<span class="tk-var">"PHP"</span>, <span class="tk-var">"Laravel"</span>, <span class="tk-var">"CodeIgniter"</span>, <span class="tk-var">"MySQL"</span>],
+  <span class="tk-prop">entrega</span>: <span class="tk-teal">"Código, dados e clareza operacional"</span>
+};</code></pre>
+              <pre class="terminal-panel" role="tabpanel" id="panel-arquitetura" aria-labelledby="tab-arquitetura" hidden data-output="✓ Infraestrutura validada: Pipelines de dados e idempotência ativos."><code><span class="tk-brace">{</span>
+  <span class="tk-jkey">"paradigma"</span>: <span class="tk-str">"Orientado a Eventos &amp; Resiliente"</span>,
+  <span class="tk-jkey">"bancos"</span>: [<span class="tk-var">"MySQL 8.0+"</span>, <span class="tk-var">"PostgreSQL"</span>, <span class="tk-var">"Redis"</span>],
+  <span class="tk-jkey">"mensageria"</span>: <span class="tk-str">"RabbitMQ / Webhook Dispatcher"</span>,
+  <span class="tk-jkey">"idempotencia"</span>: <span class="tk-str">"Garantida por UUID v4 + Redis Lock"</span>,
+  <span class="tk-jkey">"disponibilidade"</span>: <span class="tk-ok">"SLA 99.95%"</span>
+<span class="tk-brace">}</span></code></pre>
+              <pre class="terminal-panel" role="tabpanel" id="panel-stack" aria-labelledby="tab-stack" hidden data-output="✓ Lote processado com integridade referencial."><code><span class="tk-com">// Engenharia Backend &amp; Integrações</span>
+<span class="tk-key">import</span> { <span class="tk-var">ERPService</span> } <span class="tk-key">from</span> <span class="tk-str">'@enterprise/core'</span>;
+<span class="tk-key">import</span> { <span class="tk-var">PaymentGateway</span> } <span class="tk-key">from</span> <span class="tk-str">'@fintech/webhooks'</span>;
+
+<span class="tk-key">export class</span> <span class="tk-var">OperacaoReal</span> {
+  <span class="tk-key">async</span> <span class="tk-prop">processarBatch</span>(loteId: <span class="tk-jkey">string</span>) {
+    <span class="tk-key">const</span> dados = <span class="tk-key">await</span> ERPService.extrair(loteId);
+    <span class="tk-key">return await</span> PaymentGateway.sincronizar(dados);
+  }
+}</code></pre>
+              <div class="terminal-output" id="terminal-output" role="status" hidden></div>
+            </div>
+
+            <div class="terminal-stack" aria-label="Tecnologias">
+              <span class="stack-label">Stack:</span>
+              <span class="stack-tag">PHP</span>
+              <span class="stack-tag">Laravel</span>
+              <span class="stack-tag">CodeIgniter</span>
+              <span class="stack-tag">JavaScript</span>
+              <span class="stack-tag">MySQL</span>
+              <span class="stack-tag">Docker</span>
+              <span class="stack-tag">REST APIs</span>
+              <span class="stack-tag">Webhooks</span>
+              <span class="stack-tag">PostgreSQL</span>
             </div>
           </aside>
-        </section>
+        </div>
+      </div>
+    </section>
 
-        <section id="especialidades" aria-labelledby="especialidades-title">
-          <div class="section-head">
-            <h2 id="especialidades-title">Onde gero valor</h2>
-            <p>Atuação técnica com leitura de negócio: entender o problema, analisar dados, integrar sistemas e entregar soluções que sobrevivem ao uso diário.</p>
-          </div>
-          <div class="grid cards">
-            <article class="card">
-              <h3>Sistemas corporativos e ERP</h3>
-              <p>Desenvolvimento, sustentação e evolução de rotinas administrativas, financeiras e operacionais em ambientes com regras de negócio complexas.</p>
-            </article>
-            <article class="card">
-              <h3>Integrações e webhooks</h3>
-              <p>APIs REST, serviços externos, gateways de pagamento, sincronização de dados, idempotência e tratamento de falhas entre plataformas.</p>
-            </article>
-            <article class="card">
-              <h3>Dados e relatórios</h3>
-              <p>Consultas SQL, modelagem, extrações, troubleshooting e relatórios para apoiar áreas de negócio com informação confiável.</p>
-            </article>
-          </div>
-        </section>
+    <!-- Especialidades -->
+    <section class="section section-alt" id="especialidades" aria-labelledby="especialidades-title">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker mono">Capacidades &amp; Domínio</span>
+          <h2 id="especialidades-title">Onde gero valor</h2>
+          <p>Atuação técnica sólida combinada com entendimento profundo de processos de negócio, eliminando gargalos e entregando software estável.</p>
+        </div>
 
-        <section class="projects" id="projetos" aria-labelledby="projetos-title">
-          <div class="section-head">
-            <h2 id="projetos-title">Projetos em destaque</h2>
-            <p>Exemplos de posicionamento para apresentar experiência técnica, visão de produto e maturidade em integrações.</p>
-          </div>
-          <div class="grid project-list">
-            <article class="project">
-              <div>
-                <h3>Lumus Data Engine</h3>
-                <p>Motor de relatórios com Python, Docker e exportação de dados em CSV, Excel e futuramente PDF, pensado para operar junto a sistemas PHP existentes.</p>
-              </div>
-              <div class="project-meta">
-                <span class="tag">Python</span>
-                <span class="tag">Docker</span>
-                <span class="tag">Relatórios</span>
-              </div>
-            </article>
-            <article class="project">
-              <div>
-                <h3>Integrações de pagamento</h3>
-                <p>Arquitetura para webhooks, consistência de eventos, segurança, tratamento de reprocessamento e evolução para múltiplos provedores.</p>
-              </div>
-              <div class="project-meta">
-                <span class="tag">APIs</span>
-                <span class="tag">Webhooks</span>
-                <span class="tag">Segurança</span>
-              </div>
-            </article>
-          </div>
-        </section>
-
-        <section id="experiencia" aria-labelledby="experiencia-title">
-          <div class="section-head">
-            <h2 id="experiencia-title">Experiência</h2>
-            <p>Uma trajetória construída em sistemas legados, manutenção produtiva, novas funcionalidades, integrações e colaboração com áreas de negócio.</p>
-          </div>
-          <div class="timeline">
-            <article class="timeline-item">
-              <div class="timeline-date">Atual</div>
-              <div>
-                <h3>Analista Desenvolvedor / Full Stack</h3>
-                <p>Atuação em sistemas internos, análise de requisitos, melhoria de processos, integrações e apoio técnico em ambientes corporativos.</p>
-              </div>
-            </article>
-            <article class="timeline-item">
-              <div class="timeline-date">2019 - 2024</div>
-              <div>
-                <h3>Desenvolvedor Full Stack - ERP</h3>
-                <p>Manutenção e evolução de ERP com PHP, CodeIgniter/Laravel, JavaScript, jQuery e MySQL, incluindo relatórios, integrações e suporte técnico.</p>
-              </div>
-            </article>
-            <article class="timeline-item">
-              <div class="timeline-date">Base técnica</div>
-              <div>
-                <h3>Stack principal</h3>
-                <p>PHP, Laravel, CodeIgniter, JavaScript, jQuery, MySQL, PostgreSQL, Docker, Git, APIs REST, modelagem de dados e metodologias ágeis.</p>
-              </div>
-            </article>
-          </div>
-        </section>
-
-        <section class="contact" id="contato" aria-labelledby="contato-title">
-          <div class="section-head">
-            <h2 id="contato-title">Vamos conversar?</h2>
-            <p>Disponível para oportunidades, projetos e conversas sobre sistemas corporativos, integrações, relatórios e evolução de produtos digitais.</p>
-          </div>
-          <div class="contact-panel">
+        <div class="cards-grid">
+          <article class="card">
+            <span class="card-shine" aria-hidden="true"></span>
             <div>
-              <strong>Lucas Soares da Silva</strong>
-              <p>Rio de Janeiro, Brasil · Desenvolvedor Full Stack</p>
-              <div class="stack-strip">
-                <a class="tag" href="mailto:soares-lucas94@hotmail.com">soares-lucas94@hotmail.com</a>
-                <a class="tag" href="https://www.linkedin.com/in/lucas-soares-4a01a631b">LinkedIn</a>
+              <div class="card-icon"><svg class="icon icon-lg"><use href="#i-layers"/></svg></div>
+              <h3>Sistemas corporativos e ERP</h3>
+              <p class="card-desc">Desenvolvimento, sustentação e evolução de rotinas administrativas, financeiras e operacionais.</p>
+              <ul class="checklist">
+                <li><svg class="icon"><use href="#i-check-circle"/></svg><span>Módulos fiscais, faturamento e contas a pagar/receber</span></li>
+                <li><svg class="icon"><use href="#i-check-circle"/></svg><span>Controle de estoque, expedição e regras de negócio complexas</span></li>
+                <li><svg class="icon"><use href="#i-check-circle"/></svg><span>Refatoração de monolitos legados para código limpo e manutenível</span></li>
+                <li><svg class="icon"><use href="#i-check-circle"/></svg><span>Alta disponibilidade com rotinas de backup e failover</span></li>
+              </ul>
+            </div>
+            <div class="card-foot mono">
+              <span class="chip">Módulo de Operação</span>
+              <span class="card-foot-note">Estabilidade Total</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <span class="card-shine" aria-hidden="true"></span>
+            <div>
+              <div class="card-icon"><svg class="icon icon-lg"><use href="#i-network"/></svg></div>
+              <h3>Integrações e webhooks</h3>
+              <p class="card-desc">APIs REST, serviços externos, gateways de pagamento, sincronização, idempotência e tratamento de falhas.</p>
+              <ul class="checklist">
+                <li><svg class="icon"><use href="#i-check-circle"/></svg><span>Fila de mensageria com retry exponencial e dead-letter queues</span></li>
+                <li><svg class="icon"><use href="#i-check-circle"/></svg><span>Assinatura criptográfica HMAC para validação de webhooks</span></li>
+                <li><svg class="icon"><use href="#i-check-circle"/></svg><span>Mapeamento bidirecional e reconciliação financeira automática</span></li>
+                <li><svg class="icon"><use href="#i-check-circle"/></svg><span>Idempotência com chaves exclusivas para evitar pagamentos duplicados</span></li>
+              </ul>
+            </div>
+            <div class="card-foot mono">
+              <span class="chip">Módulo de Operação</span>
+              <span class="card-foot-note">Estabilidade Total</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <span class="card-shine" aria-hidden="true"></span>
+            <div>
+              <div class="card-icon"><svg class="icon icon-lg"><use href="#i-database"/></svg></div>
+              <h3>Dados e relatórios</h3>
+              <p class="card-desc">SQL, modelagem, extrações, troubleshooting e relatórios para o negócio.</p>
+              <ul class="checklist">
+                <li><svg class="icon"><use href="#i-check-circle"/></svg><span>Otimização de queries lentas, índices parciais e planos de execução (EXPLAIN)</span></li>
+                <li><svg class="icon"><use href="#i-check-circle"/></svg><span>Modelagem relacional normalizada com integridade referencial estrita</span></li>
+                <li><svg class="icon"><use href="#i-check-circle"/></svg><span>Pipelines de extração assíncrona para geração de grandes arquivos</span></li>
+                <li><svg class="icon"><use href="#i-check-circle"/></svg><span>Dashboards analíticos com visão consolidada da operação</span></li>
+              </ul>
+            </div>
+            <div class="card-foot mono">
+              <span class="chip">Módulo de Operação</span>
+              <span class="card-foot-note">Estabilidade Total</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projetos -->
+    <section class="section" id="projetos" aria-labelledby="projetos-title">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker mono">Cases Selecionados</span>
+          <h2 id="projetos-title">Projetos em destaque</h2>
+          <p>Sistemas e motores de processamento desenvolvidos para cenários de alta demanda, integrações críticas e consistência rigorosa de dados.</p>
+        </div>
+
+        <div class="projects-grid">
+          <article class="card project">
+            <div>
+              <div class="project-top">
+                <div class="card-icon"><svg class="icon icon-lg"><use href="#i-sheet"/></svg></div>
+                <button class="ghost-btn" type="button" data-modal="modal-lumus">
+                  <span>Ver Arquitetura</span>
+                  <svg class="icon"><use href="#i-arrow-up-right"/></svg>
+                </button>
+              </div>
+              <h3>Lumus Data Engine</h3>
+              <p class="card-desc">Motor de relatórios com Python e Docker, exportação em CSV, Excel e (futuramente) PDF, integrado a sistemas PHP.</p>
+              <div class="impact mono">
+                <div class="impact-label"><svg class="icon"><use href="#i-activity"/></svg><span>Impacto Operacional:</span></div>
+                <div>Redução de 74% no tempo de geração de balanços operacionais</div>
               </div>
             </div>
-            <a class="button" href="https://wa.me/qr/QWVIBVNIY3G7M1" target="_blank" rel="noopener noreferrer">Enviar mensagem</a>
-          </div>
-        </section>
-      </main>
+            <div class="project-foot">
+              <div class="chip-list mono">
+                <span class="chip">Python</span><span class="chip">Docker</span><span class="chip">Relatórios</span><span class="chip">FastAPI</span><span class="chip">Pandas</span>
+              </div>
+              <button class="link-btn" type="button" data-modal="modal-lumus">Detalhes técnicos →</button>
+            </div>
+          </article>
 
-      <footer>
-        <span>© 2026 Lucas Soares. Landing page profissional criada para apresentação de software, integrações e sistemas corporativos.</span>
-      </footer>
+          <article class="card project">
+            <div>
+              <div class="project-top">
+                <div class="card-icon"><svg class="icon icon-lg"><use href="#i-lock"/></svg></div>
+                <button class="ghost-btn" type="button" data-modal="modal-payments">
+                  <span>Ver Arquitetura</span>
+                  <svg class="icon"><use href="#i-arrow-up-right"/></svg>
+                </button>
+              </div>
+              <h3>Integrações de pagamento</h3>
+              <p class="card-desc">Arquitetura de webhooks, consistência de eventos, segurança, reprocessamento e múltiplos provedores.</p>
+              <div class="impact mono">
+                <div class="impact-label"><svg class="icon"><use href="#i-activity"/></svg><span>Impacto Operacional:</span></div>
+                <div>99.98% de consistência em eventos transacionados com zero perdas</div>
+              </div>
+            </div>
+            <div class="project-foot">
+              <div class="chip-list mono">
+                <span class="chip">APIs</span><span class="chip">Webhooks</span><span class="chip">Segurança</span><span class="chip">Idempotência</span><span class="chip">Fintech</span>
+              </div>
+              <button class="link-btn" type="button" data-modal="modal-payments">Detalhes técnicos →</button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experiência -->
+    <section class="section section-alt" id="experiencia" aria-labelledby="experiencia-title">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker mono">Histórico &amp; Consistência</span>
+          <h2 id="experiencia-title">Trajetória profissional</h2>
+          <p>Anos de dedicação em desenvolvimento de software corporativo de ponta a ponta, sustentação contínua e evolução de ecossistemas operacionais.</p>
+        </div>
+
+        <div class="timeline">
+          <article class="timeline-item is-current">
+            <span class="timeline-node" aria-hidden="true"></span>
+            <div class="timeline-period"><span class="period mono">Atual</span></div>
+            <div class="timeline-card">
+              <h3>Analista Desenvolvedor / Full Stack</h3>
+              <p>Sistemas internos, requisitos, processos, integrações e apoio técnico.</p>
+              <div class="chip-list mono">
+                <span class="chip">Sistemas Críticos</span><span class="chip">Arquitetura de Soluções</span><span class="chip">APIs REST</span><span class="chip">Liderança Técnica</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="timeline-item">
+            <span class="timeline-node" aria-hidden="true"></span>
+            <div class="timeline-period"><span class="period mono">2019 – 2024</span></div>
+            <div class="timeline-card">
+              <h3>Desenvolvedor Full Stack – ERP</h3>
+              <p>ERP com PHP, CodeIgniter/Laravel, JavaScript, jQuery e MySQL.</p>
+              <div class="chip-list mono">
+                <span class="chip">PHP</span><span class="chip">Laravel</span><span class="chip">CodeIgniter</span><span class="chip">MySQL</span><span class="chip">jQuery</span><span class="chip">Automações</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="timeline-item">
+            <span class="timeline-node" aria-hidden="true"></span>
+            <div class="timeline-period"><span class="period mono">Base técnica</span></div>
+            <div class="timeline-card">
+              <h3>Stack principal &amp; Metodologia</h3>
+              <p>PHP, Laravel, CodeIgniter, JS, jQuery, MySQL, PostgreSQL, Docker, Git, APIs REST, modelagem e ágil.</p>
+              <div class="chip-list mono">
+                <span class="chip">Git</span><span class="chip">Docker</span><span class="chip">PostgreSQL</span><span class="chip">Linux</span><span class="chip">Scrum</span><span class="chip">Modelagem SQL</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contato -->
+    <section class="contact" id="contato" aria-labelledby="contato-title">
+      <div class="contact-glow" aria-hidden="true"></div>
+      <div class="container">
+        <div class="contact-panel">
+          <div class="contact-head">
+            <span class="kicker mono">Conexão Direta</span>
+            <h2 id="contato-title">Vamos conversar?</h2>
+            <p>Disponível para novos projetos, desenvolvimento de sistemas corporativos, estruturação de integrações e consultoria técnica.</p>
+          </div>
+
+          <div class="contact-profile">
+            <div class="contact-name">Lucas Soares da Silva</div>
+            <div class="contact-loc">
+              <svg class="icon"><use href="#i-pin"/></svg>
+              <span>Rio de Janeiro, Brasil · Desenvolvedor Full Stack</span>
+            </div>
+          </div>
+
+          <div class="contact-grid">
+            <div class="contact-item">
+              <a class="contact-link" href="mailto:soares-lucas94@hotmail.com" title="Enviar e-mail direto">
+                <span class="contact-icon"><svg class="icon"><use href="#i-mail"/></svg></span>
+                <span>soares-lucas94@hotmail.com</span>
+              </a>
+              <button class="icon-btn" id="copy-email" type="button" title="Copiar e-mail" aria-label="Copiar e-mail" data-copy="soares-lucas94@hotmail.com">
+                <svg class="icon icon-copy"><use href="#i-copy"/></svg>
+                <svg class="icon icon-done"><use href="#i-check"/></svg>
+              </button>
+            </div>
+
+            <a class="contact-item linkedin" href="https://www.linkedin.com/in/lucas-soares-4a01a631b" target="_blank" rel="noopener noreferrer" title="Abrir perfil no LinkedIn">
+              <span class="contact-link">
+                <span class="contact-icon"><svg class="icon"><use href="#i-linkedin"/></svg></span>
+                <span>LinkedIn</span>
+              </span>
+              <svg class="icon arrow"><use href="#i-arrow-up-right"/></svg>
+            </a>
+          </div>
+
+          <div class="contact-cta-wrap">
+            <a class="contact-cta" href="https://wa.me/qr/QWVIBVNIY3G7M1" target="_blank" rel="noopener noreferrer">
+              <svg class="icon icon-fill"><use href="#i-message"/></svg>
+              <span>Enviar mensagem via WhatsApp</span>
+              <svg class="icon"><use href="#i-arrow-up-right"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <p>© 2026 Lucas Soares. Landing page profissional criada para apresentação de software, integrações e sistemas corporativos.</p>
+      <a class="top-link mono" href="#top" title="Voltar ao início">
+        <svg class="icon"><use href="#i-arrow-up"/></svg>
+        <span>Topo</span>
+      </a>
     </div>
-  </body>
+  </footer>
+
+  <!-- Modais de arquitetura dos projetos -->
+  <dialog class="modal" id="modal-lumus" aria-labelledby="modal-lumus-title">
+    <div class="modal-head">
+      <div class="modal-title">
+        <span class="modal-badge"><svg class="icon"><use href="#i-cpu"/></svg></span>
+        <div>
+          <h3 id="modal-lumus-title">Lumus Data Engine</h3>
+          <p class="mono">Arquitetura de Engenharia</p>
+        </div>
+      </div>
+      <button class="modal-close" type="button" data-close aria-label="Fechar"><svg class="icon"><use href="#i-x"/></svg></button>
+    </div>
+    <div class="modal-body">
+      <div>
+        <h4 class="mono">Visão Geral</h4>
+        <p>Motor de relatórios com Python e Docker, exportação em CSV, Excel e (futuramente) PDF, integrado a sistemas PHP.</p>
+      </div>
+      <div class="flow mono">
+        <div class="flow-label">Fluxo Arquitetural</div>
+        <div class="flow-steps">
+          <div class="flow-step"><small>Origem</small><strong>PHP / Monolito</strong></div>
+          <svg class="icon"><use href="#i-arrow-right"/></svg>
+          <div class="flow-step mid"><small>Processamento</small><strong>Python Engine (Docker)</strong></div>
+          <svg class="icon"><use href="#i-arrow-right"/></svg>
+          <div class="flow-step end"><small>Destino</small><strong>Export CSV / XLSX / PDF</strong></div>
+        </div>
+      </div>
+      <div>
+        <h4 class="mono">Padrões Técnicos</h4>
+        <p>Arquitetura distribuída com microsserviço de processamento em batch desacoplado via RabbitMQ/HTTP, isolando processamento pesado de I/O do servidor web PHP.</p>
+        <ul class="checklist">
+          <li><svg class="icon"><use href="#i-check-circle"/></svg><span>Processamento assíncrono de grandes volumes de dados (streaming sem sobrecarga de RAM)</span></li>
+          <li><svg class="icon"><use href="#i-check-circle"/></svg><span>Isolamento em contêineres Docker com orquestração simplificada</span></li>
+          <li><svg class="icon"><use href="#i-check-circle"/></svg><span>Módulos para formatação de planilhas Excel avançadas com formatação condicional</span></li>
+          <li><svg class="icon"><use href="#i-check-circle"/></svg><span>Conectores de streaming para bancos de dados MySQL e PostgreSQL</span></li>
+        </ul>
+      </div>
+      <div class="success">
+        <svg class="icon"><use href="#i-activity"/></svg>
+        <div><small class="mono">Métrica de Sucesso</small><strong>Redução de 74% no tempo de geração de balanços operacionais</strong></div>
+      </div>
+    </div>
+    <div class="modal-foot"><button class="modal-ok" type="button" data-close>Fechar</button></div>
+  </dialog>
+
+  <dialog class="modal" id="modal-payments" aria-labelledby="modal-payments-title">
+    <div class="modal-head">
+      <div class="modal-title">
+        <span class="modal-badge"><svg class="icon"><use href="#i-cpu"/></svg></span>
+        <div>
+          <h3 id="modal-payments-title">Integrações de pagamento</h3>
+          <p class="mono">Arquitetura de Engenharia</p>
+        </div>
+      </div>
+      <button class="modal-close" type="button" data-close aria-label="Fechar"><svg class="icon"><use href="#i-x"/></svg></button>
+    </div>
+    <div class="modal-body">
+      <div>
+        <h4 class="mono">Visão Geral</h4>
+        <p>Arquitetura de webhooks, consistência de eventos, segurança, reprocessamento e múltiplos provedores.</p>
+      </div>
+      <div class="flow mono">
+        <div class="flow-label">Fluxo Arquitetural</div>
+        <div class="flow-steps">
+          <div class="flow-step"><small>Origem</small><strong>Webhook Externo</strong></div>
+          <svg class="icon"><use href="#i-arrow-right"/></svg>
+          <div class="flow-step mid"><small>Processamento</small><strong>Idempotent Buffer</strong></div>
+          <svg class="icon"><use href="#i-arrow-right"/></svg>
+          <div class="flow-step end"><small>Destino</small><strong>ERP Database Commit</strong></div>
+        </div>
+      </div>
+      <div>
+        <h4 class="mono">Padrões Técnicos</h4>
+        <p>Gateway agnóstico multicomunicante com fallback automático de adquirentes, garantia de entrega at-least-once com persistência de payload e lock distribuído.</p>
+        <ul class="checklist">
+          <li><svg class="icon"><use href="#i-check-circle"/></svg><span>Tratamento resiliente de oscilações de rede e timeouts de adquirentes</span></li>
+          <li><svg class="icon"><use href="#i-check-circle"/></svg><span>Log de auditoria imutável com rastreabilidade total do ciclo de vida da transação</span></li>
+          <li><svg class="icon"><use href="#i-check-circle"/></svg><span>Painel administrativo para reprocessamento manual ou automático de falhas</span></li>
+          <li><svg class="icon"><use href="#i-check-circle"/></svg><span>Webhooks com handshake seguro e validação de assinatura</span></li>
+        </ul>
+      </div>
+      <div class="success">
+        <svg class="icon"><use href="#i-activity"/></svg>
+        <div><small class="mono">Métrica de Sucesso</small><strong>99.98% de consistência em eventos transacionados com zero perdas</strong></div>
+      </div>
+    </div>
+    <div class="modal-foot"><button class="modal-ok" type="button" data-close>Fechar</button></div>
+  </dialog>
+
+  <script>
+    (function () {
+      var root = document.documentElement;
+
+      // --- Alternância de tema (Espacial / Clássico) ---
+      var themeBtn = document.getElementById('theme-toggle');
+      var themeLabel = themeBtn.querySelector('.theme-label');
+      function syncThemeButton() {
+        var spatial = root.getAttribute('data-theme') === 'spatial';
+        themeBtn.setAttribute('aria-pressed', String(spatial));
+        themeLabel.textContent = spatial ? 'Modo Espacial' : 'Modo Clássico';
+      }
+      themeBtn.addEventListener('click', function () {
+        var next = root.getAttribute('data-theme') === 'spatial' ? 'classic' : 'spatial';
+        root.setAttribute('data-theme', next);
+        try { localStorage.setItem('theme', next); } catch (e) {}
+        syncThemeButton();
+        resetTilt();
+      });
+      syncThemeButton();
+
+      // --- Menu mobile ---
+      var nav = document.getElementById('nav');
+      var menuBtn = document.getElementById('menu-btn');
+      function setMenu(open) {
+        nav.classList.toggle('open', open);
+        menuBtn.setAttribute('aria-expanded', String(open));
+        menuBtn.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
+      }
+      menuBtn.addEventListener('click', function () { setMenu(!nav.classList.contains('open')); });
+      document.querySelectorAll('#mobile-menu a').forEach(function (a) {
+        a.addEventListener('click', function () { setMenu(false); });
+      });
+
+      // --- Inclinação 3D do terminal + HUD de coordenadas (somente modo Espacial) ---
+      var hero = document.getElementById('hero');
+      var wrap = document.getElementById('terminal-wrap');
+      var hud = document.getElementById('hud-coords');
+      var canTilt = window.matchMedia('(pointer: fine)').matches &&
+        !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      function resetTilt() {
+        wrap.style.transform = '';
+        hud.textContent = 'COORD X: 0° | Y: 0° | Z: +14px DEPTH';
+      }
+      if (canTilt) {
+        hero.addEventListener('mousemove', function (e) {
+          if (root.getAttribute('data-theme') !== 'spatial') return;
+          var rect = hero.getBoundingClientRect();
+          var x = Math.round(((e.clientX - rect.left) / rect.width - 0.5) * 120) / 10;
+          var y = Math.round(((e.clientY - rect.top) / rect.height - 0.5) * -120) / 10;
+          wrap.style.transform = 'perspective(1000px) rotateY(' + x + 'deg) rotateX(' + y + 'deg)';
+          hud.textContent = 'COORD X: ' + x + '° | Y: ' + y + '° | Z: +14px DEPTH';
+        });
+        hero.addEventListener('mouseleave', resetTilt);
+      }
+
+      // --- Copiar para a área de transferência ---
+      function copyText(text, btn) {
+        var done = function () {
+          btn.classList.add('copied');
+          setTimeout(function () { btn.classList.remove('copied'); }, 2000);
+        };
+        if (navigator.clipboard && window.isSecureContext) {
+          navigator.clipboard.writeText(text).then(done, function () {});
+        } else {
+          var ta = document.createElement('textarea');
+          ta.value = text;
+          ta.style.position = 'fixed';
+          ta.style.opacity = '0';
+          document.body.appendChild(ta);
+          ta.select();
+          try { document.execCommand('copy'); done(); } catch (e) {}
+          ta.remove();
+        }
+      }
+      var emailBtn = document.getElementById('copy-email');
+      emailBtn.addEventListener('click', function () { copyText(emailBtn.dataset.copy, emailBtn); });
+
+      // --- Abas do terminal ---
+      var tabs = Array.prototype.slice.call(document.querySelectorAll('.terminal-tab'));
+      var output = document.getElementById('terminal-output');
+      function activePanel() {
+        var tab = tabs.filter(function (t) { return t.getAttribute('aria-selected') === 'true'; })[0];
+        return document.getElementById(tab.getAttribute('aria-controls'));
+      }
+      function selectTab(tab) {
+        tabs.forEach(function (t) {
+          var selected = t === tab;
+          t.setAttribute('aria-selected', String(selected));
+          t.tabIndex = selected ? 0 : -1;
+          document.getElementById(t.getAttribute('aria-controls')).hidden = !selected;
+        });
+        output.hidden = true;
+      }
+      tabs.forEach(function (tab, i) {
+        tab.addEventListener('click', function () { selectTab(tab); });
+        tab.addEventListener('keydown', function (e) {
+          var dir = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
+          if (!dir) return;
+          var next = tabs[(i + dir + tabs.length) % tabs.length];
+          selectTab(next);
+          next.focus();
+        });
+      });
+
+      var copyCodeBtn = document.getElementById('copy-code');
+      copyCodeBtn.addEventListener('click', function () { copyText(activePanel().textContent, copyCodeBtn); });
+
+      var runBtn = document.getElementById('run-btn');
+      runBtn.addEventListener('click', function () {
+        var panel = activePanel();
+        runBtn.disabled = true;
+        output.hidden = true;
+        setTimeout(function () {
+          runBtn.disabled = false;
+          output.textContent = panel.dataset.output;
+          output.hidden = false;
+        }, 450);
+      });
+
+      // --- Modais de arquitetura ---
+      document.querySelectorAll('[data-modal]').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          document.getElementById(btn.dataset.modal).showModal();
+        });
+      });
+      document.querySelectorAll('dialog.modal').forEach(function (dialog) {
+        dialog.querySelectorAll('[data-close]').forEach(function (b) {
+          b.addEventListener('click', function () { dialog.close(); });
+        });
+        dialog.addEventListener('click', function (e) {
+          if (e.target === dialog) dialog.close();
+        });
+      });
+    })();
+  </script>
+</body>
 </html>
