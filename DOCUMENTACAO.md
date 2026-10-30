@@ -11,8 +11,12 @@ O layout foi portado do projeto React `new-landing-page` para um único `index.h
 ```
 landing-page/
 ├── index.html      # A página inteira: HTML + CSS (<style>) + JS (<script>) + ícones SVG
-├── index.js        # Worker da Cloudflare que entrega o index.html
+├── index.js        # Worker da Cloudflare que entrega o index.html e a foto de perfil
 ├── wrangler.toml   # Configuração do Wrangler (deploy na Cloudflare)
+├── assets/
+│   └── img/
+│       ├── perfil.jpg           # Foto de perfil otimizada, usada na página (320×320, ~16 KB)
+│       └── perfil-original.jpg  # Foto original (828×1095), guardada como fonte para novos recortes
 ├── package.json    # Scripts dev/deploy e dependência do Wrangler
 └── README.md       # Apresentação do projeto
 ```
@@ -28,20 +32,22 @@ Arquivos e pastas apenas locais (não versionados):
 
 ### 1.1 `index.js` — o servidor
 
-Worker no formato ES Module. O `index.html` é importado como texto e devolvido na rota raiz:
+Worker no formato ES Module. O `index.html` é importado como texto e a foto `assets/img/perfil.jpg` como binário:
 
 | Requisição | Resposta |
 |---|---|
 | `GET /` | `200` com o HTML, `content-type: text/html; charset=utf-8` e `cache-control: public, max-age=300` (cache de 5 minutos) |
+| `GET /assets/img/perfil.jpg` | `200` com a foto, `content-type: image/jpeg` e `cache-control: public, max-age=86400` (cache de 1 dia) |
 | Qualquer outro caminho | `404 Not found` |
 
-> Como só `/` é atendido, imagens, favicon ou outros arquivos adicionados ao projeto **não** serão servidos sem alterar o Worker. Por isso os ícones estão embutidos no próprio HTML.
+> O Worker só atende as rotas acima. Qualquer outra imagem, favicon ou arquivo adicionado ao projeto precisa de um `import` e de uma rota nova no `index.js` (e no `index.local.js`, para testes). Por isso os ícones estão embutidos no próprio HTML.
 
 ### 1.2 `wrangler.toml` — configuração
 
 - `name = "lucas-soares-site"` — nome do Worker na Cloudflare.
 - `main = "index.js"` — ponto de entrada.
 - Regra `[[rules]] type = "Text"` para `**/*.html` — é o que permite fazer `import page from "./index.html"` como string.
+- Regra `[[rules]] type = "Data"` para `**/*.jpg` — permite importar a foto como `ArrayBuffer`. A mesma regra foi adicionada ao `wrangler.local.toml`.
 
 ### 1.3 Comandos
 
@@ -105,7 +111,7 @@ O arquivo é organizado nesta ordem:
 Grid de duas colunas (texto à esquerda, terminal à direita); vira uma coluna abaixo de 1024px. Fundo com grade de linhas e dois brilhos (`.glow`).
 
 **Coluna de texto**
-- Selo (eyebrow): "Desenvolvedor Full Stack".
+- **Cartão de identidade** (`.identity`): foto de perfil redonda com indicador verde, nome "Lucas Soares", cargo "Desenvolvedor Full Stack" e selo "Disponível para projetos". Substituiu o antigo selo (eyebrow) que mostrava só o cargo. Ver seção 3.7.
 - Título (`h1`): **"Software para operação real."** — com texto em degradê no modo Espacial.
 - Texto de apoio sobre sistemas corporativos, integrações, ERP, dados e automações.
 - Botões:
@@ -173,6 +179,7 @@ Rótulo "Histórico & Consistência", título **"Trajetória profissional"**. Li
 ### 2.6 Contato (`#contato`)
 
 Rótulo "Conexão Direta", título **"Vamos conversar?"** e painel com:
+- Foto de perfil (`.contact-avatar`, 88px) acima do nome, com o mesmo indicador verde de disponibilidade.
 - Lucas Soares da Silva — Rio de Janeiro, Brasil · Desenvolvedor Full Stack.
 - **E-mail** `soares-lucas94@hotmail.com` (link `mailto:`) com botão de copiar (`#copy-email`).
 - **LinkedIn** → `linkedin.com/in/lucas-soares-4a01a631b`, nova aba.
@@ -243,6 +250,8 @@ Ficam num sprite `<svg>` no início do `<body>`, um `<symbol id="i-…">` por í
 | `.metric-card` | Métricas do hero |
 | `.terminal`, `.terminal-tab`, `.terminal-panel`, `.stack-tag` | Terminal |
 | `.timeline`, `.timeline-item`, `.is-current` | Linha do tempo |
+| `.identity`, `.identity-name`, `.identity-role`, `.identity-status` | Cartão de identidade do hero |
+| `.avatar`, `.status-dot`, `.contact-avatar` | Foto de perfil redonda com indicador de disponibilidade |
 | `.contact-panel`, `.contact-item`, `.contact-cta` | Contato |
 | `.modal`, `.flow`, `.flow-step`, `.success` | Modais de arquitetura |
 | `.icon-btn` (+ `.copied`) | Botões de copiar, com confirmação por 2 s |
@@ -253,8 +262,26 @@ Ficam num sprite `<svg>` no início do `<body>`, um `<symbol id="i-…">` por í
 |---|---|
 | até 1023px | Hero e projetos em 1 coluna; HUD oculto |
 | até 900px | Links do menu dão lugar ao menu hambúrguer; especialidades em 1 coluna; períodos da linha do tempo acima do card |
-| até 640px | Margens menores; botões e métricas empilhados; rótulos "Modo …" e "Executar" ocultos; fonte do terminal menor; fluxo dos modais na vertical; rodapé centralizado |
+| até 640px | Selo "Disponível para projetos" do cartão de identidade oculto (o ponto verde na foto continua); margens menores; botões e métricas empilhados; rótulos "Modo …" e "Executar" ocultos; fonte do terminal menor; fluxo dos modais na vertical; rodapé centralizado |
 | `prefers-reduced-motion` | Desliga animações, transições, rolagem suave e inclinação 3D |
+
+### 3.7 Foto de perfil — decisões de UX/UI
+
+A foto aparece em dois pontos: no **topo do hero**, onde o visitante decide se continua lendo, e no **contato**, ao lado do nome e logo antes dos botões de ação. O padrão segue páginas de perfil de produtos como Linear, Vercel, Stripe e Read.cv: um cartão compacto com avatar, nome e status, em vez de uma foto grande que compete com o título.
+
+| Heurística de Nielsen | Como foi aplicada |
+|---|---|
+| 1. Visibilidade do status do sistema | O ponto verde na foto e o selo "Disponível para projetos" mostram na hora que o desenvolvedor está aceitando trabalhos |
+| 2. Correspondência com o mundo real | Avatar redondo com ponto de status, padrão conhecido de Slack, LinkedIn e GitHub |
+| 4. Consistência e padrões | O mesmo componente `.avatar` aparece no hero e no contato, com as cores de cada tema (anel ciano no Espacial, verde-petróleo no Clássico) |
+| 6. Reconhecer em vez de lembrar | Rosto e nome aparecem juntos, então o visitante associa a pessoa ao trabalho sem precisar ler o terminal |
+| 8. Estética e design minimalista | Foto pequena (56px no hero), que identifica sem tirar o foco do título e dos botões. O cargo saiu do selo antigo e passou para o cartão, sem repetir informação |
+
+Outros cuidados:
+- **Confiança perto da ação:** um rosto junto ao CTA de contato aumenta a credibilidade de quem vai mandar mensagem.
+- **Desempenho:** a foto foi recortada em quadrado e reduzida para 320×320 (cerca de 16 KB, nítida em telas 2× e 3×). Tem `width`/`height` fixos para evitar que o layout pule ao carregar. A do hero usa `fetchpriority="high"` e a do contato usa `loading="lazy"`.
+- **Acessibilidade:** a foto do hero tem `alt="Foto de perfil de Lucas Soares"`. A do contato tem `alt=""`, porque o nome está logo abaixo e o leitor de tela repetiria a informação. O ponto verde é `aria-hidden`, e o status já está escrito no selo.
+- **Trocar a foto:** substitua `assets/img/perfil.jpg` por outra imagem quadrada de cerca de 320×320 com o mesmo nome. Não é preciso mudar nada no HTML nem no Worker. Guarde o original em `assets/img/`.
 
 ---
 
@@ -285,7 +312,8 @@ Sem JavaScript, o conteúdo continua legível; perdem-se apenas as interações.
 - Resultado do "Executar" em `role="status"` (anunciado por leitores de tela).
 - Menu mobile com `aria-expanded`/`aria-controls`; botão de tema com `aria-pressed`.
 - Modais em `<dialog>` nativo (foco preso e Esc para fechar).
-- Elementos decorativos (brilhos, HUD, marcadores) com `aria-hidden="true"`.
+- Elementos decorativos (brilhos, HUD, marcadores, ponto de status) com `aria-hidden="true"`.
+- Foto de perfil com texto alternativo no hero e `alt=""` no contato (ver seção 3.7).
 
 ---
 
@@ -306,6 +334,8 @@ Todo o conteúdo está em `index.html`:
 | Experiência | `section#experiencia` → `article.timeline-item` |
 | E-mail | `section#contato` — no `href="mailto:…"`, no texto e no `data-copy` do `#copy-email` |
 | LinkedIn | `section#contato` → `a.contact-item.linkedin` |
+| Foto de perfil | arquivo `assets/img/perfil.jpg` (ver seção 3.7) |
+| Nome, cargo e status do hero | `div.identity` |
 | Cores | Variáveis em `:root[data-theme="classic"]` e `:root[data-theme="spatial"]` |
 | Tema padrão | atributo `data-theme` na tag `<html>` |
 
@@ -320,6 +350,19 @@ Depois de editar, teste localmente (seção 1.3) e publique com `npm run deploy`
 - **Números de impacto:** "Redução de 74%", "99.98% de consistência" e "SLA 99.95%" vieram dos dados do modelo `new-landing-page`. Confirme que refletem resultados reais.
 - **Fontes externas:** a página depende do Google Fonts; sem conexão com ele, usa as fontes do sistema.
 - **Ano do rodapé** é fixo (2026) e precisa ser atualizado manualmente.
-- **Sem favicon nem imagem de compartilhamento** (`og:image`) — o Worker só serve `/`, então adicioná-los exige ajuste no `index.js`.
+- **Sem favicon nem imagem de compartilhamento** (`og:image`). A foto já é servida em `/assets/img/perfil.jpg` e pode virar `og:image`, mas a tag exige a URL completa do domínio publicado.
+- **Selo "Disponível para projetos"** é texto fixo. Remova ou troque o `span.identity-status` quando não estiver aceitando projetos.
 - **README** cita PHP e jQuery como tecnologias do projeto; elas se referem ao perfil profissional, não à página.
 - Não há `.gitignore`: `node_modules/`, `.wrangler/` e os arquivos locais aparecem como não rastreados no git.
+
+---
+
+## 8. Histórico de modificações
+
+| Data | Mudança | Arquivos |
+|---|---|---|
+| 29/10/2026 | Foto de perfil adicionada ao hero (cartão de identidade com status) e ao contato. O selo "Desenvolvedor Full Stack" do hero foi substituído pelo cartão e o CSS `.eyebrow`, que ficou sem uso, foi removido | `index.html` |
+| 29/10/2026 | Pasta `assets/img/` criada com a foto original e a versão otimizada | `assets/img/perfil-original.jpg`, `assets/img/perfil.jpg` |
+| 29/10/2026 | Worker passou a servir `/assets/img/perfil.jpg`, com regra `Data` para `.jpg` no Wrangler | `index.js`, `wrangler.toml`, `index.local.js`, `wrangler.local.toml` |
+| 29/10/2026 | Documentação atualizada para o novo layout espacial | `DOCUMENTACAO.md` |
+| 29/10/2026 | Nova versão espacial do layout | `index.html` |

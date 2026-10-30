@@ -201,14 +201,35 @@
     @keyframes ping { 75%, 100% { transform: scale(2.2); opacity: 0; } }
     @media (min-width: 1024px) { :root[data-theme="spatial"] .hud { display: flex; } }
     .hero-grid { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
-    .eyebrow {
-      display: inline-flex; align-items: center; gap: .4rem; align-self: flex-start;
-      padding: .25rem .75rem; margin-bottom: 1rem; border-radius: 9999px;
-      background: var(--accent-soft); color: var(--accent);
-      font-size: .75rem; font-weight: 600; letter-spacing: .03em; text-transform: uppercase;
+    /* Cartão de identidade: foto + nome + status (reconhecimento em vez de memorização) */
+    .identity {
+      display: inline-flex; align-items: center; gap: .875rem; max-width: 100%;
+      padding: .375rem 1rem .375rem .375rem; margin-bottom: 1.25rem; border-radius: 9999px;
+      background: var(--surface); border: 1px solid var(--line);
+      box-shadow: var(--card-shadow); backdrop-filter: blur(8px);
     }
-    .eyebrow .icon { width: .875rem; height: .875rem; }
-    :root[data-theme="spatial"] .eyebrow { color: #67e8f9; border: 1px solid rgba(34, 211, 238, .3); box-shadow: 0 1px 6px rgba(6, 182, 212, .2); }
+    .avatar { position: relative; flex-shrink: 0; display: block; border-radius: 9999px; }
+    .avatar img {
+      display: block; width: 3.5rem; height: 3.5rem; border-radius: 9999px; object-fit: cover;
+      background: var(--surface-2); border: 2px solid var(--bg);
+      box-shadow: 0 0 0 2px var(--accent);
+    }
+    :root[data-theme="spatial"] .avatar img { box-shadow: 0 0 0 2px #22d3ee, 0 0 18px rgba(34, 211, 238, .35); }
+    .status-dot {
+      position: absolute; right: 1px; bottom: 1px; width: .875rem; height: .875rem;
+      border-radius: 9999px; background: #22c55e; border: 2px solid var(--bg);
+    }
+    .identity-text { display: flex; flex-direction: column; min-width: 0; line-height: 1.25; }
+    .identity-name { font-size: 1rem; font-weight: 700; letter-spacing: -0.01em; }
+    .identity-role { display: flex; align-items: center; gap: .375rem; font-size: .8125rem; color: var(--muted); }
+    .identity-role .icon { width: .875rem; height: .875rem; color: var(--accent); }
+    .identity-status {
+      display: inline-flex; align-items: center; gap: .375rem; flex-shrink: 0;
+      padding: .25rem .625rem; margin-left: .25rem; border-radius: 9999px;
+      background: rgba(34, 197, 94, .12); color: #15803d; font-size: .75rem; font-weight: 600;
+    }
+    .identity-status::before { content: ""; width: .375rem; height: .375rem; border-radius: 9999px; background: currentColor; }
+    :root[data-theme="spatial"] .identity-status { color: #4ade80; border: 1px solid rgba(74, 222, 128, .25); }
     h1 {
       font-size: clamp(2.25rem, 5vw, 3.75rem); font-weight: 800; line-height: 1.08;
       letter-spacing: -0.02em; margin-bottom: 1.5rem;
@@ -440,6 +461,10 @@
     .contact-head h2 { font-size: clamp(1.875rem, 5vw, 3rem); font-weight: 800; letter-spacing: -0.02em; line-height: 1.1; margin-bottom: 1rem; }
     .contact-head p { color: #cbd5e1; }
     .contact-profile { text-align: center; padding-bottom: 2rem; margin-bottom: 2rem; border-bottom: 1px solid rgba(255, 255, 255, .1); }
+    .contact-avatar { display: inline-block; margin-bottom: .875rem; }
+    .contact-avatar img { width: 5.5rem; height: 5.5rem; border-color: var(--contact-bg); box-shadow: 0 0 0 2px #34d399; }
+    :root[data-theme="spatial"] .contact-avatar img { box-shadow: 0 0 0 2px #22d3ee, 0 0 24px rgba(34, 211, 238, .35); }
+    .contact-avatar .status-dot { width: 1.125rem; height: 1.125rem; right: 3px; bottom: 3px; border-color: var(--contact-bg); }
     .contact-name { font-size: 1.125rem; font-weight: 600; color: #fff; }
     .contact-loc { display: flex; align-items: center; justify-content: center; gap: .375rem; margin-top: .25rem; font-size: .875rem; color: #94a3b8; }
     .contact-loc .icon { color: #34d399; }
@@ -544,6 +569,8 @@
       .hero { padding: 3rem 0 5rem; }
       .section, .contact { padding: 5rem 0; }
       .theme-label { display: none; }
+      .identity { padding-right: .375rem; }
+      .identity-status { display: none; }
       .btn-group { flex-direction: column; align-items: stretch; }
       .metrics, .contact-grid { grid-template-columns: 1fr; }
       .terminal-bar { justify-content: flex-start; }
@@ -639,10 +666,20 @@
 
       <div class="container hero-grid">
         <div>
-          <span class="eyebrow">
-            <svg class="icon"><use href="#i-sparkles"/></svg>
-            Desenvolvedor Full Stack
-          </span>
+          <div class="identity">
+            <span class="avatar">
+              <img src="/assets/img/perfil.jpg" alt="Foto de perfil de Lucas Soares" width="56" height="56" decoding="async" fetchpriority="high" />
+              <span class="status-dot" aria-hidden="true"></span>
+            </span>
+            <span class="identity-text">
+              <span class="identity-name">Lucas Soares</span>
+              <span class="identity-role">
+                <svg class="icon" aria-hidden="true"><use href="#i-sparkles"/></svg>
+                Desenvolvedor Full Stack
+              </span>
+            </span>
+            <span class="identity-status">Disponível para projetos</span>
+          </div>
           <h1 id="hero-title">Software para operação real.</h1>
           <p class="hero-copy">Foco em sistemas corporativos, integrações, ERP, dados e automações. Soluções projetadas para estabilidade operacional, pipelines consistentes e alta performance em ambientes de missão crítica.</p>
 
@@ -936,6 +973,10 @@
           </div>
 
           <div class="contact-profile">
+            <span class="avatar contact-avatar">
+              <img src="/assets/img/perfil.jpg" alt="" width="88" height="88" loading="lazy" decoding="async" />
+              <span class="status-dot" aria-hidden="true"></span>
+            </span>
             <div class="contact-name">Lucas Soares da Silva</div>
             <div class="contact-loc">
               <svg class="icon"><use href="#i-pin"/></svg>
