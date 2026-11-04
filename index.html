@@ -201,6 +201,8 @@
     @keyframes ping { 75%, 100% { transform: scale(2.2); opacity: 0; } }
     @media (min-width: 1024px) { :root[data-theme="spatial"] .hud { display: flex; } }
     .hero-grid { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
+    /* Sem isto, a coluna não encolhe abaixo da largura do código do terminal e corta o hero no celular. */
+    .hero-grid > * { min-width: 0; }
     /* Cartão de identidade: foto + nome + status (reconhecimento em vez de memorização) */
     .identity {
       display: inline-flex; align-items: center; gap: .875rem; max-width: 100%;
@@ -273,6 +275,7 @@
       box-shadow: 0 25px 50px rgba(0, 0, 0, .25);
       font-family: 'JetBrains Mono', ui-monospace, Consolas, monospace;
     }
+    :root[data-theme="classic"] .terminal { border-color: rgba(15, 107, 95, .35); box-shadow: 0 20px 50px rgba(15, 107, 95, .22); }
     :root[data-theme="spatial"] .terminal {
       background: rgba(15, 23, 34, .85); border-color: rgba(6, 182, 212, .25);
       box-shadow: 0 20px 50px rgba(45, 212, 191, .12);
@@ -280,6 +283,7 @@
     }
     .terminal-glow { display: none; position: absolute; top: -4rem; right: -4rem; width: 12rem; height: 12rem; border-radius: 9999px; background: rgba(6, 182, 212, .15); filter: blur(48px); pointer-events: none; }
     :root[data-theme="spatial"] .terminal-glow { display: block; }
+    :root[data-theme="classic"] .terminal-glow { display: block; background: rgba(16, 185, 129, .18); }
     .terminal-bar {
       position: relative; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .5rem;
       padding: .75rem 1rem; font-size: .75rem;
@@ -307,9 +311,9 @@
       display: inline-flex; align-items: center; gap: .25rem;
       padding: .25rem .625rem; border-radius: 4px;
       font-family: 'Inter', system-ui, sans-serif; font-size: .75rem; font-weight: 600;
-      background: #059669; color: #fff; transition: background-color .2s;
+      background: #047857; color: #fff; transition: background-color .2s;
     }
-    .run-btn:hover { background: #10b981; }
+    .run-btn:hover { background: #065f46; }
     :root[data-theme="spatial"] .run-btn { background: #0891b2; color: #000; }
     :root[data-theme="spatial"] .run-btn:hover { background: #06b6d4; }
     .run-btn .icon { width: .75rem; height: .75rem; fill: currentColor; }
@@ -576,6 +580,8 @@
       .terminal-bar { justify-content: flex-start; }
       .run-label { display: none; }
       .terminal-body { font-size: .75rem; }
+      .terminal-body pre { white-space: pre-wrap; overflow-wrap: anywhere; }
+      .terminal-tabs { flex-wrap: wrap; }
       .contact-panel { padding: 2rem 1.25rem; }
       .flow-steps { flex-direction: column; }
       .flow-step { width: 100%; }
@@ -1150,7 +1156,7 @@
         a.addEventListener('click', function () { setMenu(false); });
       });
 
-      // --- Inclinação 3D do terminal + HUD de coordenadas (somente modo Espacial) ---
+      // --- Inclinação 3D do terminal (nos dois temas) + HUD de coordenadas (o HUD só aparece no Espacial) ---
       var hero = document.getElementById('hero');
       var wrap = document.getElementById('terminal-wrap');
       var hud = document.getElementById('hud-coords');
@@ -1162,7 +1168,6 @@
       }
       if (canTilt) {
         hero.addEventListener('mousemove', function (e) {
-          if (root.getAttribute('data-theme') !== 'spatial') return;
           var rect = hero.getBoundingClientRect();
           var x = Math.round(((e.clientX - rect.left) / rect.width - 0.5) * 120) / 10;
           var y = Math.round(((e.clientY - rect.top) / rect.height - 0.5) * -120) / 10;

@@ -1,0 +1,3858 @@
+{
+  "data": "2026-11-04",
+  "sha": "e8de22d9019f",
+  "resultados": [
+    {
+      "janela": "computador",
+      "largura": 1280,
+      "altura": 860,
+      "tema": "claro",
+      "versao": "hoje",
+      "estado": "padrao",
+      "foto": "hoje-claro-computador-padrao.png",
+      "problemas": [
+        {
+          "tipo": "contraste baixo",
+          "detalhe": "span.run-label \"Executar\" 3.77:1"
+        }
+      ],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 8
+        },
+        "hero": {
+          "altura": 813,
+          "pct": 95
+        },
+        "especialidades": {
+          "altura": 973,
+          "pct": 113
+        },
+        "projetos": {
+          "altura": 893,
+          "pct": 104
+        },
+        "experiencia": {
+          "altura": 995,
+          "pct": 116
+        },
+        "contato": {
+          "altura": 918,
+          "pct": 107
+        },
+        "rodape": {
+          "altura": 135,
+          "pct": 16
+        }
+      }
+    },
+    {
+      "janela": "computador",
+      "largura": 1280,
+      "altura": 860,
+      "tema": "claro",
+      "versao": "hoje",
+      "estado": "aba-arquitetura",
+      "foto": "hoje-claro-computador-aba-arquitetura.png",
+      "problemas": [
+        {
+          "tipo": "contraste baixo",
+          "detalhe": "span.run-label \"Executar\" 3.77:1"
+        }
+      ],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 8
+        },
+        "hero": {
+          "altura": 813,
+          "pct": 95
+        },
+        "especialidades": {
+          "altura": 973,
+          "pct": 113
+        },
+        "projetos": {
+          "altura": 893,
+          "pct": 104
+        },
+        "experiencia": {
+          "altura": 995,
+          "pct": 116
+        },
+        "contato": {
+          "altura": 918,
+          "pct": 107
+        },
+        "rodape": {
+          "altura": 135,
+          "pct": 16
+        }
+      }
+    },
+    {
+      "janela": "computador",
+      "largura": 1280,
+      "altura": 860,
+      "tema": "claro",
+      "versao": "hoje",
+      "estado": "terminal-inclinado",
+      "foto": "hoje-claro-computador-terminal-inclinado.png",
+      "problemas": [
+        {
+          "tipo": "contraste baixo",
+          "detalhe": "span.run-label \"Executar\" 3.77:1"
+        }
+      ],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 8
+        },
+        "hero": {
+          "altura": 813,
+          "pct": 95
+        },
+        "especialidades": {
+          "altura": 973,
+          "pct": 113
+        },
+        "projetos": {
+          "altura": 893,
+          "pct": 104
+        },
+        "experiencia": {
+          "altura": 995,
+          "pct": 116
+        },
+        "contato": {
+          "altura": 918,
+          "pct": 107
+        },
+        "rodape": {
+          "altura": 135,
+          "pct": 16
+        }
+      }
+    },
+    {
+      "janela": "computador",
+      "largura": 1280,
+      "altura": 860,
+      "tema": "claro",
+      "versao": "hoje",
+      "estado": "texto-longo",
+      "foto": "hoje-claro-computador-texto-longo.png",
+      "problemas": [
+        {
+          "tipo": "contraste baixo",
+          "detalhe": "span.run-label \"Executar\" 3.77:1"
+        }
+      ],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 8
+        },
+        "hero": {
+          "altura": 813,
+          "pct": 95
+        },
+        "especialidades": {
+          "altura": 973,
+          "pct": 113
+        },
+        "projetos": {
+          "altura": 893,
+          "pct": 104
+        },
+        "experiencia": {
+          "altura": 995,
+          "pct": 116
+        },
+        "contato": {
+          "altura": 918,
+          "pct": 107
+        },
+        "rodape": {
+          "altura": 135,
+          "pct": 16
+        }
+      }
+    },
+    {
+      "janela": "computador",
+      "largura": 1280,
+      "altura": 860,
+      "tema": "claro",
+      "versao": "proposta",
+      "estado": "padrao",
+      "foto": "proposta-claro-computador-padrao.png",
+      "problemas": [],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 8
+        },
+        "hero": {
+          "altura": 813,
+          "pct": 95
+        },
+        "especialidades": {
+          "altura": 973,
+          "pct": 113
+        },
+        "projetos": {
+          "altura": 893,
+          "pct": 104
+        },
+        "experiencia": {
+          "altura": 995,
+          "pct": 116
+        },
+        "contato": {
+          "altura": 918,
+          "pct": 107
+        },
+        "rodape": {
+          "altura": 135,
+          "pct": 16
+        }
+      }
+    },
+    {
+      "janela": "computador",
+      "largura": 1280,
+      "altura": 860,
+      "tema": "claro",
+      "versao": "proposta",
+      "estado": "aba-arquitetura",
+      "foto": "proposta-claro-computador-aba-arquitetura.png",
+      "problemas": [],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 8
+        },
+        "hero": {
+          "altura": 813,
+          "pct": 95
+        },
+        "especialidades": {
+          "altura": 973,
+          "pct": 113
+        },
+        "projetos": {
+          "altura": 893,
+          "pct": 104
+        },
+        "experiencia": {
+          "altura": 995,
+          "pct": 116
+        },
+        "contato": {
+          "altura": 918,
+          "pct": 107
+        },
+        "rodape": {
+          "altura": 135,
+          "pct": 16
+        }
+      }
+    },
+    {
+      "janela": "computador",
+      "largura": 1280,
+      "altura": 860,
+      "tema": "claro",
+      "versao": "proposta",
+      "estado": "terminal-inclinado",
+      "foto": "proposta-claro-computador-terminal-inclinado.png",
+      "problemas": [],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 8
+        },
+        "hero": {
+          "altura": 813,
+          "pct": 95
+        },
+        "especialidades": {
+          "altura": 973,
+          "pct": 113
+        },
+        "projetos": {
+          "altura": 893,
+          "pct": 104
+        },
+        "experiencia": {
+          "altura": 995,
+          "pct": 116
+        },
+        "contato": {
+          "altura": 918,
+          "pct": 107
+        },
+        "rodape": {
+          "altura": 135,
+          "pct": 16
+        }
+      }
+    },
+    {
+      "janela": "computador",
+      "largura": 1280,
+      "altura": 860,
+      "tema": "claro",
+      "versao": "proposta",
+      "estado": "texto-longo",
+      "foto": "proposta-claro-computador-texto-longo.png",
+      "problemas": [],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 8
+        },
+        "hero": {
+          "altura": 813,
+          "pct": 95
+        },
+        "especialidades": {
+          "altura": 973,
+          "pct": 113
+        },
+        "projetos": {
+          "altura": 893,
+          "pct": 104
+        },
+        "experiencia": {
+          "altura": 995,
+          "pct": 116
+        },
+        "contato": {
+          "altura": 918,
+          "pct": 107
+        },
+        "rodape": {
+          "altura": 135,
+          "pct": 16
+        }
+      }
+    },
+    {
+      "janela": "computador",
+      "largura": 1280,
+      "altura": 860,
+      "tema": "escuro",
+      "versao": "hoje",
+      "estado": "padrao",
+      "foto": "hoje-escuro-computador-padrao.png",
+      "problemas": [],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 8
+        },
+        "hero": {
+          "altura": 813,
+          "pct": 95
+        },
+        "especialidades": {
+          "altura": 973,
+          "pct": 113
+        },
+        "projetos": {
+          "altura": 893,
+          "pct": 104
+        },
+        "experiencia": {
+          "altura": 995,
+          "pct": 116
+        },
+        "contato": {
+          "altura": 919,
+          "pct": 107
+        },
+        "rodape": {
+          "altura": 135,
+          "pct": 16
+        }
+      }
+    },
+    {
+      "janela": "computador",
+      "largura": 1280,
+      "altura": 860,
+      "tema": "escuro",
+      "versao": "hoje",
+      "estado": "aba-arquitetura",
+      "foto": "hoje-escuro-computador-aba-arquitetura.png",
+      "problemas": [],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 8
+        },
+        "hero": {
+          "altura": 813,
+          "pct": 95
+        },
+        "especialidades": {
+          "altura": 973,
+          "pct": 113
+        },
+        "projetos": {
+          "altura": 893,
+          "pct": 104
+        },
+        "experiencia": {
+          "altura": 995,
+          "pct": 116
+        },
+        "contato": {
+          "altura": 919,
+          "pct": 107
+        },
+        "rodape": {
+          "altura": 135,
+          "pct": 16
+        }
+      }
+    },
+    {
+      "janela": "computador",
+      "largura": 1280,
+      "altura": 860,
+      "tema": "escuro",
+      "versao": "hoje",
+      "estado": "terminal-inclinado",
+      "foto": "hoje-escuro-computador-terminal-inclinado.png",
+      "problemas": [],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 8
+        },
+        "hero": {
+          "altura": 813,
+          "pct": 95
+        },
+        "especialidades": {
+          "altura": 973,
+          "pct": 113
+        },
+        "projetos": {
+          "altura": 893,
+          "pct": 104
+        },
+        "experiencia": {
+          "altura": 995,
+          "pct": 116
+        },
+        "contato": {
+          "altura": 919,
+          "pct": 107
+        },
+        "rodape": {
+          "altura": 135,
+          "pct": 16
+        }
+      }
+    },
+    {
+      "janela": "computador",
+      "largura": 1280,
+      "altura": 860,
+      "tema": "escuro",
+      "versao": "hoje",
+      "estado": "texto-longo",
+      "foto": "hoje-escuro-computador-texto-longo.png",
+      "problemas": [],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 8
+        },
+        "hero": {
+          "altura": 813,
+          "pct": 95
+        },
+        "especialidades": {
+          "altura": 973,
+          "pct": 113
+        },
+        "projetos": {
+          "altura": 893,
+          "pct": 104
+        },
+        "experiencia": {
+          "altura": 995,
+          "pct": 116
+        },
+        "contato": {
+          "altura": 919,
+          "pct": 107
+        },
+        "rodape": {
+          "altura": 135,
+          "pct": 16
+        }
+      }
+    },
+    {
+      "janela": "computador",
+      "largura": 1280,
+      "altura": 860,
+      "tema": "escuro",
+      "versao": "proposta",
+      "estado": "padrao",
+      "foto": "proposta-escuro-computador-padrao.png",
+      "problemas": [],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 8
+        },
+        "hero": {
+          "altura": 813,
+          "pct": 95
+        },
+        "especialidades": {
+          "altura": 973,
+          "pct": 113
+        },
+        "projetos": {
+          "altura": 893,
+          "pct": 104
+        },
+        "experiencia": {
+          "altura": 995,
+          "pct": 116
+        },
+        "contato": {
+          "altura": 919,
+          "pct": 107
+        },
+        "rodape": {
+          "altura": 135,
+          "pct": 16
+        }
+      }
+    },
+    {
+      "janela": "computador",
+      "largura": 1280,
+      "altura": 860,
+      "tema": "escuro",
+      "versao": "proposta",
+      "estado": "aba-arquitetura",
+      "foto": "proposta-escuro-computador-aba-arquitetura.png",
+      "problemas": [],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 8
+        },
+        "hero": {
+          "altura": 813,
+          "pct": 95
+        },
+        "especialidades": {
+          "altura": 973,
+          "pct": 113
+        },
+        "projetos": {
+          "altura": 893,
+          "pct": 104
+        },
+        "experiencia": {
+          "altura": 995,
+          "pct": 116
+        },
+        "contato": {
+          "altura": 919,
+          "pct": 107
+        },
+        "rodape": {
+          "altura": 135,
+          "pct": 16
+        }
+      }
+    },
+    {
+      "janela": "computador",
+      "largura": 1280,
+      "altura": 860,
+      "tema": "escuro",
+      "versao": "proposta",
+      "estado": "terminal-inclinado",
+      "foto": "proposta-escuro-computador-terminal-inclinado.png",
+      "problemas": [],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 8
+        },
+        "hero": {
+          "altura": 813,
+          "pct": 95
+        },
+        "especialidades": {
+          "altura": 973,
+          "pct": 113
+        },
+        "projetos": {
+          "altura": 893,
+          "pct": 104
+        },
+        "experiencia": {
+          "altura": 995,
+          "pct": 116
+        },
+        "contato": {
+          "altura": 919,
+          "pct": 107
+        },
+        "rodape": {
+          "altura": 135,
+          "pct": 16
+        }
+      }
+    },
+    {
+      "janela": "computador",
+      "largura": 1280,
+      "altura": 860,
+      "tema": "escuro",
+      "versao": "proposta",
+      "estado": "texto-longo",
+      "foto": "proposta-escuro-computador-texto-longo.png",
+      "problemas": [],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 8
+        },
+        "hero": {
+          "altura": 813,
+          "pct": 95
+        },
+        "especialidades": {
+          "altura": 973,
+          "pct": 113
+        },
+        "projetos": {
+          "altura": 893,
+          "pct": 104
+        },
+        "experiencia": {
+          "altura": 995,
+          "pct": 116
+        },
+        "contato": {
+          "altura": 919,
+          "pct": 107
+        },
+        "rodape": {
+          "altura": 135,
+          "pct": 16
+        }
+      }
+    },
+    {
+      "janela": "grande",
+      "largura": 1920,
+      "altura": 1080,
+      "tema": "claro",
+      "versao": "hoje",
+      "estado": "padrao",
+      "foto": "hoje-claro-grande-padrao.png",
+      "problemas": [
+        {
+          "tipo": "contraste baixo",
+          "detalhe": "span.run-label \"Executar\" 3.77:1"
+        }
+      ],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 6
+        },
+        "hero": {
+          "altura": 813,
+          "pct": 75
+        },
+        "especialidades": {
+          "altura": 973,
+          "pct": 90
+        },
+        "projetos": {
+          "altura": 893,
+          "pct": 83
+        },
+        "experiencia": {
+          "altura": 995,
+          "pct": 92
+        },
+        "contato": {
+          "altura": 918,
+          "pct": 85
+        },
+        "rodape": {
+          "altura": 135,
+          "pct": 13
+        }
+      }
+    },
+    {
+      "janela": "grande",
+      "largura": 1920,
+      "altura": 1080,
+      "tema": "claro",
+      "versao": "hoje",
+      "estado": "aba-arquitetura",
+      "foto": "hoje-claro-grande-aba-arquitetura.png",
+      "problemas": [
+        {
+          "tipo": "contraste baixo",
+          "detalhe": "span.run-label \"Executar\" 3.77:1"
+        }
+      ],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 6
+        },
+        "hero": {
+          "altura": 813,
+          "pct": 75
+        },
+        "especialidades": {
+          "altura": 973,
+          "pct": 90
+        },
+        "projetos": {
+          "altura": 893,
+          "pct": 83
+        },
+        "experiencia": {
+          "altura": 995,
+          "pct": 92
+        },
+        "contato": {
+          "altura": 918,
+          "pct": 85
+        },
+        "rodape": {
+          "altura": 135,
+          "pct": 13
+        }
+      }
+    },
+    {
+      "janela": "grande",
+      "largura": 1920,
+      "altura": 1080,
+      "tema": "claro",
+      "versao": "hoje",
+      "estado": "terminal-inclinado",
+      "foto": "hoje-claro-grande-terminal-inclinado.png",
+      "problemas": [
+        {
+          "tipo": "contraste baixo",
+          "detalhe": "span.run-label \"Executar\" 3.77:1"
+        }
+      ],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 6
+        },
+        "hero": {
+          "altura": 813,
+          "pct": 75
+        },
+        "especialidades": {
+          "altura": 973,
+          "pct": 90
+        },
+        "projetos": {
+          "altura": 893,
+          "pct": 83
+        },
+        "experiencia": {
+          "altura": 995,
+          "pct": 92
+        },
+        "contato": {
+          "altura": 918,
+          "pct": 85
+        },
+        "rodape": {
+          "altura": 135,
+          "pct": 13
+        }
+      }
+    },
+    {
+      "janela": "grande",
+      "largura": 1920,
+      "altura": 1080,
+      "tema": "claro",
+      "versao": "hoje",
+      "estado": "texto-longo",
+      "foto": "hoje-claro-grande-texto-longo.png",
+      "problemas": [
+        {
+          "tipo": "contraste baixo",
+          "detalhe": "span.run-label \"Executar\" 3.77:1"
+        }
+      ],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 6
+        },
+        "hero": {
+          "altura": 813,
+          "pct": 75
+        },
+        "especialidades": {
+          "altura": 973,
+          "pct": 90
+        },
+        "projetos": {
+          "altura": 893,
+          "pct": 83
+        },
+        "experiencia": {
+          "altura": 995,
+          "pct": 92
+        },
+        "contato": {
+          "altura": 918,
+          "pct": 85
+        },
+        "rodape": {
+          "altura": 135,
+          "pct": 13
+        }
+      }
+    },
+    {
+      "janela": "grande",
+      "largura": 1920,
+      "altura": 1080,
+      "tema": "claro",
+      "versao": "proposta",
+      "estado": "padrao",
+      "foto": "proposta-claro-grande-padrao.png",
+      "problemas": [],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 6
+        },
+        "hero": {
+          "altura": 813,
+          "pct": 75
+        },
+        "especialidades": {
+          "altura": 973,
+          "pct": 90
+        },
+        "projetos": {
+          "altura": 893,
+          "pct": 83
+        },
+        "experiencia": {
+          "altura": 995,
+          "pct": 92
+        },
+        "contato": {
+          "altura": 918,
+          "pct": 85
+        },
+        "rodape": {
+          "altura": 135,
+          "pct": 13
+        }
+      }
+    },
+    {
+      "janela": "grande",
+      "largura": 1920,
+      "altura": 1080,
+      "tema": "claro",
+      "versao": "proposta",
+      "estado": "aba-arquitetura",
+      "foto": "proposta-claro-grande-aba-arquitetura.png",
+      "problemas": [],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 6
+        },
+        "hero": {
+          "altura": 813,
+          "pct": 75
+        },
+        "especialidades": {
+          "altura": 973,
+          "pct": 90
+        },
+        "projetos": {
+          "altura": 893,
+          "pct": 83
+        },
+        "experiencia": {
+          "altura": 995,
+          "pct": 92
+        },
+        "contato": {
+          "altura": 918,
+          "pct": 85
+        },
+        "rodape": {
+          "altura": 135,
+          "pct": 13
+        }
+      }
+    },
+    {
+      "janela": "grande",
+      "largura": 1920,
+      "altura": 1080,
+      "tema": "claro",
+      "versao": "proposta",
+      "estado": "terminal-inclinado",
+      "foto": "proposta-claro-grande-terminal-inclinado.png",
+      "problemas": [],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 6
+        },
+        "hero": {
+          "altura": 813,
+          "pct": 75
+        },
+        "especialidades": {
+          "altura": 973,
+          "pct": 90
+        },
+        "projetos": {
+          "altura": 893,
+          "pct": 83
+        },
+        "experiencia": {
+          "altura": 995,
+          "pct": 92
+        },
+        "contato": {
+          "altura": 918,
+          "pct": 85
+        },
+        "rodape": {
+          "altura": 135,
+          "pct": 13
+        }
+      }
+    },
+    {
+      "janela": "grande",
+      "largura": 1920,
+      "altura": 1080,
+      "tema": "claro",
+      "versao": "proposta",
+      "estado": "texto-longo",
+      "foto": "proposta-claro-grande-texto-longo.png",
+      "problemas": [],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 6
+        },
+        "hero": {
+          "altura": 813,
+          "pct": 75
+        },
+        "especialidades": {
+          "altura": 973,
+          "pct": 90
+        },
+        "projetos": {
+          "altura": 893,
+          "pct": 83
+        },
+        "experiencia": {
+          "altura": 995,
+          "pct": 92
+        },
+        "contato": {
+          "altura": 918,
+          "pct": 85
+        },
+        "rodape": {
+          "altura": 135,
+          "pct": 13
+        }
+      }
+    },
+    {
+      "janela": "grande",
+      "largura": 1920,
+      "altura": 1080,
+      "tema": "escuro",
+      "versao": "hoje",
+      "estado": "padrao",
+      "foto": "hoje-escuro-grande-padrao.png",
+      "problemas": [],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 6
+        },
+        "hero": {
+          "altura": 813,
+          "pct": 75
+        },
+        "especialidades": {
+          "altura": 973,
+          "pct": 90
+        },
+        "projetos": {
+          "altura": 893,
+          "pct": 83
+        },
+        "experiencia": {
+          "altura": 995,
+          "pct": 92
+        },
+        "contato": {
+          "altura": 919,
+          "pct": 85
+        },
+        "rodape": {
+          "altura": 135,
+          "pct": 13
+        }
+      }
+    },
+    {
+      "janela": "grande",
+      "largura": 1920,
+      "altura": 1080,
+      "tema": "escuro",
+      "versao": "hoje",
+      "estado": "aba-arquitetura",
+      "foto": "hoje-escuro-grande-aba-arquitetura.png",
+      "problemas": [],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 6
+        },
+        "hero": {
+          "altura": 813,
+          "pct": 75
+        },
+        "especialidades": {
+          "altura": 973,
+          "pct": 90
+        },
+        "projetos": {
+          "altura": 893,
+          "pct": 83
+        },
+        "experiencia": {
+          "altura": 995,
+          "pct": 92
+        },
+        "contato": {
+          "altura": 919,
+          "pct": 85
+        },
+        "rodape": {
+          "altura": 135,
+          "pct": 13
+        }
+      }
+    },
+    {
+      "janela": "grande",
+      "largura": 1920,
+      "altura": 1080,
+      "tema": "escuro",
+      "versao": "hoje",
+      "estado": "terminal-inclinado",
+      "foto": "hoje-escuro-grande-terminal-inclinado.png",
+      "problemas": [],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 6
+        },
+        "hero": {
+          "altura": 813,
+          "pct": 75
+        },
+        "especialidades": {
+          "altura": 973,
+          "pct": 90
+        },
+        "projetos": {
+          "altura": 893,
+          "pct": 83
+        },
+        "experiencia": {
+          "altura": 995,
+          "pct": 92
+        },
+        "contato": {
+          "altura": 919,
+          "pct": 85
+        },
+        "rodape": {
+          "altura": 135,
+          "pct": 13
+        }
+      }
+    },
+    {
+      "janela": "grande",
+      "largura": 1920,
+      "altura": 1080,
+      "tema": "escuro",
+      "versao": "hoje",
+      "estado": "texto-longo",
+      "foto": "hoje-escuro-grande-texto-longo.png",
+      "problemas": [],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 6
+        },
+        "hero": {
+          "altura": 813,
+          "pct": 75
+        },
+        "especialidades": {
+          "altura": 973,
+          "pct": 90
+        },
+        "projetos": {
+          "altura": 893,
+          "pct": 83
+        },
+        "experiencia": {
+          "altura": 995,
+          "pct": 92
+        },
+        "contato": {
+          "altura": 919,
+          "pct": 85
+        },
+        "rodape": {
+          "altura": 135,
+          "pct": 13
+        }
+      }
+    },
+    {
+      "janela": "grande",
+      "largura": 1920,
+      "altura": 1080,
+      "tema": "escuro",
+      "versao": "proposta",
+      "estado": "padrao",
+      "foto": "proposta-escuro-grande-padrao.png",
+      "problemas": [],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 6
+        },
+        "hero": {
+          "altura": 813,
+          "pct": 75
+        },
+        "especialidades": {
+          "altura": 973,
+          "pct": 90
+        },
+        "projetos": {
+          "altura": 893,
+          "pct": 83
+        },
+        "experiencia": {
+          "altura": 995,
+          "pct": 92
+        },
+        "contato": {
+          "altura": 919,
+          "pct": 85
+        },
+        "rodape": {
+          "altura": 135,
+          "pct": 13
+        }
+      }
+    },
+    {
+      "janela": "grande",
+      "largura": 1920,
+      "altura": 1080,
+      "tema": "escuro",
+      "versao": "proposta",
+      "estado": "aba-arquitetura",
+      "foto": "proposta-escuro-grande-aba-arquitetura.png",
+      "problemas": [],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 6
+        },
+        "hero": {
+          "altura": 813,
+          "pct": 75
+        },
+        "especialidades": {
+          "altura": 973,
+          "pct": 90
+        },
+        "projetos": {
+          "altura": 893,
+          "pct": 83
+        },
+        "experiencia": {
+          "altura": 995,
+          "pct": 92
+        },
+        "contato": {
+          "altura": 919,
+          "pct": 85
+        },
+        "rodape": {
+          "altura": 135,
+          "pct": 13
+        }
+      }
+    },
+    {
+      "janela": "grande",
+      "largura": 1920,
+      "altura": 1080,
+      "tema": "escuro",
+      "versao": "proposta",
+      "estado": "terminal-inclinado",
+      "foto": "proposta-escuro-grande-terminal-inclinado.png",
+      "problemas": [],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 6
+        },
+        "hero": {
+          "altura": 813,
+          "pct": 75
+        },
+        "especialidades": {
+          "altura": 973,
+          "pct": 90
+        },
+        "projetos": {
+          "altura": 893,
+          "pct": 83
+        },
+        "experiencia": {
+          "altura": 995,
+          "pct": 92
+        },
+        "contato": {
+          "altura": 919,
+          "pct": 85
+        },
+        "rodape": {
+          "altura": 135,
+          "pct": 13
+        }
+      }
+    },
+    {
+      "janela": "grande",
+      "largura": 1920,
+      "altura": 1080,
+      "tema": "escuro",
+      "versao": "proposta",
+      "estado": "texto-longo",
+      "foto": "proposta-escuro-grande-texto-longo.png",
+      "problemas": [],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 6
+        },
+        "hero": {
+          "altura": 813,
+          "pct": 75
+        },
+        "especialidades": {
+          "altura": 973,
+          "pct": 90
+        },
+        "projetos": {
+          "altura": 893,
+          "pct": 83
+        },
+        "experiencia": {
+          "altura": 995,
+          "pct": 92
+        },
+        "contato": {
+          "altura": 919,
+          "pct": 85
+        },
+        "rodape": {
+          "altura": 135,
+          "pct": 13
+        }
+      }
+    },
+    {
+      "janela": "celular",
+      "largura": 390,
+      "altura": 844,
+      "tema": "claro",
+      "versao": "hoje",
+      "estado": "padrao",
+      "foto": "hoje-claro-celular-padrao.png",
+      "problemas": [
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "h1#hero-title \"Software para operação real.\" vai de 16 a 401 px em 390 px"
+        },
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "p.hero-copy \"Foco em sistemas corporativos, integrações, ERP, d\" vai de 16 a 401 px em 390 px"
+        },
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "a.btn.btn-secondary \"Ver trabalhos\" vai de 16 a 401 px em 390 px"
+        }
+      ],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 8
+        },
+        "hero": {
+          "altura": 1487,
+          "pct": 176
+        },
+        "especialidades": {
+          "altura": 2029,
+          "pct": 240
+        },
+        "projetos": {
+          "altura": 1589,
+          "pct": 188
+        },
+        "experiencia": {
+          "altura": 1489,
+          "pct": 176
+        },
+        "contato": {
+          "altura": 988,
+          "pct": 117
+        },
+        "rodape": {
+          "altura": 214,
+          "pct": 25
+        }
+      }
+    },
+    {
+      "janela": "celular",
+      "largura": 390,
+      "altura": 844,
+      "tema": "claro",
+      "versao": "hoje",
+      "estado": "aba-arquitetura",
+      "foto": "hoje-claro-celular-aba-arquitetura.png",
+      "problemas": [
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "h1#hero-title \"Software para operação real.\" vai de 16 a 421 px em 390 px"
+        },
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "p.hero-copy \"Foco em sistemas corporativos, integrações, ERP, d\" vai de 16 a 421 px em 390 px"
+        },
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "a.btn.btn-secondary \"Ver trabalhos\" vai de 16 a 421 px em 390 px"
+        },
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "div.metric-num.mono \"6+\" vai de 31 a 406 px em 390 px"
+        },
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "div.metric-label \"anos criando e mantendo sistemas\" vai de 31 a 406 px em 390 px"
+        },
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "div.metric-num.mono \"ERP\" vai de 31 a 406 px em 390 px"
+        },
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "div.metric-label \"rotinas administrativas, financeiras e operacionai\" vai de 31 a 406 px em 390 px"
+        },
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "div.metric-num.mono \"APIs\" vai de 31 a 406 px em 390 px"
+        },
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "div.metric-label \"integrações, webhooks e dados consistentes\" vai de 31 a 406 px em 390 px"
+        },
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "code \"{ \"paradigma\": \"Orientado a Eventos & Resiliente\",\" vai de 37 a 400 px em 390 px"
+        },
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "span.tk-str \"\"Garantida por UUID v4 + Redis Lock\"\" vai de 156 a 393 px em 390 px"
+        }
+      ],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 8
+        },
+        "hero": {
+          "altura": 1487,
+          "pct": 176
+        },
+        "especialidades": {
+          "altura": 2029,
+          "pct": 240
+        },
+        "projetos": {
+          "altura": 1589,
+          "pct": 188
+        },
+        "experiencia": {
+          "altura": 1489,
+          "pct": 176
+        },
+        "contato": {
+          "altura": 988,
+          "pct": 117
+        },
+        "rodape": {
+          "altura": 214,
+          "pct": 25
+        }
+      }
+    },
+    {
+      "janela": "celular",
+      "largura": 390,
+      "altura": 844,
+      "tema": "claro",
+      "versao": "hoje",
+      "estado": "terminal-inclinado",
+      "foto": "hoje-claro-celular-terminal-inclinado.png",
+      "problemas": [
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "h1#hero-title \"Software para operação real.\" vai de 16 a 401 px em 390 px"
+        },
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "p.hero-copy \"Foco em sistemas corporativos, integrações, ERP, d\" vai de 16 a 401 px em 390 px"
+        },
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "a.btn.btn-secondary \"Ver trabalhos\" vai de 16 a 401 px em 390 px"
+        }
+      ],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 8
+        },
+        "hero": {
+          "altura": 1487,
+          "pct": 176
+        },
+        "especialidades": {
+          "altura": 2029,
+          "pct": 240
+        },
+        "projetos": {
+          "altura": 1589,
+          "pct": 188
+        },
+        "experiencia": {
+          "altura": 1489,
+          "pct": 176
+        },
+        "contato": {
+          "altura": 988,
+          "pct": 117
+        },
+        "rodape": {
+          "altura": 214,
+          "pct": 25
+        }
+      }
+    },
+    {
+      "janela": "celular",
+      "largura": 390,
+      "altura": 844,
+      "tema": "claro",
+      "versao": "hoje",
+      "estado": "texto-longo",
+      "foto": "hoje-claro-celular-texto-longo.png",
+      "problemas": [
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "span.identity-name \"Lucas Soares de Albuquerque Figueiredo\" vai de 93 a 394 px em 390 px"
+        },
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "span.identity-role \"Desenvolvedor Full Stack\" vai de 93 a 394 px em 390 px"
+        },
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "h1#hero-title \"Software para operação real.\" vai de 16 a 401 px em 390 px"
+        },
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "p.hero-copy \"Foco em sistemas corporativos, integrações, ERP, d\" vai de 16 a 401 px em 390 px"
+        },
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "a.btn.btn-secondary \"Ver trabalhos\" vai de 16 a 401 px em 390 px"
+        }
+      ],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 8
+        },
+        "hero": {
+          "altura": 1488,
+          "pct": 176
+        },
+        "especialidades": {
+          "altura": 2029,
+          "pct": 240
+        },
+        "projetos": {
+          "altura": 1589,
+          "pct": 188
+        },
+        "experiencia": {
+          "altura": 1489,
+          "pct": 176
+        },
+        "contato": {
+          "altura": 988,
+          "pct": 117
+        },
+        "rodape": {
+          "altura": 214,
+          "pct": 25
+        }
+      }
+    },
+    {
+      "janela": "celular",
+      "largura": 390,
+      "altura": 844,
+      "tema": "claro",
+      "versao": "proposta",
+      "estado": "padrao",
+      "foto": "proposta-claro-celular-padrao.png",
+      "problemas": [],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 8
+        },
+        "hero": {
+          "altura": 1516,
+          "pct": 180
+        },
+        "especialidades": {
+          "altura": 2029,
+          "pct": 240
+        },
+        "projetos": {
+          "altura": 1589,
+          "pct": 188
+        },
+        "experiencia": {
+          "altura": 1489,
+          "pct": 176
+        },
+        "contato": {
+          "altura": 988,
+          "pct": 117
+        },
+        "rodape": {
+          "altura": 214,
+          "pct": 25
+        }
+      }
+    },
+    {
+      "janela": "celular",
+      "largura": 390,
+      "altura": 844,
+      "tema": "claro",
+      "versao": "proposta",
+      "estado": "aba-arquitetura",
+      "foto": "proposta-claro-celular-aba-arquitetura.png",
+      "problemas": [],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 8
+        },
+        "hero": {
+          "altura": 1560,
+          "pct": 185
+        },
+        "especialidades": {
+          "altura": 2029,
+          "pct": 240
+        },
+        "projetos": {
+          "altura": 1589,
+          "pct": 188
+        },
+        "experiencia": {
+          "altura": 1489,
+          "pct": 176
+        },
+        "contato": {
+          "altura": 988,
+          "pct": 117
+        },
+        "rodape": {
+          "altura": 214,
+          "pct": 25
+        }
+      }
+    },
+    {
+      "janela": "celular",
+      "largura": 390,
+      "altura": 844,
+      "tema": "claro",
+      "versao": "proposta",
+      "estado": "terminal-inclinado",
+      "foto": "proposta-claro-celular-terminal-inclinado.png",
+      "problemas": [],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 8
+        },
+        "hero": {
+          "altura": 1516,
+          "pct": 180
+        },
+        "especialidades": {
+          "altura": 2029,
+          "pct": 240
+        },
+        "projetos": {
+          "altura": 1589,
+          "pct": 188
+        },
+        "experiencia": {
+          "altura": 1489,
+          "pct": 176
+        },
+        "contato": {
+          "altura": 988,
+          "pct": 117
+        },
+        "rodape": {
+          "altura": 214,
+          "pct": 25
+        }
+      }
+    },
+    {
+      "janela": "celular",
+      "largura": 390,
+      "altura": 844,
+      "tema": "claro",
+      "versao": "proposta",
+      "estado": "texto-longo",
+      "foto": "proposta-claro-celular-texto-longo.png",
+      "problemas": [],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 8
+        },
+        "hero": {
+          "altura": 1516,
+          "pct": 180
+        },
+        "especialidades": {
+          "altura": 2029,
+          "pct": 240
+        },
+        "projetos": {
+          "altura": 1589,
+          "pct": 188
+        },
+        "experiencia": {
+          "altura": 1489,
+          "pct": 176
+        },
+        "contato": {
+          "altura": 988,
+          "pct": 117
+        },
+        "rodape": {
+          "altura": 214,
+          "pct": 25
+        }
+      }
+    },
+    {
+      "janela": "celular",
+      "largura": 390,
+      "altura": 844,
+      "tema": "escuro",
+      "versao": "hoje",
+      "estado": "padrao",
+      "foto": "hoje-escuro-celular-padrao.png",
+      "problemas": [
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "h1#hero-title \"Software para operação real.\" vai de 16 a 401 px em 390 px"
+        },
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "p.hero-copy \"Foco em sistemas corporativos, integrações, ERP, d\" vai de 16 a 401 px em 390 px"
+        },
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "a.btn.btn-secondary \"Ver trabalhos\" vai de 16 a 401 px em 390 px"
+        }
+      ],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 8
+        },
+        "hero": {
+          "altura": 1487,
+          "pct": 176
+        },
+        "especialidades": {
+          "altura": 2029,
+          "pct": 240
+        },
+        "projetos": {
+          "altura": 1589,
+          "pct": 188
+        },
+        "experiencia": {
+          "altura": 1490,
+          "pct": 177
+        },
+        "contato": {
+          "altura": 989,
+          "pct": 117
+        },
+        "rodape": {
+          "altura": 214,
+          "pct": 25
+        }
+      }
+    },
+    {
+      "janela": "celular",
+      "largura": 390,
+      "altura": 844,
+      "tema": "escuro",
+      "versao": "hoje",
+      "estado": "aba-arquitetura",
+      "foto": "hoje-escuro-celular-aba-arquitetura.png",
+      "problemas": [
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "h1#hero-title \"Software para operação real.\" vai de 16 a 421 px em 390 px"
+        },
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "p.hero-copy \"Foco em sistemas corporativos, integrações, ERP, d\" vai de 16 a 421 px em 390 px"
+        },
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "a.btn.btn-secondary \"Ver trabalhos\" vai de 16 a 421 px em 390 px"
+        },
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "div.metric-num.mono \"6+\" vai de 31 a 406 px em 390 px"
+        },
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "div.metric-label \"anos criando e mantendo sistemas\" vai de 31 a 406 px em 390 px"
+        },
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "div.metric-num.mono \"ERP\" vai de 31 a 406 px em 390 px"
+        },
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "div.metric-label \"rotinas administrativas, financeiras e operacionai\" vai de 31 a 406 px em 390 px"
+        },
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "div.metric-num.mono \"APIs\" vai de 31 a 406 px em 390 px"
+        },
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "div.metric-label \"integrações, webhooks e dados consistentes\" vai de 31 a 406 px em 390 px"
+        },
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "code \"{ \"paradigma\": \"Orientado a Eventos & Resiliente\",\" vai de 37 a 400 px em 390 px"
+        },
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "span.tk-str \"\"Garantida por UUID v4 + Redis Lock\"\" vai de 156 a 393 px em 390 px"
+        }
+      ],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 8
+        },
+        "hero": {
+          "altura": 1487,
+          "pct": 176
+        },
+        "especialidades": {
+          "altura": 2029,
+          "pct": 240
+        },
+        "projetos": {
+          "altura": 1589,
+          "pct": 188
+        },
+        "experiencia": {
+          "altura": 1490,
+          "pct": 177
+        },
+        "contato": {
+          "altura": 989,
+          "pct": 117
+        },
+        "rodape": {
+          "altura": 214,
+          "pct": 25
+        }
+      }
+    },
+    {
+      "janela": "celular",
+      "largura": 390,
+      "altura": 844,
+      "tema": "escuro",
+      "versao": "hoje",
+      "estado": "terminal-inclinado",
+      "foto": "hoje-escuro-celular-terminal-inclinado.png",
+      "problemas": [
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "h1#hero-title \"Software para operação real.\" vai de 16 a 401 px em 390 px"
+        },
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "p.hero-copy \"Foco em sistemas corporativos, integrações, ERP, d\" vai de 16 a 401 px em 390 px"
+        },
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "a.btn.btn-secondary \"Ver trabalhos\" vai de 16 a 401 px em 390 px"
+        }
+      ],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 8
+        },
+        "hero": {
+          "altura": 1487,
+          "pct": 176
+        },
+        "especialidades": {
+          "altura": 2029,
+          "pct": 240
+        },
+        "projetos": {
+          "altura": 1589,
+          "pct": 188
+        },
+        "experiencia": {
+          "altura": 1490,
+          "pct": 177
+        },
+        "contato": {
+          "altura": 989,
+          "pct": 117
+        },
+        "rodape": {
+          "altura": 214,
+          "pct": 25
+        }
+      }
+    },
+    {
+      "janela": "celular",
+      "largura": 390,
+      "altura": 844,
+      "tema": "escuro",
+      "versao": "hoje",
+      "estado": "texto-longo",
+      "foto": "hoje-escuro-celular-texto-longo.png",
+      "problemas": [
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "span.identity-name \"Lucas Soares de Albuquerque Figueiredo\" vai de 93 a 394 px em 390 px"
+        },
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "span.identity-role \"Desenvolvedor Full Stack\" vai de 93 a 394 px em 390 px"
+        },
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "h1#hero-title \"Software para operação real.\" vai de 16 a 401 px em 390 px"
+        },
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "p.hero-copy \"Foco em sistemas corporativos, integrações, ERP, d\" vai de 16 a 401 px em 390 px"
+        },
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "a.btn.btn-secondary \"Ver trabalhos\" vai de 16 a 401 px em 390 px"
+        }
+      ],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 8
+        },
+        "hero": {
+          "altura": 1488,
+          "pct": 176
+        },
+        "especialidades": {
+          "altura": 2029,
+          "pct": 240
+        },
+        "projetos": {
+          "altura": 1589,
+          "pct": 188
+        },
+        "experiencia": {
+          "altura": 1490,
+          "pct": 177
+        },
+        "contato": {
+          "altura": 989,
+          "pct": 117
+        },
+        "rodape": {
+          "altura": 214,
+          "pct": 25
+        }
+      }
+    },
+    {
+      "janela": "celular",
+      "largura": 390,
+      "altura": 844,
+      "tema": "escuro",
+      "versao": "proposta",
+      "estado": "padrao",
+      "foto": "proposta-escuro-celular-padrao.png",
+      "problemas": [],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 8
+        },
+        "hero": {
+          "altura": 1516,
+          "pct": 180
+        },
+        "especialidades": {
+          "altura": 2029,
+          "pct": 240
+        },
+        "projetos": {
+          "altura": 1589,
+          "pct": 188
+        },
+        "experiencia": {
+          "altura": 1490,
+          "pct": 177
+        },
+        "contato": {
+          "altura": 989,
+          "pct": 117
+        },
+        "rodape": {
+          "altura": 214,
+          "pct": 25
+        }
+      }
+    },
+    {
+      "janela": "celular",
+      "largura": 390,
+      "altura": 844,
+      "tema": "escuro",
+      "versao": "proposta",
+      "estado": "aba-arquitetura",
+      "foto": "proposta-escuro-celular-aba-arquitetura.png",
+      "problemas": [],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 8
+        },
+        "hero": {
+          "altura": 1560,
+          "pct": 185
+        },
+        "especialidades": {
+          "altura": 2029,
+          "pct": 240
+        },
+        "projetos": {
+          "altura": 1589,
+          "pct": 188
+        },
+        "experiencia": {
+          "altura": 1490,
+          "pct": 177
+        },
+        "contato": {
+          "altura": 989,
+          "pct": 117
+        },
+        "rodape": {
+          "altura": 214,
+          "pct": 25
+        }
+      }
+    },
+    {
+      "janela": "celular",
+      "largura": 390,
+      "altura": 844,
+      "tema": "escuro",
+      "versao": "proposta",
+      "estado": "terminal-inclinado",
+      "foto": "proposta-escuro-celular-terminal-inclinado.png",
+      "problemas": [],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 8
+        },
+        "hero": {
+          "altura": 1516,
+          "pct": 180
+        },
+        "especialidades": {
+          "altura": 2029,
+          "pct": 240
+        },
+        "projetos": {
+          "altura": 1589,
+          "pct": 188
+        },
+        "experiencia": {
+          "altura": 1490,
+          "pct": 177
+        },
+        "contato": {
+          "altura": 989,
+          "pct": 117
+        },
+        "rodape": {
+          "altura": 214,
+          "pct": 25
+        }
+      }
+    },
+    {
+      "janela": "celular",
+      "largura": 390,
+      "altura": 844,
+      "tema": "escuro",
+      "versao": "proposta",
+      "estado": "texto-longo",
+      "foto": "proposta-escuro-celular-texto-longo.png",
+      "problemas": [],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 8
+        },
+        "hero": {
+          "altura": 1516,
+          "pct": 180
+        },
+        "especialidades": {
+          "altura": 2029,
+          "pct": 240
+        },
+        "projetos": {
+          "altura": 1589,
+          "pct": 188
+        },
+        "experiencia": {
+          "altura": 1490,
+          "pct": 177
+        },
+        "contato": {
+          "altura": 989,
+          "pct": 117
+        },
+        "rodape": {
+          "altura": 214,
+          "pct": 25
+        }
+      }
+    },
+    {
+      "janela": "estreito",
+      "largura": 360,
+      "altura": 800,
+      "tema": "claro",
+      "versao": "hoje",
+      "estado": "padrao",
+      "foto": "hoje-claro-estreito-padrao.png",
+      "problemas": [
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "h1#hero-title \"Software para operação real.\" vai de 16 a 401 px em 360 px"
+        },
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "p.hero-copy \"Foco em sistemas corporativos, integrações, ERP, d\" vai de 16 a 401 px em 360 px"
+        },
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "a.btn.btn-secondary \"Ver trabalhos\" vai de 16 a 401 px em 360 px"
+        },
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "div.metric-num.mono \"6+\" vai de 31 a 386 px em 360 px"
+        },
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "div.metric-label \"anos criando e mantendo sistemas\" vai de 31 a 386 px em 360 px"
+        },
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "div.metric-num.mono \"ERP\" vai de 31 a 386 px em 360 px"
+        },
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "div.metric-label \"rotinas administrativas, financeiras e operacionai\" vai de 31 a 386 px em 360 px"
+        },
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "div.metric-num.mono \"APIs\" vai de 31 a 386 px em 360 px"
+        },
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "div.metric-label \"integrações, webhooks e dados consistentes\" vai de 31 a 386 px em 360 px"
+        },
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "code \"const profissional = { nome: \"Lucas Soares\", foco:\" vai de 37 a 380 px em 360 px"
+        },
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "span.tk-var \"\"MySQL\"\" vai de 321 a 367 px em 360 px"
+        },
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "span.stack-tag \"REST APIs\" vai de 278 a 365 px em 360 px"
+        }
+      ],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 8
+        },
+        "hero": {
+          "altura": 1487,
+          "pct": 186
+        },
+        "especialidades": {
+          "altura": 2141,
+          "pct": 268
+        },
+        "projetos": {
+          "altura": 1608,
+          "pct": 201
+        },
+        "experiencia": {
+          "altura": 1588,
+          "pct": 198
+        },
+        "contato": {
+          "altura": 988,
+          "pct": 123
+        },
+        "rodape": {
+          "altura": 214,
+          "pct": 27
+        }
+      }
+    },
+    {
+      "janela": "estreito",
+      "largura": 360,
+      "altura": 800,
+      "tema": "claro",
+      "versao": "hoje",
+      "estado": "aba-arquitetura",
+      "foto": "hoje-claro-estreito-aba-arquitetura.png",
+      "problemas": [
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "h1#hero-title \"Software para operação real.\" vai de 16 a 421 px em 360 px"
+        },
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "p.hero-copy \"Foco em sistemas corporativos, integrações, ERP, d\" vai de 16 a 421 px em 360 px"
+        },
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "a.btn.btn-secondary \"Ver trabalhos\" vai de 16 a 421 px em 360 px"
+        },
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "div.metric-num.mono \"6+\" vai de 31 a 406 px em 360 px"
+        },
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "div.metric-label \"anos criando e mantendo sistemas\" vai de 31 a 406 px em 360 px"
+        },
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "div.metric-num.mono \"ERP\" vai de 31 a 406 px em 360 px"
+        },
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "div.metric-label \"rotinas administrativas, financeiras e operacionai\" vai de 31 a 406 px em 360 px"
+        },
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "div.metric-num.mono \"APIs\" vai de 31 a 406 px em 360 px"
+        },
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "div.metric-label \"integrações, webhooks e dados consistentes\" vai de 31 a 406 px em 360 px"
+        },
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "code \"{ \"paradigma\": \"Orientado a Eventos & Resiliente\",\" vai de 37 a 400 px em 360 px"
+        },
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "span.tk-str \"\"Garantida por UUID v4 + Redis Lock\"\" vai de 156 a 393 px em 360 px"
+        },
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "span.stack-tag \"REST APIs\" vai de 278 a 365 px em 360 px"
+        }
+      ],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 8
+        },
+        "hero": {
+          "altura": 1487,
+          "pct": 186
+        },
+        "especialidades": {
+          "altura": 2141,
+          "pct": 268
+        },
+        "projetos": {
+          "altura": 1608,
+          "pct": 201
+        },
+        "experiencia": {
+          "altura": 1588,
+          "pct": 198
+        },
+        "contato": {
+          "altura": 988,
+          "pct": 123
+        },
+        "rodape": {
+          "altura": 214,
+          "pct": 27
+        }
+      }
+    },
+    {
+      "janela": "estreito",
+      "largura": 360,
+      "altura": 800,
+      "tema": "claro",
+      "versao": "hoje",
+      "estado": "terminal-inclinado",
+      "foto": "hoje-claro-estreito-terminal-inclinado.png",
+      "problemas": [
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "h1#hero-title \"Software para operação real.\" vai de 16 a 401 px em 360 px"
+        },
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "p.hero-copy \"Foco em sistemas corporativos, integrações, ERP, d\" vai de 16 a 401 px em 360 px"
+        },
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "a.btn.btn-secondary \"Ver trabalhos\" vai de 16 a 401 px em 360 px"
+        },
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "div.metric-num.mono \"6+\" vai de 31 a 386 px em 360 px"
+        },
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "div.metric-label \"anos criando e mantendo sistemas\" vai de 31 a 386 px em 360 px"
+        },
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "div.metric-num.mono \"ERP\" vai de 31 a 386 px em 360 px"
+        },
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "div.metric-label \"rotinas administrativas, financeiras e operacionai\" vai de 31 a 386 px em 360 px"
+        },
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "div.metric-num.mono \"APIs\" vai de 31 a 386 px em 360 px"
+        },
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "div.metric-label \"integrações, webhooks e dados consistentes\" vai de 31 a 386 px em 360 px"
+        },
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "code \"const profissional = { nome: \"Lucas Soares\", foco:\" vai de 37 a 380 px em 360 px"
+        },
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "span.tk-var \"\"MySQL\"\" vai de 321 a 367 px em 360 px"
+        },
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "span.stack-tag \"REST APIs\" vai de 278 a 365 px em 360 px"
+        }
+      ],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 8
+        },
+        "hero": {
+          "altura": 1487,
+          "pct": 186
+        },
+        "especialidades": {
+          "altura": 2141,
+          "pct": 268
+        },
+        "projetos": {
+          "altura": 1608,
+          "pct": 201
+        },
+        "experiencia": {
+          "altura": 1588,
+          "pct": 198
+        },
+        "contato": {
+          "altura": 988,
+          "pct": 123
+        },
+        "rodape": {
+          "altura": 214,
+          "pct": 27
+        }
+      }
+    },
+    {
+      "janela": "estreito",
+      "largura": 360,
+      "altura": 800,
+      "tema": "claro",
+      "versao": "hoje",
+      "estado": "texto-longo",
+      "foto": "hoje-claro-estreito-texto-longo.png",
+      "problemas": [
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "span.identity-name \"Lucas Soares de Albuquerque Figueiredo\" vai de 93 a 394 px em 360 px"
+        },
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "span.identity-role \"Desenvolvedor Full Stack\" vai de 93 a 394 px em 360 px"
+        },
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "h1#hero-title \"Software para operação real.\" vai de 16 a 401 px em 360 px"
+        },
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "p.hero-copy \"Foco em sistemas corporativos, integrações, ERP, d\" vai de 16 a 401 px em 360 px"
+        },
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "a.btn.btn-secondary \"Ver trabalhos\" vai de 16 a 401 px em 360 px"
+        },
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "div.metric-num.mono \"6+\" vai de 31 a 386 px em 360 px"
+        },
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "div.metric-label \"anos criando e mantendo sistemas\" vai de 31 a 386 px em 360 px"
+        },
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "div.metric-num.mono \"ERP\" vai de 31 a 386 px em 360 px"
+        },
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "div.metric-label \"rotinas administrativas, financeiras e operacionai\" vai de 31 a 386 px em 360 px"
+        },
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "div.metric-num.mono \"APIs\" vai de 31 a 386 px em 360 px"
+        },
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "div.metric-label \"integrações, webhooks e dados consistentes\" vai de 31 a 386 px em 360 px"
+        },
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "code \"const profissional = { nome: \"Lucas Soares\", foco:\" vai de 37 a 380 px em 360 px"
+        },
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "span.tk-var \"\"MySQL\"\" vai de 321 a 367 px em 360 px"
+        },
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "span.stack-tag \"REST APIs\" vai de 278 a 365 px em 360 px"
+        }
+      ],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 8
+        },
+        "hero": {
+          "altura": 1488,
+          "pct": 186
+        },
+        "especialidades": {
+          "altura": 2141,
+          "pct": 268
+        },
+        "projetos": {
+          "altura": 1608,
+          "pct": 201
+        },
+        "experiencia": {
+          "altura": 1588,
+          "pct": 198
+        },
+        "contato": {
+          "altura": 988,
+          "pct": 123
+        },
+        "rodape": {
+          "altura": 214,
+          "pct": 27
+        }
+      }
+    },
+    {
+      "janela": "estreito",
+      "largura": 360,
+      "altura": 800,
+      "tema": "claro",
+      "versao": "proposta",
+      "estado": "padrao",
+      "foto": "proposta-claro-estreito-padrao.png",
+      "problemas": [],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 8
+        },
+        "hero": {
+          "altura": 1615,
+          "pct": 202
+        },
+        "especialidades": {
+          "altura": 2141,
+          "pct": 268
+        },
+        "projetos": {
+          "altura": 1608,
+          "pct": 201
+        },
+        "experiencia": {
+          "altura": 1588,
+          "pct": 198
+        },
+        "contato": {
+          "altura": 988,
+          "pct": 123
+        },
+        "rodape": {
+          "altura": 214,
+          "pct": 27
+        }
+      }
+    },
+    {
+      "janela": "estreito",
+      "largura": 360,
+      "altura": 800,
+      "tema": "claro",
+      "versao": "proposta",
+      "estado": "aba-arquitetura",
+      "foto": "proposta-claro-estreito-aba-arquitetura.png",
+      "problemas": [],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 8
+        },
+        "hero": {
+          "altura": 1660,
+          "pct": 207
+        },
+        "especialidades": {
+          "altura": 2141,
+          "pct": 268
+        },
+        "projetos": {
+          "altura": 1608,
+          "pct": 201
+        },
+        "experiencia": {
+          "altura": 1588,
+          "pct": 198
+        },
+        "contato": {
+          "altura": 988,
+          "pct": 123
+        },
+        "rodape": {
+          "altura": 214,
+          "pct": 27
+        }
+      }
+    },
+    {
+      "janela": "estreito",
+      "largura": 360,
+      "altura": 800,
+      "tema": "claro",
+      "versao": "proposta",
+      "estado": "terminal-inclinado",
+      "foto": "proposta-claro-estreito-terminal-inclinado.png",
+      "problemas": [],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 8
+        },
+        "hero": {
+          "altura": 1615,
+          "pct": 202
+        },
+        "especialidades": {
+          "altura": 2141,
+          "pct": 268
+        },
+        "projetos": {
+          "altura": 1608,
+          "pct": 201
+        },
+        "experiencia": {
+          "altura": 1588,
+          "pct": 198
+        },
+        "contato": {
+          "altura": 988,
+          "pct": 123
+        },
+        "rodape": {
+          "altura": 214,
+          "pct": 27
+        }
+      }
+    },
+    {
+      "janela": "estreito",
+      "largura": 360,
+      "altura": 800,
+      "tema": "claro",
+      "versao": "proposta",
+      "estado": "texto-longo",
+      "foto": "proposta-claro-estreito-texto-longo.png",
+      "problemas": [],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 8
+        },
+        "hero": {
+          "altura": 1616,
+          "pct": 202
+        },
+        "especialidades": {
+          "altura": 2141,
+          "pct": 268
+        },
+        "projetos": {
+          "altura": 1608,
+          "pct": 201
+        },
+        "experiencia": {
+          "altura": 1588,
+          "pct": 198
+        },
+        "contato": {
+          "altura": 988,
+          "pct": 123
+        },
+        "rodape": {
+          "altura": 214,
+          "pct": 27
+        }
+      }
+    },
+    {
+      "janela": "estreito",
+      "largura": 360,
+      "altura": 800,
+      "tema": "escuro",
+      "versao": "hoje",
+      "estado": "padrao",
+      "foto": "hoje-escuro-estreito-padrao.png",
+      "problemas": [
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "h1#hero-title \"Software para operação real.\" vai de 16 a 401 px em 360 px"
+        },
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "p.hero-copy \"Foco em sistemas corporativos, integrações, ERP, d\" vai de 16 a 401 px em 360 px"
+        },
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "a.btn.btn-secondary \"Ver trabalhos\" vai de 16 a 401 px em 360 px"
+        },
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "div.metric-num.mono \"6+\" vai de 31 a 386 px em 360 px"
+        },
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "div.metric-label \"anos criando e mantendo sistemas\" vai de 31 a 386 px em 360 px"
+        },
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "div.metric-num.mono \"ERP\" vai de 31 a 386 px em 360 px"
+        },
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "div.metric-label \"rotinas administrativas, financeiras e operacionai\" vai de 31 a 386 px em 360 px"
+        },
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "div.metric-num.mono \"APIs\" vai de 31 a 386 px em 360 px"
+        },
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "div.metric-label \"integrações, webhooks e dados consistentes\" vai de 31 a 386 px em 360 px"
+        },
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "code \"const profissional = { nome: \"Lucas Soares\", foco:\" vai de 37 a 380 px em 360 px"
+        },
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "span.tk-var \"\"MySQL\"\" vai de 321 a 367 px em 360 px"
+        },
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "span.stack-tag \"REST APIs\" vai de 278 a 365 px em 360 px"
+        }
+      ],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 8
+        },
+        "hero": {
+          "altura": 1487,
+          "pct": 186
+        },
+        "especialidades": {
+          "altura": 2141,
+          "pct": 268
+        },
+        "projetos": {
+          "altura": 1608,
+          "pct": 201
+        },
+        "experiencia": {
+          "altura": 1589,
+          "pct": 199
+        },
+        "contato": {
+          "altura": 989,
+          "pct": 124
+        },
+        "rodape": {
+          "altura": 214,
+          "pct": 27
+        }
+      }
+    },
+    {
+      "janela": "estreito",
+      "largura": 360,
+      "altura": 800,
+      "tema": "escuro",
+      "versao": "hoje",
+      "estado": "aba-arquitetura",
+      "foto": "hoje-escuro-estreito-aba-arquitetura.png",
+      "problemas": [
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "h1#hero-title \"Software para operação real.\" vai de 16 a 421 px em 360 px"
+        },
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "p.hero-copy \"Foco em sistemas corporativos, integrações, ERP, d\" vai de 16 a 421 px em 360 px"
+        },
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "a.btn.btn-secondary \"Ver trabalhos\" vai de 16 a 421 px em 360 px"
+        },
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "div.metric-num.mono \"6+\" vai de 31 a 406 px em 360 px"
+        },
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "div.metric-label \"anos criando e mantendo sistemas\" vai de 31 a 406 px em 360 px"
+        },
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "div.metric-num.mono \"ERP\" vai de 31 a 406 px em 360 px"
+        },
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "div.metric-label \"rotinas administrativas, financeiras e operacionai\" vai de 31 a 406 px em 360 px"
+        },
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "div.metric-num.mono \"APIs\" vai de 31 a 406 px em 360 px"
+        },
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "div.metric-label \"integrações, webhooks e dados consistentes\" vai de 31 a 406 px em 360 px"
+        },
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "code \"{ \"paradigma\": \"Orientado a Eventos & Resiliente\",\" vai de 37 a 400 px em 360 px"
+        },
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "span.tk-str \"\"Garantida por UUID v4 + Redis Lock\"\" vai de 156 a 393 px em 360 px"
+        },
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "span.stack-tag \"REST APIs\" vai de 278 a 365 px em 360 px"
+        }
+      ],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 8
+        },
+        "hero": {
+          "altura": 1487,
+          "pct": 186
+        },
+        "especialidades": {
+          "altura": 2141,
+          "pct": 268
+        },
+        "projetos": {
+          "altura": 1608,
+          "pct": 201
+        },
+        "experiencia": {
+          "altura": 1589,
+          "pct": 199
+        },
+        "contato": {
+          "altura": 989,
+          "pct": 124
+        },
+        "rodape": {
+          "altura": 214,
+          "pct": 27
+        }
+      }
+    },
+    {
+      "janela": "estreito",
+      "largura": 360,
+      "altura": 800,
+      "tema": "escuro",
+      "versao": "hoje",
+      "estado": "terminal-inclinado",
+      "foto": "hoje-escuro-estreito-terminal-inclinado.png",
+      "problemas": [
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "h1#hero-title \"Software para operação real.\" vai de 16 a 401 px em 360 px"
+        },
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "p.hero-copy \"Foco em sistemas corporativos, integrações, ERP, d\" vai de 16 a 401 px em 360 px"
+        },
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "a.btn.btn-secondary \"Ver trabalhos\" vai de 16 a 401 px em 360 px"
+        },
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "div.metric-num.mono \"6+\" vai de 31 a 386 px em 360 px"
+        },
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "div.metric-label \"anos criando e mantendo sistemas\" vai de 31 a 386 px em 360 px"
+        },
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "div.metric-num.mono \"ERP\" vai de 31 a 386 px em 360 px"
+        },
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "div.metric-label \"rotinas administrativas, financeiras e operacionai\" vai de 31 a 386 px em 360 px"
+        },
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "div.metric-num.mono \"APIs\" vai de 31 a 386 px em 360 px"
+        },
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "div.metric-label \"integrações, webhooks e dados consistentes\" vai de 31 a 386 px em 360 px"
+        },
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "code \"const profissional = { nome: \"Lucas Soares\", foco:\" vai de 35 a 377 px em 360 px"
+        },
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "span.tk-var \"\"MySQL\"\" vai de 319 a 365 px em 360 px"
+        },
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "span.stack-tag \"REST APIs\" vai de 279 a 365 px em 360 px"
+        }
+      ],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 8
+        },
+        "hero": {
+          "altura": 1487,
+          "pct": 186
+        },
+        "especialidades": {
+          "altura": 2141,
+          "pct": 268
+        },
+        "projetos": {
+          "altura": 1608,
+          "pct": 201
+        },
+        "experiencia": {
+          "altura": 1589,
+          "pct": 199
+        },
+        "contato": {
+          "altura": 989,
+          "pct": 124
+        },
+        "rodape": {
+          "altura": 214,
+          "pct": 27
+        }
+      }
+    },
+    {
+      "janela": "estreito",
+      "largura": 360,
+      "altura": 800,
+      "tema": "escuro",
+      "versao": "hoje",
+      "estado": "texto-longo",
+      "foto": "hoje-escuro-estreito-texto-longo.png",
+      "problemas": [
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "span.identity-name \"Lucas Soares de Albuquerque Figueiredo\" vai de 93 a 394 px em 360 px"
+        },
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "span.identity-role \"Desenvolvedor Full Stack\" vai de 93 a 394 px em 360 px"
+        },
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "h1#hero-title \"Software para operação real.\" vai de 16 a 401 px em 360 px"
+        },
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "p.hero-copy \"Foco em sistemas corporativos, integrações, ERP, d\" vai de 16 a 401 px em 360 px"
+        },
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "a.btn.btn-secondary \"Ver trabalhos\" vai de 16 a 401 px em 360 px"
+        },
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "div.metric-num.mono \"6+\" vai de 31 a 386 px em 360 px"
+        },
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "div.metric-label \"anos criando e mantendo sistemas\" vai de 31 a 386 px em 360 px"
+        },
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "div.metric-num.mono \"ERP\" vai de 31 a 386 px em 360 px"
+        },
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "div.metric-label \"rotinas administrativas, financeiras e operacionai\" vai de 31 a 386 px em 360 px"
+        },
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "div.metric-num.mono \"APIs\" vai de 31 a 386 px em 360 px"
+        },
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "div.metric-label \"integrações, webhooks e dados consistentes\" vai de 31 a 386 px em 360 px"
+        },
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "code \"const profissional = { nome: \"Lucas Soares\", foco:\" vai de 37 a 380 px em 360 px"
+        },
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "span.tk-var \"\"MySQL\"\" vai de 321 a 367 px em 360 px"
+        },
+        {
+          "tipo": "texto fora da janela",
+          "detalhe": "span.stack-tag \"REST APIs\" vai de 278 a 365 px em 360 px"
+        }
+      ],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 8
+        },
+        "hero": {
+          "altura": 1488,
+          "pct": 186
+        },
+        "especialidades": {
+          "altura": 2141,
+          "pct": 268
+        },
+        "projetos": {
+          "altura": 1608,
+          "pct": 201
+        },
+        "experiencia": {
+          "altura": 1589,
+          "pct": 199
+        },
+        "contato": {
+          "altura": 989,
+          "pct": 124
+        },
+        "rodape": {
+          "altura": 214,
+          "pct": 27
+        }
+      }
+    },
+    {
+      "janela": "estreito",
+      "largura": 360,
+      "altura": 800,
+      "tema": "escuro",
+      "versao": "proposta",
+      "estado": "padrao",
+      "foto": "proposta-escuro-estreito-padrao.png",
+      "problemas": [],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 8
+        },
+        "hero": {
+          "altura": 1615,
+          "pct": 202
+        },
+        "especialidades": {
+          "altura": 2141,
+          "pct": 268
+        },
+        "projetos": {
+          "altura": 1608,
+          "pct": 201
+        },
+        "experiencia": {
+          "altura": 1589,
+          "pct": 199
+        },
+        "contato": {
+          "altura": 989,
+          "pct": 124
+        },
+        "rodape": {
+          "altura": 214,
+          "pct": 27
+        }
+      }
+    },
+    {
+      "janela": "estreito",
+      "largura": 360,
+      "altura": 800,
+      "tema": "escuro",
+      "versao": "proposta",
+      "estado": "aba-arquitetura",
+      "foto": "proposta-escuro-estreito-aba-arquitetura.png",
+      "problemas": [],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 8
+        },
+        "hero": {
+          "altura": 1660,
+          "pct": 207
+        },
+        "especialidades": {
+          "altura": 2141,
+          "pct": 268
+        },
+        "projetos": {
+          "altura": 1608,
+          "pct": 201
+        },
+        "experiencia": {
+          "altura": 1589,
+          "pct": 199
+        },
+        "contato": {
+          "altura": 989,
+          "pct": 124
+        },
+        "rodape": {
+          "altura": 214,
+          "pct": 27
+        }
+      }
+    },
+    {
+      "janela": "estreito",
+      "largura": 360,
+      "altura": 800,
+      "tema": "escuro",
+      "versao": "proposta",
+      "estado": "terminal-inclinado",
+      "foto": "proposta-escuro-estreito-terminal-inclinado.png",
+      "problemas": [],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 8
+        },
+        "hero": {
+          "altura": 1615,
+          "pct": 202
+        },
+        "especialidades": {
+          "altura": 2141,
+          "pct": 268
+        },
+        "projetos": {
+          "altura": 1608,
+          "pct": 201
+        },
+        "experiencia": {
+          "altura": 1589,
+          "pct": 199
+        },
+        "contato": {
+          "altura": 989,
+          "pct": 124
+        },
+        "rodape": {
+          "altura": 214,
+          "pct": 27
+        }
+      }
+    },
+    {
+      "janela": "estreito",
+      "largura": 360,
+      "altura": 800,
+      "tema": "escuro",
+      "versao": "proposta",
+      "estado": "texto-longo",
+      "foto": "proposta-escuro-estreito-texto-longo.png",
+      "problemas": [],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 8
+        },
+        "hero": {
+          "altura": 1616,
+          "pct": 202
+        },
+        "especialidades": {
+          "altura": 2141,
+          "pct": 268
+        },
+        "projetos": {
+          "altura": 1608,
+          "pct": 201
+        },
+        "experiencia": {
+          "altura": 1589,
+          "pct": 199
+        },
+        "contato": {
+          "altura": 989,
+          "pct": 124
+        },
+        "rodape": {
+          "altura": 214,
+          "pct": 27
+        }
+      }
+    },
+    {
+      "janela": "deitado",
+      "largura": 844,
+      "altura": 390,
+      "tema": "claro",
+      "versao": "hoje",
+      "estado": "padrao",
+      "foto": "hoje-claro-deitado-padrao.png",
+      "problemas": [
+        {
+          "tipo": "contraste baixo",
+          "detalhe": "span.run-label \"Executar\" 3.77:1"
+        }
+      ],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 17
+        },
+        "hero": {
+          "altura": 1135,
+          "pct": 291
+        },
+        "especialidades": {
+          "altura": 1700,
+          "pct": 436
+        },
+        "projetos": {
+          "altura": 1287,
+          "pct": 330
+        },
+        "experiencia": {
+          "altura": 1121,
+          "pct": 287
+        },
+        "contato": {
+          "altura": 912,
+          "pct": 234
+        },
+        "rodape": {
+          "altura": 135,
+          "pct": 35
+        }
+      }
+    },
+    {
+      "janela": "deitado",
+      "largura": 844,
+      "altura": 390,
+      "tema": "claro",
+      "versao": "hoje",
+      "estado": "aba-arquitetura",
+      "foto": "hoje-claro-deitado-aba-arquitetura.png",
+      "problemas": [
+        {
+          "tipo": "contraste baixo",
+          "detalhe": "span.run-label \"Executar\" 3.77:1"
+        }
+      ],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 17
+        },
+        "hero": {
+          "altura": 1135,
+          "pct": 291
+        },
+        "especialidades": {
+          "altura": 1700,
+          "pct": 436
+        },
+        "projetos": {
+          "altura": 1287,
+          "pct": 330
+        },
+        "experiencia": {
+          "altura": 1121,
+          "pct": 287
+        },
+        "contato": {
+          "altura": 912,
+          "pct": 234
+        },
+        "rodape": {
+          "altura": 135,
+          "pct": 35
+        }
+      }
+    },
+    {
+      "janela": "deitado",
+      "largura": 844,
+      "altura": 390,
+      "tema": "claro",
+      "versao": "hoje",
+      "estado": "terminal-inclinado",
+      "foto": "hoje-claro-deitado-terminal-inclinado.png",
+      "problemas": [
+        {
+          "tipo": "contraste baixo",
+          "detalhe": "span.run-label \"Executar\" 3.77:1"
+        }
+      ],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 17
+        },
+        "hero": {
+          "altura": 1135,
+          "pct": 291
+        },
+        "especialidades": {
+          "altura": 1700,
+          "pct": 436
+        },
+        "projetos": {
+          "altura": 1287,
+          "pct": 330
+        },
+        "experiencia": {
+          "altura": 1121,
+          "pct": 287
+        },
+        "contato": {
+          "altura": 912,
+          "pct": 234
+        },
+        "rodape": {
+          "altura": 135,
+          "pct": 35
+        }
+      }
+    },
+    {
+      "janela": "deitado",
+      "largura": 844,
+      "altura": 390,
+      "tema": "claro",
+      "versao": "hoje",
+      "estado": "texto-longo",
+      "foto": "hoje-claro-deitado-texto-longo.png",
+      "problemas": [
+        {
+          "tipo": "contraste baixo",
+          "detalhe": "span.run-label \"Executar\" 3.77:1"
+        }
+      ],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 17
+        },
+        "hero": {
+          "altura": 1135,
+          "pct": 291
+        },
+        "especialidades": {
+          "altura": 1700,
+          "pct": 436
+        },
+        "projetos": {
+          "altura": 1287,
+          "pct": 330
+        },
+        "experiencia": {
+          "altura": 1121,
+          "pct": 287
+        },
+        "contato": {
+          "altura": 912,
+          "pct": 234
+        },
+        "rodape": {
+          "altura": 135,
+          "pct": 35
+        }
+      }
+    },
+    {
+      "janela": "deitado",
+      "largura": 844,
+      "altura": 390,
+      "tema": "claro",
+      "versao": "proposta",
+      "estado": "padrao",
+      "foto": "proposta-claro-deitado-padrao.png",
+      "problemas": [],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 17
+        },
+        "hero": {
+          "altura": 1135,
+          "pct": 291
+        },
+        "especialidades": {
+          "altura": 1700,
+          "pct": 436
+        },
+        "projetos": {
+          "altura": 1287,
+          "pct": 330
+        },
+        "experiencia": {
+          "altura": 1121,
+          "pct": 287
+        },
+        "contato": {
+          "altura": 912,
+          "pct": 234
+        },
+        "rodape": {
+          "altura": 135,
+          "pct": 35
+        }
+      }
+    },
+    {
+      "janela": "deitado",
+      "largura": 844,
+      "altura": 390,
+      "tema": "claro",
+      "versao": "proposta",
+      "estado": "aba-arquitetura",
+      "foto": "proposta-claro-deitado-aba-arquitetura.png",
+      "problemas": [],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 17
+        },
+        "hero": {
+          "altura": 1135,
+          "pct": 291
+        },
+        "especialidades": {
+          "altura": 1700,
+          "pct": 436
+        },
+        "projetos": {
+          "altura": 1287,
+          "pct": 330
+        },
+        "experiencia": {
+          "altura": 1121,
+          "pct": 287
+        },
+        "contato": {
+          "altura": 912,
+          "pct": 234
+        },
+        "rodape": {
+          "altura": 135,
+          "pct": 35
+        }
+      }
+    },
+    {
+      "janela": "deitado",
+      "largura": 844,
+      "altura": 390,
+      "tema": "claro",
+      "versao": "proposta",
+      "estado": "terminal-inclinado",
+      "foto": "proposta-claro-deitado-terminal-inclinado.png",
+      "problemas": [],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 17
+        },
+        "hero": {
+          "altura": 1135,
+          "pct": 291
+        },
+        "especialidades": {
+          "altura": 1700,
+          "pct": 436
+        },
+        "projetos": {
+          "altura": 1287,
+          "pct": 330
+        },
+        "experiencia": {
+          "altura": 1121,
+          "pct": 287
+        },
+        "contato": {
+          "altura": 912,
+          "pct": 234
+        },
+        "rodape": {
+          "altura": 135,
+          "pct": 35
+        }
+      }
+    },
+    {
+      "janela": "deitado",
+      "largura": 844,
+      "altura": 390,
+      "tema": "claro",
+      "versao": "proposta",
+      "estado": "texto-longo",
+      "foto": "proposta-claro-deitado-texto-longo.png",
+      "problemas": [],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 17
+        },
+        "hero": {
+          "altura": 1135,
+          "pct": 291
+        },
+        "especialidades": {
+          "altura": 1700,
+          "pct": 436
+        },
+        "projetos": {
+          "altura": 1287,
+          "pct": 330
+        },
+        "experiencia": {
+          "altura": 1121,
+          "pct": 287
+        },
+        "contato": {
+          "altura": 912,
+          "pct": 234
+        },
+        "rodape": {
+          "altura": 135,
+          "pct": 35
+        }
+      }
+    },
+    {
+      "janela": "deitado",
+      "largura": 844,
+      "altura": 390,
+      "tema": "escuro",
+      "versao": "hoje",
+      "estado": "padrao",
+      "foto": "hoje-escuro-deitado-padrao.png",
+      "problemas": [],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 17
+        },
+        "hero": {
+          "altura": 1135,
+          "pct": 291
+        },
+        "especialidades": {
+          "altura": 1700,
+          "pct": 436
+        },
+        "projetos": {
+          "altura": 1287,
+          "pct": 330
+        },
+        "experiencia": {
+          "altura": 1122,
+          "pct": 288
+        },
+        "contato": {
+          "altura": 913,
+          "pct": 234
+        },
+        "rodape": {
+          "altura": 135,
+          "pct": 35
+        }
+      }
+    },
+    {
+      "janela": "deitado",
+      "largura": 844,
+      "altura": 390,
+      "tema": "escuro",
+      "versao": "hoje",
+      "estado": "aba-arquitetura",
+      "foto": "hoje-escuro-deitado-aba-arquitetura.png",
+      "problemas": [],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 17
+        },
+        "hero": {
+          "altura": 1135,
+          "pct": 291
+        },
+        "especialidades": {
+          "altura": 1700,
+          "pct": 436
+        },
+        "projetos": {
+          "altura": 1287,
+          "pct": 330
+        },
+        "experiencia": {
+          "altura": 1122,
+          "pct": 288
+        },
+        "contato": {
+          "altura": 913,
+          "pct": 234
+        },
+        "rodape": {
+          "altura": 135,
+          "pct": 35
+        }
+      }
+    },
+    {
+      "janela": "deitado",
+      "largura": 844,
+      "altura": 390,
+      "tema": "escuro",
+      "versao": "hoje",
+      "estado": "terminal-inclinado",
+      "foto": "hoje-escuro-deitado-terminal-inclinado.png",
+      "problemas": [],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 17
+        },
+        "hero": {
+          "altura": 1135,
+          "pct": 291
+        },
+        "especialidades": {
+          "altura": 1700,
+          "pct": 436
+        },
+        "projetos": {
+          "altura": 1287,
+          "pct": 330
+        },
+        "experiencia": {
+          "altura": 1122,
+          "pct": 288
+        },
+        "contato": {
+          "altura": 913,
+          "pct": 234
+        },
+        "rodape": {
+          "altura": 135,
+          "pct": 35
+        }
+      }
+    },
+    {
+      "janela": "deitado",
+      "largura": 844,
+      "altura": 390,
+      "tema": "escuro",
+      "versao": "hoje",
+      "estado": "texto-longo",
+      "foto": "hoje-escuro-deitado-texto-longo.png",
+      "problemas": [],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 17
+        },
+        "hero": {
+          "altura": 1135,
+          "pct": 291
+        },
+        "especialidades": {
+          "altura": 1700,
+          "pct": 436
+        },
+        "projetos": {
+          "altura": 1287,
+          "pct": 330
+        },
+        "experiencia": {
+          "altura": 1122,
+          "pct": 288
+        },
+        "contato": {
+          "altura": 913,
+          "pct": 234
+        },
+        "rodape": {
+          "altura": 135,
+          "pct": 35
+        }
+      }
+    },
+    {
+      "janela": "deitado",
+      "largura": 844,
+      "altura": 390,
+      "tema": "escuro",
+      "versao": "proposta",
+      "estado": "padrao",
+      "foto": "proposta-escuro-deitado-padrao.png",
+      "problemas": [],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 17
+        },
+        "hero": {
+          "altura": 1135,
+          "pct": 291
+        },
+        "especialidades": {
+          "altura": 1700,
+          "pct": 436
+        },
+        "projetos": {
+          "altura": 1287,
+          "pct": 330
+        },
+        "experiencia": {
+          "altura": 1122,
+          "pct": 288
+        },
+        "contato": {
+          "altura": 913,
+          "pct": 234
+        },
+        "rodape": {
+          "altura": 135,
+          "pct": 35
+        }
+      }
+    },
+    {
+      "janela": "deitado",
+      "largura": 844,
+      "altura": 390,
+      "tema": "escuro",
+      "versao": "proposta",
+      "estado": "aba-arquitetura",
+      "foto": "proposta-escuro-deitado-aba-arquitetura.png",
+      "problemas": [],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 17
+        },
+        "hero": {
+          "altura": 1135,
+          "pct": 291
+        },
+        "especialidades": {
+          "altura": 1700,
+          "pct": 436
+        },
+        "projetos": {
+          "altura": 1287,
+          "pct": 330
+        },
+        "experiencia": {
+          "altura": 1122,
+          "pct": 288
+        },
+        "contato": {
+          "altura": 913,
+          "pct": 234
+        },
+        "rodape": {
+          "altura": 135,
+          "pct": 35
+        }
+      }
+    },
+    {
+      "janela": "deitado",
+      "largura": 844,
+      "altura": 390,
+      "tema": "escuro",
+      "versao": "proposta",
+      "estado": "terminal-inclinado",
+      "foto": "proposta-escuro-deitado-terminal-inclinado.png",
+      "problemas": [],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 17
+        },
+        "hero": {
+          "altura": 1135,
+          "pct": 291
+        },
+        "especialidades": {
+          "altura": 1700,
+          "pct": 436
+        },
+        "projetos": {
+          "altura": 1287,
+          "pct": 330
+        },
+        "experiencia": {
+          "altura": 1122,
+          "pct": 288
+        },
+        "contato": {
+          "altura": 913,
+          "pct": 234
+        },
+        "rodape": {
+          "altura": 135,
+          "pct": 35
+        }
+      }
+    },
+    {
+      "janela": "deitado",
+      "largura": 844,
+      "altura": 390,
+      "tema": "escuro",
+      "versao": "proposta",
+      "estado": "texto-longo",
+      "foto": "proposta-escuro-deitado-texto-longo.png",
+      "problemas": [],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 17
+        },
+        "hero": {
+          "altura": 1135,
+          "pct": 291
+        },
+        "especialidades": {
+          "altura": 1700,
+          "pct": 436
+        },
+        "projetos": {
+          "altura": 1287,
+          "pct": 330
+        },
+        "experiencia": {
+          "altura": 1122,
+          "pct": 288
+        },
+        "contato": {
+          "altura": 913,
+          "pct": 234
+        },
+        "rodape": {
+          "altura": 135,
+          "pct": 35
+        }
+      }
+    }
+  ]
+}

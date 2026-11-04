@@ -111,7 +111,7 @@ O arquivo é organizado nesta ordem:
 
 ### 2.2 Hero (`#hero`)
 
-Grid de duas colunas (texto à esquerda, terminal à direita); vira uma coluna abaixo de 1024px. Fundo com grade de linhas e dois brilhos (`.glow`).
+Grid de duas colunas (texto à esquerda, terminal à direita); vira uma coluna abaixo de 1024px. As colunas têm `min-width: 0`, para não ficarem mais largas que a tela por causa do código do terminal. Fundo com grade de linhas e dois brilhos (`.glow`).
 
 **Coluna de texto**
 - **Cartão de identidade** (`.identity`): foto de perfil redonda com indicador verde, nome "Lucas Soares", cargo "Desenvolvedor Full Stack" e selo "Disponível para projetos". Substituiu o antigo selo (eyebrow) que mostrava só o cargo. Ver seção 3.7.
@@ -141,7 +141,8 @@ Grid de duas colunas (texto à esquerda, terminal à direita); vira uma coluna a
 - **Executar** (`#run-btn`): após 450 ms mostra a mensagem do atributo `data-output` da aba ativa.
 - **Copiar** (`#copy-code`): copia o código da aba ativa.
 - Rodapé "Stack:" com tags: PHP, Laravel, CodeIgniter, JavaScript, MySQL, Docker, REST APIs, Webhooks, PostgreSQL.
-- No modo Espacial, com mouse, o terminal inclina em 3D acompanhando o cursor (desativado em telas de toque e com "reduzir movimento").
+- Nos dois temas, com mouse, o terminal inclina em 3D acompanhando o cursor (desativado em telas de toque e com "reduzir movimento"). Tem brilho no canto e sombra colorida: ciano no Espacial, verde no Clássico, onde o fundo do terminal continua escuro.
+- Até 640px, o código quebra linha (`pre-wrap`) e as abas descem de linha se não couberem.
 
 ### 2.3 Especialidades (`#especialidades`)
 
@@ -205,7 +206,7 @@ O tema é definido pelo atributo `data-theme` no `<html>`:
 | Tema | Valor | Aparência |
 |---|---|---|
 | Espacial (padrão) | `spatial` | Fundo azul-escuro, destaques ciano, vidro translúcido, brilhos, título em degradê, HUD e inclinação 3D |
-| Clássico | `classic` | Fundo claro, verde-petróleo e azul, visual sóbrio |
+| Clássico | `classic` | Fundo claro, verde-petróleo e azul, visual sóbrio; o terminal tem inclinação 3D, brilho e sombra em verde |
 
 A escolha fica salva no navegador (`localStorage`, chave `theme`) e é aplicada no `<head>` antes da página aparecer, para não piscar.
 
@@ -265,7 +266,7 @@ Ficam num sprite `<svg>` no início do `<body>`, um `<symbol id="i-…">` por í
 |---|---|
 | até 1023px | Hero e projetos em 1 coluna; HUD oculto |
 | até 900px | Links do menu dão lugar ao menu hambúrguer; especialidades em 1 coluna; períodos da linha do tempo acima do card |
-| até 640px | Selo "Disponível para projetos" do cartão de identidade oculto (o ponto verde na foto continua); margens menores; botões e métricas empilhados; rótulos "Modo …" e "Executar" ocultos; fonte do terminal menor; fluxo dos modais na vertical; rodapé centralizado |
+| até 640px | Selo "Disponível para projetos" do cartão de identidade oculto (o ponto verde na foto continua); margens menores; botões e métricas empilhados; rótulos "Modo …" e "Executar" ocultos; fonte do terminal menor, código com quebra de linha e abas que descem de linha; fluxo dos modais na vertical; rodapé centralizado |
 | `prefers-reduced-motion` | Desliga animações, transições, rolagem suave e inclinação 3D |
 
 ### 3.7 Foto de perfil — decisões de UX/UI
@@ -296,7 +297,7 @@ Script no fim do `<body>`, sem bibliotecas:
 |---|---|
 | Alternar tema e salvar a escolha | `#theme-toggle` |
 | Abrir/fechar menu mobile | `#menu-btn`, `#mobile-menu` |
-| Inclinação 3D do terminal + HUD (Espacial, mouse) | `#hero`, `#terminal-wrap`, `#hud-coords` |
+| Inclinação 3D do terminal (os dois temas, mouse) + HUD (Espacial) | `#hero`, `#terminal-wrap`, `#hud-coords` |
 | Copiar e-mail / código (Clipboard API, com alternativa para HTTP) | `#copy-email`, `#copy-code` |
 | Trocar abas do terminal (clique e setas) | `.terminal-tab` |
 | Executar simulação | `#run-btn`, `#terminal-output` |
@@ -364,6 +365,7 @@ Depois de editar, teste localmente (seção 1.3) e publique com `npm run deploy`
 
 | Data | Mudança | Arquivos |
 |---|---|---|
+| 03/11/2026 | Hero cabe inteiro no celular, de 360px para cima: colunas com `min-width: 0` (D1); até 640px, código do terminal com quebra de linha e abas que descem de linha (D2); botão Executar em `#047857`, hover `#065f46`, contraste de 3,8:1 para 5,5:1 (D3); terminal do Clássico com inclinação 3D, brilho e sombra em verde (D4). Mockup em `docs/mockups/hero-celular/` | `index.html` |
 | 29/10/2026 | Foto de perfil adicionada ao hero (cartão de identidade com status) e ao contato. O selo "Desenvolvedor Full Stack" do hero foi substituído pelo cartão e o CSS `.eyebrow`, que ficou sem uso, foi removido | `index.html` |
 | 29/10/2026 | Pasta `assets/img/` criada com a foto original e a versão otimizada | `assets/img/perfil-original.jpg`, `assets/img/perfil.jpg` |
 | 29/10/2026 | Worker passou a servir `/assets/img/perfil.jpg`, com regra `Data` para `.jpg` no Wrangler | `index.js`, `wrangler.toml`, `index.local.js`, `wrangler.local.toml` |

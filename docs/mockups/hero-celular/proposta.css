@@ -1,0 +1,29 @@
+/*
+  Só o CSS novo da proposta. Entra por cima do CSS do index.html no quadro.
+  Na implementação, cada regra vai para o <style> do index.html, no lugar dito
+  no cartão "Como entra no código".
+*/
+
+/* D1 · A coluna do hero pode ser mais estreita que o código do terminal.
+   Com "1fr", a coluna não encolhe abaixo do conteúdo mínimo, e o <pre> não quebra linha. */
+.hero-grid > * { min-width: 0; }
+
+/* D2 · No celular, o código do terminal quebra linha em vez de passar da borda. */
+@media (max-width: 640px) {
+  .terminal-body pre { white-space: pre-wrap; overflow-wrap: anywhere; }
+  .terminal-tabs { flex-wrap: wrap; }
+}
+
+/* D3 · "Executar" no Clássico: branco sobre verde com contraste de 5,5:1 (era 3,8:1).
+   O hover escurece em vez de clarear, para não cair para 2,5:1. */
+.run-btn { background: #047857; }
+.run-btn:hover { background: #065f46; }
+
+/* D4 · O terminal do Clássico ganha o efeito do Espacial: brilho no canto e sombra colorida,
+   no verde do tema. O fundo continua escuro, para o código seguir legível.
+   A inclinação 3D vem do proposta.js. */
+:root[data-theme="classic"] .terminal {
+  border-color: rgba(15, 107, 95, .35);
+  box-shadow: 0 20px 50px rgba(15, 107, 95, .22);
+}
+:root[data-theme="classic"] .terminal-glow { display: block; background: rgba(16, 185, 129, .18); }
