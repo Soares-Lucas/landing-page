@@ -18,7 +18,10 @@ landing-page/
 │       ├── perfil.jpg           # Foto de perfil otimizada, usada na página (320×320, ~16 KB)
 │       └── perfil-original.jpg  # Foto original (828×1095), guardada como fonte para novos recortes
 ├── package.json    # Scripts dev/deploy e dependência do Wrangler
-└── README.md       # Apresentação do projeto
+├── README.md       # Apresentação do projeto
+├── CLAUDE.md       # Instruções para o Claude, com a seção "Mockups"
+└── docs/
+    └── mockups/    # Mockups de mudanças visíveis antes do código (padrão em docs/mockups/README.md)
 ```
 
 Arquivos e pastas apenas locais (não versionados):

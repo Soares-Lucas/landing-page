@@ -1,0 +1,9 @@
+/*
+  Só o CSS novo da proposta. Entra por cima do CSS do index.html no quadro.
+  Na implementação, cada regra vai para o <style> do index.html, no lugar dito
+  no cartão "Como entra no código".
+
+  Escreva para os dois temas:
+    :root[data-theme="classic"] ...   (claro)
+    :root[data-theme="spatial"] ...   (escuro)
+*/

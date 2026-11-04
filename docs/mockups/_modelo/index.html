@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{{FRASE}} · Mockup</title>
+  <script src="dados.js"></script>
+  <script>window.MOCKUP_MEDIDAS = null;</script>
+  <script src="fotos/medidas.js" onerror="void 0"></script>
+  <style>
+    /* Paleta neutra do mockup: não puxa a cor do produto. */
+    :root {
+      --fundo: #f4f4f5; --cartao: #ffffff; --linha: #e4e4e7; --texto: #18181b; --suave: #52525b;
+      --seg: #e4e4e7; --seg-ativo: #18181b; --seg-ativo-texto: #ffffff; --moldura: #27272a; --foco: #2563eb;
+      color-scheme: light;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --fundo: #111113; --cartao: #1c1c1f; --linha: #2e2e33; --texto: #f4f4f5; --suave: #a1a1aa;
+        --seg: #2e2e33; --seg-ativo: #f4f4f5; --seg-ativo-texto: #18181b; --moldura: #3f3f46; --foco: #60a5fa;
+        color-scheme: dark;
+      }
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--fundo); color: var(--texto); font: 15px/1.55 system-ui, -apple-system, "Segoe UI", sans-serif; }
+    .pagina { max-width: 1440px; margin: 0 auto; padding: 32px 16px 64px; }
+    @media (min-width: 720px) { .pagina { padding: 40px 32px 80px; } }
+
+    .kicker { margin: 0 0 6px; color: var(--suave); font-size: 13px; letter-spacing: .04em; text-transform: uppercase; }
+    h1 { margin: 0; font-size: clamp(22px, 3.2vw, 32px); line-height: 1.2; text-wrap: balance; }
+    .sub { margin: 8px 0 0; color: var(--suave); max-width: 70ch; }
+
+    .controles { position: sticky; top: 0; z-index: 5; display: flex; flex-wrap: wrap; gap: 12px 24px; margin: 24px -16px 0; padding: 12px 16px; background: var(--fundo); border-bottom: 1px solid var(--linha); }
+    .grupo { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+    .grupo > span { color: var(--suave); font-size: 13px; }
+    .seg { display: inline-flex; flex-wrap: wrap; gap: 2px; padding: 2px; border-radius: 9px; background: var(--seg); }
+    .seg button { border: 0; border-radius: 7px; padding: 6px 12px; background: transparent; color: var(--texto); font: inherit; font-size: 14px; cursor: pointer; }
+    .seg button[aria-pressed="true"] { background: var(--seg-ativo); color: var(--seg-ativo-texto); }
+    .seg button:focus-visible, a:focus-visible { outline: 2px solid var(--foco); outline-offset: 2px; }
+
+    .contexto { margin-top: 32px; }
+    .contexto h2 { display: flex; align-items: baseline; gap: 10px; margin: 0 0 12px; font-size: 18px; }
+    .contexto h2 small { color: var(--suave); font-weight: 400; font-size: 13px; }
+    .quadros { display: grid; gap: 20px; }
+    .contexto[data-janela="computador"] .quadros { grid-template-columns: repeat(auto-fit, minmax(min(100%, 440px), 1fr)); }
+    .contexto[data-janela="celular"] .quadros { grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 410px)); justify-content: center; }
+    .cartao-quadro { min-width: 0; }
+    .cartao-quadro header { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; margin-bottom: 8px; font-weight: 600; }
+    .cartao-quadro header a { color: var(--suave); font-weight: 400; font-size: 13px; }
+    .janela { position: relative; overflow: hidden; border: 1px solid var(--linha); border-radius: 10px; background: var(--cartao); }
+    .janela iframe { position: absolute; top: 0; left: 0; border: 0; transform-origin: 0 0; background: #fff; }
+    .celular { border: 10px solid var(--moldura); border-radius: 40px; }
+
+    .notas { display: grid; gap: 16px; margin-top: 40px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); }
+    .nota { padding: 18px 20px; border: 1px solid var(--linha); border-radius: 12px; background: var(--cartao); }
+    .nota h3 { margin: 0 0 8px; font-size: 16px; }
+    .nota p, .nota li { color: var(--suave); }
+    .nota ul, .nota ol { margin: 0; padding-left: 20px; }
+    .nota li + li { margin-top: 6px; }
+    .nota strong { color: var(--texto); }
+    .nota code { font-size: 13px; }
+    .decidir { grid-column: 1 / -1; }
+    .medidas table { width: 100%; border-collapse: collapse; font-size: 13px; font-variant-numeric: tabular-nums; }
+    .medidas th, .medidas td { padding: 4px 6px; border-bottom: 1px solid var(--linha); text-align: left; }
+    .medidas td:not(:first-child), .medidas th:not(:first-child) { text-align: right; }
+    .rodape { margin-top: 32px; color: var(--suave); font-size: 13px; }
+  </style>
+</head>
+<body>
+  <div class="pagina">
+    <p class="kicker">Mockup · {{ASSUNTO}} · {{DATA}}</p>
+    <h1>{{FRASE}}</h1>
+    <p class="sub">Hoje e a proposta lado a lado, com o CSS e o JavaScript do <code>index.html</code> de verdade. A proposta liga só o <code>proposta.css</code> e o <code>proposta.js</code> por cima.</p>
+
+    <div class="controles" role="toolbar" aria-label="Controles do mockup" id="controles"></div>
+
+    <section class="contexto" data-janela="computador" aria-labelledby="h-computador">
+      <h2 id="h-computador">Computador <small>1280 × 860</small></h2>
+      <div class="quadros"></div>
+    </section>
+
+    <section class="contexto" data-janela="celular" aria-labelledby="h-celular">
+      <h2 id="h-celular">Celular <small>390 × 844</small></h2>
+      <div class="quadros"></div>
+    </section>
+
+    <!-- As notas, sempre nesta ordem. Troque os textos-guia pelo conteúdo do mockup. -->
+    <section class="notas" aria-label="Notas">
+      <article class="nota">
+        <h3>No computador</h3>
+        <p>O que acontece em 1280 × 860, com as medidas: "a seção tem 640 px de 860 px (74%)".</p>
+      </article>
+      <article class="nota">
+        <h3>No celular</h3>
+        <p>O que acontece em 390 × 844 e em 360 × 800, onde o texto quebra primeiro.</p>
+      </article>
+      <article class="nota">
+        <h3>O que fica igual</h3>
+        <ul>
+          <li>O que a proposta não toca, para ninguém procurar mudança onde não há.</li>
+        </ul>
+      </article>
+      <article class="nota">
+        <h3>Como entra no código</h3>
+        <ul>
+          <li><code>index.html</code>, no <code>&lt;style&gt;</code>: para onde vai cada regra do <code>proposta.css</code>.</li>
+          <li><code>index.html</code>, no <code>&lt;script&gt;</code> do fim: o <code>proposta.js</code> (ou "o JavaScript não muda").</li>
+          <li><code>index.js</code>: "o Worker não muda", ou a rota nova.</li>
+          <li><code>DOCUMENTACAO.md</code>: a seção que muda.</li>
+        </ul>
+      </article>
+      <article class="nota medidas" id="medidas" hidden>
+        <h3>Medidas da conferência</h3>
+        <div id="medidas-corpo"></div>
+      </article>
+      <article class="nota decidir">
+        <h3>Para decidir</h3>
+        <ol>
+          <li><strong>D1 · Nome curto.</strong> A proposta (recomendada) e por quê. Alternativa: o quê, e o custo em número ("soma cerca de 50 px à seção"). Heurística de Nielsen, quando for usabilidade.</li>
+        </ol>
+      </article>
+    </section>
+
+    <p class="rodape" id="rodape"></p>
+  </div>
+
+  <script>
+    (function () {
+      var D = window.MOCKUP;
+      var JANELAS = { computador: [1280, 860], celular: [390, 844] };
+      var GRUPOS = [
+        { chave: 'v', nome: 'Versão', opcoes: [['lado', 'Lado a lado'], ['proposta', 'Proposta'], ['hoje', 'Hoje']] },
+        { chave: 'e', nome: 'Estado', opcoes: Object.keys(D.estados).map(function (k) { return [k, D.estados[k].nome]; }) },
+        { chave: 't', nome: 'Tema', opcoes: [['claro', 'Claro'], ['escuro', 'Escuro']] },
+        { chave: 'c', nome: 'Em volta', opcoes: [['neutro', 'Neutro'], ['real', 'Real']] },
+      ];
+      var padrao = { v: 'lado', e: GRUPOS[1].opcoes[0][0], t: D.temaPadrao === 'classic' ? 'claro' : 'escuro', c: 'neutro' };
+
+      function lerHash() {
+        var h = new URLSearchParams(location.hash.slice(1)), s = {};
+        GRUPOS.forEach(function (g) {
+          var v = h.get(g.chave);
+          s[g.chave] = g.opcoes.some(function (o) { return o[0] === v; }) ? v : padrao[g.chave];
+        });
+        return s;
+      }
+      var estado = lerHash();
+
+      var controles = document.getElementById('controles');
+      GRUPOS.forEach(function (g) {
+        if (g.opcoes.length < 2 && g.chave === 'e') return;
+        var grupo = document.createElement('div'); grupo.className = 'grupo';
+        var rot = document.createElement('span'); rot.textContent = g.nome; rot.id = 'g-' + g.chave;
+        var seg = document.createElement('div'); seg.className = 'seg'; seg.setAttribute('role', 'group'); seg.setAttribute('aria-labelledby', rot.id);
+        g.opcoes.forEach(function (o) {
+          var b = document.createElement('button'); b.type = 'button'; b.textContent = o[1]; b.dataset.chave = g.chave; b.dataset.valor = o[0];
+          seg.appendChild(b);
+        });
+        grupo.appendChild(rot); grupo.appendChild(seg); controles.appendChild(grupo);
+      });
+      controles.addEventListener('click', function (ev) {
+        var b = ev.target.closest('button'); if (!b) return;
+        estado[b.dataset.chave] = b.dataset.valor;
+        history.replaceState(null, '', '#' + new URLSearchParams(estado).toString());
+        desenhar();
+      });
+      window.addEventListener('hashchange', function () { estado = lerHash(); desenhar(); });
+
+      var observador = new ResizeObserver(function (itens) {
+        itens.forEach(function (it) { encaixar(it.target); });
+      });
+      function encaixar(janela) {
+        var w = +janela.dataset.w, h = +janela.dataset.h;
+        var celular = janela.classList.contains('celular');
+        var s = janela.clientWidth / w;
+        if (celular) s = Math.min(1, s);
+        var f = janela.querySelector('iframe');
+        f.style.width = w + 'px'; f.style.height = h + 'px'; f.style.transform = 'scale(' + s + ')';
+        janela.style.height = (h * s + (celular ? 20 : 2)) + 'px';
+      }
+
+      var esperando = 0;
+      window.addEventListener('message', function (ev) {
+        if (ev.data && ev.data.mockupPronto && --esperando <= 0) window.__indexPronto = true;
+      });
+
+      function urlQuadro(v, janela) {
+        return 'quadro.html?' + new URLSearchParams({ v: v, t: estado.t, e: estado.e, c: estado.c }).toString() + '#' + janela;
+      }
+
+      function desenhar() {
+        controles.querySelectorAll('button').forEach(function (b) {
+          b.setAttribute('aria-pressed', String(estado[b.dataset.chave] === b.dataset.valor));
+        });
+        var versoes = estado.v === 'lado' ? ['hoje', 'proposta'] : [estado.v];
+        window.__indexPronto = false;
+        esperando = versoes.length * Object.keys(JANELAS).length;
+        document.querySelectorAll('.contexto').forEach(function (sec) {
+          var nome = sec.dataset.janela, tam = JANELAS[nome];
+          var lista = sec.querySelector('.quadros');
+          lista.querySelectorAll('.janela').forEach(function (j) { observador.unobserve(j); });
+          lista.innerHTML = '';
+          versoes.forEach(function (v) {
+            var url = urlQuadro(v, nome);
+            var cartao = document.createElement('div'); cartao.className = 'cartao-quadro';
+            cartao.innerHTML = '<header><span>' + (v === 'hoje' ? 'Hoje' : 'Proposta') + '</span><a target="_blank" rel="noopener">Abrir no tamanho real</a></header>';
+            cartao.querySelector('a').href = url;
+            var janela = document.createElement('div');
+            janela.className = 'janela' + (nome === 'celular' ? ' celular' : '');
+            janela.dataset.w = tam[0]; janela.dataset.h = tam[1];
+            var f = document.createElement('iframe');
+            f.title = (v === 'hoje' ? 'Hoje' : 'Proposta') + ' no ' + nome; f.src = url; f.tabIndex = -1;
+            janela.appendChild(f); cartao.appendChild(janela); lista.appendChild(cartao);
+            observador.observe(janela); encaixar(janela);
+          });
+        });
+      }
+      desenhar();
+
+      var M = window.MOCKUP_MEDIDAS;
+      if (M && M.linhas && M.linhas.length) {
+        var partes = M.partes;
+        var html = '<table><thead><tr><th>Janela · versão</th>' + partes.map(function (p) { return '<th>' + p + '</th>'; }).join('') + '</tr></thead><tbody>';
+        M.linhas.forEach(function (l) {
+          html += '<tr><td>' + l.janela + ' · ' + l.versao + '</td>' + partes.map(function (p) {
+            var m = l.medidas[p]; return '<td>' + (m ? m.altura + ' px (' + m.pct + '%)' : '–') + '</td>';
+          }).join('') + '</tr>';
+        });
+        document.getElementById('medidas-corpo').innerHTML = html + '</tbody></table><p>Altura de cada parte e a % da altura da janela, no estado e tema ' + M.estado + ' · ' + M.tema + '.</p>';
+        document.getElementById('medidas').hidden = false;
+      }
+      document.getElementById('rodape').textContent = 'Dados gerados de ' + D.origem + ' (sha ' + D.sha + ') por roteiro/gerar.mjs.' + (M ? ' Conferência de ' + M.data + '.' : ' Ainda sem conferência: rode o fotos.mjs.');
+    })();
+  </script>
+</body>
+</html>
