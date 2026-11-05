@@ -11,7 +11,10 @@ O layout foi portado do projeto React `new-landing-page` para um único `index.h
 ```
 landing-page/
 ├── index.html      # A página inteira: HTML + CSS (<style>) + JS (<script>) + ícones SVG
-├── index.js        # Worker da Cloudflare que entrega o index.html e a foto de perfil
+├── index.js        # Worker da Cloudflare que entrega o index.html, a página do Afinuvo e a foto de perfil
+├── projetos/
+│   └── afinuvo/
+│       └── index.html  # Landing page do Afinuvo para o cliente, só com o modo teste (/projetos/afinuvo)
 ├── wrangler.toml   # Configuração do Wrangler (deploy na Cloudflare)
 ├── assets/
 │   └── img/
@@ -41,6 +44,8 @@ Worker no formato ES Module. O `index.html` é importado como texto e a foto `as
 |---|---|
 | `GET /` | `200` com o HTML, `content-type: text/html; charset=utf-8` e `cache-control: public, max-age=300` (cache de 5 minutos) |
 | `GET /assets/img/perfil.jpg` | `200` com a foto, `content-type: image/jpeg` e `cache-control: public, max-age=86400` (cache de 1 dia) |
+| `GET /projetos/afinuvo` | `200` com `projetos/afinuvo/index.html` (importado como texto), com o mesmo cache de 5 minutos do `/` |
+| `GET /projetos/afinuvo/` | `301` para `/projetos/afinuvo` |
 | Qualquer outro caminho | `404 Not found` |
 
 > O Worker só atende as rotas acima. Qualquer outra imagem, favicon ou arquivo adicionado ao projeto precisa de um `import` e de uma rota nova no `index.js` (e no `index.local.js`, para testes). Por isso os ícones estão embutidos no próprio HTML.
@@ -156,7 +161,7 @@ Rótulo "Capacidades & Domínio", título **"Onde gero valor"**. Três cards, ca
 
 ### 2.4 Projetos em destaque (`#projetos`)
 
-Rótulo "Cases Selecionados". Dois cards com ícone, descrição, bloco de **Impacto Operacional**, tags e dois botões ("Ver Arquitetura" e "Detalhes técnicos →") que abrem o modal correspondente:
+Rótulo "Cases Selecionados". Dois cards de projeto e, depois deles, o card "Teste ao vivo" (veja abaixo). Os dois cards de projeto têm ícone, descrição, bloco de **Impacto Operacional**, tags e dois botões ("Ver Arquitetura" e "Detalhes técnicos →") que abrem o modal correspondente:
 
 | Projeto | Impacto | Tags | Modal |
 |---|---|---|---|
@@ -169,6 +174,56 @@ Rótulo "Cases Selecionados". Dois cards com ícone, descrição, bloco de **Imp
 |---|---|---|---|
 | Lumus | PHP / Monolito | Python Engine (Docker) | Export CSV / XLSX / PDF |
 | Pagamentos | Webhook Externo | Idempotent Buffer | ERP Database Commit |
+| Contador de Almoço | Navegador · Alpine.js | Laravel 13 + Livewire 4 | MySQL 8.4 |
+| Afinuvo | Interface · React 19 + Tailwind 4 | Hooks + regras do ciclo | localStorage |
+
+**"Ver mais sobre o projeto →"** (`a.ver-mais`), logo depois da descrição, em todo card. Leva a `/projetos/<slug>`. O do Afinuvo abre a página dele (`/projetos/afinuvo`). Nos outros (Lumus, Integrações de pagamento e Contador), a página ainda não existe: o link tem `data-pagina` e o clique só mostra o aviso "página em breve".
+
+**Baixar · em breve** (`button.dl-btn[data-baixar]`), em todo card, ao lado do "Detalhes técnicos". Ainda não baixa: o clique mostra o aviso `#dl-aviso` ("download em breve, em APK e na Google Play"), que some em 6 s e, nos projetos com demo, oferece "Testar a demo". Quando o download existir, o botão vira um `<a href>` para o APK ou a Google Play.
+
+**Card "Teste ao vivo"** (`#projeto-demos`), depois dos dois cards, nas duas colunas. O título é "Alguns projetos disponíveis para teste", sem contar os projetos. Tem duas abas (`role="tablist"`, clique e setas): **Contador de Almoço** (abre primeiro) e **Afinuvo**. A aba fechada mostra o selo "teste também". Cada painel traz o texto do projeto (descrição, Ver mais, status, tags e Detalhes técnicos, que abre `#modal-contador` ou `#modal-afinuvo`) e uma vitrine com a prévia parada da demo, "Testar a demo · 1 min" e Baixar. No pé, a linha "Também dá para testar…" abre a outra aba.
+
+**Demos** (`dialog#modal-demo-contador` e `dialog#modal-demo-afinuvo`): rodam só no navegador, sem servidor e sem `localStorage`, com o tempo a 60× (ou 1×).
+
+- No topo, o seletor Contador | Afinuvo troca de demo sem fechar. Também há 1× / 60×, Reiniciar e Fechar.
+- **Contador:** Iniciar (30, 45 ou 60 min) → Acompanhar (contagem, barra e tom: no intervalo, em breve, prepare-se, excedido) → Retornar com PIN. A dica é "PIN versão de teste: 123456", e o erro lembra o PIN.
+- **Afinuvo:** Executar (foco de 25 min) → Refletir ("O que dificultou hoje?", com 4 barreiras) → Ajustar (hipótese, antes → depois e "Aplicar ajuste"). Também dá para seguir por Concluí → resumo.
+- No fim de cada demo: "Testar de novo", "Agora teste o…" e "Quero algo assim no meu time →" (leva ao `#contato`).
+- Fechar guarda o estado: o foco do Afinuvo pausa, e o almoço do Contador segue contando.
+
+### 2.4.1 Página do Afinuvo (`projetos/afinuvo/index.html`)
+
+É a landing page para o cliente, servida em `/projetos/afinuvo`. Por enquanto só tem o **modo teste**. É um arquivo só (HTML, CSS e JS), no visual do app: só tema escuro, fundo `#070A11`, índigo `#6366F1` e Plus Jakarta Sans.
+
+- **Seções:** o topo preso (← Portfólio · Afinuvo · Testar o app), o hero "Faltou a um hábito? O Afinuvo ajusta o plano, em vez de zerar a sua sequência.", a comparação "Outro app × Afinuvo", "Três passos, todo dia", a chamada final e o rodapé ("Ver os outros projetos").
+- **Fica de fora:** nomes de concorrentes, as Heurísticas de Nielsen, o detalhe das 5 dimensões, números sem fonte, coleta de e-mail e as abas de desenvolvimento do app.
+- **O teste:** todo "Testar o app" (`[data-testar]`) abre o teste ali mesmo, em `dialog#demo`: "Teste o Afinuvo", Fazer → Refletir → Ajustar, com o hábito "Estudar inglês" e o tempo sempre a 60×. O teste **não cita os outros projetos do portfólio**. `#testar` no endereço abre o teste direto. Fechar pausa o teste e devolve o foco ao botão que o abriu.
+- **Voltar:** o "← Portfólio" vai a `/#projetos`. Se o visitante veio do portfólio, volta pelo histórico, na mesma posição.
+- **Baixar · em breve:** só explica que o app vai sair em APK e na Google Play.
+
+O nome oficial do app é **Afinuvo**. No repositório do app (`c:/pifhos`), o código ainda usa o nome antigo, Disciple. O que mudar lá está em `c:/pifhos/docs/landing-page-cliente.md`.
+
+### 2.4.2 Decisões (mockup `docs/mockups/contador-almoco/`, 04/11/2026)
+
+| | Decisão |
+|---|---|
+| D1 | As demos abrem num modal |
+| D2 | Um card só, com abas, e o outro projeto sempre à vista (selo "teste também", linha no pé e "Agora teste o…") |
+| D3 | Com o modal, o lado da demo deixa de existir |
+| D4 | O tempo das demos corre a 60× (com a opção 1×) |
+| D5 | A demo do Contador tem PIN, com a dica "PIN versão de teste: 123456" |
+| D6 | Sem links reais por enquanto: links e downloads ficam para o futuro |
+| D7 | A aba Contador abre primeiro |
+| D8 | O convite para o outro projeto numa linha só, no pé do card |
+| D9 | O erro de PIN lembra o PIN de teste |
+| D10 | Fechar a demo guarda o estado |
+| D11 | O Baixar aparece já, em todo projeto, marcado "em breve", e o clique explica |
+| D12 | O seletor Contador \| Afinuvo no topo do modal troca de demo sem fechar |
+| D13 | Sem a linha "ícone + Ver Arquitetura" no card de demos |
+| D14 | "Ver mais sobre o projeto →" logo depois da descrição, nos quatro cards |
+| D15 | A página do Afinuvo é uma landing page para o cliente, em `/projetos/afinuvo`. O app de hoje fica como área de desenvolvimento, fora do site |
+| D16 | O "Testar o app" da página do Afinuvo abre um teste só do Afinuvo, na própria página |
+| — | O nome oficial do app passa a ser Afinuvo (antes Disciple). Na página dele, por enquanto, só o modo teste |
 
 ### 2.5 Experiência (`#experiencia`)
 
@@ -302,6 +357,10 @@ Script no fim do `<body>`, sem bibliotecas:
 | Trocar abas do terminal (clique e setas) | `.terminal-tab` |
 | Executar simulação | `#run-btn`, `#terminal-output` |
 | Abrir/fechar modais | `[data-modal]`, `[data-close]`, `dialog.modal` |
+| Abas do card "Teste ao vivo" (clique, setas, Home e End) e abrir a demo | `#projeto-demos`, `.sc-tab`, `[data-aba]`, `[data-demo]` |
+| Trocar de demo sem fechar | `[data-trocar]` |
+| Aviso do Baixar e do "Ver mais" (página em breve) | `[data-baixar]`, `[data-pagina]`, `#dl-aviso` |
+| Demo do Contador e demo do Afinuvo (relógio simulado a 1× ou 60×) | `#modal-demo-contador`, `#modal-demo-afinuvo` |
 
 Sem JavaScript, o conteúdo continua legível; perdem-se apenas as interações.
 
@@ -334,7 +393,11 @@ Todo o conteúdo está em `index.html`:
 | Tags de stack do terminal | `div.terminal-stack` |
 | Especialidades | `section#especialidades` → `article.card` |
 | Projetos | `section#projetos` → `article.card.project` |
-| Detalhes de arquitetura | `dialog#modal-lumus` e `dialog#modal-payments` |
+| Detalhes de arquitetura | `dialog#modal-lumus`, `dialog#modal-payments`, `dialog#modal-contador` e `dialog#modal-afinuvo` |
+| Card "Teste ao vivo" (abas, textos e vitrines) | `article#projeto-demos` |
+| Telas das demos | `dialog#modal-demo-contador` e `dialog#modal-demo-afinuvo`; as hipóteses do Afinuvo ficam em `HIP`, no `<script>` |
+| Texto do aviso do Baixar e do "Ver mais" | função `avisar`, no `<script>` |
+| Página do Afinuvo | `projetos/afinuvo/index.html` |
 | Experiência | `section#experiencia` → `article.timeline-item` |
 | E-mail | `section#contato` — no `href="mailto:…"`, no texto e no `data-copy` do `#copy-email` |
 | LinkedIn | `section#contato` → `a.contact-item.linkedin` |
@@ -357,6 +420,9 @@ Depois de editar, teste localmente (seção 1.3) e publique com `npm run deploy`
 - **Sem favicon nem imagem de compartilhamento** (`og:image`). A foto já é servida em `/assets/img/perfil.jpg` e pode virar `og:image`, mas a tag exige a URL completa do domínio publicado.
 - **Selo "Disponível para projetos"** é texto fixo. Remova ou troque o `span.identity-status` quando não estiver aceitando projetos.
 - **README** cita PHP e jQuery como tecnologias do projeto; elas se referem ao perfil profissional, não à página.
+- **Baixar e "Ver mais" ainda sem destino:** quando o download ou a página de um projeto existir, troque o `data-baixar` por um link e tire o `data-pagina` do link (veja a seção 2.4).
+- **Demo do Afinuvo em dois lugares:** o card do portfólio e `projetos/afinuvo/index.html` repetem a lógica da demo (cerca de 90 linhas). Mudou uma, confira a outra. O ideal é virar um módulo só.
+- **Dados das demos:** os horários, as porcentagens das hipóteses ("94% de confiança") e as sequências são de exemplo, não resultados reais.
 - Não há `.gitignore`: `node_modules/`, `.wrangler/` e os arquivos locais aparecem como não rastreados no git.
 
 ---
@@ -365,6 +431,7 @@ Depois de editar, teste localmente (seção 1.3) e publique com `npm run deploy`
 
 | Data | Mudança | Arquivos |
 |---|---|---|
+| 04/11/2026 | Projetos ganham o card "Teste ao vivo" com as demos do Contador de Almoço e do Afinuvo em modal, o "Ver mais sobre o projeto" e o Baixar · em breve em todo card. Nova página do Afinuvo para o cliente, só com o modo teste, servida em `/projetos/afinuvo`. Decisões D1 a D16 na seção 2.4.2. Mockup em `docs/mockups/contador-almoco/` | `index.html`, `projetos/afinuvo/index.html`, `index.js`, `index.local.js` |
 | 03/11/2026 | Hero cabe inteiro no celular, de 360px para cima: colunas com `min-width: 0` (D1); até 640px, código do terminal com quebra de linha e abas que descem de linha (D2); botão Executar em `#047857`, hover `#065f46`, contraste de 3,8:1 para 5,5:1 (D3); terminal do Clássico com inclinação 3D, brilho e sombra em verde (D4). Mockup em `docs/mockups/hero-celular/` | `index.html` |
 | 29/10/2026 | Foto de perfil adicionada ao hero (cartão de identidade com status) e ao contato. O selo "Desenvolvedor Full Stack" do hero foi substituído pelo cartão e o CSS `.eyebrow`, que ficou sem uso, foi removido | `index.html` |
 | 29/10/2026 | Pasta `assets/img/` criada com a foto original e a versão otimizada | `assets/img/perfil-original.jpg`, `assets/img/perfil.jpg` |

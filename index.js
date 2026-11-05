@@ -1,5 +1,6 @@
 import page from "./index.html";
 import profilePhoto from "./assets/img/perfil.jpg";
+import afinuvoPage from "./projetos/afinuvo/index.html";
 
 export default {
   async fetch(request, env, ctx) {
@@ -13,6 +14,19 @@ export default {
         headers: {
           "content-type": "image/jpeg",
           "cache-control": "public, max-age=86400",
+        },
+      });
+    }
+
+    // Landing page do Afinuvo (só o modo teste, por enquanto)
+    if (url.pathname === "/projetos/afinuvo/") {
+      return Response.redirect(new URL("/projetos/afinuvo", url), 301);
+    }
+    if (url.pathname === "/projetos/afinuvo") {
+      return new Response(afinuvoPage, {
+        headers: {
+          "content-type": "text/html; charset=utf-8",
+          "cache-control": "public, max-age=300",
         },
       });
     }

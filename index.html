@@ -592,6 +592,307 @@
       html { scroll-behavior: auto; }
       *, *::before, *::after { animation: none !important; transition: none !important; }
     }
+
+    /* --- Projetos: card "Teste ao vivo", demos em modal, Baixar e "Ver mais" --- */
+
+    /* --- Card "Teste ao vivo": ocupa as duas colunas; abas no topo, texto à esquerda e vitrine à direita --- */
+    .project-wide { grid-column: 1 / -1; }
+    .showcase:hover { transform: none; } /* o card é cheio de botões: não "pula" sob o ponteiro */
+    .sc-head { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 1rem 1.5rem; padding-bottom: 1.25rem; margin-bottom: 1.5rem; border-bottom: 1px solid var(--line); }
+    .sc-info h3 { margin-top: 0; }
+    .sc-title { font-size: 1.125rem; font-weight: 700; }
+    .sc-tabs { display: flex; gap: .5rem; padding: .25rem; border-radius: 14px; background: var(--surface-2); border: 1px solid var(--line); }
+    .sc-tab { position: relative; display: flex; align-items: center; gap: .625rem; min-height: 3.25rem; padding: .375rem 1rem .375rem .5rem; border-radius: 10px; text-align: left; color: var(--muted); font: inherit; cursor: pointer; transition: background-color .2s, color .2s; }
+    .sc-tab:hover { color: var(--ink); }
+    .sc-tab[aria-selected="true"] { background: var(--surface); color: var(--ink); box-shadow: 0 1px 2px rgba(0, 0, 0, .08), 0 4px 12px rgba(0, 0, 0, .06); }
+    :root[data-theme="spatial"] .sc-tab[aria-selected="true"] { background: rgba(8, 51, 68, .9); box-shadow: 0 0 0 1px rgba(34, 211, 238, .3); }
+    .sc-tab-ico { display: inline-grid; place-items: center; width: 2.25rem; height: 2.25rem; border-radius: 8px; background: var(--surface-alt); color: var(--accent); flex: none; }
+    .sc-tab-txt { display: flex; flex-direction: column; line-height: 1.2; }
+    .sc-tab-txt strong { font-size: .9375rem; }
+    .sc-tab-txt small { font-size: .75rem; color: var(--muted); }
+    /* Curiosidade (D2): a aba que não está aberta mostra que ainda há um projeto para testar */
+    .sc-novo { position: absolute; top: -.625rem; right: -.25rem; display: none; align-items: center; gap: .3rem; padding: .0625rem .4375rem; border-radius: 999px; font-size: .5625rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; background: var(--accent); color: #fff; }
+    :root[data-theme="spatial"] .sc-novo { color: #04121a; }
+    .sc-novo .cw-dot { width: .375rem; height: .375rem; background: currentColor; }
+    .sc-tab[aria-selected="false"] .sc-novo { display: inline-flex; }
+
+    /* Texto (3 partes) e vitrine (2 partes): a vitrine é o que se usa, o texto é o que se lê */
+    .sc-grid { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 3fr); gap: 2rem; align-items: stretch; }
+    .sc-info { display: flex; flex-direction: column; min-width: 0; }
+    .sc-info .project-foot { margin-top: auto; }
+    .sc-vitrine { display: flex; flex-direction: column; align-items: center; gap: .75rem; min-width: 0; }
+    .sc-poster { width: 100%; flex: 1; justify-content: center; align-items: center; gap: .375rem; padding: 1.25rem 1rem 2.5rem; text-align: center; cursor: pointer; min-height: 12rem;
+      -webkit-mask-image: linear-gradient(#000 70%, rgba(0, 0, 0, .35)); mask-image: linear-gradient(#000 70%, rgba(0, 0, 0, .35)); }
+    .sc-poster .demo-count { font-size: 2.5rem; }
+    .sc-poster .dd-anel { width: 6.5rem; height: 6.5rem; }
+    .sc-poster .dd-tempo { font-size: 1.5rem; }
+    .sc-acoes { display: flex; flex-wrap: wrap; justify-content: center; gap: .5rem; margin-top: -2.25rem; position: relative; }
+    .sc-acoes .sc-testar { padding: 0 1.25rem; }
+    .sc-testar {
+      display: inline-flex; align-items: center; justify-content: center; gap: .5rem; position: relative;
+      min-height: 3.25rem; padding: 0 1.5rem; border-radius: 999px; font: inherit; font-weight: 700; cursor: pointer;
+      background: var(--btn-primary-bg); color: var(--btn-primary-ink); box-shadow: 0 10px 24px -8px rgba(0, 0, 0, .45);
+      transition: transform .2s, background-color .2s;
+    }
+    .sc-testar:hover { transform: translateY(-1px); background: var(--btn-primary-hover); }
+    .sc-testar .icon { width: 1rem; height: 1rem; fill: currentColor; }
+    .sc-tempo { font-size: .75rem; font-weight: 500; opacity: .8; }
+    .sc-passos { font-size: .6875rem; letter-spacing: .04em; color: var(--muted); text-align: center; }
+
+    /* O convite para o outro projeto numa linha (D8) */
+    .sc-next { margin-top: 1.25rem; padding-top: .75rem; border-top: 1px dashed var(--line); }
+    .sc-conta { flex: none; padding: .125rem .5rem; border-radius: 999px; font-size: .625rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); border: 1px solid var(--line); }
+    .sc-outro { width: 100%; min-width: 0; min-height: 2.75rem; display: flex; align-items: center; gap: .75rem; padding: .375rem .75rem; border-radius: 12px; text-align: left; font: inherit; cursor: pointer; color: var(--ink);
+      background: transparent; transition: background-color .2s; }
+    .sc-outro:hover { background: var(--surface-2); }
+    .sc-outro-txt { flex: 1; min-width: 0; font-size: .875rem; line-height: 1.4; }
+    .sc-outro-txt small { font-size: .625rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); }
+    .sc-outro-txt > span { color: var(--muted); }
+
+    /* "Ver mais sobre o projeto" (D14): link para a landing page do projeto, logo depois da descrição */
+    .ver-mais { display: inline-flex; align-items: center; gap: .375rem; align-self: flex-start; min-height: 2.75rem; margin: -.5rem 0 .5rem; font-size: .875rem; font-weight: 600; color: var(--accent); text-decoration: none; }
+    .ver-mais .icon { width: 1rem; height: 1rem; transition: transform .2s; }
+    .ver-mais:hover { text-decoration: underline; text-underline-offset: 3px; }
+    .ver-mais:hover .icon { transform: translateX(3px); }
+    :root[data-theme="spatial"] .ver-mais { color: #67e8f9; }
+
+    /* Baixar (D11): em todo projeto. Por enquanto não baixa; o clique explica e oferece a demo */
+    .pf-acoes { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem 1rem; }
+    .dl-btn { display: inline-flex; align-items: center; gap: .375rem; min-height: 2.75rem; padding: 0 .875rem; border-radius: 999px; font: inherit; font-size: .8125rem; font-weight: 600; cursor: pointer;
+      color: var(--ink); background: var(--surface); border: 1px solid var(--line); transition: border-color .2s; }
+    .dl-btn:hover { border-color: var(--accent); }
+    .dl-btn .icon { width: 1rem; height: 1rem; color: var(--accent); }
+    .dl-breve { padding: .0625rem .375rem; border-radius: 999px; font-size: .5625rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); background: var(--surface-2); }
+    .sc-acoes .dl-btn { min-height: 3.25rem; padding: 0 1.125rem; font-size: .9375rem; box-shadow: 0 10px 24px -12px rgba(0, 0, 0, .35); }
+    .dl-aviso { position: fixed; left: 50%; bottom: 1rem; z-index: 80; transform: translateX(-50%); width: min(30rem, calc(100% - 2rem));
+      display: flex; align-items: center; gap: .75rem; padding: .75rem .75rem .75rem 1rem; border-radius: 16px;
+      background: var(--surface); color: var(--ink); border: 1px solid var(--line); box-shadow: 0 18px 40px -12px rgba(0, 0, 0, .45); }
+    .dl-aviso[hidden] { display: none; }
+    :root[data-theme="spatial"] .dl-aviso { background: #0f172a; } /* o --surface do espacial é translúcido: o aviso fica por cima do texto */
+    .dl-aviso-ico { display: inline-grid; place-items: center; width: 2.25rem; height: 2.25rem; border-radius: 10px; background: var(--accent-soft); color: var(--accent); flex: none; }
+    .dl-aviso p { flex: 1; min-width: 0; display: flex; flex-direction: column; font-size: .8125rem; line-height: 1.35; }
+    .dl-aviso p span { color: var(--muted); }
+    .dl-aviso-demo { flex: none; min-height: 2.5rem; padding: 0 .875rem; border-radius: 999px; font: inherit; font-size: .8125rem; font-weight: 700; cursor: pointer; background: var(--btn-primary-bg); color: var(--btn-primary-ink); }
+    .dl-aviso-demo[hidden] { display: none; }
+    .dl-aviso-x { flex: none; display: inline-grid; place-items: center; width: 2.5rem; height: 2.5rem; border-radius: 10px; cursor: pointer; color: var(--muted); }
+    .dl-aviso-x:hover { color: var(--ink); background: var(--surface-2); }
+    .sc-seta { flex: none; color: var(--accent); transition: transform .2s; }
+    .sc-outro:hover .sc-seta { transform: translateX(3px); }
+
+    .cw-badge {
+      display: inline-flex; align-items: center; gap: .5rem; align-self: flex-start;
+      margin-bottom: .5rem; padding: .25rem .625rem; border-radius: 999px;
+      font-size: .6875rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase;
+      background: var(--accent-soft); color: var(--accent); border: 1px solid var(--line);
+    }
+    :root[data-theme="spatial"] .cw-badge { color: #67e8f9; }
+    .cw-dot { width: .5rem; height: .5rem; border-radius: 50%; background: #10b981; box-shadow: 0 0 0 0 rgba(16, 185, 129, .5); animation: cw-pulso 2s infinite; }
+    @keyframes cw-pulso { 70% { box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); } 100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); } }
+
+    /* --- A demo: a cara do próprio app (zinc + esmeralda, âmbar e rosa), clara ou escura com o tema --- */
+    .demo {
+      --d-bg: #ffffff; --d-panel: #fafafa; --d-ink: #18181b; --d-muted: #52525b; --d-line: #e4e4e7;
+      --d-accent: #047857; --d-accent-hover: #065f46; --d-on-accent: #ffffff; --d-accent-soft: #ecfdf5;
+      --d-tom-bg: #ecfdf5; --d-tom-ink: #065f46; --d-tom-bar: #059669;
+      display: flex; flex-direction: column; min-width: 0;
+      border-radius: 16px; border: 1px solid var(--d-line); background: var(--d-bg); color: var(--d-ink);
+      box-shadow: 0 1px 2px rgba(0, 0, 0, .04), 0 12px 32px rgba(20, 26, 24, .08);
+      overflow: hidden;
+    }
+    :root[data-theme="spatial"] .demo {
+      --d-bg: #0c0c0e; --d-panel: #18181b; --d-ink: #f4f4f5; --d-muted: #a1a1aa; --d-line: #27272a;
+      --d-accent: #10b981; --d-accent-hover: #34d399; --d-on-accent: #09090b; --d-accent-soft: rgba(16, 185, 129, .12);
+      --d-tom-bg: rgba(16, 185, 129, .10); --d-tom-ink: #6ee7b7; --d-tom-bar: #10b981;
+      box-shadow: 0 0 0 1px rgba(16, 185, 129, .08), 0 18px 40px rgba(0, 0, 0, .45);
+    }
+    /* Os tons dos estados (D3 do app: cor + texto + ícone) */
+    .demo[data-tom="breve"] { --d-tom-bg: #fffbeb; --d-tom-ink: #92400e; --d-tom-bar: #d97706; }
+    .demo[data-tom="prepare"] { --d-tom-bg: #fef3c7; --d-tom-ink: #78350f; --d-tom-bar: #d97706; }
+    .demo[data-tom="excedido"] { --d-tom-bg: #fff1f2; --d-tom-ink: #be123c; --d-tom-bar: #e11d48; }
+    :root[data-theme="spatial"] .demo[data-tom="breve"] { --d-tom-bg: rgba(245, 158, 11, .10); --d-tom-ink: #fcd34d; --d-tom-bar: #f59e0b; }
+    :root[data-theme="spatial"] .demo[data-tom="prepare"] { --d-tom-bg: rgba(245, 158, 11, .18); --d-tom-ink: #fde68a; --d-tom-bar: #f59e0b; }
+    :root[data-theme="spatial"] .demo[data-tom="excedido"] { --d-tom-bg: rgba(244, 63, 94, .14); --d-tom-ink: #fda4af; --d-tom-bar: #f43f5e; }
+
+    :where(.demo) button { font: inherit; color: inherit; cursor: pointer; }
+    .demo button:focus-visible, .demo a:focus-visible { outline: 2px solid var(--d-accent); outline-offset: 2px; }
+
+    .demo-bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .5rem .75rem; padding: .75rem 1rem; background: var(--d-panel); border-bottom: 1px solid var(--d-line); }
+    .demo-tag { font-size: .6875rem; font-weight: 600; letter-spacing: .06em; color: var(--d-muted); }
+    .demo-tools { display: flex; align-items: center; gap: .5rem; }
+    .demo-seg { display: inline-flex; gap: 2px; padding: 2px; border-radius: 10px; background: var(--d-bg); border: 1px solid var(--d-line); }
+    .demo-seg button { min-height: 2rem; padding: .25rem .625rem; border-radius: 8px; font-size: .75rem; font-weight: 600; color: var(--d-muted); }
+    .demo-seg button:hover { color: var(--d-ink); }
+    .demo-seg button[aria-pressed="true"] { background: var(--d-accent); color: var(--d-on-accent); }
+    .demo-reset { display: inline-grid; place-items: center; width: 2.25rem; height: 2.25rem; border-radius: 10px; border: 1px solid var(--d-line); color: var(--d-muted); }
+    .demo-reset:hover { color: var(--d-ink); background: var(--d-bg); }
+
+    .demo-steps { display: flex; gap: .25rem; padding: .875rem 1rem 0; font-size: .6875rem; letter-spacing: .04em; text-transform: uppercase; color: var(--d-muted); }
+    .demo-steps li { flex: 1; display: flex; align-items: center; gap: .375rem; padding-bottom: .5rem; border-bottom: 2px solid var(--d-line); }
+    .demo-steps li span { display: inline-grid; place-items: center; width: 1.125rem; height: 1.125rem; border-radius: 50%; border: 1px solid currentColor; font-size: .625rem; }
+    .demo-steps li[aria-current="step"] { color: var(--d-ink); font-weight: 700; border-bottom-color: var(--d-accent); }
+    .demo-steps li[aria-current="step"] span, .demo-steps li.feito span { background: var(--d-accent); border-color: var(--d-accent); color: var(--d-on-accent); }
+    .demo-steps li.feito { border-bottom-color: var(--d-accent); }
+
+    .demo-screen { flex: 1; display: grid; min-height: 24.5rem; padding: 1.25rem 1.25rem 1rem; } /* a altura do retorno: trocar de etapa não empurra a página */
+    .demo-view { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: .625rem; text-align: center; min-width: 0; }
+    .demo-view[hidden] { display: none; }
+    .demo-label { font-size: .6875rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--d-muted); }
+    .demo-clock { font-size: 1.5rem; font-weight: 700; font-variant-numeric: tabular-nums; line-height: 1.1; margin-top: -.25rem; }
+    .demo-count { font-size: clamp(2.5rem, 7vw, 3.75rem); font-weight: 700; font-variant-numeric: tabular-nums; line-height: 1; letter-spacing: -.02em; color: var(--d-tom-ink); }
+    .demo[data-tom="ok"] .demo-count { color: var(--d-ink); }
+    .demo-dur { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: .5rem .75rem; margin-top: .5rem; }
+    .demo-prev { font-size: .875rem; color: var(--d-muted); }
+    .demo-prev strong { color: var(--d-ink); font-variant-numeric: tabular-nums; }
+
+    .demo-chip { display: inline-flex; align-items: center; gap: .375rem; padding: .375rem .75rem; border-radius: 999px; font-size: .8125rem; font-weight: 600; background: var(--d-tom-bg); color: var(--d-tom-ink); }
+    .demo-progress { width: 100%; max-width: 22rem; height: .375rem; border-radius: 999px; background: var(--d-line); overflow: hidden; }
+    .demo-progress span { display: block; height: 100%; width: 0; border-radius: inherit; background: var(--d-tom-bar); transition: width .25s linear; }
+
+    .demo-cta {
+      display: inline-flex; align-items: center; justify-content: center; gap: .5rem;
+      width: 100%; max-width: 22rem; min-height: 3.5rem; margin-top: .5rem; padding: 0 1.25rem;
+      border-radius: 999px; font-size: 1rem; font-weight: 700;
+      background: var(--d-accent); color: var(--d-on-accent);
+      box-shadow: 0 8px 20px -6px rgba(5, 150, 105, .55);
+      transition: background-color .2s, transform .2s;
+    }
+    .demo-cta:hover { background: var(--d-accent-hover); transform: translateY(-1px); }
+    .demo-cta .icon { width: 1.125rem; height: 1.125rem; }
+    .demo-cta-2 { background: transparent; color: var(--d-ink); border: 1px solid var(--d-line); box-shadow: none; }
+    .demo-cta-2:hover { background: var(--d-panel); }
+    .demo-hint { font-size: .75rem; color: var(--d-muted); }
+
+    .demo-result { display: inline-flex; align-items: center; gap: .5rem; padding: .5rem 1rem; border-radius: 999px; font-weight: 700; background: var(--d-tom-bg); color: var(--d-tom-ink); }
+    .demo-result .icon { width: 1.125rem; height: 1.125rem; }
+    .demo-dados { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .5rem; width: 100%; max-width: 24rem; margin-top: .25rem; text-align: left; }
+    .demo-dados div { padding: .5rem .75rem; border-radius: 10px; background: var(--d-panel); border: 1px solid var(--d-line); }
+    .demo-dados dt { font-size: .625rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--d-muted); }
+    .demo-dados dd { font-size: .9375rem; font-weight: 700; font-variant-numeric: tabular-nums; white-space: nowrap; }
+    .demo-dados .demo-dif { grid-column: 1 / -1; background: var(--d-tom-bg); border-color: transparent; }
+    .demo-dif dt, .demo-dif dd { color: var(--d-tom-ink); }
+    .demo-fim { display: flex; flex-direction: column; align-items: center; gap: .75rem; width: 100%; }
+    .demo-fim .link-btn { color: var(--d-accent); font-size: .8125rem; }
+    :root[data-theme="spatial"] .demo-fim .link-btn { color: #6ee7b7; }
+
+    .demo-privacy { padding: .625rem 1rem; font-size: .6875rem; text-align: center; color: var(--d-muted); border-top: 1px solid var(--d-line); background: var(--d-panel); }
+
+    /* --- O modal da demo (D1): a moldura .demo é o próprio modal, nas cores do app e do tema --- */
+    .modal-demo { width: min(30rem, calc(100% - 2rem)); max-height: calc(100% - 2rem); background: transparent; border: 0; box-shadow: 0 25px 50px rgba(0, 0, 0, .45); color: inherit; overflow: visible; }
+    .modal-demo > .demo { max-height: calc(100vh - 2rem); max-height: calc(100dvh - 2rem); overflow-y: auto; box-shadow: none; }
+    /* Troca de demo no topo do modal (D12) */
+    .demo-troca button { display: inline-flex; align-items: center; gap: .375rem; min-height: 2.25rem; font-size: .8125rem; }
+    .demo-troca .icon { width: .9375rem; height: .9375rem; }
+
+    /* PIN versão de teste (D5) */
+    .dp-rot { font-size: .8125rem; font-weight: 600; margin-top: .25rem; }
+    .dp-campo { width: 100%; max-width: 14rem; min-height: 3rem; padding: 0 1rem; border-radius: 12px; text-align: center; font-size: 1.375rem; letter-spacing: .5em; text-indent: .5em;
+      color: var(--d-ink); background: var(--d-bg); border: 1.5px solid var(--d-line); }
+    .dp-campo::placeholder { color: var(--d-muted); opacity: .7; }
+    .dp-campo:focus-visible { outline: 2px solid var(--d-accent); outline-offset: 2px; border-color: var(--d-accent); }
+    .dp-campo[aria-invalid="true"] { border-color: #e11d48; }
+    .dp-erro { min-height: 1.125rem; font-size: .75rem; font-weight: 600; color: #be123c; }
+    :root[data-theme="spatial"] .dp-erro { color: #fda4af; }
+    .dp-dica { display: flex; align-items: center; gap: .5rem; width: 100%; max-width: 22rem; padding: .5rem .5rem .5rem .75rem; border-radius: 12px; font-size: .8125rem; text-align: left;
+      background: var(--d-accent-soft); color: var(--d-ink); border: 1px dashed var(--d-accent); }
+    .dp-dica > .icon { flex: none; color: var(--d-accent); }
+    .dp-dica span { flex: 1; }
+    .dp-dica button { min-height: 2rem; padding: 0 .75rem; border-radius: 8px; font-size: .75rem; font-weight: 700; background: var(--d-accent); color: var(--d-on-accent); }
+
+    /* Fim da demo: convite para testar o outro projeto (D2) */
+    .demo-cruzar { display: flex; align-items: center; gap: .625rem; width: 100%; max-width: 22rem; min-height: 3rem; padding: .5rem .875rem; border-radius: 12px; font-size: .875rem; text-align: left;
+      background: var(--d-panel); border: 1px solid var(--d-line); }
+    .demo-cruzar span { flex: 1; }
+    .demo-cruzar .icon { flex: none; color: var(--d-accent); }
+    .demo-cruzar:hover { border-color: var(--d-accent); }
+
+    /* --- Responsivo (bloco Responsivo do index.html) --- */
+    @media (max-width: 1023px) {
+      .sc-grid { grid-template-columns: 1fr; gap: 0; }
+      /* Mostrar antes de explicar: no celular, a vitrine com "Testar a demo" vem logo depois da descrição */
+      .sc-info { display: contents; }
+      .sc-grid > .sc-vitrine { order: 1; margin-bottom: 1.5rem; }
+      .sc-info .impact, .sc-info .project-foot { order: 2; }
+      .sc-grid { display: flex; flex-direction: column; }
+      .sc-info .project-foot { margin-top: 0; }
+      .sc-poster { min-height: 10rem; flex: none; }
+      .sc-info h3 { display: none; } /* a aba já diz o nome, com o ícone; o painel é rotulado pela aba */
+    }
+    @media (max-width: 640px) {
+      .project-wide { padding: 1.25rem; }
+      .sc-head { padding-bottom: 1rem; margin-bottom: 1rem; gap: .75rem; }
+      .showcase .sc-title { font-size: 1rem; }
+      /* Prévia baixa no celular: o produto aparece, sem tomar a tela */
+      .sc-poster { min-height: 8.5rem; padding: .875rem .75rem 2.25rem; gap: .25rem; }
+      .sc-poster .demo-count { font-size: 2rem; }
+      .sc-poster .demo-progress { display: none; }
+      .sc-poster .dd-anel { width: 5rem; height: 5rem; }
+      .sc-poster .dd-tempo { font-size: 1.125rem; }
+      .sc-grid > .sc-vitrine { margin-bottom: 1.25rem; gap: .5rem; }
+      .sc-acoes { width: 100%; flex-wrap: nowrap; }
+      .sc-acoes .sc-testar { flex: 1; padding: 0 1rem; }
+      .sc-acoes .sc-tempo { display: none; }
+      .sc-acoes .dl-btn { padding: 0 .875rem; }
+      .sc-acoes .dl-breve { display: none; } /* no celular, o aviso explica */
+      /* Troca de demo e ferramentas numa linha só, até 360 px */
+      .demo-bar { gap: .375rem; padding: .5rem; }
+      .demo-tools { gap: .25rem; }
+      .demo-troca .icon { display: none; }
+      .demo-troca button, .demo-tools .demo-seg button { padding: .25rem .4375rem; font-size: .75rem; }
+      .dl-aviso { flex-wrap: wrap; row-gap: .5rem; }
+      .dl-aviso-demo { order: 3; flex: 1 1 100%; }
+      .sc-tabs { width: 100%; }
+      .sc-tab { flex: 1; min-width: 0; padding: .375rem .5rem; gap: .5rem; }
+      .sc-tab-ico { width: 2rem; height: 2rem; }
+      .sc-tab-txt strong { font-size: .875rem; }
+      .sc-tab-txt small { display: none; }
+      .sc-outro { padding: .5rem; align-items: flex-start; }
+      .sc-outro .sc-seta { align-self: center; }
+      .demo-screen { min-height: 0; padding: 1rem .875rem .875rem; }
+      .demo-steps { padding: .75rem .875rem 0; font-size: .625rem; }
+      .demo-nome .demo-tag { display: none; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .cw-dot { animation: none; }
+    }
+
+    /* --- Afinuvo: a mesma demo, com as cores do app (índigo, âmbar na reflexão, esmeralda no fim) --- */
+    .demo-afinuvo { --d-accent: #4338ca; --d-accent-hover: #3730a3; --d-accent-soft: #eef2ff; --d-tom-bg: #eef2ff; --d-tom-ink: #3730a3; --d-tom-bar: #4f46e5; }
+    :root[data-theme="spatial"] .demo-afinuvo { --d-bg: #070a11; --d-panel: #0f1420; --d-line: #1e2535; --d-accent: #818cf8; --d-accent-hover: #a5b4fc; --d-on-accent: #0b0f19; --d-accent-soft: rgba(129, 140, 248, .12); --d-tom-bg: rgba(129, 140, 248, .12); --d-tom-ink: #c7d2fe; --d-tom-bar: #818cf8; }
+    .demo-afinuvo[data-tom="refletir"] { --d-tom-bg: #fffbeb; --d-tom-ink: #92400e; --d-tom-bar: #d97706; }
+    .demo-afinuvo[data-tom="feito"] { --d-tom-bg: #ecfdf5; --d-tom-ink: #065f46; --d-tom-bar: #059669; }
+    :root[data-theme="spatial"] .demo-afinuvo[data-tom="refletir"] { --d-tom-bg: rgba(245, 158, 11, .12); --d-tom-ink: #fcd34d; --d-tom-bar: #f59e0b; }
+    :root[data-theme="spatial"] .demo-afinuvo[data-tom="feito"] { --d-tom-bg: rgba(16, 185, 129, .12); --d-tom-ink: #6ee7b7; --d-tom-bar: #10b981; }
+    .demo-afinuvo .demo-cta { box-shadow: 0 8px 20px -6px rgba(67, 56, 202, .5); }
+    .demo-afinuvo .demo-cta-2 { box-shadow: none; }
+    .dd-habito { display: flex; flex-direction: column; align-items: center; gap: .125rem; }
+    .dd-titulo { font-size: 1.0625rem; font-weight: 700; }
+    .dd-plano { font-size: .8125rem; color: var(--d-muted); }
+    .dd-anel { position: relative; width: 8.5rem; height: 8.5rem; }
+    .dd-anel svg { width: 100%; height: 100%; transform: rotate(-90deg); }
+    .dd-anel circle { fill: none; stroke-width: 8; }
+    .dd-trilho { stroke: var(--d-line); }
+    .dd-progresso { stroke: var(--d-tom-bar); stroke-linecap: round; stroke-dasharray: 326.73; stroke-dashoffset: 0; transition: stroke-dashoffset .25s linear; }
+    .dd-anel-txt { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: .125rem; }
+    .dd-tempo { font-size: 2rem; font-weight: 700; font-variant-numeric: tabular-nums; line-height: 1; }
+    .dd-duplo { display: grid; grid-template-columns: 1fr 1fr; gap: .5rem; width: 100%; max-width: 22rem; }
+    .dd-sec { display: inline-flex; align-items: center; justify-content: center; gap: .375rem; min-height: 2.75rem; padding: .25rem .5rem; border-radius: 12px; font-size: .8125rem; font-weight: 600; border: 1px solid var(--d-line); background: var(--d-panel); }
+    .dd-ok { color: #047857; } .dd-dif { color: #92400e; }
+    :root[data-theme="spatial"] .dd-ok { color: #6ee7b7; } :root[data-theme="spatial"] .dd-dif { color: #fcd34d; }
+    .dd-pergunta { font-size: 1.125rem; font-weight: 700; }
+    .dd-obs { font-size: .875rem; color: var(--d-muted); max-width: 24rem; }
+    .dd-opcoes { display: grid; grid-template-columns: 1fr 1fr; gap: .5rem; width: 100%; max-width: 24rem; margin-top: .25rem; }
+    .dd-opcoes button { display: flex; align-items: center; gap: .5rem; min-height: 3rem; padding: .5rem .75rem; text-align: left; font-size: .8125rem; font-weight: 600; border-radius: 12px; border: 1px solid var(--d-line); background: var(--d-panel); }
+    .dd-opcoes button:hover { border-color: var(--d-tom-bar); }
+    .dd-opcoes .icon { flex: none; color: var(--d-tom-bar); }
+    .dd-voltar { color: var(--d-muted); font-size: .8125rem; }
+    .dd-troca { display: flex; align-items: center; gap: .5rem; width: 100%; max-width: 24rem; font-size: .8125rem; }
+    .dd-troca > div { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: .125rem; padding: .5rem .75rem; border-radius: 10px; border: 1px solid var(--d-line); background: var(--d-panel); text-align: left; }
+    .dd-troca small { font-size: .625rem; letter-spacing: .1em; text-transform: uppercase; color: var(--d-muted); }
+    .dd-troca .dd-depois { background: var(--d-accent-soft); border-color: transparent; font-weight: 700; }
+    .dd-troca > .icon { flex: none; color: var(--d-muted); }
+    .demo-dados dd.dd-quebra { white-space: normal; }
+    @media (max-width: 640px) { .dd-anel { width: 7rem; height: 7rem; } .dd-tempo { font-size: 1.625rem; } .dd-opcoes { grid-template-columns: 1fr; } .dd-opcoes button { min-height: 2.75rem; } }
+    .demo [hidden] { display: none; } /* o display dos blocos da demo não vence o hidden */
   </style>
 </head>
 <body>
@@ -619,6 +920,19 @@
     <symbol id="i-play" viewBox="0 0 24 24"><path d="M6 3 20 12 6 21z"/></symbol>
     <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
     <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+    <symbol id="i-rotate" viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></symbol>
+    <symbol id="i-alert" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></symbol>
+    <symbol id="i-utensils" viewBox="0 0 24 24"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2M7 2v20M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></symbol>
+    <symbol id="i-key" viewBox="0 0 24 24"><circle cx="7.5" cy="15.5" r="5.5"/><path d="m21 2-9.6 9.6M15.5 7.5l3 3L22 7l-3-3"/></symbol>
+    <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></symbol>
+    <symbol id="i-pause" viewBox="0 0 24 24"><rect x="6" y="4" width="4" height="16" rx="1"/><rect x="14" y="4" width="4" height="16" rx="1"/></symbol>
+    <symbol id="i-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3M12 17h.01"/></symbol>
+    <symbol id="i-battery" viewBox="0 0 24 24"><rect x="2" y="7" width="16" height="10" rx="2"/><path d="M22 11v2M6 11v2"/></symbol>
+    <symbol id="i-maximize" viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></symbol>
+    <symbol id="i-bell-off" viewBox="0 0 24 24"><path d="M8.7 3A6 6 0 0 1 18 8a21.3 21.3 0 0 0 .6 5M17 17H3s3-2 3-9a4.67 4.67 0 0 1 .3-1.7M10.3 21a1.94 1.94 0 0 0 3.4 0M2 2l20 20"/></symbol>
+    <symbol id="i-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m16.24 7.76-2.12 6.36-6.36 2.12 2.12-6.36z"/></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></symbol>
   </svg>
 
   <header class="nav" id="nav">
@@ -878,6 +1192,7 @@
               </div>
               <h3>Lumus Data Engine</h3>
               <p class="card-desc">Motor de relatórios com Python e Docker, exportação em CSV, Excel e (futuramente) PDF, integrado a sistemas PHP.</p>
+              <a class="ver-mais" href="/projetos/lumus" data-pagina="Lumus Data Engine">Ver mais sobre o projeto<svg class="icon"><use href="#i-arrow-right"/></svg></a>
               <div class="impact mono">
                 <div class="impact-label"><svg class="icon"><use href="#i-activity"/></svg><span>Impacto Operacional:</span></div>
                 <div>Redução de 74% no tempo de geração de balanços operacionais</div>
@@ -887,7 +1202,10 @@
               <div class="chip-list mono">
                 <span class="chip">Python</span><span class="chip">Docker</span><span class="chip">Relatórios</span><span class="chip">FastAPI</span><span class="chip">Pandas</span>
               </div>
-              <button class="link-btn" type="button" data-modal="modal-lumus">Detalhes técnicos →</button>
+              <div class="pf-acoes">
+                <button class="dl-btn" type="button" aria-disabled="true" data-baixar="Lumus Data Engine"><svg class="icon"><use href="#i-download"/></svg><span>Baixar</span><span class="dl-breve mono">em breve</span></button>
+                <button class="link-btn" type="button" data-modal="modal-lumus">Detalhes técnicos →</button>
+              </div>
             </div>
           </article>
 
@@ -902,6 +1220,7 @@
               </div>
               <h3>Integrações de pagamento</h3>
               <p class="card-desc">Arquitetura de webhooks, consistência de eventos, segurança, reprocessamento e múltiplos provedores.</p>
+              <a class="ver-mais" href="/projetos/integracoes-pagamento" data-pagina="Integrações de pagamento">Ver mais sobre o projeto<svg class="icon"><use href="#i-arrow-right"/></svg></a>
               <div class="impact mono">
                 <div class="impact-label"><svg class="icon"><use href="#i-activity"/></svg><span>Impacto Operacional:</span></div>
                 <div>99.98% de consistência em eventos transacionados com zero perdas</div>
@@ -911,7 +1230,92 @@
               <div class="chip-list mono">
                 <span class="chip">APIs</span><span class="chip">Webhooks</span><span class="chip">Segurança</span><span class="chip">Idempotência</span><span class="chip">Fintech</span>
               </div>
-              <button class="link-btn" type="button" data-modal="modal-payments">Detalhes técnicos →</button>
+              <div class="pf-acoes">
+                <button class="dl-btn" type="button" aria-disabled="true" data-baixar="Integrações de pagamento"><svg class="icon"><use href="#i-download"/></svg><span>Baixar</span><span class="dl-breve mono">em breve</span></button>
+                <button class="link-btn" type="button" data-modal="modal-payments">Detalhes técnicos →</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Teste ao vivo: projetos com demo, em abas. As demos abrem nos modais modal-demo-* -->
+          <article class="card project project-wide showcase" id="projeto-demos" aria-labelledby="demos-title">
+            <div class="sc-head">
+              <div>
+                <p class="cw-badge mono"><span class="cw-dot" aria-hidden="true"></span>Teste ao vivo · sem cadastro</p>
+                <h3 class="sc-title" id="demos-title">Alguns projetos disponíveis para teste</h3>
+              </div>
+              <div class="sc-tabs" role="tablist" aria-label="Projetos com demo">
+                <button class="sc-tab" type="button" role="tab" id="aba-contador" aria-controls="painel-contador" aria-selected="true" tabindex="0" data-aba="contador"><span class="sc-tab-ico"><svg class="icon"><use href="#i-clock"/></svg></span><span class="sc-tab-txt"><strong>Contador de Almoço</strong><small>Pontualidade no intervalo</small></span><span class="sc-novo mono" aria-hidden="true"><span class="cw-dot"></span>teste também</span></button>
+                <button class="sc-tab" type="button" role="tab" id="aba-afinuvo" aria-controls="painel-afinuvo" aria-selected="false" tabindex="-1" data-aba="afinuvo"><span class="sc-tab-ico"><svg class="icon"><use href="#i-target"/></svg></span><span class="sc-tab-txt"><strong>Afinuvo</strong><small>Hábitos sem culpa</small></span><span class="sc-novo mono" aria-hidden="true"><span class="cw-dot"></span>teste também</span></button>
+              </div>
+            </div>
+            <div class="sc-painel" role="tabpanel" id="painel-contador" aria-labelledby="aba-contador">
+              <div class="sc-grid">
+                <div class="sc-info">
+                  <h3 id="contador-title">Contador de Almoço</h3>
+                  <p class="card-desc">Aplicação web pessoal para registrar o início e o retorno do intervalo, com contador regressivo e histórico confiável de pontualidade. O servidor é a fonte oficial dos horários.</p>
+                  <a class="ver-mais" href="/projetos/contador-almoco" data-pagina="Contador de Almoço" data-pagina-demo="modal-demo-contador">Ver mais sobre o projeto<svg class="icon"><use href="#i-arrow-right"/></svg></a>
+                  <div class="impact mono">
+                    <div class="impact-label"><svg class="icon"><use href="#i-activity"/></svg><span>Status do Projeto:</span></div>
+                    <div>MVP funcionando: iniciar, acompanhar e registrar o retorno com PIN (fase 4 de 6)</div>
+                  </div>
+                  <div class="project-foot">
+                    <div class="chip-list mono"><span class="chip">Laravel 13</span><span class="chip">Livewire 4</span><span class="chip">Alpine.js</span><span class="chip">Tailwind</span><span class="chip">MySQL</span><span class="chip">Docker</span></div>
+                    <button class="link-btn" type="button" data-modal="modal-contador">Detalhes técnicos →</button>
+                  </div>
+                </div>
+                <div class="sc-vitrine">
+                  <div class="demo sc-poster" data-tom="prepare" aria-hidden="true" data-demo="modal-demo-contador">
+                    <p class="demo-label mono">Retorno previsto</p>
+                    <p class="demo-clock mono">13:17:00</p>
+                    <p class="demo-count mono">00:04:12</p>
+                    <p class="demo-chip"><svg class="icon"><use href="#i-alert"/></svg>Prepare-se para retornar</p>
+                    <div class="demo-progress"><span style="width:93%"></span></div>
+                  </div>
+                  <div class="sc-acoes">
+                    <button class="sc-testar" type="button" data-demo="modal-demo-contador"><svg class="icon"><use href="#i-play"/></svg>Testar a demo<span class="sc-tempo mono">· 1 min</span></button>
+                    <button class="dl-btn" type="button" aria-disabled="true" data-baixar="Contador de Almoço" data-baixar-demo="modal-demo-contador"><svg class="icon"><use href="#i-download"/></svg><span>Baixar</span><span class="dl-breve mono">em breve</span></button>
+                  </div>
+                  <p class="sc-passos mono">Iniciar → Acompanhar → Retornar com PIN</p>
+                </div>
+              </div>
+              <div class="sc-next">
+                <button class="sc-outro" type="button" data-aba="afinuvo"><span class="sc-outro-txt"><small class="mono">Também dá para testar</small> <strong>Afinuvo</strong> <span>E se faltar a um hábito virasse um ajuste no plano, e não culpa?</span></span><svg class="icon sc-seta"><use href="#i-arrow-right"/></svg></button>
+              </div>
+            </div>
+            <div class="sc-painel" role="tabpanel" id="painel-afinuvo" aria-labelledby="aba-afinuvo" hidden>
+              <div class="sc-grid">
+                <div class="sc-info">
+                  <h3 id="afinuvo-title">Afinuvo</h3>
+                  <p class="card-desc">App de hábitos que trata a falta como dado, não como fracasso. Cada hábito tem propósito, plano e sessão de foco; quando algo não sai, uma reflexão sem culpa vira hipótese e ajuste no plano.</p>
+                  <a class="ver-mais" href="/projetos/afinuvo">Ver mais sobre o projeto<svg class="icon"><use href="#i-arrow-right"/></svg></a>
+                  <div class="impact mono">
+                    <div class="impact-label"><svg class="icon"><use href="#i-activity"/></svg><span>Status do Projeto:</span></div>
+                    <div>Protótipo funcionando: as 5 dimensões (Propósito, Planejamento, Execução, Reflexão e Aprendizado), com dados no navegador</div>
+                  </div>
+                  <div class="project-foot">
+                    <div class="chip-list mono"><span class="chip">React 19</span><span class="chip">TypeScript</span><span class="chip">Vite</span><span class="chip">Tailwind 4</span><span class="chip">Motion</span></div>
+                    <button class="link-btn" type="button" data-modal="modal-afinuvo">Detalhes técnicos →</button>
+                  </div>
+                </div>
+                <div class="sc-vitrine">
+                  <div class="demo sc-poster demo-afinuvo" data-tom="ok" aria-hidden="true" data-demo="modal-demo-afinuvo">
+                    <p class="demo-label mono">Hábito de hoje</p>
+                    <p class="dd-titulo">Estudar Laravel</p>
+                    <div class="dd-anel"><svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="52" class="dd-trilho"/><circle cx="60" cy="60" r="52" class="dd-progresso" style="stroke-dashoffset:162"/></svg>
+                      <div class="dd-anel-txt"><span class="dd-tempo mono">12:36</span><span class="demo-label mono">Em foco</span></div>
+                    </div>
+                  </div>
+                  <div class="sc-acoes">
+                    <button class="sc-testar" type="button" data-demo="modal-demo-afinuvo"><svg class="icon"><use href="#i-play"/></svg>Testar a demo<span class="sc-tempo mono">· 1 min</span></button>
+                    <button class="dl-btn" type="button" aria-disabled="true" data-baixar="Afinuvo" data-baixar-demo="modal-demo-afinuvo"><svg class="icon"><use href="#i-download"/></svg><span>Baixar</span><span class="dl-breve mono">em breve</span></button>
+                  </div>
+                  <p class="sc-passos mono">Executar → Refletir → Ajustar o plano</p>
+                </div>
+              </div>
+              <div class="sc-next">
+                <button class="sc-outro" type="button" data-aba="contador"><span class="sc-outro-txt"><small class="mono">Também dá para testar</small> <strong>Contador de Almoço</strong> <span>Quanto você passa do horário de almoço? Descubra em 1 minuto.</span></span><svg class="icon sc-seta"><use href="#i-arrow-right"/></svg></button>
+              </div>
             </div>
           </article>
         </div>
@@ -1122,6 +1526,259 @@
     <div class="modal-foot"><button class="modal-ok" type="button" data-close>Fechar</button></div>
   </dialog>
 
+
+  <dialog class="modal" id="modal-contador" aria-labelledby="modal-contador-title">
+    <div class="modal-head">
+      <div class="modal-title"><span class="modal-badge"><svg class="icon"><use href="#i-cpu"/></svg></span>
+        <div>
+          <h3 id="modal-contador-title">Contador de Almoço</h3>
+          <p class="mono">Arquitetura de Engenharia</p>
+        </div>
+      </div>
+      <button class="modal-close" type="button" data-close aria-label="Fechar"><svg class="icon"><use href="#i-x"/></svg></button>
+    </div>
+    <div class="modal-body">
+      <div>
+        <h4 class="mono">Visão Geral</h4>
+        <p>Registro pessoal do intervalo de almoço que responde, com horários do servidor: a que horas saí, a que horas voltei e quanto passei do combinado.</p>
+      </div>
+      <div class="flow mono">
+        <div class="flow-label">Fluxo Arquitetural</div>
+        <div class="flow-steps">
+          <div class="flow-step"><small>Navegador</small><strong>Alpine.js (contador)</strong></div><svg class="icon"><use href="#i-arrow-right"/></svg>
+          <div class="flow-step mid"><small>Aplicação</small><strong>Laravel 13 + Livewire 4</strong></div><svg class="icon"><use href="#i-arrow-right"/></svg>
+          <div class="flow-step end"><small>Registro</small><strong>MySQL 8.4</strong></div>
+        </div>
+      </div>
+      <div>
+        <h4 class="mono">Padrões Técnicos</h4>
+        <p>Monólito Laravel em Docker. O contador roda no navegador sem requisição por segundo; o horário oficial de início e de retorno é sempre o do servidor.</p>
+        <ul class="checklist">
+          <li><svg class="icon"><use href="#i-check-circle"/></svg><span>Correção da diferença entre o relógio do servidor e o do aparelho</span></li>
+          <li><svg class="icon"><use href="#i-check-circle"/></svg><span>Retorno confirmado por PIN guardado como hash, com limite de tentativas</span></li>
+          <li><svg class="icon"><use href="#i-check-circle"/></svg><span>Estados por cor, texto e ícone: nunca só a cor</span></li>
+          <li><svg class="icon"><use href="#i-check-circle"/></svg><span>Ambiente Docker Compose com containers Debian</span></li>
+        </ul>
+      </div>
+      <div class="success"><svg class="icon"><use href="#i-activity"/></svg>
+        <div><small class="mono">Status do Projeto</small><strong>Fase 4 de 6 concluída: o fluxo principal funciona; histórico e relatórios a seguir</strong></div>
+      </div>
+    </div>
+    <div class="modal-foot">
+      <button class="modal-ok" type="button" data-close>Fechar</button>
+    </div>
+  </dialog>
+
+  <dialog class="modal" id="modal-afinuvo" aria-labelledby="modal-afinuvo-title">
+    <div class="modal-head">
+      <div class="modal-title"><span class="modal-badge"><svg class="icon"><use href="#i-cpu"/></svg></span>
+        <div>
+          <h3 id="modal-afinuvo-title">Afinuvo</h3>
+          <p class="mono">Arquitetura de Engenharia</p>
+        </div>
+      </div>
+      <button class="modal-close" type="button" data-close aria-label="Fechar"><svg class="icon"><use href="#i-x"/></svg></button>
+    </div>
+    <div class="modal-body">
+      <div>
+        <h4 class="mono">Visão Geral</h4>
+        <p>Sistema de autorregulação em cinco dimensões: Propósito (por que o hábito importa), Planejamento (se-então), Execução (sessão de foco), Reflexão (o que dificultou, sem culpa) e Aprendizado (hipóteses que recalibram o plano).</p>
+      </div>
+      <div class="flow mono">
+        <div class="flow-label">Fluxo Arquitetural</div>
+        <div class="flow-steps">
+          <div class="flow-step"><small>Interface</small><strong>React 19 + Tailwind 4</strong></div><svg class="icon"><use href="#i-arrow-right"/></svg>
+          <div class="flow-step mid"><small>Estado</small><strong>Hooks + regras do ciclo</strong></div><svg class="icon"><use href="#i-arrow-right"/></svg>
+          <div class="flow-step end"><small>Dados</small><strong>localStorage</strong></div>
+        </div>
+      </div>
+      <div>
+        <h4 class="mono">Padrões Técnicos</h4>
+        <p>SPA em TypeScript com Vite, sem backend nem login. Os tipos descrevem o ciclo inteiro (hábito, sessão, reflexão e hipótese), e aplicar uma hipótese muda o plano do hábito.</p>
+        <ul class="checklist">
+          <li><svg class="icon"><use href="#i-check-circle"/></svg><span>Linguagem sem punição: a falta abre uma investigação, não um alerta vermelho</span></li>
+          <li><svg class="icon"><use href="#i-check-circle"/></svg><span>Visão híbrida: painel no computador e simulador de celular lado a lado</span></li>
+          <li><svg class="icon"><use href="#i-check-circle"/></svg><span>Alvos de toque de 44 px e estados com texto, não só cor</span></li>
+          <li><svg class="icon"><use href="#i-check-circle"/></svg><span>Tipagem estrita conferida no build (tsc --noEmit)</span></li>
+        </ul>
+      </div>
+      <div class="success"><svg class="icon"><use href="#i-activity"/></svg>
+        <div><small class="mono">Status do Projeto</small><strong>Protótipo navegável das 5 dimensões; contas e sincronização a seguir</strong></div>
+      </div>
+    </div>
+    <div class="modal-foot">
+      <button class="modal-ok" type="button" data-close>Fechar</button>
+    </div>
+  </dialog>
+
+  <dialog class="modal modal-demo" id="modal-demo-contador" aria-label="Demo do Contador de Almoço">
+    <div class="demo" data-tom="ok">
+      <div class="demo-bar">
+        <div class="demo-seg demo-troca" role="group" aria-label="Escolher a demo">
+          <button type="button" data-trocar="contador" aria-pressed="true"><svg class="icon"><use href="#i-clock"/></svg>Contador</button>
+          <button type="button" data-trocar="afinuvo" aria-pressed="false"><svg class="icon"><use href="#i-target"/></svg>Afinuvo</button>
+        </div>
+        <div class="demo-tools">
+          <div class="demo-seg" role="group" aria-label="Velocidade do tempo">
+            <button type="button" data-vel="1" aria-pressed="false" title="Tempo real">1×</button>
+            <button type="button" data-vel="60" aria-pressed="true" title="1 minuto por segundo">60×</button>
+          </div>
+          <button class="demo-reset" type="button" data-acao="reiniciar" aria-label="Reiniciar a demonstração" title="Reiniciar"><svg class="icon"><use href="#i-rotate"/></svg></button>
+          <button class="demo-reset" type="button" data-close aria-label="Fechar a demonstração" title="Fechar"><svg class="icon"><use href="#i-x"/></svg></button>
+        </div>
+      </div>
+      <ol class="demo-steps mono" aria-label="Etapas">
+        <li data-passo="inicio"><span>1</span>Iniciar</li>
+        <li data-passo="almoco"><span>2</span>Acompanhar</li>
+        <li data-passo="retorno"><span>3</span>Retornar</li>
+      </ol>
+      <div class="demo-screen">
+        <div class="demo-view" data-view="inicio">
+          <p class="demo-label mono">Agora</p>
+          <p class="demo-clock mono" data-campo="agora">12:17:00</p>
+          <div class="demo-dur"><span class="demo-label mono" id="demo-dur-rot">Duração</span>
+            <div class="demo-seg" role="group" aria-labelledby="demo-dur-rot">
+              <button type="button" data-dur="30" aria-pressed="false">30 min</button>
+              <button type="button" data-dur="45" aria-pressed="false">45 min</button>
+              <button type="button" data-dur="60" aria-pressed="true">60 min</button>
+            </div>
+          </div>
+          <p class="demo-prev">Se iniciar agora, retorno às <strong class="mono" data-campo="previa">13:17</strong></p>
+          <button class="demo-cta" type="button" data-acao="iniciar"><svg class="icon"><use href="#i-utensils"/></svg>Iniciar almoço</button>
+        </div>
+        <div class="demo-view" data-view="almoco" hidden>
+          <p class="demo-label mono">Retorno previsto</p>
+          <p class="demo-clock mono" data-campo="previsto">13:17:00</p>
+          <p class="demo-count mono" data-campo="contador" aria-live="off">00:42:36</p>
+          <p class="demo-chip" role="status"><svg class="icon" data-campo="chip-icone"><use href="#i-check-circle"/></svg><span data-campo="chip">No intervalo · tempo restante</span></p>
+          <div class="demo-progress" aria-hidden="true"><span data-campo="barra"></span></div>
+          <button class="demo-cta" type="button" data-acao="retornar"><svg class="icon"><use href="#i-check"/></svg>Registrar retorno</button>
+        </div>
+        <div class="demo-view" data-view="pin" hidden>
+          <p class="demo-label mono">Confirme o retorno</p>
+          <p class="demo-clock mono" data-campo="pin-agora">13:20:12</p>
+          <label class="dp-rot" for="demo-pin">PIN de 6 dígitos</label>
+          <input class="dp-campo mono" id="demo-pin" type="text" inputmode="numeric" autocomplete="off" maxlength="6" pattern="[0-9]*" aria-describedby="dp-dica dp-erro" placeholder="••••••">
+          <p class="dp-erro" id="dp-erro" role="alert" data-campo="pin-erro"></p>
+          <div class="dp-dica" id="dp-dica"><svg class="icon"><use href="#i-key"/></svg><span>PIN versão de teste: <strong class="mono">123456</strong></span>
+            <button type="button" data-acao="usar-pin">Usar</button>
+          </div>
+          <button class="demo-cta" type="button" data-acao="confirmar"><svg class="icon"><use href="#i-check"/></svg>Confirmar retorno</button>
+          <button class="link-btn dd-voltar" type="button" data-acao="voltar">← Voltar ao contador</button>
+        </div>
+        <div class="demo-view" data-view="retorno" hidden>
+          <p class="demo-result" data-campo="resultado"><svg class="icon"><use href="#i-check-circle"/></svg><span>Dentro do horário</span></p>
+          <dl class="demo-dados mono">
+            <div><dt>Início</dt><dd data-campo="r-inicio">12:17:00</dd></div>
+            <div><dt>Previsto</dt><dd data-campo="r-previsto">13:17:00</dd></div>
+            <div><dt>Retorno</dt><dd data-campo="r-retorno">13:20:12</dd></div>
+            <div><dt>Duração</dt><dd data-campo="r-duracao">63m 12s</dd></div>
+            <div class="demo-dif"><dt>Diferença</dt><dd data-campo="r-dif">+3m 12s</dd></div>
+          </dl>
+          <div class="demo-fim">
+            <button class="demo-cta demo-cta-2" type="button" data-acao="reiniciar"><svg class="icon"><use href="#i-rotate"/></svg>Testar de novo</button>
+            <button class="demo-cruzar" type="button" data-trocar="afinuvo"><svg class="icon"><use href="#i-target"/></svg><span>Agora teste o <strong>Afinuvo</strong></span><svg class="icon"><use href="#i-arrow-right"/></svg></button>
+            <a class="link-btn" href="#contato" data-close>Quero algo assim no meu time →</a>
+          </div>
+        </div>
+      </div>
+      <p class="demo-privacy">Nada é enviado nem salvo: ao sair da página, a demo recomeça.</p>
+    </div>
+  </dialog>
+
+  <dialog class="modal modal-demo" id="modal-demo-afinuvo" aria-label="Demo do Afinuvo">
+    <div class="demo demo-afinuvo" data-tom="ok">
+      <div class="demo-bar">
+        <div class="demo-seg demo-troca" role="group" aria-label="Escolher a demo">
+          <button type="button" data-trocar="contador" aria-pressed="false"><svg class="icon"><use href="#i-clock"/></svg>Contador</button>
+          <button type="button" data-trocar="afinuvo" aria-pressed="true"><svg class="icon"><use href="#i-target"/></svg>Afinuvo</button>
+        </div>
+        <div class="demo-tools">
+          <div class="demo-seg" role="group" aria-label="Velocidade do tempo">
+            <button type="button" data-vel="1" aria-pressed="false" title="Tempo real">1×</button>
+            <button type="button" data-vel="60" aria-pressed="true" title="1 minuto por segundo">60×</button>
+          </div>
+          <button class="demo-reset" type="button" data-acao="reiniciar" aria-label="Reiniciar a demonstração" title="Reiniciar"><svg class="icon"><use href="#i-rotate"/></svg></button>
+          <button class="demo-reset" type="button" data-close aria-label="Fechar a demonstração" title="Fechar"><svg class="icon"><use href="#i-x"/></svg></button>
+        </div>
+      </div>
+      <ol class="demo-steps mono" aria-label="Etapas">
+        <li data-passo="executar"><span>1</span>Executar</li>
+        <li data-passo="refletir"><span>2</span>Refletir</li>
+        <li data-passo="ajustar"><span>3</span>Ajustar</li>
+      </ol>
+      <div class="demo-screen">
+        <div class="demo-view" data-view="executar">
+          <div class="dd-habito">
+            <p class="demo-label mono">Hábito de hoje</p>
+            <p class="dd-titulo">Estudar Laravel</p>
+            <p class="dd-plano mono" data-campo="plano">25 min · depois do jantar</p>
+          </div>
+          <div class="dd-anel"><svg aria-hidden="true" viewBox="0 0 120 120"><circle cx="60" cy="60" r="52" class="dd-trilho"/><circle cx="60" cy="60" r="52" class="dd-progresso" data-campo="anel"/></svg>
+            <div class="dd-anel-txt"><span class="dd-tempo mono" data-campo="tempo">25:00</span><span class="demo-label mono" data-campo="estado" aria-live="polite">Pronto</span></div>
+          </div>
+          <button class="demo-cta" type="button" data-acao="foco"><svg class="icon" data-campo="foco-icone"><use href="#i-play"/></svg><span data-campo="foco-txt">Iniciar foco</span></button>
+          <div class="dd-duplo">
+            <button class="dd-sec dd-ok" type="button" data-acao="concluir"><svg class="icon"><use href="#i-check-circle"/></svg>Concluí</button>
+            <button class="dd-sec dd-dif" type="button" data-acao="dificuldade"><svg class="icon"><use href="#i-help"/></svg>Tive dificuldade</button>
+          </div>
+        </div>
+        <div class="demo-view" data-view="refletir" hidden>
+          <p class="demo-label mono">Reflexão sem culpa</p>
+          <p class="dd-pergunta" id="dd-pergunta">O que dificultou hoje?</p>
+          <p class="demo-hint">Não é falta de caráter: o plano encontrou uma barreira.</p>
+          <div class="dd-opcoes" role="group" aria-labelledby="dd-pergunta">
+            <button type="button" data-barreira="fatigue"><svg class="icon"><use href="#i-battery"/></svg><span>Cansaço / pouca energia</span></button>
+            <button type="button" data-barreira="oversized"><svg class="icon"><use href="#i-maximize"/></svg><span>Meta grande demais</span></button>
+            <button type="button" data-barreira="forgot"><svg class="icon"><use href="#i-bell-off"/></svg><span>Esqueci / sem gatilho</span></button>
+            <button type="button" data-barreira="friction"><svg class="icon"><use href="#i-compass"/></svg><span>Não sabia por onde ir</span></button>
+          </div>
+          <button class="link-btn dd-voltar" type="button" data-acao="voltar">← Voltar ao foco</button>
+        </div>
+        <div class="demo-view" data-view="ajustar" hidden>
+          <p class="demo-chip"><svg class="icon"><use href="#i-sparkles"/></svg><span data-campo="h-conf">Hipótese · 94% de confiança</span></p>
+          <p class="dd-pergunta" data-campo="h-titulo">Meta grande demais</p>
+          <p class="dd-obs" data-campo="h-obs"></p>
+          <div class="dd-troca mono">
+            <div><small>Antes</small><span data-campo="h-antes"></span></div><svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg>
+            <div class="dd-depois"><small>Depois</small><span data-campo="h-depois"></span></div>
+          </div>
+          <button class="demo-cta" type="button" data-acao="aplicar"><svg class="icon"><use href="#i-check"/></svg>Aplicar ajuste</button>
+          <div data-campo="aplicado" hidden>
+            <p class="demo-result" role="status"><svg class="icon"><use href="#i-check-circle"/></svg><span>Plano atualizado</span></p>
+            <div class="demo-fim">
+              <button class="demo-cta demo-cta-2" type="button" data-acao="reiniciar"><svg class="icon"><use href="#i-rotate"/></svg>Testar de novo</button>
+              <button class="demo-cruzar" type="button" data-trocar="contador"><svg class="icon"><use href="#i-clock"/></svg><span>Agora teste o <strong>Contador de Almoço</strong></span><svg class="icon"><use href="#i-arrow-right"/></svg></button>
+              <a class="link-btn" href="#contato" data-close>Quero algo assim no meu time →</a>
+            </div>
+          </div>
+        </div>
+        <div class="demo-view" data-view="concluido" hidden>
+          <p class="demo-result"><svg class="icon"><use href="#i-check-circle"/></svg><span>Sessão concluída</span></p>
+          <dl class="demo-dados mono">
+            <div><dt>Hábito</dt><dd>Estudar Laravel</dd></div>
+            <div><dt>Foco</dt><dd data-campo="c-foco">25 min</dd></div>
+            <div><dt>Sequência</dt><dd>4 dias</dd></div>
+            <div><dt>Próxima</dt><dd>Amanhã</dd></div>
+          </dl>
+          <div class="demo-fim">
+            <button class="demo-cta demo-cta-2" type="button" data-acao="reiniciar"><svg class="icon"><use href="#i-rotate"/></svg>Testar de novo</button>
+            <button class="demo-cruzar" type="button" data-trocar="contador"><svg class="icon"><use href="#i-clock"/></svg><span>Agora teste o <strong>Contador de Almoço</strong></span><svg class="icon"><use href="#i-arrow-right"/></svg></button>
+            <a class="link-btn" href="#contato" data-close>Quero algo assim no meu time →</a>
+          </div>
+        </div>
+      </div>
+      <p class="demo-privacy">Nada é enviado nem salvo: ao sair da página, a demo recomeça.</p>
+    </div>
+  </dialog>
+
+  <!-- Aviso do Baixar e do "Ver mais" enquanto o download e as páginas dos projetos não existem -->
+  <div class="dl-aviso" id="dl-aviso" role="status" hidden><span class="dl-aviso-ico"><svg class="icon"><use href="#i-download" data-campo="dl-icone"/></svg></span>
+    <p><strong data-campo="dl-titulo">Download em breve</strong><span data-campo="dl-texto">O app vai sair em APK e na Google Play.</span></p>
+    <button class="dl-aviso-demo" type="button" hidden>Testar a demo</button>
+    <button class="dl-aviso-x" type="button" aria-label="Fechar o aviso"><svg class="icon"><use href="#i-x"/></svg></button>
+  </div>
+
   <script>
     (function () {
       var root = document.documentElement;
@@ -1255,6 +1912,251 @@
           if (e.target === dialog) dialog.close();
         });
       });
+
+      // --- Projetos 5. Abas e botões que abrem as demos ---------------
+      var cardEl = document.getElementById('projeto-demos');
+      var tabs = [].slice.call(cardEl.querySelectorAll('.sc-tab'));
+      function mostrarAba(id, focar) {
+        tabs.forEach(function (t) {
+          var on = t.dataset.aba === id;
+          t.setAttribute('aria-selected', String(on)); t.tabIndex = on ? 0 : -1;
+          document.getElementById(t.getAttribute('aria-controls')).hidden = !on;
+          if (on && focar) t.focus();
+        });
+      }
+      cardEl.addEventListener('click', function (e) {
+        var b = e.target.closest('[data-aba]'); if (b) return mostrarAba(b.dataset.aba, b.classList.contains('sc-outro'));
+        var d = e.target.closest('[data-demo]'); if (d) document.getElementById(d.dataset.demo).showModal();
+      });
+      cardEl.querySelector('.sc-tabs').addEventListener('keydown', function (e) {
+        var i = tabs.indexOf(document.activeElement); if (i < 0) return;
+        var j = e.key === 'ArrowRight' ? i + 1 : e.key === 'ArrowLeft' ? i - 1 : e.key === 'Home' ? 0 : e.key === 'End' ? tabs.length - 1 : null;
+        if (j === null) return;
+        e.preventDefault(); mostrarAba(tabs[(j + tabs.length) % tabs.length].dataset.aba, true);
+      });
+      // "Agora teste o …": fecha esta demo, mostra a aba do outro projeto e abre a demo dele.
+      // A troca do topo do modal faz o mesmo; o foco vai para a troca do modal novo, no projeto aberto.
+      function trocarDemo(id) {
+        var aberto = document.querySelector('dialog.modal-demo[open]'); if (aberto) aberto.close();
+        mostrarAba(id);
+        var dlg = document.getElementById('modal-demo-' + id); dlg.showModal();
+        dlg.querySelector('.demo-troca [aria-pressed="true"]').focus();
+      }
+      document.querySelectorAll('[data-trocar]').forEach(function (b) {
+        b.addEventListener('click', function () { if (b.getAttribute('aria-pressed') !== 'true') trocarDemo(b.dataset.trocar); });
+      });
+
+      // --- Projetos 5b. Aviso do Baixar -------------------------------
+      // Um aviso no pé da tela, com Fechar, que some sozinho em 6 s. Nada é baixado.
+      var aviso = document.getElementById('dl-aviso'), avisoDemo = aviso.querySelector('.dl-aviso-demo'), avisoTempo = 0, avisoDe = null;
+      // O mesmo aviso serve ao Baixar e ao "Ver mais" enquanto a página do projeto não existe.
+      function avisar(b) {
+        avisoDe = b;
+        var pagina = 'pagina' in b.dataset, demo = pagina ? b.dataset.paginaDemo : b.dataset.baixarDemo;
+        aviso.querySelector('[data-campo="dl-icone"]').setAttribute('href', pagina ? '#i-arrow-up-right' : '#i-download');
+        aviso.querySelector('[data-campo="dl-titulo"]').textContent = pagina ? b.dataset.pagina + ': página em breve' : b.dataset.baixar + ': download em breve';
+        aviso.querySelector('[data-campo="dl-texto"]').textContent = pagina ? 'A página do projeto, com mais detalhes, está sendo preparada.' : 'O app vai sair em APK e na Google Play.';
+        avisoDemo.hidden = !demo; avisoDemo.dataset.demo = demo || '';
+        aviso.hidden = false;
+        clearTimeout(avisoTempo); avisoTempo = setTimeout(fecharAviso, 6000);
+      }
+      function fecharAviso(devolver) { aviso.hidden = true; if (devolver && avisoDe) avisoDe.focus(); }
+      document.addEventListener('click', function (e) {
+        var b = e.target.closest('[data-baixar], [data-pagina]'); if (!b) return;
+        if (b.dataset.pagina) e.preventDefault(); // a página do projeto ainda não existe
+        avisar(b);
+      });
+      aviso.querySelector('.dl-aviso-x').addEventListener('click', function () { fecharAviso(true); });
+      avisoDemo.addEventListener('click', function () { fecharAviso(); document.getElementById(avisoDemo.dataset.demo).showModal(); });
+      aviso.addEventListener('mouseenter', function () { clearTimeout(avisoTempo); });
+      aviso.addEventListener('focusin', function () { clearTimeout(avisoTempo); });
+
+      // --- Projetos 6. Relógio simulado, comum às duas demos: avança "vel" vezes mais rápido que o real ---
+      function relogio() {
+        var r = { vel: 60, base: { real: Date.now(), sim: Date.now() } };
+        r.agora = function () { return r.base.sim + (Date.now() - r.base.real) * r.vel; };
+        r.rebase = function (sim) { r.base = { real: Date.now(), sim: sim == null ? r.agora() : sim }; };
+        return r;
+      }
+      function dois(n) { return String(n).padStart(2, '0'); }
+      function ligarVel(raiz, rel, depois) {
+        raiz.querySelectorAll('[data-vel]').forEach(function (b) {
+          b.addEventListener('click', function () { rel.rebase(); rel.vel = +b.dataset.vel; if (depois) depois(); desenhar(); });
+        });
+        function desenhar() { raiz.querySelectorAll('[data-vel]').forEach(function (b) { b.setAttribute('aria-pressed', String(+b.dataset.vel === rel.vel)); }); }
+        desenhar();
+      }
+      function passos(raiz, ordem, i, tudoFeito) {
+        raiz.querySelectorAll('[data-passo]').forEach(function (li, k) {
+          li.classList.toggle('feito', k < i || tudoFeito);
+          if (k === i && !tudoFeito) li.setAttribute('aria-current', 'step'); else li.removeAttribute('aria-current');
+        });
+      }
+
+      // --- Projetos 7. Demo do Contador --------------------------------------------------------------------
+      (function () {
+        var dlg = document.getElementById('modal-demo-contador');
+        var raiz = dlg.querySelector('.demo');
+        var $ = function (c) { return raiz.querySelector('[data-campo="' + c + '"]'); };
+        var rel = relogio(), agora = rel.agora;
+        var PIN = '123456';
+        var s = { fase: 'inicio', dur: 60, inicio: 0, retorno: 0 };
+        var ultimoTom = '';
+        var campo = raiz.querySelector('#demo-pin');
+
+        function hora(t, seg) { var d = new Date(t); return dois(d.getHours()) + ':' + dois(d.getMinutes()) + (seg === false ? '' : ':' + dois(d.getSeconds())); }
+        function hms(ms) { var x = Math.floor(Math.abs(ms) / 1000); return dois(Math.floor(x / 3600)) + ':' + dois(Math.floor(x / 60) % 60) + ':' + dois(x % 60); }
+        function curto(ms) { var x = Math.round(Math.abs(ms) / 1000); return Math.floor(x / 60) + 'm ' + dois(x % 60) + 's'; }
+        function extenso(ms) { var x = Math.round(Math.abs(ms) / 1000), m = Math.floor(x / 60), sg = x % 60; return (m ? m + ' min' : '') + (m && sg ? ' ' : '') + (sg || !m ? sg + ' s' : ''); }
+        var TONS = {
+          ok: ['i-check-circle', 'No intervalo · tempo restante'],
+          breve: ['i-clock', 'Retorno em breve'],
+          prepare: ['i-alert', 'Prepare-se para retornar'],
+          excedido: ['i-alert', 'Prazo atingido · tempo acima'],
+        };
+
+        function desenhar() {
+          var t = agora();
+          raiz.querySelectorAll('[data-view]').forEach(function (v) { v.hidden = v.dataset.view !== s.fase; });
+          passos(raiz, null, { inicio: 0, almoco: 1, pin: 2, retorno: 2 }[s.fase], false);
+          raiz.querySelectorAll('[data-dur]').forEach(function (b) { b.setAttribute('aria-pressed', String(+b.dataset.dur === s.dur)); });
+          var tom = 'ok', prev = s.inicio + s.dur * 60000;
+          if (s.fase === 'inicio') {
+            $('agora').textContent = hora(t);
+            $('previa').textContent = hora(t + s.dur * 60000, false);
+          } else if (s.fase === 'almoco' || s.fase === 'pin') {
+            var resta = prev - t;
+            tom = resta <= 0 ? 'excedido' : resta < 5 * 60000 ? 'prepare' : resta < 10 * 60000 ? 'breve' : 'ok';
+            $('previsto').textContent = hora(prev);
+            $('contador').textContent = (resta < 0 ? '+' : '') + hms(resta);
+            $('barra').style.width = Math.min(100, Math.max(0, (t - s.inicio) / (s.dur * 600))) + '%';
+            $('pin-agora').textContent = hora(t);
+            if (tom !== ultimoTom) {
+              $('chip-icone').querySelector('use').setAttribute('href', '#' + TONS[tom][0]);
+              $('chip').textContent = TONS[tom][1];
+            }
+          } else {
+            var dif = s.retorno - prev, acima = dif > 0;
+            tom = acima ? 'excedido' : 'ok';
+            $('r-inicio').textContent = hora(s.inicio);
+            $('r-previsto').textContent = hora(prev);
+            $('r-retorno').textContent = hora(s.retorno);
+            $('r-duracao').textContent = curto(s.retorno - s.inicio);
+            $('r-dif').textContent = (acima ? '+' : '−') + curto(dif);
+            var r = $('resultado');
+            r.querySelector('use').setAttribute('href', acima ? '#i-alert' : '#i-check-circle');
+            r.querySelector('span').textContent = acima ? extenso(dif) + ' acima do limite' : 'Dentro do horário';
+          }
+          raiz.dataset.tom = tom;
+          ultimoTom = tom;
+        }
+        function focar(sel) { var b = raiz.querySelector('[data-view="' + s.fase + '"] ' + sel); if (b) b.focus({ preventScroll: true }); }
+        function erro(msg) { $('pin-erro').textContent = msg; campo.setAttribute('aria-invalid', msg ? 'true' : 'false'); }
+
+        raiz.addEventListener('click', function (e) {
+          var b = e.target.closest('button'); if (!b || b.dataset.vel) return;
+          var a = b.dataset.acao;
+          if (b.dataset.dur) { s.dur = +b.dataset.dur; }
+          else if (a === 'iniciar') { s.fase = 'almoco'; s.inicio = agora(); ultimoTom = ''; desenhar(); return focar('[data-acao="retornar"]'); }
+          else if (a === 'retornar') { s.fase = 'pin'; campo.value = ''; erro(''); desenhar(); return focar('#demo-pin'); }
+          else if (a === 'usar-pin') { campo.value = PIN; erro(''); return focar('[data-acao="confirmar"]'); }
+          else if (a === 'confirmar') {
+            var v = campo.value.trim();
+            if (v.length !== 6) { erro('Digite os 6 dígitos do PIN.'); return campo.focus(); }
+            if (v !== PIN) { erro('PIN incorreto. Na versão de teste, use 123456.'); campo.select(); return; }
+            s.fase = 'retorno'; s.retorno = agora(); desenhar(); return focar('[data-acao="reiniciar"]');
+          }
+          else if (a === 'voltar') { s.fase = 'almoco'; desenhar(); return focar('[data-acao="retornar"]'); }
+          else if (a === 'reiniciar') { s.fase = 'inicio'; ultimoTom = ''; desenhar(); return focar('[data-acao="iniciar"]'); }
+          desenhar();
+        });
+        campo.addEventListener('input', function () { campo.value = campo.value.replace(/\D/g, '').slice(0, 6); if ($('pin-erro').textContent) erro(''); });
+        campo.addEventListener('keydown', function (e) { if (e.key === 'Enter') raiz.querySelector('[data-acao="confirmar"]').click(); });
+        ligarVel(raiz, rel);
+
+        // Só conta com o modal aberto.
+        setInterval(function () { if (dlg.open && !document.hidden) desenhar(); }, 250);
+        dlg.addEventListener('close', function () { if (s.fase === 'inicio') rel.rebase(Date.now()); });
+
+        desenhar();
+      })();
+
+      // --- Projetos 8. Demo do Afinuvo --------------------------------------------------------------------
+      (function () {
+        var dlg = document.getElementById('modal-demo-afinuvo');
+        var raiz = dlg.querySelector('.demo');
+        var $ = function (c) { return raiz.querySelector('[data-campo="' + c + '"]'); };
+        var rel = relogio(), agora = rel.agora;
+        var DUR = 25 * 60000, CIRC = 2 * Math.PI * 52;
+        var PLANO = '25 min · depois do jantar';
+        // Hipóteses no tom do app (src/data/initialData.ts), uma por barreira:
+        // [confiança, título, observação, antes, depois, plano depois de aplicar]
+        var HIP = {
+          fatigue: [89, 'Energia baixa à noite', 'Você cumpre 92% dos hábitos feitos de manhã e 33% dos feitos depois das 20h30.', 'Depois do jantar', 'Às 18h30', '25 min · às 18h30'],
+          oversized: [94, 'Meta grande demais', 'Você mantém 88% de adesão em blocos curtos e falta a 75% das sessões longas.', '25 min', '15 min', '15 min · depois do jantar'],
+          forgot: [81, 'Gatilho que não acontece', 'Nos dias de falta, o jantar não teve horário fixo e o gatilho não disparou.', 'Depois do jantar', 'Ao fechar o notebook', '25 min · ao fechar o notebook'],
+          friction: [86, 'Começo sem passo claro', 'Você começa mais vezes quando o primeiro passo já está escrito no plano.', 'Abrir o curso', 'Rodar os testes (2 min)', '25 min · começa pelos testes'],
+        };
+        function novo() { return { fase: 'executar', rodando: false, resta: DUR, ult: 0, barreira: 'oversized', aplicado: false }; }
+        var s = novo();
+        function mmss(ms) { var x = Math.ceil(Math.max(0, ms) / 1000); return dois(Math.floor(x / 60)) + ':' + dois(x % 60); }
+
+        function desenhar() {
+          if (s.rodando) {
+            var t = agora(); s.resta -= t - s.ult; s.ult = t;
+            if (s.resta <= 0) { s.resta = 0; s.rodando = false; s.fase = 'concluido'; }
+          }
+          raiz.querySelectorAll('[data-view]').forEach(function (v) { v.hidden = v.dataset.view !== s.fase; });
+          passos(raiz, null, s.fase === 'concluido' ? 3 : ['executar', 'refletir', 'ajustar'].indexOf(s.fase), s.fase === 'concluido' || (s.fase === 'ajustar' && s.aplicado));
+          $('plano').textContent = s.aplicado ? HIP[s.barreira][5] : PLANO;
+          var tom = 'ok';
+          if (s.fase === 'executar') {
+            var meio = s.resta < DUR;
+            $('tempo').textContent = mmss(s.resta);
+            $('estado').textContent = s.rodando ? 'Em foco' : meio ? 'Pausado' : 'Pronto';
+            $('anel').style.strokeDashoffset = String(CIRC * (1 - s.resta / DUR));
+            $('foco-icone').querySelector('use').setAttribute('href', s.rodando ? '#i-pause' : '#i-play');
+            $('foco-txt').textContent = s.rodando ? 'Pausar' : meio ? 'Retomar foco' : 'Iniciar foco';
+          } else if (s.fase === 'refletir') {
+            tom = 'refletir';
+          } else if (s.fase === 'ajustar') {
+            var h = HIP[s.barreira];
+            $('h-conf').textContent = 'Hipótese · ' + h[0] + '% de confiança';
+            $('h-titulo').textContent = h[1];
+            $('h-obs').textContent = h[2];
+            $('h-antes').textContent = h[3];
+            $('h-depois').textContent = h[4];
+            raiz.querySelector('[data-acao="aplicar"]').hidden = s.aplicado;
+            $('aplicado').hidden = !s.aplicado;
+            tom = s.aplicado ? 'feito' : 'refletir';
+          } else {
+            $('c-foco').textContent = Math.max(1, Math.round((DUR - s.resta) / 60000)) + ' min';
+            tom = 'feito';
+          }
+          raiz.dataset.tom = tom;
+        }
+        function focar(sel) { var b = raiz.querySelector('[data-view="' + s.fase + '"] ' + sel); if (b) b.focus({ preventScroll: true }); }
+
+        raiz.addEventListener('click', function (e) {
+          var b = e.target.closest('button'); if (!b || b.dataset.vel) return;
+          var a = b.dataset.acao;
+          if (b.dataset.barreira) { s.barreira = b.dataset.barreira; s.aplicado = false; s.fase = 'ajustar'; desenhar(); return focar('[data-acao="aplicar"]'); }
+          else if (a === 'foco') { s.rodando = !s.rodando; s.ult = agora(); }
+          else if (a === 'concluir') { s.rodando = false; if (s.resta === DUR) s.resta = 0; s.fase = 'concluido'; desenhar(); return focar('[data-acao="reiniciar"]'); }
+          else if (a === 'dificuldade') { s.rodando = false; s.fase = 'refletir'; desenhar(); return focar('[data-barreira]'); }
+          else if (a === 'voltar') { s.fase = 'executar'; desenhar(); return focar('[data-acao="foco"]'); }
+          else if (a === 'aplicar') { s.aplicado = true; desenhar(); return focar('[data-acao="reiniciar"]'); }
+          else if (a === 'reiniciar') { s = novo(); desenhar(); return focar('[data-acao="foco"]'); }
+          desenhar();
+        });
+        ligarVel(raiz, rel, function () { s.ult = agora(); });
+
+        // Só conta com o modal aberto; fechar pausa o foco.
+        setInterval(function () { if (s.rodando && dlg.open && !document.hidden) desenhar(); }, 250);
+        dlg.addEventListener('close', function () { if (s.rodando) { s.rodando = false; desenhar(); } });
+
+        desenhar();
+      })();
     })();
   </script>
 </body>

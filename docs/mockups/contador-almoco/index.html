@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>O Contador de Almoço e o Afinuvo entram nos projetos num card compacto com abas, as demos abrem num modal com troca entre elas e todo projeto ganha o Ver mais e o Baixar · Mockup</title>
+  <script src="dados.js"></script>
+  <script>window.MOCKUP_MEDIDAS = null;</script>
+  <script src="fotos/medidas.js" onerror="void 0"></script>
+  <style>
+    /* Paleta neutra do mockup: não puxa a cor do produto. */
+    :root {
+      --fundo: #f4f4f5; --cartao: #ffffff; --linha: #e4e4e7; --texto: #18181b; --suave: #52525b;
+      --seg: #e4e4e7; --seg-ativo: #18181b; --seg-ativo-texto: #ffffff; --moldura: #27272a; --foco: #2563eb;
+      color-scheme: light;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --fundo: #111113; --cartao: #1c1c1f; --linha: #2e2e33; --texto: #f4f4f5; --suave: #a1a1aa;
+        --seg: #2e2e33; --seg-ativo: #f4f4f5; --seg-ativo-texto: #18181b; --moldura: #3f3f46; --foco: #60a5fa;
+        color-scheme: dark;
+      }
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--fundo); color: var(--texto); font: 15px/1.55 system-ui, -apple-system, "Segoe UI", sans-serif; }
+    .pagina { max-width: 1440px; margin: 0 auto; padding: 32px 16px 64px; }
+    @media (min-width: 720px) { .pagina { padding: 40px 32px 80px; } }
+
+    .kicker { margin: 0 0 6px; color: var(--suave); font-size: 13px; letter-spacing: .04em; text-transform: uppercase; }
+    h1 { margin: 0; font-size: clamp(22px, 3.2vw, 32px); line-height: 1.2; text-wrap: balance; }
+    .sub { margin: 8px 0 0; color: var(--suave); max-width: 70ch; }
+
+    .controles { position: sticky; top: 0; z-index: 5; display: flex; flex-wrap: wrap; gap: 12px 24px; margin: 24px -16px 0; padding: 12px 16px; background: var(--fundo); border-bottom: 1px solid var(--linha); }
+    .grupo { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+    .grupo > span { color: var(--suave); font-size: 13px; }
+    .seg { display: inline-flex; flex-wrap: wrap; gap: 2px; padding: 2px; border-radius: 9px; background: var(--seg); }
+    .seg button { border: 0; border-radius: 7px; padding: 6px 12px; background: transparent; color: var(--texto); font: inherit; font-size: 14px; cursor: pointer; }
+    .seg button[aria-pressed="true"] { background: var(--seg-ativo); color: var(--seg-ativo-texto); }
+    .seg button:focus-visible, a:focus-visible { outline: 2px solid var(--foco); outline-offset: 2px; }
+
+    .contexto { margin-top: 32px; }
+    .contexto h2 { display: flex; align-items: baseline; gap: 10px; margin: 0 0 12px; font-size: 18px; }
+    .contexto h2 small { color: var(--suave); font-weight: 400; font-size: 13px; }
+    .quadros { display: grid; gap: 20px; }
+    .contexto[data-janela="computador"] .quadros { grid-template-columns: repeat(auto-fit, minmax(min(100%, 440px), 1fr)); }
+    .contexto[data-janela="celular"] .quadros { grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 410px)); justify-content: center; }
+    .cartao-quadro { min-width: 0; }
+    .cartao-quadro header { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; margin-bottom: 8px; font-weight: 600; }
+    .cartao-quadro header a { color: var(--suave); font-weight: 400; font-size: 13px; }
+    .janela { position: relative; overflow: hidden; border: 1px solid var(--linha); border-radius: 10px; background: var(--cartao); }
+    .janela iframe { position: absolute; top: 0; left: 0; border: 0; transform-origin: 0 0; background: #fff; }
+    .celular { border: 10px solid var(--moldura); border-radius: 40px; }
+
+    .notas { display: grid; gap: 16px; margin-top: 40px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); }
+    .nota { padding: 18px 20px; border: 1px solid var(--linha); border-radius: 12px; background: var(--cartao); }
+    .nota h3 { margin: 0 0 8px; font-size: 16px; }
+    .nota p, .nota li { color: var(--suave); }
+    .nota ul, .nota ol { margin: 0; padding-left: 20px; }
+    .nota li + li { margin-top: 6px; }
+    .nota strong { color: var(--texto); }
+    .nota code { font-size: 13px; }
+    .decidir { grid-column: 1 / -1; }
+    .medidas table { width: 100%; border-collapse: collapse; font-size: 13px; font-variant-numeric: tabular-nums; }
+    .medidas th, .medidas td { padding: 4px 6px; border-bottom: 1px solid var(--linha); text-align: left; }
+    .medidas td:not(:first-child), .medidas th:not(:first-child) { text-align: right; }
+    .rodape { margin-top: 32px; color: var(--suave); font-size: 13px; }
+  </style>
+</head>
+<body>
+  <div class="pagina">
+    <p class="kicker">Mockup · contador-almoco · 2026-11-04</p>
+    <h1>O Contador de Almoço e o Afinuvo entram nos projetos num card compacto com abas, as demos abrem num modal com troca entre elas e todo projeto ganha o Ver mais e o Baixar</h1>
+    <p class="sub">Hoje e a proposta lado a lado, com o CSS e o JavaScript do <code>index.html</code> de verdade. A proposta liga só o <code>proposta.css</code> e o <code>proposta.js</code> por cima.</p>
+
+    <div class="controles" role="toolbar" aria-label="Controles do mockup" id="controles"></div>
+
+    <section class="contexto" data-janela="computador" aria-labelledby="h-computador">
+      <h2 id="h-computador">Computador <small>1280 × 860</small></h2>
+      <div class="quadros"></div>
+    </section>
+
+    <section class="contexto" data-janela="celular" aria-labelledby="h-celular">
+      <h2 id="h-celular">Celular <small>390 × 844</small></h2>
+      <div class="quadros"></div>
+    </section>
+
+    <!-- As notas, sempre nesta ordem. Troque os textos-guia pelo conteúdo do mockup. -->
+    <section class="notas" aria-label="Notas">
+      <article class="nota">
+        <h3>No computador</h3>
+        <p>Um <strong>card largo "Teste ao vivo"</strong> entra depois dos dois de hoje e ocupa as duas colunas. No topo, o título <strong>"Alguns projetos disponíveis para teste"</strong> (sem contar quantos: o card pode ganhar projetos sem mudar o texto) e duas <strong>abas</strong>: Contador de Almoço e Afinuvo. Cada aba mostra o texto do projeto à esquerda (nome, descrição, <strong>"Ver mais sobre o projeto →"</strong>, status, tags e Detalhes técnicos) e, à direita, uma <strong>vitrine</strong>: uma prévia parada da demo com duas ações lado a lado, <strong>"Testar a demo · 1 min"</strong> (a principal) e <strong>"Baixar · em breve"</strong>. Em 1280 × 860 a seção Projetos vai de <strong>893 px (104%)</strong> para <strong>1665 px (194%)</strong>, +772 px; o card de demos tem cerca de 690 px e cabe inteiro na janela. Em 1920 × 1080, 1665 px (154%). Sem o "Ver mais", seriam 1577 px: ele custa cerca de 44 px em cada card.</p>
+        <p><strong>Para aproveitar melhor a tela:</strong> sai a linha do ícone e do "Ver Arquitetura" do card de demos (a aba já tem o ícone e o "Detalhes técnicos" abre o mesmo modal); a vitrine fica mais baixa (12rem) e ganha mais largura (texto 4 : vitrine 3), para os dois botões caberem numa linha; e o convite para o outro projeto vira <strong>uma linha só</strong> no pé do card: "Também dá para testar Afinuvo, E se faltar a um hábito virasse um ajuste no plano, e não culpa? →".</p>
+        <p><strong>"Ver mais sobre o projeto →" em todos os projetos</strong> (pedido de 04/11/2026): um link logo depois da descrição, nos quatro cards, que leva à landing page de cada projeto (<code>/projetos/lumus</code>, <code>/projetos/integracoes-pagamento</code>, <code>/projetos/contador-almoco</code>, <code>/projetos/afinuvo</code>). É um link de verdade (<code>&lt;a href&gt;</code>), separado do "Detalhes técnicos", que continua abrindo o modal de arquitetura. Enquanto a página de um projeto não existe, o clique não sai da página: abre o mesmo aviso do Baixar, "Contador de Almoço: página em breve. A página do projeto, com mais detalhes, está sendo preparada.", com "Testar a demo" nos projetos com demo.</p>
+        <p><strong>A landing page do Afinuvo, versão final para o cliente</strong> (pedido de 04/11/2026): o "Ver mais" do Afinuvo abre a página dele, em <code>/projetos/afinuvo</code>. Ela parte da landing page que o app já tem, mas é direta e sempre leva ao teste: topo preso com "← Portfólio" e <strong>"Testar o app"</strong>; o hero "Faltou a um hábito? O Afinuvo ajusta o plano, em vez de zerar a sua sequência.", com Testar o app · 1 min e Baixar · em breve, e a tela "O que dificultou hoje?"; "Outro app" × Afinuvo (sem nomes de concorrentes); <strong>três passos</strong> no lugar do detalhe das 5 dimensões; e a chamada final. Saem as Heurísticas de Nielsen, os números sem fonte (87%, o simulador de retenção), o formulário de e-mail e as abas de teste (Landing Page | App Interativo | Heurísticas | Benchmark e Híbrido | Desktop | Mobile). Todo "Testar o app" abre <strong>o teste ali mesmo</strong>, num modal no visual do Afinuvo, e fechar volta para a página dele: "Teste o Afinuvo", Fazer → Refletir → Ajustar, com o hábito "Estudar inglês". O teste <strong>não cita os outros projetos</strong>: sem o seletor Contador | Afinuvo, sem "Agora teste o Contador" e sem "Quero algo assim no meu time", que são da página principal (a de desenvolvedor). Também sem o 1× / 60×: o tempo corre sempre a 60×, e o rodapé do modal avisa ("No teste, 25 minutos passam em 25 segundos"). O endereço <code>/projetos/afinuvo#testar</code> abre o teste direto. No celular, o modal cabe em 360 × 800; deitado, rola por dentro. Em 1280 × 860, a página tem 2551 px (cerca de 3 telas, com o hero inteiro na primeira); em 360 × 800, 3619 px, com os dois botões na largura toda. <a href="projetos/afinuvo/index.html">Abrir a landing page final</a>.</p>
+        <p><strong>O app de hoje vira a área de desenvolvimento</strong>, que não vai para o site: quem cuida do app a vê pelo repositório (<code>npm run dev</code> no <code>c:/pifhos</code>). No mockup, ela está em <code>projetos/afinuvo-dev/</code>, com uma faixa amarela que diz o que é, só para comparar: <a href="projetos/afinuvo-dev/index.html">abrir a área de desenvolvimento</a>. O que mudar no Afinuvo está documentado em <code>c:/pifhos/docs/landing-page-cliente.md</code>.</p>
+        <p><strong>Baixar em todos os projetos</strong> (pedido de 04/11/2026): os cards Lumus e Integrações de pagamento ganham "Baixar · em breve" ao lado de "Detalhes técnicos"; os dois projetos com demo o têm na vitrine. Por enquanto <strong>nada é baixado</strong>: o clique abre um aviso no pé da tela, "Contador de Almoço: download em breve. O app vai sair em APK e na Google Play.", com Fechar e, nos projetos com demo, o atalho <strong>"Testar a demo"</strong>. O aviso some sozinho em 6 s, mas não enquanto o ponteiro ou o foco estiverem nele. Quando o download existir, só o destino do botão muda.</p>
+        <p><strong>Navegação fluida entre as demos:</strong> o topo do modal troca o nome do projeto por um seletor <strong>Contador | Afinuvo</strong>, que passa de uma demo à outra sem fechar e voltar ao card. A aba do card acompanha a troca, e o foco vai para o seletor do modal novo. O resto do modal segue igual: 1× / 60×, Reiniciar e Fechar, as etapas 1-2-3, uma ação principal por tela, o PIN com "PIN versão de teste: 123456" e, no fim, "Agora teste o…".</p>
+        <p>As ideias por trás, do jeito que os produtos do Vale fazem: <strong>teste antes de baixar</strong> (a demo é o caminho principal, e o Baixar oferece a demo enquanto não existe), <strong>mostrar antes de explicar</strong>, <strong>uma ação principal por tela</strong> (Testar cheio, Baixar contornado), <strong>curiosidade</strong> (o selo e a pergunta do outro projeto) e <strong>sem becos sem saída</strong> (todo clique responde, até o do download que ainda não existe).</p>
+      </article>
+      <article class="nota">
+        <h3>No celular</h3>
+        <p>O card vira uma coluna: o título em uma linha, as duas abas lado a lado, a descrição e logo depois a vitrine, com a prévia baixa (8,5rem, sem a barra de progresso) e os botões <strong>Testar a demo</strong> e <strong>Baixar</strong> na mesma linha; status, tags e Detalhes técnicos vêm depois. O nome do projeto não se repete embaixo da aba. Em 390 × 844, a seção vai de <strong>1589 px (188%)</strong> para <strong>2780 px (329%)</strong>, +1191 px (o "Ver mais" nos três cards da coluna soma cerca de 110 px). Em 360 × 800, de 1608 px (201%) para 2916 px (365%). Deitado (844 × 390), de 1287 px (330%) para 2386 px (612%).</p>
+        <p>O aviso do Baixar ocupa a largura da tela menos 16 px de cada lado, com o texto e o Fechar em cima e "Testar a demo" na largura toda embaixo. O modal ocupa a largura menos 16 px de cada lado; o seletor Contador | Afinuvo, o 1× / 60×, Reiniciar e Fechar cabem numa linha até 360 px, e o modal cabe inteiro em 390 × 844 e 360 × 800 em todas as etapas, inclusive a do PIN. Deitado, o modal rola por dentro. Nada corta, nada rola para o lado e o contraste passa nos dois temas, nos 11 estados.</p>
+      </article>
+      <article class="nota">
+        <h3>O que fica igual</h3>
+        <ul>
+          <li>Os dois cards de hoje (Lumus e Integrações de pagamento), na mesma ordem e com os mesmos modais. Ganham o "Ver mais sobre o projeto" depois da descrição (cerca de 44 px) e o Baixar no rodapé, ao lado de Detalhes técnicos.</li>
+          <li>O título, o texto e o kicker da seção Projetos.</li>
+          <li>Os dois modais novos de arquitetura usam o mesmo desenho dos de hoje.</li>
+          <li>As outras seções, o menu, os temas e o Worker.</li>
+          <li>Nada sai da página nem é gravado: as demos não chamam servidor nem usam <code>localStorage</code>, o PIN de teste só existe no navegador e o Baixar e o "Ver mais" não saem da página enquanto o download e as páginas dos projetos não existem (o do Afinuvo já abre a página dele).</li>
+          <li>O app do Afinuvo no <code>c:/pifhos</code>: o mockup não muda o código dele. Os ajustes ficam anotados em <code>c:/pifhos/docs/landing-page-cliente.md</code>, para serem feitos lá. A landing page final usa o visual do app (escuro, índigo, Plus Jakarta Sans), nos dois temas do portfólio.</li>
+          <li>Sem links para o GitHub por enquanto (D6 decidido). O lugar do "Código ↗" no futuro é o mesmo grupo do Baixar e do Detalhes técnicos.</li>
+        </ul>
+      </article>
+      <article class="nota">
+        <h3>Como entra no código</h3>
+        <ul>
+          <li><code>index.html</code>, no sprite de ícones: os treze <code>&lt;symbol&gt;</code> novos (<code>i-clock</code>, <code>i-rotate</code>, <code>i-alert</code>, <code>i-utensils</code>, <code>i-key</code>, <code>i-target</code>, <code>i-pause</code>, <code>i-help</code>, <code>i-battery</code>, <code>i-maximize</code>, <code>i-bell-off</code>, <code>i-compass</code> e <code>i-download</code>).</li>
+          <li><code>index.html</code>, nos dois cards de hoje: depois do <code>.card-desc</code>, o <code>&lt;a class="ver-mais" href="/projetos/…"&gt;</code>; e o <code>.project-foot</code> ganha um <code>&lt;div class="pf-acoes"&gt;</code> com o <code>&lt;button class="dl-btn" aria-disabled="true" data-baixar="…"&gt;</code> e o "Detalhes técnicos" que já existe.</li>
+          <li><code>index.html</code>, no <code>&lt;body&gt;</code>: o <code>&lt;article id="projeto-demos"&gt;</code> como terceiro filho de <code>.projects-grid</code>, com as abas (<code>role="tablist"</code>) e os dois painéis. Depois do <code>#modal-payments</code>, quatro <code>&lt;dialog&gt;</code>: <code>#modal-contador</code> e <code>#modal-afinuvo</code> (arquitetura) e <code>#modal-demo-contador</code> e <code>#modal-demo-afinuvo</code> (as demos, com o seletor <code>.demo-troca</code>). No fim do <code>&lt;body&gt;</code>, o aviso <code>#dl-aviso</code> (<code>role="status"</code>). O HTML é o mesmo que o <code>proposta.js</code> injeta no mockup.</li>
+          <li><code>index.html</code>, no <code>&lt;style&gt;</code>, bloco Projetos: o <code>proposta.css</code> (card com abas, vitrine, Baixar e aviso, modal da demo, PIN). As regras de <code>max-width: 1023px</code> e <code>640px</code> vão para os blocos que já existem no Responsivo.</li>
+          <li><code>index.html</code>, no <code>&lt;script&gt;</code> do fim: as abas (clique e setas do teclado), a troca de demo, o aviso do Baixar, o relógio simulado e as duas demos do <code>proposta.js</code>, sem <code>window.demosCard</code>, <code>window.contadorDemo</code> e <code>window.afinuvoDemo</code>, que só existem para o mockup. Os ouvintes dos modais saem: o código de hoje já liga todo <code>[data-modal]</code> e <code>[data-close]</code>. O link do Afinuvo já nasce sem o <code>data-pagina</code>, com <code>href="/projetos/afinuvo"</code>; nos outros, o <code>data-pagina</code> sai quando a página existir. Quando o download existir, o <code>data-baixar</code> vira um link (<code>&lt;a href&gt;</code> para o APK ou a Google Play) e o aviso sai.</li>
+          <li><strong>Afinuvo (<code>c:/pifhos</code>)</strong>: a landing page final entra lá, no lugar da tela inicial de hoje, num build de cliente sem as abas de desenvolvimento (por exemplo <code>VITE_MODO=cliente</code>), com <code>base: '/projetos/afinuvo/'</code>. O app de hoje continua no <code>npm run dev</code>. A lista completa, arquivo por arquivo, está em <code>c:/pifhos/docs/landing-page-cliente.md</code>. Em produção, nada é copiado para o repositório do portfólio. No mockup, <code>projetos/afinuvo/</code> é o modelo da página final, feito à mão, e <code>projetos/afinuvo-dev/</code> é a cópia do app de hoje, gerada pelo <code>roteiro/copiar-afinuvo.mjs</code>.</li>
+          <li><code>index.js</code>: o Worker encaminha <code>/projetos/afinuvo/*</code> para onde o Afinuvo estiver publicado (o build dele como assets estáticos no deploy ou um deploy próprio), sem duplicar os arquivos no repositório da landing page. As páginas dos outros projetos, quando vierem, são outro trabalho, com mockup próprio.</li>
+          <li><code>DOCUMENTACAO.md</code>: 2.4 Projetos em destaque (o card com abas, as demos em modal e o Baixar), 3.4 Ícones, 3.6 Responsividade, 4. Interações (abas, troca de demo, aviso do Baixar, relógio simulado e PIN de teste), 5. Acessibilidade e uma linha no 8. Histórico.</li>
+          <li>Ferramenta de mockups: o <code>fotos.mjs</code> confere o modal aberto quando há um (antes, conferia a página inerte atrás dele).</li>
+        </ul>
+      </article>
+      <article class="nota medidas" id="medidas" hidden>
+        <h3>Medidas da conferência</h3>
+        <div id="medidas-corpo"></div>
+      </article>
+      <article class="nota decidir">
+        <h3>Para decidir</h3>
+        <p>Já decidido em 04/11/2026: D1 as demos abrem num modal; D2 um card com abas, e o outro projeto sempre à vista e convidativo; D3 com o modal, o lado da demo deixa de existir; D4 tempo a 60×; D5 o PIN entra, com "PIN versão de teste" sugerido; D6 sem links por enquanto. Pedidos depois: aproveitar melhor a tela, navegação fluida entre os testes, Baixar em todo projeto (ainda sem funcionar), o título sem contar os projetos ("Alguns projetos disponíveis para teste") e um "Ver mais" que leva à landing page de cada projeto, com a do Afinuvo numa versão final para o cliente, e o app de hoje como área de desenvolvimento. E o nome oficial do app passa a ser <strong>Afinuvo</strong> (antes Disciple): o mockup, as abas, a página do projeto (<code>/projetos/afinuvo</code>) e o teste usam só Afinuvo, com a marca "A". No código do <code>c:/pifhos</code> o nome ainda é Disciple, e a troca de lá está anotada no documento do app. O que sobra:</p>
+        <ol>
+          <li><strong>D7 · A aba Contador abre primeiro.</strong> Recomendado: o Contador, que é um MVP com fluxo curto (três cliques até o resultado). Alternativa: o Afinuvo primeiro, que tem a ideia mais diferente. Não muda a altura. <em>Reconhecimento em vez de lembrança.</em></li>
+          <li><strong>D8 · O convite para o outro projeto numa linha.</strong> Recomendado: o selo "Teste também" na aba fechada, a linha "Também dá para testar…" no pé do card e o "Agora teste o…" no fim de cada demo. A linha custa cerca de 60 px no computador e 90 px no celular (o cartão da rodada anterior custava 95 e 150). Alternativa: tirar a linha e deixar só o selo e o fim da demo, mas a aba sozinha é fácil de não ver. <em>Visibilidade do estado do sistema.</em></li>
+          <li><strong>D9 · O erro de PIN lembra o PIN de teste.</strong> Recomendado: "PIN incorreto. Na versão de teste, use 123456." Alternativa: só "PIN incorreto", como no app real, mais fiel mas trava quem não viu a dica. <em>Ajudar a reconhecer, diagnosticar e recuperar erros.</em></li>
+          <li><strong>D10 · Fechar a demo guarda o estado.</strong> Recomendado: quem fecha sem querer volta para onde estava (o foco do Afinuvo pausa; o almoço do Contador segue contando). Alternativa: cada abertura começa do zero, mais simples mas castiga quem fechou sem querer. <em>Controle e liberdade do usuário.</em></li>
+          <li><strong>D11 · O Baixar aparece já, marcado "em breve", e responde ao clique.</strong> Recomendado: o botão visível em todos os projetos, com o selo "em breve" (no computador) e o aviso que explica e oferece a demo. Alternativa A: o botão desabilitado e cinza, que não explica nada e pode reprovar no contraste. Alternativa B: esconder até o download existir, que não custa altura, mas não mostra que o app vai sair. Nenhuma muda a altura do card de demos; nos cards de hoje, o Baixar cabe na linha do Detalhes técnicos. <em>Visibilidade do estado do sistema e prevenção de erros.</em></li>
+          <li><strong>D12 · Seletor Contador | Afinuvo no topo do modal.</strong> Recomendado: trocar de demo a qualquer momento, sem fechar. Alternativa: só o "Agora teste o…" no fim da demo, como na rodada anterior, que exige terminar uma para chegar na outra. Não muda a altura do modal (ocupa o lugar do nome do projeto). <em>Controle e liberdade e flexibilidade e eficiência de uso.</em></li>
+          <li><strong>D13 · Sem a linha "ícone + Ver Arquitetura" no card de demos.</strong> Recomendado: tirar, porque repete a aba e o "Detalhes técnicos"; economiza cerca de 70 px no computador. No celular, o nome do projeto embaixo da aba também sai (cerca de 50 px). Alternativa: manter, igual aos cards Lumus e Pagamentos, mais consistente e mais alto. <em>Estética e design minimalista contra consistência e padrões.</em></li>
+          <li><strong>D14 · "Ver mais sobre o projeto →", logo depois da descrição, nos quatro cards.</strong> Recomendado: um link de texto com o destino no nome, separado do "Detalhes técnicos" (modal) e do Baixar; o do Afinuvo já abre a página dele, e nos outros, enquanto a página não existe, o clique avisa "página em breve" e oferece a demo. Custa cerca de 44 px por card. Alternativa A: "Ler mais" no rodapé, junto do Detalhes técnicos, que não custa altura, mas deixa três ações parecidas lado a lado e "Ler mais" sozinho não diz para onde vai. Alternativa B: o link só aparece quando a página existir. <em>Correspondência com o mundo real (o texto diz o destino) e reconhecimento em vez de lembrança.</em></li>
+          <li><strong>D15 · A página do Afinuvo é uma landing page final, direta e voltada ao teste, servida em <code>/projetos/afinuvo</code>; o app de hoje fica como área de desenvolvimento, fora do site.</strong> Recomendado: a página do mockup, com "Outro app" no lugar dos concorrentes, três passos no lugar das 5 dimensões, sem Nielsen e sem as abas de teste, e quatro "Testar o app" (topo preso, hero, depois dos passos e no fim); 2551 px no computador e 3619 px no celular (360 px). Alternativa A: publicar o app de hoje como está, que não dá trabalho, mas cita concorrentes, mostra as ferramentas de desenvolvimento e leva o cliente a ler em vez de testar. Alternativa B: só o card do portfólio, sem página, que não custa nada, mas deixa o "Ver mais" sem destino. <em>Estética e design minimalista e correspondência com o mundo real (a página fala a língua do cliente, não a de quem fez o app).</em></li>
+          <li><strong>D16 · "Testar o app" abre um teste só do Afinuvo, na própria página dele.</strong> Recomendado: um modal no visual do Afinuvo, com o mesmo ciclo da demo do portfólio (Fazer → Refletir → Ajustar), sem nada dos outros projetos e sem o seletor de velocidade; fechar devolve à página e ao botão que abriu. Custa repetir a lógica da demo (cerca de 90 linhas) até ela virar um módulo só, usado pelas duas páginas, com a troca de projetos ligada só no portfólio. Alternativa A: levar ao modal do portfólio, que reaproveita tudo, mas mostra o Contador e o "Quero algo assim no meu time" para o cliente do Afinuvo e tira ele da página. Alternativa B: um modo de teste do próprio app, sem as abas de desenvolvimento, mais completo (as 5 dimensões), mas que ainda precisa ser feito no <code>c:/pifhos</code>; quando existir, só o destino do botão muda. <em>Correspondência com o mundo real e estética e design minimalista (o cliente vê só o que é dele) e controle e liberdade (fechar volta para onde estava).</em></li>
+        </ol>
+        <p>Heurísticas que o desenho atende sem precisar de decisão: <strong>visibilidade do estado</strong> (aba selecionada, selo "Teste também", etapas 1-2-3, contador e anel, seletor do modal), <strong>correspondência com o mundo real</strong> (horas de relógio, "O que dificultou hoje?", APK e Google Play), <strong>controle e liberdade</strong> (Fechar, Esc, Reiniciar, Pausar e Voltar em cada etapa; o aviso fecha e não some com o foco nele), <strong>consistência</strong> (a mesma moldura nas duas demos e o mesmo Baixar nos quatro projetos), <strong>prevenção de erros</strong> (o campo só aceita números e pede os 6 dígitos; o Baixar não leva a lugar nenhum quebrado), <strong>reconhecimento em vez de lembrança</strong> (o PIN de teste e o "antes → depois" à vista), <strong>cor nunca sozinha</strong> e <strong>ajuda</strong> (a caixa do PIN, a reflexão sem culpa, o aviso do download). No teclado, as abas andam com as setas, o modal prende o foco e devolve ao botão que o abriu, o seletor leva o foco junto, e fechar o aviso devolve o foco ao Baixar.</p>
+      </article>
+    </section>
+
+    <p class="rodape" id="rodape"></p>
+  </div>
+
+  <script>
+    (function () {
+      var D = window.MOCKUP;
+      var JANELAS = { computador: [1280, 860], celular: [390, 844] };
+      var GRUPOS = [
+        { chave: 'v', nome: 'Versão', opcoes: [['lado', 'Lado a lado'], ['proposta', 'Proposta'], ['hoje', 'Hoje']] },
+        { chave: 'e', nome: 'Estado', opcoes: Object.keys(D.estados).map(function (k) { return [k, D.estados[k].nome]; }) },
+        { chave: 't', nome: 'Tema', opcoes: [['claro', 'Claro'], ['escuro', 'Escuro']] },
+        { chave: 'c', nome: 'Em volta', opcoes: [['neutro', 'Neutro'], ['real', 'Real']] },
+      ];
+      var padrao = { v: 'lado', e: GRUPOS[1].opcoes[0][0], t: D.temaPadrao === 'classic' ? 'claro' : 'escuro', c: 'neutro' };
+
+      function lerHash() {
+        var h = new URLSearchParams(location.hash.slice(1)), s = {};
+        GRUPOS.forEach(function (g) {
+          var v = h.get(g.chave);
+          s[g.chave] = g.opcoes.some(function (o) { return o[0] === v; }) ? v : padrao[g.chave];
+        });
+        return s;
+      }
+      var estado = lerHash();
+
+      var controles = document.getElementById('controles');
+      GRUPOS.forEach(function (g) {
+        if (g.opcoes.length < 2 && g.chave === 'e') return;
+        var grupo = document.createElement('div'); grupo.className = 'grupo';
+        var rot = document.createElement('span'); rot.textContent = g.nome; rot.id = 'g-' + g.chave;
+        var seg = document.createElement('div'); seg.className = 'seg'; seg.setAttribute('role', 'group'); seg.setAttribute('aria-labelledby', rot.id);
+        g.opcoes.forEach(function (o) {
+          var b = document.createElement('button'); b.type = 'button'; b.textContent = o[1]; b.dataset.chave = g.chave; b.dataset.valor = o[0];
+          seg.appendChild(b);
+        });
+        grupo.appendChild(rot); grupo.appendChild(seg); controles.appendChild(grupo);
+      });
+      controles.addEventListener('click', function (ev) {
+        var b = ev.target.closest('button'); if (!b) return;
+        estado[b.dataset.chave] = b.dataset.valor;
+        history.replaceState(null, '', '#' + new URLSearchParams(estado).toString());
+        desenhar();
+      });
+      window.addEventListener('hashchange', function () { estado = lerHash(); desenhar(); });
+
+      var observador = new ResizeObserver(function (itens) {
+        itens.forEach(function (it) { encaixar(it.target); });
+      });
+      function encaixar(janela) {
+        var w = +janela.dataset.w, h = +janela.dataset.h;
+        var celular = janela.classList.contains('celular');
+        var s = janela.clientWidth / w;
+        if (celular) s = Math.min(1, s);
+        var f = janela.querySelector('iframe');
+        f.style.width = w + 'px'; f.style.height = h + 'px'; f.style.transform = 'scale(' + s + ')';
+        janela.style.height = (h * s + (celular ? 20 : 2)) + 'px';
+      }
+
+      var esperando = 0;
+      window.addEventListener('message', function (ev) {
+        if (ev.data && ev.data.mockupPronto && --esperando <= 0) window.__indexPronto = true;
+      });
+
+      function urlQuadro(v, janela) {
+        return 'quadro.html?' + new URLSearchParams({ v: v, t: estado.t, e: estado.e, c: estado.c }).toString() + '#' + janela;
+      }
+
+      function desenhar() {
+        controles.querySelectorAll('button').forEach(function (b) {
+          b.setAttribute('aria-pressed', String(estado[b.dataset.chave] === b.dataset.valor));
+        });
+        var versoes = estado.v === 'lado' ? ['hoje', 'proposta'] : [estado.v];
+        window.__indexPronto = false;
+        esperando = versoes.length * Object.keys(JANELAS).length;
+        document.querySelectorAll('.contexto').forEach(function (sec) {
+          var nome = sec.dataset.janela, tam = JANELAS[nome];
+          var lista = sec.querySelector('.quadros');
+          lista.querySelectorAll('.janela').forEach(function (j) { observador.unobserve(j); });
+          lista.innerHTML = '';
+          versoes.forEach(function (v) {
+            var url = urlQuadro(v, nome);
+            var cartao = document.createElement('div'); cartao.className = 'cartao-quadro';
+            cartao.innerHTML = '<header><span>' + (v === 'hoje' ? 'Hoje' : 'Proposta') + '</span><a target="_blank" rel="noopener">Abrir no tamanho real</a></header>';
+            cartao.querySelector('a').href = url;
+            var janela = document.createElement('div');
+            janela.className = 'janela' + (nome === 'celular' ? ' celular' : '');
+            janela.dataset.w = tam[0]; janela.dataset.h = tam[1];
+            var f = document.createElement('iframe');
+            f.title = (v === 'hoje' ? 'Hoje' : 'Proposta') + ' no ' + nome; f.src = url; f.tabIndex = -1;
+            janela.appendChild(f); cartao.appendChild(janela); lista.appendChild(cartao);
+            observador.observe(janela); encaixar(janela);
+          });
+        });
+      }
+      desenhar();
+
+      var M = window.MOCKUP_MEDIDAS;
+      if (M && M.linhas && M.linhas.length) {
+        var partes = M.partes;
+        var html = '<table><thead><tr><th>Janela · versão</th>' + partes.map(function (p) { return '<th>' + p + '</th>'; }).join('') + '</tr></thead><tbody>';
+        M.linhas.forEach(function (l) {
+          html += '<tr><td>' + l.janela + ' · ' + l.versao + '</td>' + partes.map(function (p) {
+            var m = l.medidas[p]; return '<td>' + (m ? m.altura + ' px (' + m.pct + '%)' : '–') + '</td>';
+          }).join('') + '</tr>';
+        });
+        document.getElementById('medidas-corpo').innerHTML = html + '</tbody></table><p>Altura de cada parte e a % da altura da janela, no estado e tema ' + M.estado + ' · ' + M.tema + '.</p>';
+        document.getElementById('medidas').hidden = false;
+      }
+      document.getElementById('rodape').textContent = 'Dados gerados de ' + D.origem + ' (sha ' + D.sha + ') por roteiro/gerar.mjs.' + (M ? ' Conferência de ' + M.data + '.' : ' Ainda sem conferência: rode o fotos.mjs.');
+    })();
+  </script>
+</body>
+</html>
