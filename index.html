@@ -2126,9 +2126,9 @@
 
       // --- Projetos 5. Abas e botões que abrem as demos ---------------
       var cardEl = document.getElementById('projeto-demos');
-      var tabs = [].slice.call(cardEl.querySelectorAll('.sc-tab'));
+      var abasProjeto = [].slice.call(cardEl.querySelectorAll('.sc-tab'));
       function mostrarAba(id, focar) {
-        tabs.forEach(function (t) {
+        abasProjeto.forEach(function (t) {
           var on = t.dataset.aba === id;
           t.setAttribute('aria-selected', String(on)); t.tabIndex = on ? 0 : -1;
           document.getElementById(t.getAttribute('aria-controls')).hidden = !on;
@@ -2140,10 +2140,10 @@
         var d = e.target.closest('[data-demo]'); if (d) document.getElementById(d.dataset.demo).showModal();
       });
       cardEl.querySelector('.sc-tabs').addEventListener('keydown', function (e) {
-        var i = tabs.indexOf(document.activeElement); if (i < 0) return;
-        var j = e.key === 'ArrowRight' ? i + 1 : e.key === 'ArrowLeft' ? i - 1 : e.key === 'Home' ? 0 : e.key === 'End' ? tabs.length - 1 : null;
+        var i = abasProjeto.indexOf(document.activeElement); if (i < 0) return;
+        var j = e.key === 'ArrowRight' ? i + 1 : e.key === 'ArrowLeft' ? i - 1 : e.key === 'Home' ? 0 : e.key === 'End' ? abasProjeto.length - 1 : null;
         if (j === null) return;
-        e.preventDefault(); mostrarAba(tabs[(j + tabs.length) % tabs.length].dataset.aba, true);
+        e.preventDefault(); mostrarAba(abasProjeto[(j + abasProjeto.length) % abasProjeto.length].dataset.aba, true);
       });
       // "Agora teste o …": fecha esta demo, mostra a aba do outro projeto e abre a demo dele.
       // A troca do topo do modal faz o mesmo; o foco vai para a troca do modal novo, no projeto aberto.
