@@ -481,7 +481,9 @@
     .contact-item:hover { border-color: rgba(16, 185, 129, .4); }
     .contact-item.linkedin:hover { border-color: rgba(59, 130, 246, .4); }
     .contact-link { display: flex; align-items: center; gap: .75rem; min-width: 0; font-size: .875rem; font-weight: 500; color: #e2e8f0; }
-    .contact-link span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    /* O e-mail quebra depois do @ quando não cabe (o <wbr> no HTML); "soares-lucas94@" não quebra no hífen. */
+    .contact-link span:not(.contact-icon) { overflow-wrap: anywhere; }
+    .contact-link .junto { white-space: nowrap; }
     .contact-item:hover .contact-link { color: #fff; }
     .contact-icon { width: 2.25rem; height: 2.25rem; border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; background: rgba(16, 185, 129, .2); color: #34d399; }
     .linkedin .contact-icon { background: rgba(59, 130, 246, .2); color: #60a5fa; }
@@ -555,6 +557,67 @@
     .modal-ok { padding: .5rem 1rem; border-radius: 12px; font-size: .75rem; font-weight: 600; background: #06b6d4; color: #000; }
     .modal-ok:hover { background: #22d3ee; }
 
+    /* ---------- Movimento (estrelas, parallax, seções que surgem, glitch) ---------- */
+    /* Vem dos commits 91e175e e b915b92 do new-landing-page; mockup em docs/mockups/movimento-espacial.
+       O parallax usa a propriedade "translate", que se soma ao "transform" (inclinação do terminal, hover dos cartões). */
+    .starfield { display: none; position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+    :root[data-theme="spatial"] .starfield { display: block; opacity: .8; }
+    /* O JS escreve --py (px) em cada peça; sem JS ou com movimento reduzido, fica 0. */
+    .glow, .contact-glow, .terminal-wrap, .projects-grid > .project, .contact-panel, .projects-nebula { translate: 0 var(--py, 0px); }
+    #projetos { position: relative; overflow: hidden; }
+    #projetos > .container { position: relative; z-index: 1; }
+    .projects-nebula {
+      display: none; position: absolute; right: -5rem; top: 33%;
+      width: 20rem; height: 20rem; border-radius: 9999px;
+      background: rgba(6, 182, 212, .1); filter: blur(100px); pointer-events: none;
+    }
+    :root[data-theme="spatial"] .projects-nebula { display: block; }
+    .projects-grid { align-items: start; }
+    /* A classe .revela só entra pelo JS: sem JS, nada fica escondido. */
+    .revela { opacity: 0; transform: translateY(48px) scale(.975); transition: opacity .8s cubic-bezier(.16, 1, .3, 1), transform .8s cubic-bezier(.16, 1, .3, 1); }
+    .revela.visivel { opacity: 1; transform: none; }
+    /* Hover dos cartões no Espacial: cresce e acende. */
+    :root[data-theme="spatial"] .card { transition: transform .3s ease-out, border-color .3s ease-out, box-shadow .3s ease-out; }
+    :root[data-theme="spatial"] .card:hover {
+      transform: translateY(-4px) scale(1.03);
+      border-color: #22d3ee;
+      box-shadow: 0 0 30px rgba(45, 212, 191, .28), 0 10px 20px rgba(0, 0, 0, .4);
+    }
+    :root[data-theme="spatial"] .project:hover {
+      transform: translateY(-4px) scale(1.025);
+      box-shadow: 0 0 35px rgba(56, 189, 248, .3), 0 12px 25px rgba(0, 0, 0, .5);
+    }
+    /* Glitch nos títulos, só no Espacial: a cada 7,5 s, por cerca de 0,3 s, o título treme e ganha duas cópias
+       deslocadas (o texto vem do data-text). O isolation mantém as cópias atrás do título, e não do fundo da seção. */
+    :root[data-theme="spatial"] .glitch { position: relative; isolation: isolate; animation: glitch-torce 7.5s infinite ease-in-out; }
+    :root[data-theme="spatial"] .glitch::before,
+    :root[data-theme="spatial"] .glitch::after {
+      content: attr(data-text); position: absolute; inset: 0; pointer-events: none; opacity: 0;
+      -webkit-background-clip: border-box; background-clip: border-box; background: none;
+    }
+    :root[data-theme="spatial"] .glitch::before { color: #38bdf8; z-index: -1; animation: glitch-copia-1 7.5s infinite linear; }
+    :root[data-theme="spatial"] .glitch::after { color: #2dd4bf; z-index: -2; animation: glitch-copia-2 7.5s infinite linear; }
+    @keyframes glitch-torce {
+      0%, 93%, 100% { transform: none; filter: none; }
+      94% { transform: skew(-.8deg, .4deg); filter: drop-shadow(-1px 0 rgba(56, 189, 248, .6)); }
+      95% { transform: skew(1.2deg, -.6deg) translate(-1px, .5px); filter: drop-shadow(1px 0 rgba(45, 212, 191, .6)); }
+      96% { transform: skew(-.4deg, .2deg); filter: none; }
+      97% { transform: none; }
+    }
+    @keyframes glitch-copia-1 {
+      0%, 92.5%, 100% { opacity: 0; clip-path: inset(0); transform: none; }
+      93% { opacity: .75; clip-path: inset(18% 0 54% 0); transform: translate(-2px, -.5px); }
+      94% { opacity: .65; clip-path: inset(62% 0 15% 0); transform: translate(2px, .5px); }
+      95% { opacity: .8; clip-path: inset(35% 0 40% 0); transform: translate(-1.5px, .2px); }
+      95.8% { opacity: 0; clip-path: inset(0); transform: none; }
+    }
+    @keyframes glitch-copia-2 {
+      0%, 93%, 100% { opacity: 0; clip-path: inset(0); transform: none; }
+      93.8% { opacity: .7; clip-path: inset(45% 0 25% 0); transform: translate(2px, .5px); }
+      94.6% { opacity: .65; clip-path: inset(10% 0 68% 0); transform: translate(-2px, -.5px); }
+      95.4% { opacity: 0; clip-path: inset(0); transform: none; }
+    }
+
     /* ---------- Responsivo ---------- */
     @media (max-width: 1023px) {
       .hero-grid, .projects-grid { grid-template-columns: 1fr; }
@@ -591,6 +654,8 @@
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
       *, *::before, *::after { animation: none !important; transition: none !important; }
+      .revela { opacity: 1; transform: none; }
+      :root[data-theme="spatial"] .card:hover { transform: none; }
     }
 
     /* --- Projetos: card "Teste ao vivo", demos em modal, Baixar e "Ver mais" --- */
@@ -977,6 +1042,7 @@
   <main id="top">
     <!-- Hero -->
     <section class="hero" id="hero" aria-labelledby="hero-title">
+      <canvas class="starfield" aria-hidden="true"></canvas>
       <div class="glow glow-1" aria-hidden="true"></div>
       <div class="glow glow-2" aria-hidden="true"></div>
       <div class="hud mono" aria-hidden="true">
@@ -1000,7 +1066,7 @@
             </span>
             <span class="identity-status">Disponível para projetos</span>
           </div>
-          <h1 id="hero-title">Software para operação real.</h1>
+          <h1 id="hero-title" class="glitch" data-text="Software para operação real.">Software para operação real.</h1>
           <p class="hero-copy">Foco em sistemas corporativos, integrações, ERP, dados e automações. Soluções projetadas para estabilidade operacional, pipelines consistentes e alta performance em ambientes de missão crítica.</p>
 
           <div class="btn-group">
@@ -1106,7 +1172,7 @@
       <div class="container">
         <div class="section-head">
           <span class="kicker mono">Capacidades &amp; Domínio</span>
-          <h2 id="especialidades-title">Onde gero valor</h2>
+          <h2 id="especialidades-title" class="glitch" data-text="Onde gero valor">Onde gero valor</h2>
           <p>Atuação técnica sólida combinada com entendimento profundo de processos de negócio, eliminando gargalos e entregando software estável.</p>
         </div>
 
@@ -1173,10 +1239,11 @@
 
     <!-- Projetos -->
     <section class="section" id="projetos" aria-labelledby="projetos-title">
+      <div class="projects-nebula" aria-hidden="true"></div>
       <div class="container">
         <div class="section-head">
           <span class="kicker mono">Cases Selecionados</span>
-          <h2 id="projetos-title">Projetos em destaque</h2>
+          <h2 id="projetos-title" class="glitch" data-text="Projetos em destaque">Projetos em destaque</h2>
           <p>Sistemas e motores de processamento desenvolvidos para cenários de alta demanda, integrações críticas e consistência rigorosa de dados.</p>
         </div>
 
@@ -1327,7 +1394,7 @@
       <div class="container">
         <div class="section-head">
           <span class="kicker mono">Histórico &amp; Consistência</span>
-          <h2 id="experiencia-title">Trajetória profissional</h2>
+          <h2 id="experiencia-title" class="glitch" data-text="Trajetória profissional">Trajetória profissional</h2>
           <p>Anos de dedicação em desenvolvimento de software corporativo de ponta a ponta, sustentação contínua e evolução de ecossistemas operacionais.</p>
         </div>
 
@@ -1378,7 +1445,7 @@
         <div class="contact-panel">
           <div class="contact-head">
             <span class="kicker mono">Conexão Direta</span>
-            <h2 id="contato-title">Vamos conversar?</h2>
+            <h2 id="contato-title" class="glitch" data-text="Vamos conversar?">Vamos conversar?</h2>
             <p>Disponível para novos projetos, desenvolvimento de sistemas corporativos, estruturação de integrações e consultoria técnica.</p>
           </div>
 
@@ -1398,7 +1465,7 @@
             <div class="contact-item">
               <a class="contact-link" href="mailto:soares-lucas94@hotmail.com" title="Enviar e-mail direto">
                 <span class="contact-icon"><svg class="icon"><use href="#i-mail"/></svg></span>
-                <span>soares-lucas94@hotmail.com</span>
+                <span><span class="junto">soares-lucas94@</span><wbr>hotmail.com</span>
               </a>
               <button class="icon-btn" id="copy-email" type="button" title="Copiar e-mail" aria-label="Copiar e-mail" data-copy="soares-lucas94@hotmail.com">
                 <svg class="icon icon-copy"><use href="#i-copy"/></svg>
@@ -1912,6 +1979,150 @@
           if (e.target === dialog) dialog.close();
         });
       });
+
+      // --- Movimento: estrelas no hero (Espacial), parallax e seções que surgem ao rolar ---
+      // Vem dos commits 91e175e e b915b92 do new-landing-page (React + motion), em JS puro.
+      // Com movimento reduzido: céu parado, sem parallax e com as seções já à vista.
+      (function () {
+        var root = document.documentElement;
+        var hero = document.getElementById('hero');
+        var reduzido = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        var anima = !reduzido;
+
+        // ---------------------------------------------------------------- Estrelas
+        // O canvas fica dentro do hero (e não na janela inteira, como no new-landing-page):
+        // só desenha enquanto o hero está à vista e só no Espacial.
+        var canvas = hero.querySelector('.starfield');
+        var ctx = canvas.getContext('2d');
+        var CORES = ['#ffffff', '#e0f2fe', '#bae6fd', '#a5f3fc', '#2dd4bf', '#38bdf8'];
+        var FUNDO = 1000, VELOCIDADE = 2.4, FOCAL = 280;
+        var estrelas = [], w = 0, h = 0, dpr = 1, quadro = 0, heroVisivel = true;
+
+        // Sorteio com semente fixa: a mesma página dá as mesmas estrelas (e as mesmas fotos).
+        var semente = 20261104;
+        function sorteio() { semente = (semente * 1664525 + 1013904223) >>> 0; return semente / 4294967296; }
+
+        function medir() {
+          dpr = Math.min(window.devicePixelRatio || 1, 2);
+          w = hero.clientWidth; h = hero.clientHeight;
+          canvas.width = Math.round(w * dpr); canvas.height = Math.round(h * dpr);
+          ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+          // Uma estrela a cada 5000 px² do hero, de 60 a 220 (208 em 1280 px, 118 em 390 px).
+          var total = Math.max(60, Math.min(220, Math.round(w * h / 5000)));
+          semente = 20261104; estrelas = [];
+          for (var i = 0; i < total; i++) estrelas.push(nova(sorteio() * FUNDO));
+        }
+        function nova(z) {
+          var s = { x: (sorteio() - .5) * w * 2, y: (sorteio() - .5) * h * 2, z: z, pz: z, tam: sorteio() * 1.5 + .6, cor: CORES[Math.floor(sorteio() * CORES.length)] };
+          return s;
+        }
+        function desenhar(mover) {
+          ctx.clearRect(0, 0, w, h);
+          var cx = w / 2, cy = h / 2;
+          for (var i = 0; i < estrelas.length; i++) {
+            var s = estrelas[i];
+            if (mover) {
+              s.pz = s.z; s.z -= VELOCIDADE;
+              if (s.z <= 0) { var n = nova(FUNDO); s.x = n.x; s.y = n.y; s.z = s.pz = FUNDO; }
+            }
+            var k = FOCAL / s.z, px = s.x * k + cx, py = s.y * k + cy;
+            if (px < 0 || px > w || py < 0 || py > h) continue;
+            var perto = 1 - s.z / FUNDO;
+            var alfa = Math.min(1, Math.max(.1, perto * 1.2));
+            var raio = Math.max(.6, s.tam * perto * 2.2);
+            if (mover) {
+              var pk = FOCAL / s.pz;
+              ctx.beginPath(); ctx.moveTo(s.x * pk + cx, s.y * pk + cy); ctx.lineTo(px, py);
+              ctx.strokeStyle = s.cor; ctx.globalAlpha = alfa * .75; ctx.lineWidth = raio * .85; ctx.lineCap = 'round'; ctx.stroke();
+            }
+            ctx.beginPath(); ctx.arc(px, py, raio, 0, Math.PI * 2);
+            ctx.fillStyle = s.cor; ctx.globalAlpha = alfa; ctx.fill();
+            if (raio > 1.8) {
+              ctx.beginPath(); ctx.arc(px, py, raio * 2, 0, Math.PI * 2);
+              ctx.fillStyle = '#38bdf8'; ctx.globalAlpha = alfa * .25; ctx.fill();
+            }
+          }
+          ctx.globalAlpha = 1;
+        }
+        function espacial() { return root.getAttribute('data-theme') === 'spatial'; }
+        function laco() {
+          quadro = 0;
+          if (!anima || !heroVisivel || !espacial() || document.hidden) return;
+          desenhar(true);
+          quadro = requestAnimationFrame(laco);
+        }
+        function ligar() {
+          if (!espacial()) { cancelAnimationFrame(quadro); quadro = 0; return; }
+          if (!anima) { desenhar(false); return; } // movimento reduzido: um céu parado
+          if (!quadro) quadro = requestAnimationFrame(laco);
+        }
+        medir(); ligar();
+        new ResizeObserver(function () { medir(); if (!anima) ligar(); }).observe(hero);
+        new IntersectionObserver(function (e) { heroVisivel = e[0].isIntersecting; ligar(); }).observe(hero);
+        new MutationObserver(ligar).observe(root, { attributes: true, attributeFilter: ['data-theme'] });
+        document.addEventListener('visibilitychange', ligar);
+
+        // ---------------------------------------------------------------- Parallax
+        // Cada peça anda de "de" a "ate" px enquanto a seção atravessa a janela, como os useTransform.
+        var projetos = document.getElementById('projetos');
+        var nebula = projetos.querySelector('.projects-nebula');
+        var cartoes = projetos.querySelectorAll('.projects-grid > .project');
+        var contato = document.getElementById('contato');
+
+        // modo "topo": de quando o topo da seção encosta no topo da janela até ela sair por cima (o hero).
+        // modo "passa": de quando a seção aparece embaixo até sumir em cima (as outras).
+        var PECAS = [
+          { secao: hero, modo: 'topo', el: hero.querySelector('.glow-1'), de: 0, ate: 120 },
+          { secao: hero, modo: 'topo', el: hero.querySelector('.glow-2'), de: 0, ate: 180 },
+          { secao: hero, modo: 'topo', el: document.getElementById('terminal-wrap'), de: 0, ate: -35, largo: true },
+          { secao: projetos, modo: 'passa', el: nebula, de: -40, ate: 60 },
+          // Os dois cartões em sentidos opostos, só com duas colunas: empilhados, se encostariam.
+          { secao: projetos, modo: 'passa', el: cartoes[0], de: 30, ate: -30, largo: true },
+          { secao: projetos, modo: 'passa', el: cartoes[1], de: -20, ate: 20, largo: true },
+          { secao: contato, modo: 'passa', el: contato.querySelector('.contact-glow'), de: -80, ate: 80 },
+          { secao: contato, modo: 'passa', el: contato.querySelector('.contact-panel'), de: 30, ate: -15 },
+        ];
+        var duasColunas = window.matchMedia('(min-width: 1024px)');
+        var pendente = false;
+        function atualizar() {
+          pendente = false;
+          var vh = window.innerHeight;
+          PECAS.forEach(function (p) {
+            if (!p.el) return;
+            if (reduzido || (p.largo && !duasColunas.matches)) { p.el.style.removeProperty('--py'); return; }
+            var r = p.secao.getBoundingClientRect();
+            var t = p.modo === 'topo' ? -r.top / r.height : (vh - r.top) / (vh + r.height);
+            t = Math.min(1, Math.max(0, t));
+            p.el.style.setProperty('--py', (p.de + (p.ate - p.de) * t).toFixed(1) + 'px');
+          });
+        }
+        function pedir() {
+          if (!pendente) { pendente = true; requestAnimationFrame(atualizar); }
+        }
+        window.addEventListener('scroll', pedir, { passive: true });
+        window.addEventListener('resize', pedir);
+        atualizar();
+
+        // ---------------------------------------------------------------- Seções que surgem
+        // As seções depois do hero sobem 48 px e aparecem uma vez, quando passam 60 px da borda de baixo. Sem limite em %: com a janela baixa (844 × 390), 15% de uma seção alta (os projetos têm 2326 px) nunca cabe na tela e ela ficaria invisível.
+        var secoes = document.querySelectorAll('main > section:not(#hero)');
+        if (anima && 'IntersectionObserver' in window) {
+          var vigia = new IntersectionObserver(function (itens) {
+            itens.forEach(function (it) {
+              if (!it.isIntersecting) return;
+              it.target.classList.add('visivel');
+              vigia.unobserve(it.target);
+            });
+          }, { rootMargin: '0px 0px -60px 0px' });
+          Array.prototype.forEach.call(secoes, function (s) {
+            // O que já está na janela ao abrir (um link #contato, por exemplo) não some e volta.
+            var r = s.getBoundingClientRect();
+            if (r.top < window.innerHeight - 60 && r.bottom > 0) return;
+            s.classList.add('revela');
+            vigia.observe(s);
+          });
+        }
+      })();
 
       // --- Projetos 5. Abas e botões que abrem as demos ---------------
       var cardEl = document.getElementById('projeto-demos');

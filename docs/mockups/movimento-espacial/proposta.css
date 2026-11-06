@@ -1,0 +1,93 @@
+/*
+  Só o CSS novo da proposta. Entra por cima do CSS do index.html no quadro.
+  Na implementação, cada regra vai para o <style> do index.html, no lugar dito
+  no cartão "Como entra no código".
+
+  Vem do commit 91e175e do new-landing-page ("parallax scroll effects and starfield"),
+  traduzido do React + motion para CSS e JS puros.
+
+  O deslocamento do parallax usa a propriedade "translate", e não "transform":
+  as duas se somam, então a inclinação 3D do terminal, o translate(-50%, -50%)
+  do brilho do contato e o hover dos cartões continuam como estão.
+*/
+
+/* ---------- Campo de estrelas (só no Espacial, só no hero) ---------- */
+.starfield { display: none; position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+:root[data-theme="spatial"] .starfield { display: block; opacity: .8; }
+
+/* ---------- Parallax ---------- */
+/* O JS escreve --py (px) em cada peça; sem JS ou com movimento reduzido, fica 0. */
+.glow, .contact-glow, .terminal-wrap, .projects-grid > .project, .contact-panel, .projects-nebula {
+  translate: 0 var(--py, 0px);
+}
+/* Brilho extra atrás dos projetos, no Espacial (no Clássico não existe, como no new-landing-page). */
+#projetos { position: relative; overflow: hidden; }
+#projetos > .container { position: relative; z-index: 1; }
+.projects-nebula {
+  display: none; position: absolute; right: -5rem; top: 33%;
+  width: 20rem; height: 20rem; border-radius: 9999px;
+  background: rgba(6, 182, 212, .1); filter: blur(100px); pointer-events: none;
+}
+:root[data-theme="spatial"] .projects-nebula { display: block; }
+/* Com a desencontrada, cada cartão fica com a própria altura. */
+.projects-grid { align-items: start; }
+
+/* ---------- Seções que surgem ao rolar ---------- */
+/* A classe .revela só entra pelo JS: sem JS, nada fica escondido.
+   Valores do commit b915b92: sobe 48 px e cresce de 97,5% a 100% em 0,8 s. */
+.revela { opacity: 0; transform: translateY(48px) scale(.975); transition: opacity .8s cubic-bezier(.16, 1, .3, 1), transform .8s cubic-bezier(.16, 1, .3, 1); }
+.revela.visivel { opacity: 1; transform: none; }
+
+/* ---------- Hover dos cartões no Espacial: cresce e acende ---------- */
+:root[data-theme="spatial"] .card { transition: transform .3s ease-out, border-color .3s ease-out, box-shadow .3s ease-out; }
+:root[data-theme="spatial"] .card:hover {
+  transform: translateY(-4px) scale(1.03);
+  border-color: #22d3ee;
+  box-shadow: 0 0 30px rgba(45, 212, 191, .28), 0 10px 20px rgba(0, 0, 0, .4);
+}
+:root[data-theme="spatial"] .project:hover {
+  transform: translateY(-4px) scale(1.025);
+  box-shadow: 0 0 35px rgba(56, 189, 248, .3), 0 12px 25px rgba(0, 0, 0, .5);
+}
+
+/* ---------- Glitch nos títulos, só no Espacial (commit b915b92) ---------- */
+/* A cada 7,5 s, por cerca de 0,3 s, o título treme e ganha duas cópias deslocadas em azul e verde-água.
+   O texto das cópias vem do data-text. O isolation mantém as cópias atrás do título, e não atrás do fundo da seção. */
+:root[data-theme="spatial"] .glitch { position: relative; isolation: isolate; animation: glitch-torce 7.5s infinite ease-in-out; }
+:root[data-theme="spatial"] .glitch::before,
+:root[data-theme="spatial"] .glitch::after {
+  content: attr(data-text); position: absolute; inset: 0; pointer-events: none; opacity: 0;
+  -webkit-background-clip: border-box; background-clip: border-box; background: none;
+}
+:root[data-theme="spatial"] .glitch::before { color: #38bdf8; z-index: -1; animation: glitch-copia-1 7.5s infinite linear; }
+:root[data-theme="spatial"] .glitch::after { color: #2dd4bf; z-index: -2; animation: glitch-copia-2 7.5s infinite linear; }
+@keyframes glitch-torce {
+  0%, 93%, 100% { transform: none; filter: none; }
+  94% { transform: skew(-.8deg, .4deg); filter: drop-shadow(-1px 0 rgba(56, 189, 248, .6)); }
+  95% { transform: skew(1.2deg, -.6deg) translate(-1px, .5px); filter: drop-shadow(1px 0 rgba(45, 212, 191, .6)); }
+  96% { transform: skew(-.4deg, .2deg); filter: none; }
+  97% { transform: none; }
+}
+@keyframes glitch-copia-1 {
+  0%, 92.5%, 100% { opacity: 0; clip-path: inset(0); transform: none; }
+  93% { opacity: .75; clip-path: inset(18% 0 54% 0); transform: translate(-2px, -.5px); }
+  94% { opacity: .65; clip-path: inset(62% 0 15% 0); transform: translate(2px, .5px); }
+  95% { opacity: .8; clip-path: inset(35% 0 40% 0); transform: translate(-1.5px, .2px); }
+  95.8% { opacity: 0; clip-path: inset(0); transform: none; }
+}
+@keyframes glitch-copia-2 {
+  0%, 93%, 100% { opacity: 0; clip-path: inset(0); transform: none; }
+  93.8% { opacity: .7; clip-path: inset(45% 0 25% 0); transform: translate(2px, .5px); }
+  94.6% { opacity: .65; clip-path: inset(10% 0 68% 0); transform: translate(-2px, -.5px); }
+  95.4% { opacity: 0; clip-path: inset(0); transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .revela { opacity: 1; transform: none; }
+  :root[data-theme="spatial"] .card:hover { transform: none; }
+}
+
+/* ---------- De carona (D5): o e-mail do contato não corta mais ---------- */
+/* Hoje ele sai "soares-lucas94@hot..." em 1280, 1920, 844 e 360 px. Agora quebra depois do @ quando não cabe. */
+.contact-link span:not(.contact-icon) { overflow: visible; text-overflow: clip; white-space: normal; overflow-wrap: anywhere; }
+.contact-link span .junto { white-space: nowrap; } /* "soares-lucas94@" não quebra no hífen */

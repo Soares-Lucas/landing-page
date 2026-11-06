@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Quadro</title>
+  <!--
+    Uma tela por vez, no tamanho real. Parâmetros:
+      v = hoje | proposta      (a proposta liga o proposta.css e o proposta.js)
+      t = claro | escuro       (classic | spatial no index.html)
+      e = <estado>             (as chaves de estados no roteiro/gerar.mjs)
+      c = neutro | real        (o que não é o foco vira bloco neutro ou fica real)
+      ir = <id>                (para onde rolar; padrão: o "ir" do roteiro)
+      parado = 1               (sem transições nem animações; o fotos.mjs usa para fotografar o estado final)
+  -->
+  <script src="dados.js"></script>
+  <style>
+    .mk-neutro { position: relative !important; }
+    .mk-neutro > * { visibility: hidden !important; }
+    .mk-neutro::after {
+      content: attr(data-mk-rotulo) !important;
+      position: absolute !important; inset: 8px !important; z-index: 1 !important;
+      display: grid !important; place-items: center !important;
+      border: 1px dashed rgba(128, 128, 128, .45) !important; border-radius: 12px !important;
+      background: repeating-linear-gradient(135deg, rgba(128, 128, 128, .10) 0 12px, rgba(128, 128, 128, .05) 12px 24px) !important;
+      color: rgba(128, 128, 128, .9) !important;
+      font: 500 13px/1.2 system-ui, sans-serif !important; letter-spacing: .04em !important;
+      opacity: 1 !important; transform: none !important; filter: none !important;
+    }
+    body > header.mk-neutro::after { inset: 4px !important; }
+  </style>
+</head>
+<body>
+  <script>
+    (function () {
+      var D = window.MOCKUP;
+      var q = new URLSearchParams(location.search);
+      var chavesEstado = Object.keys(D.estados);
+      var p = {
+        v: q.get('v') === 'hoje' ? 'hoje' : 'proposta',
+        t: q.get('t') === 'claro' ? 'claro' : 'escuro',
+        e: D.estados[q.get('e')] ? q.get('e') : chavesEstado[0],
+        c: q.get('c') === 'real' ? 'real' : 'neutro',
+        ir: q.get('ir') || D.ir,
+        parado: q.get('parado') === '1',
+      };
+      window.MOCKUP_PARAMS = p;
+
+      // Todo erro de JavaScript fica registrado; a conferência falha se houver algum.
+      window.__mockupErros = [];
+      window.addEventListener('error', function (ev) {
+        window.__mockupErros.push(ev.message + ' (' + (ev.filename || 'inline') + ':' + (ev.lineno || '?') + ')');
+      });
+
+      // Ações por estado, quando o estado é uma interação e não um texto.
+      // Ex.: 'menu-aberto': function () { document.getElementById('menu-btn').click(); }
+      var ACOES = {
+        // Rola até o meio da seção, que é onde o parallax mais aparece. Muda só o destino; o terminar() rola.
+        projetos: function () { p.ir = 'projetos'; },
+        'projeto-longo': function () { p.ir = 'projetos'; },
+        contato: function () { p.ir = 'contato'; },
+        // Congela o glitch em 94,5% do ciclo (7,09 s de 7,5 s). Ganha do "parado=1" por ser mais específico.
+        glitch: function () {
+          var s = document.createElement('style');
+          s.textContent = 'html body .glitch { animation: glitch-torce 7.5s linear -7.09s infinite paused !important; }' +
+            'html body .glitch::before { animation: glitch-copia-1 7.5s linear -7.09s infinite paused !important; }' +
+            'html body .glitch::after { animation: glitch-copia-2 7.5s linear -7.09s infinite paused !important; }';
+          document.head.appendChild(s);
+        },
+      };
+
+      var root = document.documentElement;
+      root.setAttribute('data-theme', p.t === 'claro' ? 'classic' : 'spatial');
+      try { localStorage.removeItem('theme'); } catch (e) {}
+
+      // O quadro só fica pronto depois que todo CSS carregar, senão a foto sai sem a proposta.
+      var carregando = [];
+      function anexar(el) {
+        carregando.push(new Promise(function (ok) { el.onload = el.onerror = ok; }));
+        document.head.appendChild(el); return el;
+      }
+      D.fontes.forEach(function (href) {
+        var l = document.createElement('link'); l.rel = 'stylesheet'; l.href = href; anexar(l);
+      });
+      var real = document.createElement('style'); real.id = 'mk-css-real'; real.textContent = D.css;
+      document.head.insertBefore(real, document.head.querySelector('style'));
+      if (p.parado) {
+        var parado = document.createElement('style');
+        parado.textContent = '*, *::before, *::after { transition: none !important; animation: none !important; }';
+        document.head.appendChild(parado);
+      }
+      if (p.v === 'proposta') {
+        var l = document.createElement('link'); l.rel = 'stylesheet'; l.href = 'proposta.css'; anexar(l);
+      }
+
+      document.body.innerHTML = D.estados[p.e].corpo;
+      var s = document.createElement('script'); s.textContent = D.script; document.body.appendChild(s);
+
+      function neutralizar() {
+        if (p.c !== 'neutro') return;
+        var partes = document.querySelectorAll('body > header, main > section, body > footer');
+        Array.prototype.forEach.call(partes, function (el) {
+          var id = el.tagName === 'FOOTER' ? 'rodape' : el.id;
+          if (D.foco.indexOf(id) >= 0) return;
+          el.classList.add('mk-neutro');
+          el.setAttribute('data-mk-rotulo', id || el.tagName.toLowerCase());
+        });
+      }
+
+      function terminar() {
+        neutralizar();
+        if (ACOES[p.e]) ACOES[p.e]();
+        var alvo = document.getElementById(p.ir);
+        var nav = document.getElementById('nav');
+        var topo = alvo ? alvo.getBoundingClientRect().top + window.scrollY : 0;
+        if (alvo && alvo !== nav && nav) topo -= nav.offsetHeight;
+        root.style.scrollBehavior = 'auto';
+        window.scrollTo(0, Math.max(0, topo));
+        Promise.all(carregando).then(function () { return document.fonts.ready; }).then(function () {
+          requestAnimationFrame(function () {
+            window.__mockupPronto = true;
+            if (parent !== window) parent.postMessage({ mockupPronto: true }, '*');
+          });
+        });
+      }
+
+      if (p.v === 'proposta') {
+        var pj = document.createElement('script');
+        pj.src = 'proposta.js';
+        pj.onload = terminar;
+        pj.onerror = function () { window.__mockupErros.push('proposta.js não carregou'); terminar(); };
+        document.body.appendChild(pj);
+      } else {
+        terminar();
+      }
+    })();
+  </script>
+</body>
+</html>

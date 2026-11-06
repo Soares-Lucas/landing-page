@@ -116,11 +116,11 @@ O arquivo é organizado nesta ordem:
 
 ### 2.2 Hero (`#hero`)
 
-Grid de duas colunas (texto à esquerda, terminal à direita); vira uma coluna abaixo de 1024px. As colunas têm `min-width: 0`, para não ficarem mais largas que a tela por causa do código do terminal. Fundo com grade de linhas e dois brilhos (`.glow`).
+Grid de duas colunas (texto à esquerda, terminal à direita); vira uma coluna abaixo de 1024px. As colunas têm `min-width: 0`, para não ficarem mais largas que a tela por causa do código do terminal. Fundo com grade de linhas e dois brilhos (`.glow`), que descem até 120 e 180 px conforme a página rola (parallax). No modo Espacial, um campo de estrelas (`canvas.starfield`) fica atrás do conteúdo, com as estrelas vindo do centro. O hero aparece pronto, sem animação de entrada. Ver seção 3.8.
 
 **Coluna de texto**
 - **Cartão de identidade** (`.identity`): foto de perfil redonda com indicador verde, nome "Lucas Soares", cargo "Desenvolvedor Full Stack" e selo "Disponível para projetos". Substituiu o antigo selo (eyebrow) que mostrava só o cargo. Ver seção 3.7.
-- Título (`h1`): **"Software para operação real."** — com texto em degradê no modo Espacial.
+- Título (`h1`): **"Software para operação real."** — com texto em degradê e glitch (`.glitch`) no modo Espacial.
 - Texto de apoio sobre sistemas corporativos, integrações, ERP, dados e automações.
 - Botões:
   - **Falar sobre um projeto** (primário) → WhatsApp (`https://wa.me/qr/QWVIBVNIY3G7M1`), nova aba.
@@ -148,6 +148,7 @@ Grid de duas colunas (texto à esquerda, terminal à direita); vira uma coluna a
 - Rodapé "Stack:" com tags: PHP, Laravel, CodeIgniter, JavaScript, MySQL, Docker, REST APIs, Webhooks, PostgreSQL.
 - Nos dois temas, com mouse, o terminal inclina em 3D acompanhando o cursor (desativado em telas de toque e com "reduzir movimento"). Tem brilho no canto e sombra colorida: ciano no Espacial, verde no Clássico, onde o fundo do terminal continua escuro.
 - Até 640px, o código quebra linha (`pre-wrap`) e as abas descem de linha se não couberem.
+- A partir de 1024px, o terminal sobe até 35 px conforme a página rola (parallax).
 
 ### 2.3 Especialidades (`#especialidades`)
 
@@ -161,7 +162,7 @@ Rótulo "Capacidades & Domínio", título **"Onde gero valor"**. Três cards, ca
 
 ### 2.4 Projetos em destaque (`#projetos`)
 
-Rótulo "Cases Selecionados". Dois cards de projeto e, depois deles, o card "Teste ao vivo" (veja abaixo). Os dois cards de projeto têm ícone, descrição, bloco de **Impacto Operacional**, tags e dois botões ("Ver Arquitetura" e "Detalhes técnicos →") que abrem o modal correspondente:
+Rótulo "Cases Selecionados". Dois cards de projeto e, depois deles, o card "Teste ao vivo" (veja abaixo). A partir de 1024px, os dois cards de projeto andam em sentidos opostos conforme a página rola (+30 → −30 px e −20 → +20 px), e cada um tem a própria altura (`align-items: start`). No Espacial, um brilho (`.projects-nebula`) atrás deles desce de −40 a +60 px. Os dois cards de projeto têm ícone, descrição, bloco de **Impacto Operacional**, tags e dois botões ("Ver Arquitetura" e "Detalhes técnicos →") que abrem o modal correspondente:
 
 | Projeto | Impacto | Tags | Modal |
 |---|---|---|---|
@@ -240,7 +241,9 @@ Rótulo "Histórico & Consistência", título **"Trajetória profissional"**. Li
 Rótulo "Conexão Direta", título **"Vamos conversar?"** e painel com:
 - Foto de perfil (`.contact-avatar`, 88px) acima do nome, com o mesmo indicador verde de disponibilidade.
 - Lucas Soares da Silva — Rio de Janeiro, Brasil · Desenvolvedor Full Stack.
-- **E-mail** `soares-lucas94@hotmail.com` (link `mailto:`) com botão de copiar (`#copy-email`).
+- **E-mail** `soares-lucas94@hotmail.com` (link `mailto:`) com botão de copiar (`#copy-email`). Quando não cabe, quebra depois do @ (`<span class="junto">` + `<wbr>`), em vez de cortar com reticências.
+
+O painel anda de +30 a −15 px e o brilho de fundo, de −80 a +80 px, conforme a página rola.
 - **LinkedIn** → `linkedin.com/in/lucas-soares-4a01a631b`, nova aba.
 - Botão **Enviar mensagem via WhatsApp** → mesmo link do hero.
 
@@ -260,7 +263,7 @@ O tema é definido pelo atributo `data-theme` no `<html>`:
 
 | Tema | Valor | Aparência |
 |---|---|---|
-| Espacial (padrão) | `spatial` | Fundo azul-escuro, destaques ciano, vidro translúcido, brilhos, título em degradê, HUD e inclinação 3D |
+| Espacial (padrão) | `spatial` | Fundo azul-escuro, destaques ciano, vidro translúcido, brilhos, título em degradê, HUD, inclinação 3D, campo de estrelas no hero, glitch nos títulos e cards que crescem e acendem no hover |
 | Clássico | `classic` | Fundo claro, verde-petróleo e azul, visual sóbrio; o terminal tem inclinação 3D, brilho e sombra em verde |
 
 A escolha fica salva no navegador (`localStorage`, chave `theme`) e é aplicada no `<head>` antes da página aparecer, para não piscar.
@@ -322,7 +325,7 @@ Ficam num sprite `<svg>` no início do `<body>`, um `<symbol id="i-…">` por í
 | até 1023px | Hero e projetos em 1 coluna; HUD oculto |
 | até 900px | Links do menu dão lugar ao menu hambúrguer; especialidades em 1 coluna; períodos da linha do tempo acima do card |
 | até 640px | Selo "Disponível para projetos" do cartão de identidade oculto (o ponto verde na foto continua); margens menores; botões e métricas empilhados; rótulos "Modo …" e "Executar" ocultos; fonte do terminal menor, código com quebra de linha e abas que descem de linha; fluxo dos modais na vertical; rodapé centralizado |
-| `prefers-reduced-motion` | Desliga animações, transições, rolagem suave e inclinação 3D |
+| `prefers-reduced-motion` | Desliga animações, transições, rolagem suave, inclinação 3D, parallax, glitch e as seções que surgem (já aparecem à vista); as estrelas ficam paradas |
 
 ### 3.7 Foto de perfil — decisões de UX/UI
 
@@ -341,6 +344,27 @@ Outros cuidados:
 - **Desempenho:** a foto foi recortada em quadrado e reduzida para 320×320 (cerca de 16 KB, nítida em telas 2× e 3×). Tem `width`/`height` fixos para evitar que o layout pule ao carregar. A do hero usa `fetchpriority="high"` e a do contato usa `loading="lazy"`.
 - **Acessibilidade:** a foto do hero tem `alt="Foto de perfil de Lucas Soares"`. A do contato tem `alt=""`, porque o nome está logo abaixo e o leitor de tela repetiria a informação. O ponto verde é `aria-hidden`, e o status já está escrito no selo.
 - **Trocar a foto:** substitua `assets/img/perfil.jpg` por outra imagem quadrada de cerca de 320×320 com o mesmo nome. Não é preciso mudar nada no HTML nem no Worker. Guarde o original em `assets/img/`.
+
+### 3.8 Movimento: estrelas, parallax, seções que surgem e glitch
+
+Vem dos commits `91e175e` (parallax e campo de estrelas) e `b915b92` (glitch e entrada das seções) do modelo `new-landing-page`. Lá o código é React com a biblioteca `motion`; aqui é CSS e JS puros, no bloco "Movimento" do `<style>` e no fim do `<script>`, sem dependência nova.
+
+- **Estrelas** (`canvas.starfield`, só no Espacial): uma estrela a cada 5000 px² do hero, de 60 a 220 (208 em 1280px, 118 em 390px). O sorteio usa semente fixa, então a página sempre tem as mesmas estrelas. O canvas só anima com o hero na tela, a aba visível e o tema Espacial.
+- **Parallax:** o JS escreve `--py` em cada peça a cada quadro de rolagem (`requestAnimationFrame`), e o CSS aplica `translate: 0 var(--py)`. A propriedade `translate` se soma ao `transform`, então a inclinação do terminal, o `translate(-50%, -50%)` do brilho do contato e o hover dos cards continuam funcionando.
+- **Seções que surgem** (`.revela` → `.visivel`): especialidades, projetos, experiência e contato sobem 48px e crescem de 97,5% a 100% em 0,8 s, uma vez cada, quando passam 60px da borda de baixo da tela (`IntersectionObserver`). A classe só é posta pelo JS, então sem JS nada some. Uma seção que já está na tela ao abrir a página não some e volta.
+- **Glitch** (`.glitch` + `data-text`, só no Espacial): no `h1` e nos quatro `h2`, a cada 7,5 s, por cerca de 0,3 s, o título treme e ganha duas cópias deslocadas, uma azul e uma verde-água. O `isolation: isolate` mantém as cópias atrás do título. **Ao trocar o texto de um título, troque também o `data-text`.**
+- **Hover dos cards no Espacial:** sobem 4px, crescem 3% (2,5% nos projetos), a borda fica ciano e ganham um brilho em volta.
+
+Decisões (mockup `docs/mockups/movimento-espacial/`, 05/11/2026), aprovadas como recomendadas:
+
+| | Decisão |
+|---|---|
+| D1 | Estrelas só dentro do hero (canvas no hero, parado fora da tela), e não na janela inteira |
+| D2 | O hero aparece sem animação de entrada; só as seções de baixo surgem ao rolar |
+| D3 | Glitch em todos os títulos (`h1` e os quatro `h2`), a cada 7,5 s, só no Espacial |
+| D4 | Os projetos se desencontram só com duas colunas (a partir de 1024px); o terminal também só se move a partir daí |
+| D5 | De carona: o e-mail do contato quebra depois do @ em vez de cortar |
+| — | Decidido sem perguntar, na conferência da página real: as seções surgem quando passam 60px da borda de baixo, sem o limite de 15% do modelo. Com a tela baixa (844×390), 15% da seção de projetos (2326px) nunca cabe na tela e ela ficaria invisível |
 
 ---
 
@@ -361,6 +385,9 @@ Script no fim do `<body>`, sem bibliotecas:
 | Trocar de demo sem fechar | `[data-trocar]` |
 | Aviso do Baixar e do "Ver mais" (página em breve) | `[data-baixar]`, `[data-pagina]`, `#dl-aviso` |
 | Demo do Contador e demo do Afinuvo (relógio simulado a 1× ou 60×) | `#modal-demo-contador`, `#modal-demo-afinuvo` |
+| Campo de estrelas do hero (Espacial) | `canvas.starfield` |
+| Parallax ao rolar (`--py`) | `.glow`, `#terminal-wrap`, `.projects-nebula`, cards de projeto, `.contact-glow`, `.contact-panel` |
+| Seções que surgem ao rolar | `main > section:not(#hero)` (`.revela`, `.visivel`) |
 
 Sem JavaScript, o conteúdo continua legível; perdem-se apenas as interações.
 
@@ -431,6 +458,7 @@ Depois de editar, teste localmente (seção 1.3) e publique com `npm run deploy`
 
 | Data | Mudança | Arquivos |
 |---|---|---|
+| 05/11/2026 | Movimento dos commits `91e175e` e `b915b92` do `new-landing-page`, em CSS e JS puros: estrelas no hero (Espacial), parallax nos brilhos, no terminal, nos projetos e no contato, seções que surgem ao rolar, glitch nos títulos (Espacial) e hover que cresce e acende nos cards do Espacial. De carona, o e-mail do contato quebra depois do @ em vez de cortar. Decisões D1 a D5 na seção 3.8. Mockup em `docs/mockups/movimento-espacial/` | `index.html` |
 | 04/11/2026 | Projetos ganham o card "Teste ao vivo" com as demos do Contador de Almoço e do Afinuvo em modal, o "Ver mais sobre o projeto" e o Baixar · em breve em todo card. Nova página do Afinuvo para o cliente, só com o modo teste, servida em `/projetos/afinuvo`. Decisões D1 a D16 na seção 2.4.2. Mockup em `docs/mockups/contador-almoco/` | `index.html`, `projetos/afinuvo/index.html`, `index.js`, `index.local.js` |
 | 03/11/2026 | Hero cabe inteiro no celular, de 360px para cima: colunas com `min-width: 0` (D1); até 640px, código do terminal com quebra de linha e abas que descem de linha (D2); botão Executar em `#047857`, hover `#065f46`, contraste de 3,8:1 para 5,5:1 (D3); terminal do Clássico com inclinação 3D, brilho e sombra em verde (D4). Mockup em `docs/mockups/hero-celular/` | `index.html` |
 | 29/10/2026 | Foto de perfil adicionada ao hero (cartão de identidade com status) e ao contato. O selo "Desenvolvedor Full Stack" do hero foi substituído pelo cartão e o CSS `.eyebrow`, que ficou sem uso, foi removido | `index.html` |

@@ -1,0 +1,4206 @@
+{
+  "data": "2026-11-04",
+  "sha": "14a1082cdbc8",
+  "resultados": [
+    {
+      "janela": "computador",
+      "largura": 1280,
+      "altura": 860,
+      "tema": "claro",
+      "versao": "hoje",
+      "estado": "padrao",
+      "foto": "hoje-claro-computador-padrao.png",
+      "problemas": [
+        {
+          "tipo": "texto cortado",
+          "detalhe": "span \"soares-lucas94@hotmail.com\""
+        }
+      ],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 8
+        },
+        "hero": {
+          "altura": 813,
+          "pct": 95
+        },
+        "especialidades": {
+          "altura": 973,
+          "pct": 113
+        },
+        "projetos": {
+          "altura": 893,
+          "pct": 104
+        },
+        "experiencia": {
+          "altura": 995,
+          "pct": 116
+        },
+        "contato": {
+          "altura": 918,
+          "pct": 107
+        },
+        "rodape": {
+          "altura": 135,
+          "pct": 16
+        }
+      }
+    },
+    {
+      "janela": "computador",
+      "largura": 1280,
+      "altura": 860,
+      "tema": "claro",
+      "versao": "hoje",
+      "estado": "projetos",
+      "foto": "hoje-claro-computador-projetos.png",
+      "problemas": [
+        {
+          "tipo": "texto cortado",
+          "detalhe": "span \"soares-lucas94@hotmail.com\""
+        }
+      ],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 8
+        },
+        "hero": {
+          "altura": 813,
+          "pct": 95
+        },
+        "especialidades": {
+          "altura": 973,
+          "pct": 113
+        },
+        "projetos": {
+          "altura": 893,
+          "pct": 104
+        },
+        "experiencia": {
+          "altura": 995,
+          "pct": 116
+        },
+        "contato": {
+          "altura": 918,
+          "pct": 107
+        },
+        "rodape": {
+          "altura": 135,
+          "pct": 16
+        }
+      }
+    },
+    {
+      "janela": "computador",
+      "largura": 1280,
+      "altura": 860,
+      "tema": "claro",
+      "versao": "hoje",
+      "estado": "contato",
+      "foto": "hoje-claro-computador-contato.png",
+      "problemas": [
+        {
+          "tipo": "texto cortado",
+          "detalhe": "span \"soares-lucas94@hotmail.com\""
+        }
+      ],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 8
+        },
+        "hero": {
+          "altura": 813,
+          "pct": 95
+        },
+        "especialidades": {
+          "altura": 973,
+          "pct": 113
+        },
+        "projetos": {
+          "altura": 893,
+          "pct": 104
+        },
+        "experiencia": {
+          "altura": 995,
+          "pct": 116
+        },
+        "contato": {
+          "altura": 918,
+          "pct": 107
+        },
+        "rodape": {
+          "altura": 135,
+          "pct": 16
+        }
+      }
+    },
+    {
+      "janela": "computador",
+      "largura": 1280,
+      "altura": 860,
+      "tema": "claro",
+      "versao": "hoje",
+      "estado": "glitch",
+      "foto": "hoje-claro-computador-glitch.png",
+      "problemas": [
+        {
+          "tipo": "texto cortado",
+          "detalhe": "span \"soares-lucas94@hotmail.com\""
+        }
+      ],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 8
+        },
+        "hero": {
+          "altura": 813,
+          "pct": 95
+        },
+        "especialidades": {
+          "altura": 973,
+          "pct": 113
+        },
+        "projetos": {
+          "altura": 893,
+          "pct": 104
+        },
+        "experiencia": {
+          "altura": 995,
+          "pct": 116
+        },
+        "contato": {
+          "altura": 918,
+          "pct": 107
+        },
+        "rodape": {
+          "altura": 135,
+          "pct": 16
+        }
+      }
+    },
+    {
+      "janela": "computador",
+      "largura": 1280,
+      "altura": 860,
+      "tema": "claro",
+      "versao": "hoje",
+      "estado": "projeto-longo",
+      "foto": "hoje-claro-computador-projeto-longo.png",
+      "problemas": [
+        {
+          "tipo": "texto cortado",
+          "detalhe": "span \"soares-lucas94@hotmail.com\""
+        }
+      ],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 8
+        },
+        "hero": {
+          "altura": 813,
+          "pct": 95
+        },
+        "especialidades": {
+          "altura": 973,
+          "pct": 113
+        },
+        "projetos": {
+          "altura": 996,
+          "pct": 116
+        },
+        "experiencia": {
+          "altura": 995,
+          "pct": 116
+        },
+        "contato": {
+          "altura": 918,
+          "pct": 107
+        },
+        "rodape": {
+          "altura": 135,
+          "pct": 16
+        }
+      }
+    },
+    {
+      "janela": "computador",
+      "largura": 1280,
+      "altura": 860,
+      "tema": "claro",
+      "versao": "proposta",
+      "estado": "padrao",
+      "foto": "proposta-claro-computador-padrao.png",
+      "problemas": [],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 8
+        },
+        "hero": {
+          "altura": 813,
+          "pct": 95
+        },
+        "especialidades": {
+          "altura": 973,
+          "pct": 113
+        },
+        "projetos": {
+          "altura": 893,
+          "pct": 104
+        },
+        "experiencia": {
+          "altura": 995,
+          "pct": 116
+        },
+        "contato": {
+          "altura": 925,
+          "pct": 108
+        },
+        "rodape": {
+          "altura": 135,
+          "pct": 16
+        }
+      }
+    },
+    {
+      "janela": "computador",
+      "largura": 1280,
+      "altura": 860,
+      "tema": "claro",
+      "versao": "proposta",
+      "estado": "projetos",
+      "foto": "proposta-claro-computador-projetos.png",
+      "problemas": [],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 8
+        },
+        "hero": {
+          "altura": 813,
+          "pct": 95
+        },
+        "especialidades": {
+          "altura": 973,
+          "pct": 113
+        },
+        "projetos": {
+          "altura": 893,
+          "pct": 104
+        },
+        "experiencia": {
+          "altura": 995,
+          "pct": 116
+        },
+        "contato": {
+          "altura": 925,
+          "pct": 108
+        },
+        "rodape": {
+          "altura": 135,
+          "pct": 16
+        }
+      }
+    },
+    {
+      "janela": "computador",
+      "largura": 1280,
+      "altura": 860,
+      "tema": "claro",
+      "versao": "proposta",
+      "estado": "contato",
+      "foto": "proposta-claro-computador-contato.png",
+      "problemas": [],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 8
+        },
+        "hero": {
+          "altura": 813,
+          "pct": 95
+        },
+        "especialidades": {
+          "altura": 973,
+          "pct": 113
+        },
+        "projetos": {
+          "altura": 893,
+          "pct": 104
+        },
+        "experiencia": {
+          "altura": 995,
+          "pct": 116
+        },
+        "contato": {
+          "altura": 925,
+          "pct": 108
+        },
+        "rodape": {
+          "altura": 135,
+          "pct": 16
+        }
+      }
+    },
+    {
+      "janela": "computador",
+      "largura": 1280,
+      "altura": 860,
+      "tema": "claro",
+      "versao": "proposta",
+      "estado": "glitch",
+      "foto": "proposta-claro-computador-glitch.png",
+      "problemas": [],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 8
+        },
+        "hero": {
+          "altura": 813,
+          "pct": 95
+        },
+        "especialidades": {
+          "altura": 973,
+          "pct": 113
+        },
+        "projetos": {
+          "altura": 893,
+          "pct": 104
+        },
+        "experiencia": {
+          "altura": 995,
+          "pct": 116
+        },
+        "contato": {
+          "altura": 925,
+          "pct": 108
+        },
+        "rodape": {
+          "altura": 135,
+          "pct": 16
+        }
+      }
+    },
+    {
+      "janela": "computador",
+      "largura": 1280,
+      "altura": 860,
+      "tema": "claro",
+      "versao": "proposta",
+      "estado": "projeto-longo",
+      "foto": "proposta-claro-computador-projeto-longo.png",
+      "problemas": [],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 8
+        },
+        "hero": {
+          "altura": 813,
+          "pct": 95
+        },
+        "especialidades": {
+          "altura": 973,
+          "pct": 113
+        },
+        "projetos": {
+          "altura": 996,
+          "pct": 116
+        },
+        "experiencia": {
+          "altura": 995,
+          "pct": 116
+        },
+        "contato": {
+          "altura": 925,
+          "pct": 108
+        },
+        "rodape": {
+          "altura": 135,
+          "pct": 16
+        }
+      }
+    },
+    {
+      "janela": "computador",
+      "largura": 1280,
+      "altura": 860,
+      "tema": "escuro",
+      "versao": "hoje",
+      "estado": "padrao",
+      "foto": "hoje-escuro-computador-padrao.png",
+      "problemas": [
+        {
+          "tipo": "texto cortado",
+          "detalhe": "span \"soares-lucas94@hotmail.com\""
+        }
+      ],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 8
+        },
+        "hero": {
+          "altura": 813,
+          "pct": 95
+        },
+        "especialidades": {
+          "altura": 973,
+          "pct": 113
+        },
+        "projetos": {
+          "altura": 893,
+          "pct": 104
+        },
+        "experiencia": {
+          "altura": 995,
+          "pct": 116
+        },
+        "contato": {
+          "altura": 919,
+          "pct": 107
+        },
+        "rodape": {
+          "altura": 135,
+          "pct": 16
+        }
+      }
+    },
+    {
+      "janela": "computador",
+      "largura": 1280,
+      "altura": 860,
+      "tema": "escuro",
+      "versao": "hoje",
+      "estado": "projetos",
+      "foto": "hoje-escuro-computador-projetos.png",
+      "problemas": [
+        {
+          "tipo": "texto cortado",
+          "detalhe": "span \"soares-lucas94@hotmail.com\""
+        }
+      ],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 8
+        },
+        "hero": {
+          "altura": 813,
+          "pct": 95
+        },
+        "especialidades": {
+          "altura": 973,
+          "pct": 113
+        },
+        "projetos": {
+          "altura": 893,
+          "pct": 104
+        },
+        "experiencia": {
+          "altura": 995,
+          "pct": 116
+        },
+        "contato": {
+          "altura": 919,
+          "pct": 107
+        },
+        "rodape": {
+          "altura": 135,
+          "pct": 16
+        }
+      }
+    },
+    {
+      "janela": "computador",
+      "largura": 1280,
+      "altura": 860,
+      "tema": "escuro",
+      "versao": "hoje",
+      "estado": "contato",
+      "foto": "hoje-escuro-computador-contato.png",
+      "problemas": [
+        {
+          "tipo": "texto cortado",
+          "detalhe": "span \"soares-lucas94@hotmail.com\""
+        }
+      ],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 8
+        },
+        "hero": {
+          "altura": 813,
+          "pct": 95
+        },
+        "especialidades": {
+          "altura": 973,
+          "pct": 113
+        },
+        "projetos": {
+          "altura": 893,
+          "pct": 104
+        },
+        "experiencia": {
+          "altura": 995,
+          "pct": 116
+        },
+        "contato": {
+          "altura": 919,
+          "pct": 107
+        },
+        "rodape": {
+          "altura": 135,
+          "pct": 16
+        }
+      }
+    },
+    {
+      "janela": "computador",
+      "largura": 1280,
+      "altura": 860,
+      "tema": "escuro",
+      "versao": "hoje",
+      "estado": "glitch",
+      "foto": "hoje-escuro-computador-glitch.png",
+      "problemas": [
+        {
+          "tipo": "texto cortado",
+          "detalhe": "span \"soares-lucas94@hotmail.com\""
+        }
+      ],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 8
+        },
+        "hero": {
+          "altura": 813,
+          "pct": 95
+        },
+        "especialidades": {
+          "altura": 973,
+          "pct": 113
+        },
+        "projetos": {
+          "altura": 893,
+          "pct": 104
+        },
+        "experiencia": {
+          "altura": 995,
+          "pct": 116
+        },
+        "contato": {
+          "altura": 919,
+          "pct": 107
+        },
+        "rodape": {
+          "altura": 135,
+          "pct": 16
+        }
+      }
+    },
+    {
+      "janela": "computador",
+      "largura": 1280,
+      "altura": 860,
+      "tema": "escuro",
+      "versao": "hoje",
+      "estado": "projeto-longo",
+      "foto": "hoje-escuro-computador-projeto-longo.png",
+      "problemas": [
+        {
+          "tipo": "texto cortado",
+          "detalhe": "span \"soares-lucas94@hotmail.com\""
+        }
+      ],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 8
+        },
+        "hero": {
+          "altura": 813,
+          "pct": 95
+        },
+        "especialidades": {
+          "altura": 973,
+          "pct": 113
+        },
+        "projetos": {
+          "altura": 996,
+          "pct": 116
+        },
+        "experiencia": {
+          "altura": 995,
+          "pct": 116
+        },
+        "contato": {
+          "altura": 919,
+          "pct": 107
+        },
+        "rodape": {
+          "altura": 135,
+          "pct": 16
+        }
+      }
+    },
+    {
+      "janela": "computador",
+      "largura": 1280,
+      "altura": 860,
+      "tema": "escuro",
+      "versao": "proposta",
+      "estado": "padrao",
+      "foto": "proposta-escuro-computador-padrao.png",
+      "problemas": [],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 8
+        },
+        "hero": {
+          "altura": 813,
+          "pct": 95
+        },
+        "especialidades": {
+          "altura": 973,
+          "pct": 113
+        },
+        "projetos": {
+          "altura": 893,
+          "pct": 104
+        },
+        "experiencia": {
+          "altura": 995,
+          "pct": 116
+        },
+        "contato": {
+          "altura": 926,
+          "pct": 108
+        },
+        "rodape": {
+          "altura": 135,
+          "pct": 16
+        }
+      }
+    },
+    {
+      "janela": "computador",
+      "largura": 1280,
+      "altura": 860,
+      "tema": "escuro",
+      "versao": "proposta",
+      "estado": "projetos",
+      "foto": "proposta-escuro-computador-projetos.png",
+      "problemas": [],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 8
+        },
+        "hero": {
+          "altura": 813,
+          "pct": 95
+        },
+        "especialidades": {
+          "altura": 973,
+          "pct": 113
+        },
+        "projetos": {
+          "altura": 893,
+          "pct": 104
+        },
+        "experiencia": {
+          "altura": 995,
+          "pct": 116
+        },
+        "contato": {
+          "altura": 926,
+          "pct": 108
+        },
+        "rodape": {
+          "altura": 135,
+          "pct": 16
+        }
+      }
+    },
+    {
+      "janela": "computador",
+      "largura": 1280,
+      "altura": 860,
+      "tema": "escuro",
+      "versao": "proposta",
+      "estado": "contato",
+      "foto": "proposta-escuro-computador-contato.png",
+      "problemas": [],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 8
+        },
+        "hero": {
+          "altura": 813,
+          "pct": 95
+        },
+        "especialidades": {
+          "altura": 973,
+          "pct": 113
+        },
+        "projetos": {
+          "altura": 893,
+          "pct": 104
+        },
+        "experiencia": {
+          "altura": 995,
+          "pct": 116
+        },
+        "contato": {
+          "altura": 926,
+          "pct": 108
+        },
+        "rodape": {
+          "altura": 135,
+          "pct": 16
+        }
+      }
+    },
+    {
+      "janela": "computador",
+      "largura": 1280,
+      "altura": 860,
+      "tema": "escuro",
+      "versao": "proposta",
+      "estado": "glitch",
+      "foto": "proposta-escuro-computador-glitch.png",
+      "problemas": [],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 8
+        },
+        "hero": {
+          "altura": 813,
+          "pct": 95
+        },
+        "especialidades": {
+          "altura": 973,
+          "pct": 113
+        },
+        "projetos": {
+          "altura": 893,
+          "pct": 104
+        },
+        "experiencia": {
+          "altura": 995,
+          "pct": 116
+        },
+        "contato": {
+          "altura": 926,
+          "pct": 108
+        },
+        "rodape": {
+          "altura": 135,
+          "pct": 16
+        }
+      }
+    },
+    {
+      "janela": "computador",
+      "largura": 1280,
+      "altura": 860,
+      "tema": "escuro",
+      "versao": "proposta",
+      "estado": "projeto-longo",
+      "foto": "proposta-escuro-computador-projeto-longo.png",
+      "problemas": [],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 8
+        },
+        "hero": {
+          "altura": 813,
+          "pct": 95
+        },
+        "especialidades": {
+          "altura": 973,
+          "pct": 113
+        },
+        "projetos": {
+          "altura": 996,
+          "pct": 116
+        },
+        "experiencia": {
+          "altura": 995,
+          "pct": 116
+        },
+        "contato": {
+          "altura": 926,
+          "pct": 108
+        },
+        "rodape": {
+          "altura": 135,
+          "pct": 16
+        }
+      }
+    },
+    {
+      "janela": "grande",
+      "largura": 1920,
+      "altura": 1080,
+      "tema": "claro",
+      "versao": "hoje",
+      "estado": "padrao",
+      "foto": "hoje-claro-grande-padrao.png",
+      "problemas": [
+        {
+          "tipo": "texto cortado",
+          "detalhe": "span \"soares-lucas94@hotmail.com\""
+        }
+      ],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 6
+        },
+        "hero": {
+          "altura": 813,
+          "pct": 75
+        },
+        "especialidades": {
+          "altura": 973,
+          "pct": 90
+        },
+        "projetos": {
+          "altura": 893,
+          "pct": 83
+        },
+        "experiencia": {
+          "altura": 995,
+          "pct": 92
+        },
+        "contato": {
+          "altura": 918,
+          "pct": 85
+        },
+        "rodape": {
+          "altura": 135,
+          "pct": 13
+        }
+      }
+    },
+    {
+      "janela": "grande",
+      "largura": 1920,
+      "altura": 1080,
+      "tema": "claro",
+      "versao": "hoje",
+      "estado": "projetos",
+      "foto": "hoje-claro-grande-projetos.png",
+      "problemas": [
+        {
+          "tipo": "texto cortado",
+          "detalhe": "span \"soares-lucas94@hotmail.com\""
+        }
+      ],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 6
+        },
+        "hero": {
+          "altura": 813,
+          "pct": 75
+        },
+        "especialidades": {
+          "altura": 973,
+          "pct": 90
+        },
+        "projetos": {
+          "altura": 893,
+          "pct": 83
+        },
+        "experiencia": {
+          "altura": 995,
+          "pct": 92
+        },
+        "contato": {
+          "altura": 918,
+          "pct": 85
+        },
+        "rodape": {
+          "altura": 135,
+          "pct": 13
+        }
+      }
+    },
+    {
+      "janela": "grande",
+      "largura": 1920,
+      "altura": 1080,
+      "tema": "claro",
+      "versao": "hoje",
+      "estado": "contato",
+      "foto": "hoje-claro-grande-contato.png",
+      "problemas": [
+        {
+          "tipo": "texto cortado",
+          "detalhe": "span \"soares-lucas94@hotmail.com\""
+        }
+      ],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 6
+        },
+        "hero": {
+          "altura": 813,
+          "pct": 75
+        },
+        "especialidades": {
+          "altura": 973,
+          "pct": 90
+        },
+        "projetos": {
+          "altura": 893,
+          "pct": 83
+        },
+        "experiencia": {
+          "altura": 995,
+          "pct": 92
+        },
+        "contato": {
+          "altura": 918,
+          "pct": 85
+        },
+        "rodape": {
+          "altura": 135,
+          "pct": 13
+        }
+      }
+    },
+    {
+      "janela": "grande",
+      "largura": 1920,
+      "altura": 1080,
+      "tema": "claro",
+      "versao": "hoje",
+      "estado": "glitch",
+      "foto": "hoje-claro-grande-glitch.png",
+      "problemas": [
+        {
+          "tipo": "texto cortado",
+          "detalhe": "span \"soares-lucas94@hotmail.com\""
+        }
+      ],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 6
+        },
+        "hero": {
+          "altura": 813,
+          "pct": 75
+        },
+        "especialidades": {
+          "altura": 973,
+          "pct": 90
+        },
+        "projetos": {
+          "altura": 893,
+          "pct": 83
+        },
+        "experiencia": {
+          "altura": 995,
+          "pct": 92
+        },
+        "contato": {
+          "altura": 918,
+          "pct": 85
+        },
+        "rodape": {
+          "altura": 135,
+          "pct": 13
+        }
+      }
+    },
+    {
+      "janela": "grande",
+      "largura": 1920,
+      "altura": 1080,
+      "tema": "claro",
+      "versao": "hoje",
+      "estado": "projeto-longo",
+      "foto": "hoje-claro-grande-projeto-longo.png",
+      "problemas": [
+        {
+          "tipo": "texto cortado",
+          "detalhe": "span \"soares-lucas94@hotmail.com\""
+        }
+      ],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 6
+        },
+        "hero": {
+          "altura": 813,
+          "pct": 75
+        },
+        "especialidades": {
+          "altura": 973,
+          "pct": 90
+        },
+        "projetos": {
+          "altura": 996,
+          "pct": 92
+        },
+        "experiencia": {
+          "altura": 995,
+          "pct": 92
+        },
+        "contato": {
+          "altura": 918,
+          "pct": 85
+        },
+        "rodape": {
+          "altura": 135,
+          "pct": 13
+        }
+      }
+    },
+    {
+      "janela": "grande",
+      "largura": 1920,
+      "altura": 1080,
+      "tema": "claro",
+      "versao": "proposta",
+      "estado": "padrao",
+      "foto": "proposta-claro-grande-padrao.png",
+      "problemas": [],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 6
+        },
+        "hero": {
+          "altura": 813,
+          "pct": 75
+        },
+        "especialidades": {
+          "altura": 973,
+          "pct": 90
+        },
+        "projetos": {
+          "altura": 893,
+          "pct": 83
+        },
+        "experiencia": {
+          "altura": 995,
+          "pct": 92
+        },
+        "contato": {
+          "altura": 925,
+          "pct": 86
+        },
+        "rodape": {
+          "altura": 135,
+          "pct": 13
+        }
+      }
+    },
+    {
+      "janela": "grande",
+      "largura": 1920,
+      "altura": 1080,
+      "tema": "claro",
+      "versao": "proposta",
+      "estado": "projetos",
+      "foto": "proposta-claro-grande-projetos.png",
+      "problemas": [],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 6
+        },
+        "hero": {
+          "altura": 813,
+          "pct": 75
+        },
+        "especialidades": {
+          "altura": 973,
+          "pct": 90
+        },
+        "projetos": {
+          "altura": 893,
+          "pct": 83
+        },
+        "experiencia": {
+          "altura": 995,
+          "pct": 92
+        },
+        "contato": {
+          "altura": 925,
+          "pct": 86
+        },
+        "rodape": {
+          "altura": 135,
+          "pct": 13
+        }
+      }
+    },
+    {
+      "janela": "grande",
+      "largura": 1920,
+      "altura": 1080,
+      "tema": "claro",
+      "versao": "proposta",
+      "estado": "contato",
+      "foto": "proposta-claro-grande-contato.png",
+      "problemas": [],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 6
+        },
+        "hero": {
+          "altura": 813,
+          "pct": 75
+        },
+        "especialidades": {
+          "altura": 973,
+          "pct": 90
+        },
+        "projetos": {
+          "altura": 893,
+          "pct": 83
+        },
+        "experiencia": {
+          "altura": 995,
+          "pct": 92
+        },
+        "contato": {
+          "altura": 925,
+          "pct": 86
+        },
+        "rodape": {
+          "altura": 135,
+          "pct": 13
+        }
+      }
+    },
+    {
+      "janela": "grande",
+      "largura": 1920,
+      "altura": 1080,
+      "tema": "claro",
+      "versao": "proposta",
+      "estado": "glitch",
+      "foto": "proposta-claro-grande-glitch.png",
+      "problemas": [],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 6
+        },
+        "hero": {
+          "altura": 813,
+          "pct": 75
+        },
+        "especialidades": {
+          "altura": 973,
+          "pct": 90
+        },
+        "projetos": {
+          "altura": 893,
+          "pct": 83
+        },
+        "experiencia": {
+          "altura": 995,
+          "pct": 92
+        },
+        "contato": {
+          "altura": 925,
+          "pct": 86
+        },
+        "rodape": {
+          "altura": 135,
+          "pct": 13
+        }
+      }
+    },
+    {
+      "janela": "grande",
+      "largura": 1920,
+      "altura": 1080,
+      "tema": "claro",
+      "versao": "proposta",
+      "estado": "projeto-longo",
+      "foto": "proposta-claro-grande-projeto-longo.png",
+      "problemas": [],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 6
+        },
+        "hero": {
+          "altura": 813,
+          "pct": 75
+        },
+        "especialidades": {
+          "altura": 973,
+          "pct": 90
+        },
+        "projetos": {
+          "altura": 996,
+          "pct": 92
+        },
+        "experiencia": {
+          "altura": 995,
+          "pct": 92
+        },
+        "contato": {
+          "altura": 925,
+          "pct": 86
+        },
+        "rodape": {
+          "altura": 135,
+          "pct": 13
+        }
+      }
+    },
+    {
+      "janela": "grande",
+      "largura": 1920,
+      "altura": 1080,
+      "tema": "escuro",
+      "versao": "hoje",
+      "estado": "padrao",
+      "foto": "hoje-escuro-grande-padrao.png",
+      "problemas": [
+        {
+          "tipo": "texto cortado",
+          "detalhe": "span \"soares-lucas94@hotmail.com\""
+        }
+      ],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 6
+        },
+        "hero": {
+          "altura": 813,
+          "pct": 75
+        },
+        "especialidades": {
+          "altura": 973,
+          "pct": 90
+        },
+        "projetos": {
+          "altura": 893,
+          "pct": 83
+        },
+        "experiencia": {
+          "altura": 995,
+          "pct": 92
+        },
+        "contato": {
+          "altura": 919,
+          "pct": 85
+        },
+        "rodape": {
+          "altura": 135,
+          "pct": 13
+        }
+      }
+    },
+    {
+      "janela": "grande",
+      "largura": 1920,
+      "altura": 1080,
+      "tema": "escuro",
+      "versao": "hoje",
+      "estado": "projetos",
+      "foto": "hoje-escuro-grande-projetos.png",
+      "problemas": [
+        {
+          "tipo": "texto cortado",
+          "detalhe": "span \"soares-lucas94@hotmail.com\""
+        }
+      ],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 6
+        },
+        "hero": {
+          "altura": 813,
+          "pct": 75
+        },
+        "especialidades": {
+          "altura": 973,
+          "pct": 90
+        },
+        "projetos": {
+          "altura": 893,
+          "pct": 83
+        },
+        "experiencia": {
+          "altura": 995,
+          "pct": 92
+        },
+        "contato": {
+          "altura": 919,
+          "pct": 85
+        },
+        "rodape": {
+          "altura": 135,
+          "pct": 13
+        }
+      }
+    },
+    {
+      "janela": "grande",
+      "largura": 1920,
+      "altura": 1080,
+      "tema": "escuro",
+      "versao": "hoje",
+      "estado": "contato",
+      "foto": "hoje-escuro-grande-contato.png",
+      "problemas": [
+        {
+          "tipo": "texto cortado",
+          "detalhe": "span \"soares-lucas94@hotmail.com\""
+        }
+      ],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 6
+        },
+        "hero": {
+          "altura": 813,
+          "pct": 75
+        },
+        "especialidades": {
+          "altura": 973,
+          "pct": 90
+        },
+        "projetos": {
+          "altura": 893,
+          "pct": 83
+        },
+        "experiencia": {
+          "altura": 995,
+          "pct": 92
+        },
+        "contato": {
+          "altura": 919,
+          "pct": 85
+        },
+        "rodape": {
+          "altura": 135,
+          "pct": 13
+        }
+      }
+    },
+    {
+      "janela": "grande",
+      "largura": 1920,
+      "altura": 1080,
+      "tema": "escuro",
+      "versao": "hoje",
+      "estado": "glitch",
+      "foto": "hoje-escuro-grande-glitch.png",
+      "problemas": [
+        {
+          "tipo": "texto cortado",
+          "detalhe": "span \"soares-lucas94@hotmail.com\""
+        }
+      ],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 6
+        },
+        "hero": {
+          "altura": 813,
+          "pct": 75
+        },
+        "especialidades": {
+          "altura": 973,
+          "pct": 90
+        },
+        "projetos": {
+          "altura": 893,
+          "pct": 83
+        },
+        "experiencia": {
+          "altura": 995,
+          "pct": 92
+        },
+        "contato": {
+          "altura": 919,
+          "pct": 85
+        },
+        "rodape": {
+          "altura": 135,
+          "pct": 13
+        }
+      }
+    },
+    {
+      "janela": "grande",
+      "largura": 1920,
+      "altura": 1080,
+      "tema": "escuro",
+      "versao": "hoje",
+      "estado": "projeto-longo",
+      "foto": "hoje-escuro-grande-projeto-longo.png",
+      "problemas": [
+        {
+          "tipo": "texto cortado",
+          "detalhe": "span \"soares-lucas94@hotmail.com\""
+        }
+      ],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 6
+        },
+        "hero": {
+          "altura": 813,
+          "pct": 75
+        },
+        "especialidades": {
+          "altura": 973,
+          "pct": 90
+        },
+        "projetos": {
+          "altura": 996,
+          "pct": 92
+        },
+        "experiencia": {
+          "altura": 995,
+          "pct": 92
+        },
+        "contato": {
+          "altura": 919,
+          "pct": 85
+        },
+        "rodape": {
+          "altura": 135,
+          "pct": 13
+        }
+      }
+    },
+    {
+      "janela": "grande",
+      "largura": 1920,
+      "altura": 1080,
+      "tema": "escuro",
+      "versao": "proposta",
+      "estado": "padrao",
+      "foto": "proposta-escuro-grande-padrao.png",
+      "problemas": [],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 6
+        },
+        "hero": {
+          "altura": 813,
+          "pct": 75
+        },
+        "especialidades": {
+          "altura": 973,
+          "pct": 90
+        },
+        "projetos": {
+          "altura": 893,
+          "pct": 83
+        },
+        "experiencia": {
+          "altura": 995,
+          "pct": 92
+        },
+        "contato": {
+          "altura": 926,
+          "pct": 86
+        },
+        "rodape": {
+          "altura": 135,
+          "pct": 13
+        }
+      }
+    },
+    {
+      "janela": "grande",
+      "largura": 1920,
+      "altura": 1080,
+      "tema": "escuro",
+      "versao": "proposta",
+      "estado": "projetos",
+      "foto": "proposta-escuro-grande-projetos.png",
+      "problemas": [],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 6
+        },
+        "hero": {
+          "altura": 813,
+          "pct": 75
+        },
+        "especialidades": {
+          "altura": 973,
+          "pct": 90
+        },
+        "projetos": {
+          "altura": 893,
+          "pct": 83
+        },
+        "experiencia": {
+          "altura": 995,
+          "pct": 92
+        },
+        "contato": {
+          "altura": 926,
+          "pct": 86
+        },
+        "rodape": {
+          "altura": 135,
+          "pct": 13
+        }
+      }
+    },
+    {
+      "janela": "grande",
+      "largura": 1920,
+      "altura": 1080,
+      "tema": "escuro",
+      "versao": "proposta",
+      "estado": "contato",
+      "foto": "proposta-escuro-grande-contato.png",
+      "problemas": [],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 6
+        },
+        "hero": {
+          "altura": 813,
+          "pct": 75
+        },
+        "especialidades": {
+          "altura": 973,
+          "pct": 90
+        },
+        "projetos": {
+          "altura": 893,
+          "pct": 83
+        },
+        "experiencia": {
+          "altura": 995,
+          "pct": 92
+        },
+        "contato": {
+          "altura": 926,
+          "pct": 86
+        },
+        "rodape": {
+          "altura": 135,
+          "pct": 13
+        }
+      }
+    },
+    {
+      "janela": "grande",
+      "largura": 1920,
+      "altura": 1080,
+      "tema": "escuro",
+      "versao": "proposta",
+      "estado": "glitch",
+      "foto": "proposta-escuro-grande-glitch.png",
+      "problemas": [],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 6
+        },
+        "hero": {
+          "altura": 813,
+          "pct": 75
+        },
+        "especialidades": {
+          "altura": 973,
+          "pct": 90
+        },
+        "projetos": {
+          "altura": 893,
+          "pct": 83
+        },
+        "experiencia": {
+          "altura": 995,
+          "pct": 92
+        },
+        "contato": {
+          "altura": 926,
+          "pct": 86
+        },
+        "rodape": {
+          "altura": 135,
+          "pct": 13
+        }
+      }
+    },
+    {
+      "janela": "grande",
+      "largura": 1920,
+      "altura": 1080,
+      "tema": "escuro",
+      "versao": "proposta",
+      "estado": "projeto-longo",
+      "foto": "proposta-escuro-grande-projeto-longo.png",
+      "problemas": [],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 6
+        },
+        "hero": {
+          "altura": 813,
+          "pct": 75
+        },
+        "especialidades": {
+          "altura": 973,
+          "pct": 90
+        },
+        "projetos": {
+          "altura": 996,
+          "pct": 92
+        },
+        "experiencia": {
+          "altura": 995,
+          "pct": 92
+        },
+        "contato": {
+          "altura": 926,
+          "pct": 86
+        },
+        "rodape": {
+          "altura": 135,
+          "pct": 13
+        }
+      }
+    },
+    {
+      "janela": "celular",
+      "largura": 390,
+      "altura": 844,
+      "tema": "claro",
+      "versao": "hoje",
+      "estado": "padrao",
+      "foto": "hoje-claro-celular-padrao.png",
+      "problemas": [],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 8
+        },
+        "hero": {
+          "altura": 1516,
+          "pct": 180
+        },
+        "especialidades": {
+          "altura": 2029,
+          "pct": 240
+        },
+        "projetos": {
+          "altura": 1589,
+          "pct": 188
+        },
+        "experiencia": {
+          "altura": 1489,
+          "pct": 176
+        },
+        "contato": {
+          "altura": 988,
+          "pct": 117
+        },
+        "rodape": {
+          "altura": 214,
+          "pct": 25
+        }
+      }
+    },
+    {
+      "janela": "celular",
+      "largura": 390,
+      "altura": 844,
+      "tema": "claro",
+      "versao": "hoje",
+      "estado": "projetos",
+      "foto": "hoje-claro-celular-projetos.png",
+      "problemas": [],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 8
+        },
+        "hero": {
+          "altura": 1516,
+          "pct": 180
+        },
+        "especialidades": {
+          "altura": 2029,
+          "pct": 240
+        },
+        "projetos": {
+          "altura": 1589,
+          "pct": 188
+        },
+        "experiencia": {
+          "altura": 1489,
+          "pct": 176
+        },
+        "contato": {
+          "altura": 988,
+          "pct": 117
+        },
+        "rodape": {
+          "altura": 214,
+          "pct": 25
+        }
+      }
+    },
+    {
+      "janela": "celular",
+      "largura": 390,
+      "altura": 844,
+      "tema": "claro",
+      "versao": "hoje",
+      "estado": "contato",
+      "foto": "hoje-claro-celular-contato.png",
+      "problemas": [],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 8
+        },
+        "hero": {
+          "altura": 1516,
+          "pct": 180
+        },
+        "especialidades": {
+          "altura": 2029,
+          "pct": 240
+        },
+        "projetos": {
+          "altura": 1589,
+          "pct": 188
+        },
+        "experiencia": {
+          "altura": 1489,
+          "pct": 176
+        },
+        "contato": {
+          "altura": 988,
+          "pct": 117
+        },
+        "rodape": {
+          "altura": 214,
+          "pct": 25
+        }
+      }
+    },
+    {
+      "janela": "celular",
+      "largura": 390,
+      "altura": 844,
+      "tema": "claro",
+      "versao": "hoje",
+      "estado": "glitch",
+      "foto": "hoje-claro-celular-glitch.png",
+      "problemas": [],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 8
+        },
+        "hero": {
+          "altura": 1516,
+          "pct": 180
+        },
+        "especialidades": {
+          "altura": 2029,
+          "pct": 240
+        },
+        "projetos": {
+          "altura": 1589,
+          "pct": 188
+        },
+        "experiencia": {
+          "altura": 1489,
+          "pct": 176
+        },
+        "contato": {
+          "altura": 988,
+          "pct": 117
+        },
+        "rodape": {
+          "altura": 214,
+          "pct": 25
+        }
+      }
+    },
+    {
+      "janela": "celular",
+      "largura": 390,
+      "altura": 844,
+      "tema": "claro",
+      "versao": "hoje",
+      "estado": "projeto-longo",
+      "foto": "hoje-claro-celular-projeto-longo.png",
+      "problemas": [],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 8
+        },
+        "hero": {
+          "altura": 1516,
+          "pct": 180
+        },
+        "especialidades": {
+          "altura": 2029,
+          "pct": 240
+        },
+        "projetos": {
+          "altura": 1717,
+          "pct": 203
+        },
+        "experiencia": {
+          "altura": 1489,
+          "pct": 176
+        },
+        "contato": {
+          "altura": 988,
+          "pct": 117
+        },
+        "rodape": {
+          "altura": 214,
+          "pct": 25
+        }
+      }
+    },
+    {
+      "janela": "celular",
+      "largura": 390,
+      "altura": 844,
+      "tema": "claro",
+      "versao": "proposta",
+      "estado": "padrao",
+      "foto": "proposta-claro-celular-padrao.png",
+      "problemas": [],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 8
+        },
+        "hero": {
+          "altura": 1516,
+          "pct": 180
+        },
+        "especialidades": {
+          "altura": 2029,
+          "pct": 240
+        },
+        "projetos": {
+          "altura": 1589,
+          "pct": 188
+        },
+        "experiencia": {
+          "altura": 1489,
+          "pct": 176
+        },
+        "contato": {
+          "altura": 995,
+          "pct": 118
+        },
+        "rodape": {
+          "altura": 214,
+          "pct": 25
+        }
+      }
+    },
+    {
+      "janela": "celular",
+      "largura": 390,
+      "altura": 844,
+      "tema": "claro",
+      "versao": "proposta",
+      "estado": "projetos",
+      "foto": "proposta-claro-celular-projetos.png",
+      "problemas": [],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 8
+        },
+        "hero": {
+          "altura": 1516,
+          "pct": 180
+        },
+        "especialidades": {
+          "altura": 2029,
+          "pct": 240
+        },
+        "projetos": {
+          "altura": 1589,
+          "pct": 188
+        },
+        "experiencia": {
+          "altura": 1489,
+          "pct": 176
+        },
+        "contato": {
+          "altura": 995,
+          "pct": 118
+        },
+        "rodape": {
+          "altura": 214,
+          "pct": 25
+        }
+      }
+    },
+    {
+      "janela": "celular",
+      "largura": 390,
+      "altura": 844,
+      "tema": "claro",
+      "versao": "proposta",
+      "estado": "contato",
+      "foto": "proposta-claro-celular-contato.png",
+      "problemas": [],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 8
+        },
+        "hero": {
+          "altura": 1516,
+          "pct": 180
+        },
+        "especialidades": {
+          "altura": 2029,
+          "pct": 240
+        },
+        "projetos": {
+          "altura": 1589,
+          "pct": 188
+        },
+        "experiencia": {
+          "altura": 1489,
+          "pct": 176
+        },
+        "contato": {
+          "altura": 995,
+          "pct": 118
+        },
+        "rodape": {
+          "altura": 214,
+          "pct": 25
+        }
+      }
+    },
+    {
+      "janela": "celular",
+      "largura": 390,
+      "altura": 844,
+      "tema": "claro",
+      "versao": "proposta",
+      "estado": "glitch",
+      "foto": "proposta-claro-celular-glitch.png",
+      "problemas": [],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 8
+        },
+        "hero": {
+          "altura": 1516,
+          "pct": 180
+        },
+        "especialidades": {
+          "altura": 2029,
+          "pct": 240
+        },
+        "projetos": {
+          "altura": 1589,
+          "pct": 188
+        },
+        "experiencia": {
+          "altura": 1489,
+          "pct": 176
+        },
+        "contato": {
+          "altura": 995,
+          "pct": 118
+        },
+        "rodape": {
+          "altura": 214,
+          "pct": 25
+        }
+      }
+    },
+    {
+      "janela": "celular",
+      "largura": 390,
+      "altura": 844,
+      "tema": "claro",
+      "versao": "proposta",
+      "estado": "projeto-longo",
+      "foto": "proposta-claro-celular-projeto-longo.png",
+      "problemas": [],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 8
+        },
+        "hero": {
+          "altura": 1516,
+          "pct": 180
+        },
+        "especialidades": {
+          "altura": 2029,
+          "pct": 240
+        },
+        "projetos": {
+          "altura": 1717,
+          "pct": 203
+        },
+        "experiencia": {
+          "altura": 1489,
+          "pct": 176
+        },
+        "contato": {
+          "altura": 995,
+          "pct": 118
+        },
+        "rodape": {
+          "altura": 214,
+          "pct": 25
+        }
+      }
+    },
+    {
+      "janela": "celular",
+      "largura": 390,
+      "altura": 844,
+      "tema": "escuro",
+      "versao": "hoje",
+      "estado": "padrao",
+      "foto": "hoje-escuro-celular-padrao.png",
+      "problemas": [],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 8
+        },
+        "hero": {
+          "altura": 1516,
+          "pct": 180
+        },
+        "especialidades": {
+          "altura": 2029,
+          "pct": 240
+        },
+        "projetos": {
+          "altura": 1589,
+          "pct": 188
+        },
+        "experiencia": {
+          "altura": 1490,
+          "pct": 177
+        },
+        "contato": {
+          "altura": 989,
+          "pct": 117
+        },
+        "rodape": {
+          "altura": 214,
+          "pct": 25
+        }
+      }
+    },
+    {
+      "janela": "celular",
+      "largura": 390,
+      "altura": 844,
+      "tema": "escuro",
+      "versao": "hoje",
+      "estado": "projetos",
+      "foto": "hoje-escuro-celular-projetos.png",
+      "problemas": [],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 8
+        },
+        "hero": {
+          "altura": 1516,
+          "pct": 180
+        },
+        "especialidades": {
+          "altura": 2029,
+          "pct": 240
+        },
+        "projetos": {
+          "altura": 1589,
+          "pct": 188
+        },
+        "experiencia": {
+          "altura": 1490,
+          "pct": 177
+        },
+        "contato": {
+          "altura": 989,
+          "pct": 117
+        },
+        "rodape": {
+          "altura": 214,
+          "pct": 25
+        }
+      }
+    },
+    {
+      "janela": "celular",
+      "largura": 390,
+      "altura": 844,
+      "tema": "escuro",
+      "versao": "hoje",
+      "estado": "contato",
+      "foto": "hoje-escuro-celular-contato.png",
+      "problemas": [],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 8
+        },
+        "hero": {
+          "altura": 1516,
+          "pct": 180
+        },
+        "especialidades": {
+          "altura": 2029,
+          "pct": 240
+        },
+        "projetos": {
+          "altura": 1589,
+          "pct": 188
+        },
+        "experiencia": {
+          "altura": 1490,
+          "pct": 177
+        },
+        "contato": {
+          "altura": 989,
+          "pct": 117
+        },
+        "rodape": {
+          "altura": 214,
+          "pct": 25
+        }
+      }
+    },
+    {
+      "janela": "celular",
+      "largura": 390,
+      "altura": 844,
+      "tema": "escuro",
+      "versao": "hoje",
+      "estado": "glitch",
+      "foto": "hoje-escuro-celular-glitch.png",
+      "problemas": [],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 8
+        },
+        "hero": {
+          "altura": 1516,
+          "pct": 180
+        },
+        "especialidades": {
+          "altura": 2029,
+          "pct": 240
+        },
+        "projetos": {
+          "altura": 1589,
+          "pct": 188
+        },
+        "experiencia": {
+          "altura": 1490,
+          "pct": 177
+        },
+        "contato": {
+          "altura": 989,
+          "pct": 117
+        },
+        "rodape": {
+          "altura": 214,
+          "pct": 25
+        }
+      }
+    },
+    {
+      "janela": "celular",
+      "largura": 390,
+      "altura": 844,
+      "tema": "escuro",
+      "versao": "hoje",
+      "estado": "projeto-longo",
+      "foto": "hoje-escuro-celular-projeto-longo.png",
+      "problemas": [],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 8
+        },
+        "hero": {
+          "altura": 1516,
+          "pct": 180
+        },
+        "especialidades": {
+          "altura": 2029,
+          "pct": 240
+        },
+        "projetos": {
+          "altura": 1717,
+          "pct": 203
+        },
+        "experiencia": {
+          "altura": 1490,
+          "pct": 177
+        },
+        "contato": {
+          "altura": 989,
+          "pct": 117
+        },
+        "rodape": {
+          "altura": 214,
+          "pct": 25
+        }
+      }
+    },
+    {
+      "janela": "celular",
+      "largura": 390,
+      "altura": 844,
+      "tema": "escuro",
+      "versao": "proposta",
+      "estado": "padrao",
+      "foto": "proposta-escuro-celular-padrao.png",
+      "problemas": [],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 8
+        },
+        "hero": {
+          "altura": 1516,
+          "pct": 180
+        },
+        "especialidades": {
+          "altura": 2029,
+          "pct": 240
+        },
+        "projetos": {
+          "altura": 1589,
+          "pct": 188
+        },
+        "experiencia": {
+          "altura": 1490,
+          "pct": 177
+        },
+        "contato": {
+          "altura": 996,
+          "pct": 118
+        },
+        "rodape": {
+          "altura": 214,
+          "pct": 25
+        }
+      }
+    },
+    {
+      "janela": "celular",
+      "largura": 390,
+      "altura": 844,
+      "tema": "escuro",
+      "versao": "proposta",
+      "estado": "projetos",
+      "foto": "proposta-escuro-celular-projetos.png",
+      "problemas": [],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 8
+        },
+        "hero": {
+          "altura": 1516,
+          "pct": 180
+        },
+        "especialidades": {
+          "altura": 2029,
+          "pct": 240
+        },
+        "projetos": {
+          "altura": 1589,
+          "pct": 188
+        },
+        "experiencia": {
+          "altura": 1490,
+          "pct": 177
+        },
+        "contato": {
+          "altura": 996,
+          "pct": 118
+        },
+        "rodape": {
+          "altura": 214,
+          "pct": 25
+        }
+      }
+    },
+    {
+      "janela": "celular",
+      "largura": 390,
+      "altura": 844,
+      "tema": "escuro",
+      "versao": "proposta",
+      "estado": "contato",
+      "foto": "proposta-escuro-celular-contato.png",
+      "problemas": [],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 8
+        },
+        "hero": {
+          "altura": 1516,
+          "pct": 180
+        },
+        "especialidades": {
+          "altura": 2029,
+          "pct": 240
+        },
+        "projetos": {
+          "altura": 1589,
+          "pct": 188
+        },
+        "experiencia": {
+          "altura": 1490,
+          "pct": 177
+        },
+        "contato": {
+          "altura": 996,
+          "pct": 118
+        },
+        "rodape": {
+          "altura": 214,
+          "pct": 25
+        }
+      }
+    },
+    {
+      "janela": "celular",
+      "largura": 390,
+      "altura": 844,
+      "tema": "escuro",
+      "versao": "proposta",
+      "estado": "glitch",
+      "foto": "proposta-escuro-celular-glitch.png",
+      "problemas": [],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 8
+        },
+        "hero": {
+          "altura": 1516,
+          "pct": 180
+        },
+        "especialidades": {
+          "altura": 2029,
+          "pct": 240
+        },
+        "projetos": {
+          "altura": 1589,
+          "pct": 188
+        },
+        "experiencia": {
+          "altura": 1490,
+          "pct": 177
+        },
+        "contato": {
+          "altura": 996,
+          "pct": 118
+        },
+        "rodape": {
+          "altura": 214,
+          "pct": 25
+        }
+      }
+    },
+    {
+      "janela": "celular",
+      "largura": 390,
+      "altura": 844,
+      "tema": "escuro",
+      "versao": "proposta",
+      "estado": "projeto-longo",
+      "foto": "proposta-escuro-celular-projeto-longo.png",
+      "problemas": [],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 8
+        },
+        "hero": {
+          "altura": 1516,
+          "pct": 180
+        },
+        "especialidades": {
+          "altura": 2029,
+          "pct": 240
+        },
+        "projetos": {
+          "altura": 1717,
+          "pct": 203
+        },
+        "experiencia": {
+          "altura": 1490,
+          "pct": 177
+        },
+        "contato": {
+          "altura": 996,
+          "pct": 118
+        },
+        "rodape": {
+          "altura": 214,
+          "pct": 25
+        }
+      }
+    },
+    {
+      "janela": "estreito",
+      "largura": 360,
+      "altura": 800,
+      "tema": "claro",
+      "versao": "hoje",
+      "estado": "padrao",
+      "foto": "hoje-claro-estreito-padrao.png",
+      "problemas": [
+        {
+          "tipo": "texto cortado",
+          "detalhe": "span \"soares-lucas94@hotmail.com\""
+        }
+      ],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 8
+        },
+        "hero": {
+          "altura": 1615,
+          "pct": 202
+        },
+        "especialidades": {
+          "altura": 2141,
+          "pct": 268
+        },
+        "projetos": {
+          "altura": 1608,
+          "pct": 201
+        },
+        "experiencia": {
+          "altura": 1588,
+          "pct": 198
+        },
+        "contato": {
+          "altura": 988,
+          "pct": 123
+        },
+        "rodape": {
+          "altura": 214,
+          "pct": 27
+        }
+      }
+    },
+    {
+      "janela": "estreito",
+      "largura": 360,
+      "altura": 800,
+      "tema": "claro",
+      "versao": "hoje",
+      "estado": "projetos",
+      "foto": "hoje-claro-estreito-projetos.png",
+      "problemas": [
+        {
+          "tipo": "texto cortado",
+          "detalhe": "span \"soares-lucas94@hotmail.com\""
+        }
+      ],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 8
+        },
+        "hero": {
+          "altura": 1615,
+          "pct": 202
+        },
+        "especialidades": {
+          "altura": 2141,
+          "pct": 268
+        },
+        "projetos": {
+          "altura": 1608,
+          "pct": 201
+        },
+        "experiencia": {
+          "altura": 1588,
+          "pct": 198
+        },
+        "contato": {
+          "altura": 988,
+          "pct": 123
+        },
+        "rodape": {
+          "altura": 214,
+          "pct": 27
+        }
+      }
+    },
+    {
+      "janela": "estreito",
+      "largura": 360,
+      "altura": 800,
+      "tema": "claro",
+      "versao": "hoje",
+      "estado": "contato",
+      "foto": "hoje-claro-estreito-contato.png",
+      "problemas": [
+        {
+          "tipo": "texto cortado",
+          "detalhe": "span \"soares-lucas94@hotmail.com\""
+        }
+      ],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 8
+        },
+        "hero": {
+          "altura": 1615,
+          "pct": 202
+        },
+        "especialidades": {
+          "altura": 2141,
+          "pct": 268
+        },
+        "projetos": {
+          "altura": 1608,
+          "pct": 201
+        },
+        "experiencia": {
+          "altura": 1588,
+          "pct": 198
+        },
+        "contato": {
+          "altura": 988,
+          "pct": 123
+        },
+        "rodape": {
+          "altura": 214,
+          "pct": 27
+        }
+      }
+    },
+    {
+      "janela": "estreito",
+      "largura": 360,
+      "altura": 800,
+      "tema": "claro",
+      "versao": "hoje",
+      "estado": "glitch",
+      "foto": "hoje-claro-estreito-glitch.png",
+      "problemas": [
+        {
+          "tipo": "texto cortado",
+          "detalhe": "span \"soares-lucas94@hotmail.com\""
+        }
+      ],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 8
+        },
+        "hero": {
+          "altura": 1615,
+          "pct": 202
+        },
+        "especialidades": {
+          "altura": 2141,
+          "pct": 268
+        },
+        "projetos": {
+          "altura": 1608,
+          "pct": 201
+        },
+        "experiencia": {
+          "altura": 1588,
+          "pct": 198
+        },
+        "contato": {
+          "altura": 988,
+          "pct": 123
+        },
+        "rodape": {
+          "altura": 214,
+          "pct": 27
+        }
+      }
+    },
+    {
+      "janela": "estreito",
+      "largura": 360,
+      "altura": 800,
+      "tema": "claro",
+      "versao": "hoje",
+      "estado": "projeto-longo",
+      "foto": "hoje-claro-estreito-projeto-longo.png",
+      "problemas": [
+        {
+          "tipo": "texto cortado",
+          "detalhe": "span \"soares-lucas94@hotmail.com\""
+        }
+      ],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 8
+        },
+        "hero": {
+          "altura": 1615,
+          "pct": 202
+        },
+        "especialidades": {
+          "altura": 2141,
+          "pct": 268
+        },
+        "projetos": {
+          "altura": 1787,
+          "pct": 223
+        },
+        "experiencia": {
+          "altura": 1588,
+          "pct": 198
+        },
+        "contato": {
+          "altura": 988,
+          "pct": 123
+        },
+        "rodape": {
+          "altura": 214,
+          "pct": 27
+        }
+      }
+    },
+    {
+      "janela": "estreito",
+      "largura": 360,
+      "altura": 800,
+      "tema": "claro",
+      "versao": "proposta",
+      "estado": "padrao",
+      "foto": "proposta-claro-estreito-padrao.png",
+      "problemas": [],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 8
+        },
+        "hero": {
+          "altura": 1615,
+          "pct": 202
+        },
+        "especialidades": {
+          "altura": 2141,
+          "pct": 268
+        },
+        "projetos": {
+          "altura": 1608,
+          "pct": 201
+        },
+        "experiencia": {
+          "altura": 1588,
+          "pct": 198
+        },
+        "contato": {
+          "altura": 995,
+          "pct": 124
+        },
+        "rodape": {
+          "altura": 214,
+          "pct": 27
+        }
+      }
+    },
+    {
+      "janela": "estreito",
+      "largura": 360,
+      "altura": 800,
+      "tema": "claro",
+      "versao": "proposta",
+      "estado": "projetos",
+      "foto": "proposta-claro-estreito-projetos.png",
+      "problemas": [],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 8
+        },
+        "hero": {
+          "altura": 1615,
+          "pct": 202
+        },
+        "especialidades": {
+          "altura": 2141,
+          "pct": 268
+        },
+        "projetos": {
+          "altura": 1608,
+          "pct": 201
+        },
+        "experiencia": {
+          "altura": 1588,
+          "pct": 198
+        },
+        "contato": {
+          "altura": 995,
+          "pct": 124
+        },
+        "rodape": {
+          "altura": 214,
+          "pct": 27
+        }
+      }
+    },
+    {
+      "janela": "estreito",
+      "largura": 360,
+      "altura": 800,
+      "tema": "claro",
+      "versao": "proposta",
+      "estado": "contato",
+      "foto": "proposta-claro-estreito-contato.png",
+      "problemas": [],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 8
+        },
+        "hero": {
+          "altura": 1615,
+          "pct": 202
+        },
+        "especialidades": {
+          "altura": 2141,
+          "pct": 268
+        },
+        "projetos": {
+          "altura": 1608,
+          "pct": 201
+        },
+        "experiencia": {
+          "altura": 1588,
+          "pct": 198
+        },
+        "contato": {
+          "altura": 995,
+          "pct": 124
+        },
+        "rodape": {
+          "altura": 214,
+          "pct": 27
+        }
+      }
+    },
+    {
+      "janela": "estreito",
+      "largura": 360,
+      "altura": 800,
+      "tema": "claro",
+      "versao": "proposta",
+      "estado": "glitch",
+      "foto": "proposta-claro-estreito-glitch.png",
+      "problemas": [],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 8
+        },
+        "hero": {
+          "altura": 1615,
+          "pct": 202
+        },
+        "especialidades": {
+          "altura": 2141,
+          "pct": 268
+        },
+        "projetos": {
+          "altura": 1608,
+          "pct": 201
+        },
+        "experiencia": {
+          "altura": 1588,
+          "pct": 198
+        },
+        "contato": {
+          "altura": 995,
+          "pct": 124
+        },
+        "rodape": {
+          "altura": 214,
+          "pct": 27
+        }
+      }
+    },
+    {
+      "janela": "estreito",
+      "largura": 360,
+      "altura": 800,
+      "tema": "claro",
+      "versao": "proposta",
+      "estado": "projeto-longo",
+      "foto": "proposta-claro-estreito-projeto-longo.png",
+      "problemas": [],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 8
+        },
+        "hero": {
+          "altura": 1615,
+          "pct": 202
+        },
+        "especialidades": {
+          "altura": 2141,
+          "pct": 268
+        },
+        "projetos": {
+          "altura": 1787,
+          "pct": 223
+        },
+        "experiencia": {
+          "altura": 1588,
+          "pct": 198
+        },
+        "contato": {
+          "altura": 995,
+          "pct": 124
+        },
+        "rodape": {
+          "altura": 214,
+          "pct": 27
+        }
+      }
+    },
+    {
+      "janela": "estreito",
+      "largura": 360,
+      "altura": 800,
+      "tema": "escuro",
+      "versao": "hoje",
+      "estado": "padrao",
+      "foto": "hoje-escuro-estreito-padrao.png",
+      "problemas": [
+        {
+          "tipo": "texto cortado",
+          "detalhe": "span \"soares-lucas94@hotmail.com\""
+        }
+      ],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 8
+        },
+        "hero": {
+          "altura": 1615,
+          "pct": 202
+        },
+        "especialidades": {
+          "altura": 2141,
+          "pct": 268
+        },
+        "projetos": {
+          "altura": 1608,
+          "pct": 201
+        },
+        "experiencia": {
+          "altura": 1589,
+          "pct": 199
+        },
+        "contato": {
+          "altura": 989,
+          "pct": 124
+        },
+        "rodape": {
+          "altura": 214,
+          "pct": 27
+        }
+      }
+    },
+    {
+      "janela": "estreito",
+      "largura": 360,
+      "altura": 800,
+      "tema": "escuro",
+      "versao": "hoje",
+      "estado": "projetos",
+      "foto": "hoje-escuro-estreito-projetos.png",
+      "problemas": [
+        {
+          "tipo": "texto cortado",
+          "detalhe": "span \"soares-lucas94@hotmail.com\""
+        }
+      ],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 8
+        },
+        "hero": {
+          "altura": 1615,
+          "pct": 202
+        },
+        "especialidades": {
+          "altura": 2141,
+          "pct": 268
+        },
+        "projetos": {
+          "altura": 1608,
+          "pct": 201
+        },
+        "experiencia": {
+          "altura": 1589,
+          "pct": 199
+        },
+        "contato": {
+          "altura": 989,
+          "pct": 124
+        },
+        "rodape": {
+          "altura": 214,
+          "pct": 27
+        }
+      }
+    },
+    {
+      "janela": "estreito",
+      "largura": 360,
+      "altura": 800,
+      "tema": "escuro",
+      "versao": "hoje",
+      "estado": "contato",
+      "foto": "hoje-escuro-estreito-contato.png",
+      "problemas": [
+        {
+          "tipo": "texto cortado",
+          "detalhe": "span \"soares-lucas94@hotmail.com\""
+        }
+      ],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 8
+        },
+        "hero": {
+          "altura": 1615,
+          "pct": 202
+        },
+        "especialidades": {
+          "altura": 2141,
+          "pct": 268
+        },
+        "projetos": {
+          "altura": 1608,
+          "pct": 201
+        },
+        "experiencia": {
+          "altura": 1589,
+          "pct": 199
+        },
+        "contato": {
+          "altura": 989,
+          "pct": 124
+        },
+        "rodape": {
+          "altura": 214,
+          "pct": 27
+        }
+      }
+    },
+    {
+      "janela": "estreito",
+      "largura": 360,
+      "altura": 800,
+      "tema": "escuro",
+      "versao": "hoje",
+      "estado": "glitch",
+      "foto": "hoje-escuro-estreito-glitch.png",
+      "problemas": [
+        {
+          "tipo": "texto cortado",
+          "detalhe": "span \"soares-lucas94@hotmail.com\""
+        }
+      ],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 8
+        },
+        "hero": {
+          "altura": 1615,
+          "pct": 202
+        },
+        "especialidades": {
+          "altura": 2141,
+          "pct": 268
+        },
+        "projetos": {
+          "altura": 1608,
+          "pct": 201
+        },
+        "experiencia": {
+          "altura": 1589,
+          "pct": 199
+        },
+        "contato": {
+          "altura": 989,
+          "pct": 124
+        },
+        "rodape": {
+          "altura": 214,
+          "pct": 27
+        }
+      }
+    },
+    {
+      "janela": "estreito",
+      "largura": 360,
+      "altura": 800,
+      "tema": "escuro",
+      "versao": "hoje",
+      "estado": "projeto-longo",
+      "foto": "hoje-escuro-estreito-projeto-longo.png",
+      "problemas": [
+        {
+          "tipo": "texto cortado",
+          "detalhe": "span \"soares-lucas94@hotmail.com\""
+        }
+      ],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 8
+        },
+        "hero": {
+          "altura": 1615,
+          "pct": 202
+        },
+        "especialidades": {
+          "altura": 2141,
+          "pct": 268
+        },
+        "projetos": {
+          "altura": 1787,
+          "pct": 223
+        },
+        "experiencia": {
+          "altura": 1589,
+          "pct": 199
+        },
+        "contato": {
+          "altura": 989,
+          "pct": 124
+        },
+        "rodape": {
+          "altura": 214,
+          "pct": 27
+        }
+      }
+    },
+    {
+      "janela": "estreito",
+      "largura": 360,
+      "altura": 800,
+      "tema": "escuro",
+      "versao": "proposta",
+      "estado": "padrao",
+      "foto": "proposta-escuro-estreito-padrao.png",
+      "problemas": [],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 8
+        },
+        "hero": {
+          "altura": 1615,
+          "pct": 202
+        },
+        "especialidades": {
+          "altura": 2141,
+          "pct": 268
+        },
+        "projetos": {
+          "altura": 1608,
+          "pct": 201
+        },
+        "experiencia": {
+          "altura": 1589,
+          "pct": 199
+        },
+        "contato": {
+          "altura": 996,
+          "pct": 124
+        },
+        "rodape": {
+          "altura": 214,
+          "pct": 27
+        }
+      }
+    },
+    {
+      "janela": "estreito",
+      "largura": 360,
+      "altura": 800,
+      "tema": "escuro",
+      "versao": "proposta",
+      "estado": "projetos",
+      "foto": "proposta-escuro-estreito-projetos.png",
+      "problemas": [],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 8
+        },
+        "hero": {
+          "altura": 1615,
+          "pct": 202
+        },
+        "especialidades": {
+          "altura": 2141,
+          "pct": 268
+        },
+        "projetos": {
+          "altura": 1608,
+          "pct": 201
+        },
+        "experiencia": {
+          "altura": 1589,
+          "pct": 199
+        },
+        "contato": {
+          "altura": 996,
+          "pct": 124
+        },
+        "rodape": {
+          "altura": 214,
+          "pct": 27
+        }
+      }
+    },
+    {
+      "janela": "estreito",
+      "largura": 360,
+      "altura": 800,
+      "tema": "escuro",
+      "versao": "proposta",
+      "estado": "contato",
+      "foto": "proposta-escuro-estreito-contato.png",
+      "problemas": [],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 8
+        },
+        "hero": {
+          "altura": 1615,
+          "pct": 202
+        },
+        "especialidades": {
+          "altura": 2141,
+          "pct": 268
+        },
+        "projetos": {
+          "altura": 1608,
+          "pct": 201
+        },
+        "experiencia": {
+          "altura": 1589,
+          "pct": 199
+        },
+        "contato": {
+          "altura": 996,
+          "pct": 124
+        },
+        "rodape": {
+          "altura": 214,
+          "pct": 27
+        }
+      }
+    },
+    {
+      "janela": "estreito",
+      "largura": 360,
+      "altura": 800,
+      "tema": "escuro",
+      "versao": "proposta",
+      "estado": "glitch",
+      "foto": "proposta-escuro-estreito-glitch.png",
+      "problemas": [],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 8
+        },
+        "hero": {
+          "altura": 1615,
+          "pct": 202
+        },
+        "especialidades": {
+          "altura": 2141,
+          "pct": 268
+        },
+        "projetos": {
+          "altura": 1608,
+          "pct": 201
+        },
+        "experiencia": {
+          "altura": 1589,
+          "pct": 199
+        },
+        "contato": {
+          "altura": 996,
+          "pct": 124
+        },
+        "rodape": {
+          "altura": 214,
+          "pct": 27
+        }
+      }
+    },
+    {
+      "janela": "estreito",
+      "largura": 360,
+      "altura": 800,
+      "tema": "escuro",
+      "versao": "proposta",
+      "estado": "projeto-longo",
+      "foto": "proposta-escuro-estreito-projeto-longo.png",
+      "problemas": [],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 8
+        },
+        "hero": {
+          "altura": 1615,
+          "pct": 202
+        },
+        "especialidades": {
+          "altura": 2141,
+          "pct": 268
+        },
+        "projetos": {
+          "altura": 1787,
+          "pct": 223
+        },
+        "experiencia": {
+          "altura": 1589,
+          "pct": 199
+        },
+        "contato": {
+          "altura": 996,
+          "pct": 124
+        },
+        "rodape": {
+          "altura": 214,
+          "pct": 27
+        }
+      }
+    },
+    {
+      "janela": "deitado",
+      "largura": 844,
+      "altura": 390,
+      "tema": "claro",
+      "versao": "hoje",
+      "estado": "padrao",
+      "foto": "hoje-claro-deitado-padrao.png",
+      "problemas": [
+        {
+          "tipo": "texto cortado",
+          "detalhe": "span \"soares-lucas94@hotmail.com\""
+        }
+      ],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 17
+        },
+        "hero": {
+          "altura": 1135,
+          "pct": 291
+        },
+        "especialidades": {
+          "altura": 1700,
+          "pct": 436
+        },
+        "projetos": {
+          "altura": 1287,
+          "pct": 330
+        },
+        "experiencia": {
+          "altura": 1121,
+          "pct": 287
+        },
+        "contato": {
+          "altura": 912,
+          "pct": 234
+        },
+        "rodape": {
+          "altura": 135,
+          "pct": 35
+        }
+      }
+    },
+    {
+      "janela": "deitado",
+      "largura": 844,
+      "altura": 390,
+      "tema": "claro",
+      "versao": "hoje",
+      "estado": "projetos",
+      "foto": "hoje-claro-deitado-projetos.png",
+      "problemas": [
+        {
+          "tipo": "texto cortado",
+          "detalhe": "span \"soares-lucas94@hotmail.com\""
+        }
+      ],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 17
+        },
+        "hero": {
+          "altura": 1135,
+          "pct": 291
+        },
+        "especialidades": {
+          "altura": 1700,
+          "pct": 436
+        },
+        "projetos": {
+          "altura": 1287,
+          "pct": 330
+        },
+        "experiencia": {
+          "altura": 1121,
+          "pct": 287
+        },
+        "contato": {
+          "altura": 912,
+          "pct": 234
+        },
+        "rodape": {
+          "altura": 135,
+          "pct": 35
+        }
+      }
+    },
+    {
+      "janela": "deitado",
+      "largura": 844,
+      "altura": 390,
+      "tema": "claro",
+      "versao": "hoje",
+      "estado": "contato",
+      "foto": "hoje-claro-deitado-contato.png",
+      "problemas": [
+        {
+          "tipo": "texto cortado",
+          "detalhe": "span \"soares-lucas94@hotmail.com\""
+        }
+      ],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 17
+        },
+        "hero": {
+          "altura": 1135,
+          "pct": 291
+        },
+        "especialidades": {
+          "altura": 1700,
+          "pct": 436
+        },
+        "projetos": {
+          "altura": 1287,
+          "pct": 330
+        },
+        "experiencia": {
+          "altura": 1121,
+          "pct": 287
+        },
+        "contato": {
+          "altura": 912,
+          "pct": 234
+        },
+        "rodape": {
+          "altura": 135,
+          "pct": 35
+        }
+      }
+    },
+    {
+      "janela": "deitado",
+      "largura": 844,
+      "altura": 390,
+      "tema": "claro",
+      "versao": "hoje",
+      "estado": "glitch",
+      "foto": "hoje-claro-deitado-glitch.png",
+      "problemas": [
+        {
+          "tipo": "texto cortado",
+          "detalhe": "span \"soares-lucas94@hotmail.com\""
+        }
+      ],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 17
+        },
+        "hero": {
+          "altura": 1135,
+          "pct": 291
+        },
+        "especialidades": {
+          "altura": 1700,
+          "pct": 436
+        },
+        "projetos": {
+          "altura": 1287,
+          "pct": 330
+        },
+        "experiencia": {
+          "altura": 1121,
+          "pct": 287
+        },
+        "contato": {
+          "altura": 912,
+          "pct": 234
+        },
+        "rodape": {
+          "altura": 135,
+          "pct": 35
+        }
+      }
+    },
+    {
+      "janela": "deitado",
+      "largura": 844,
+      "altura": 390,
+      "tema": "claro",
+      "versao": "hoje",
+      "estado": "projeto-longo",
+      "foto": "hoje-claro-deitado-projeto-longo.png",
+      "problemas": [
+        {
+          "tipo": "texto cortado",
+          "detalhe": "span \"soares-lucas94@hotmail.com\""
+        }
+      ],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 17
+        },
+        "hero": {
+          "altura": 1135,
+          "pct": 291
+        },
+        "especialidades": {
+          "altura": 1700,
+          "pct": 436
+        },
+        "projetos": {
+          "altura": 1338,
+          "pct": 343
+        },
+        "experiencia": {
+          "altura": 1121,
+          "pct": 287
+        },
+        "contato": {
+          "altura": 912,
+          "pct": 234
+        },
+        "rodape": {
+          "altura": 135,
+          "pct": 35
+        }
+      }
+    },
+    {
+      "janela": "deitado",
+      "largura": 844,
+      "altura": 390,
+      "tema": "claro",
+      "versao": "proposta",
+      "estado": "padrao",
+      "foto": "proposta-claro-deitado-padrao.png",
+      "problemas": [],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 17
+        },
+        "hero": {
+          "altura": 1135,
+          "pct": 291
+        },
+        "especialidades": {
+          "altura": 1700,
+          "pct": 436
+        },
+        "projetos": {
+          "altura": 1287,
+          "pct": 330
+        },
+        "experiencia": {
+          "altura": 1121,
+          "pct": 287
+        },
+        "contato": {
+          "altura": 919,
+          "pct": 236
+        },
+        "rodape": {
+          "altura": 135,
+          "pct": 35
+        }
+      }
+    },
+    {
+      "janela": "deitado",
+      "largura": 844,
+      "altura": 390,
+      "tema": "claro",
+      "versao": "proposta",
+      "estado": "projetos",
+      "foto": "proposta-claro-deitado-projetos.png",
+      "problemas": [],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 17
+        },
+        "hero": {
+          "altura": 1135,
+          "pct": 291
+        },
+        "especialidades": {
+          "altura": 1700,
+          "pct": 436
+        },
+        "projetos": {
+          "altura": 1287,
+          "pct": 330
+        },
+        "experiencia": {
+          "altura": 1121,
+          "pct": 287
+        },
+        "contato": {
+          "altura": 919,
+          "pct": 236
+        },
+        "rodape": {
+          "altura": 135,
+          "pct": 35
+        }
+      }
+    },
+    {
+      "janela": "deitado",
+      "largura": 844,
+      "altura": 390,
+      "tema": "claro",
+      "versao": "proposta",
+      "estado": "contato",
+      "foto": "proposta-claro-deitado-contato.png",
+      "problemas": [],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 17
+        },
+        "hero": {
+          "altura": 1135,
+          "pct": 291
+        },
+        "especialidades": {
+          "altura": 1700,
+          "pct": 436
+        },
+        "projetos": {
+          "altura": 1287,
+          "pct": 330
+        },
+        "experiencia": {
+          "altura": 1121,
+          "pct": 287
+        },
+        "contato": {
+          "altura": 919,
+          "pct": 236
+        },
+        "rodape": {
+          "altura": 135,
+          "pct": 35
+        }
+      }
+    },
+    {
+      "janela": "deitado",
+      "largura": 844,
+      "altura": 390,
+      "tema": "claro",
+      "versao": "proposta",
+      "estado": "glitch",
+      "foto": "proposta-claro-deitado-glitch.png",
+      "problemas": [],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 17
+        },
+        "hero": {
+          "altura": 1135,
+          "pct": 291
+        },
+        "especialidades": {
+          "altura": 1700,
+          "pct": 436
+        },
+        "projetos": {
+          "altura": 1287,
+          "pct": 330
+        },
+        "experiencia": {
+          "altura": 1121,
+          "pct": 287
+        },
+        "contato": {
+          "altura": 919,
+          "pct": 236
+        },
+        "rodape": {
+          "altura": 135,
+          "pct": 35
+        }
+      }
+    },
+    {
+      "janela": "deitado",
+      "largura": 844,
+      "altura": 390,
+      "tema": "claro",
+      "versao": "proposta",
+      "estado": "projeto-longo",
+      "foto": "proposta-claro-deitado-projeto-longo.png",
+      "problemas": [],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 17
+        },
+        "hero": {
+          "altura": 1135,
+          "pct": 291
+        },
+        "especialidades": {
+          "altura": 1700,
+          "pct": 436
+        },
+        "projetos": {
+          "altura": 1338,
+          "pct": 343
+        },
+        "experiencia": {
+          "altura": 1121,
+          "pct": 287
+        },
+        "contato": {
+          "altura": 919,
+          "pct": 236
+        },
+        "rodape": {
+          "altura": 135,
+          "pct": 35
+        }
+      }
+    },
+    {
+      "janela": "deitado",
+      "largura": 844,
+      "altura": 390,
+      "tema": "escuro",
+      "versao": "hoje",
+      "estado": "padrao",
+      "foto": "hoje-escuro-deitado-padrao.png",
+      "problemas": [
+        {
+          "tipo": "texto cortado",
+          "detalhe": "span \"soares-lucas94@hotmail.com\""
+        }
+      ],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 17
+        },
+        "hero": {
+          "altura": 1135,
+          "pct": 291
+        },
+        "especialidades": {
+          "altura": 1700,
+          "pct": 436
+        },
+        "projetos": {
+          "altura": 1287,
+          "pct": 330
+        },
+        "experiencia": {
+          "altura": 1122,
+          "pct": 288
+        },
+        "contato": {
+          "altura": 913,
+          "pct": 234
+        },
+        "rodape": {
+          "altura": 135,
+          "pct": 35
+        }
+      }
+    },
+    {
+      "janela": "deitado",
+      "largura": 844,
+      "altura": 390,
+      "tema": "escuro",
+      "versao": "hoje",
+      "estado": "projetos",
+      "foto": "hoje-escuro-deitado-projetos.png",
+      "problemas": [
+        {
+          "tipo": "texto cortado",
+          "detalhe": "span \"soares-lucas94@hotmail.com\""
+        }
+      ],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 17
+        },
+        "hero": {
+          "altura": 1135,
+          "pct": 291
+        },
+        "especialidades": {
+          "altura": 1700,
+          "pct": 436
+        },
+        "projetos": {
+          "altura": 1287,
+          "pct": 330
+        },
+        "experiencia": {
+          "altura": 1122,
+          "pct": 288
+        },
+        "contato": {
+          "altura": 913,
+          "pct": 234
+        },
+        "rodape": {
+          "altura": 135,
+          "pct": 35
+        }
+      }
+    },
+    {
+      "janela": "deitado",
+      "largura": 844,
+      "altura": 390,
+      "tema": "escuro",
+      "versao": "hoje",
+      "estado": "contato",
+      "foto": "hoje-escuro-deitado-contato.png",
+      "problemas": [
+        {
+          "tipo": "texto cortado",
+          "detalhe": "span \"soares-lucas94@hotmail.com\""
+        }
+      ],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 17
+        },
+        "hero": {
+          "altura": 1135,
+          "pct": 291
+        },
+        "especialidades": {
+          "altura": 1700,
+          "pct": 436
+        },
+        "projetos": {
+          "altura": 1287,
+          "pct": 330
+        },
+        "experiencia": {
+          "altura": 1122,
+          "pct": 288
+        },
+        "contato": {
+          "altura": 913,
+          "pct": 234
+        },
+        "rodape": {
+          "altura": 135,
+          "pct": 35
+        }
+      }
+    },
+    {
+      "janela": "deitado",
+      "largura": 844,
+      "altura": 390,
+      "tema": "escuro",
+      "versao": "hoje",
+      "estado": "glitch",
+      "foto": "hoje-escuro-deitado-glitch.png",
+      "problemas": [
+        {
+          "tipo": "texto cortado",
+          "detalhe": "span \"soares-lucas94@hotmail.com\""
+        }
+      ],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 17
+        },
+        "hero": {
+          "altura": 1135,
+          "pct": 291
+        },
+        "especialidades": {
+          "altura": 1700,
+          "pct": 436
+        },
+        "projetos": {
+          "altura": 1287,
+          "pct": 330
+        },
+        "experiencia": {
+          "altura": 1122,
+          "pct": 288
+        },
+        "contato": {
+          "altura": 913,
+          "pct": 234
+        },
+        "rodape": {
+          "altura": 135,
+          "pct": 35
+        }
+      }
+    },
+    {
+      "janela": "deitado",
+      "largura": 844,
+      "altura": 390,
+      "tema": "escuro",
+      "versao": "hoje",
+      "estado": "projeto-longo",
+      "foto": "hoje-escuro-deitado-projeto-longo.png",
+      "problemas": [
+        {
+          "tipo": "texto cortado",
+          "detalhe": "span \"soares-lucas94@hotmail.com\""
+        }
+      ],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 17
+        },
+        "hero": {
+          "altura": 1135,
+          "pct": 291
+        },
+        "especialidades": {
+          "altura": 1700,
+          "pct": 436
+        },
+        "projetos": {
+          "altura": 1338,
+          "pct": 343
+        },
+        "experiencia": {
+          "altura": 1122,
+          "pct": 288
+        },
+        "contato": {
+          "altura": 913,
+          "pct": 234
+        },
+        "rodape": {
+          "altura": 135,
+          "pct": 35
+        }
+      }
+    },
+    {
+      "janela": "deitado",
+      "largura": 844,
+      "altura": 390,
+      "tema": "escuro",
+      "versao": "proposta",
+      "estado": "padrao",
+      "foto": "proposta-escuro-deitado-padrao.png",
+      "problemas": [],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 17
+        },
+        "hero": {
+          "altura": 1135,
+          "pct": 291
+        },
+        "especialidades": {
+          "altura": 1700,
+          "pct": 436
+        },
+        "projetos": {
+          "altura": 1287,
+          "pct": 330
+        },
+        "experiencia": {
+          "altura": 1122,
+          "pct": 288
+        },
+        "contato": {
+          "altura": 920,
+          "pct": 236
+        },
+        "rodape": {
+          "altura": 135,
+          "pct": 35
+        }
+      }
+    },
+    {
+      "janela": "deitado",
+      "largura": 844,
+      "altura": 390,
+      "tema": "escuro",
+      "versao": "proposta",
+      "estado": "projetos",
+      "foto": "proposta-escuro-deitado-projetos.png",
+      "problemas": [],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 17
+        },
+        "hero": {
+          "altura": 1135,
+          "pct": 291
+        },
+        "especialidades": {
+          "altura": 1700,
+          "pct": 436
+        },
+        "projetos": {
+          "altura": 1287,
+          "pct": 330
+        },
+        "experiencia": {
+          "altura": 1122,
+          "pct": 288
+        },
+        "contato": {
+          "altura": 920,
+          "pct": 236
+        },
+        "rodape": {
+          "altura": 135,
+          "pct": 35
+        }
+      }
+    },
+    {
+      "janela": "deitado",
+      "largura": 844,
+      "altura": 390,
+      "tema": "escuro",
+      "versao": "proposta",
+      "estado": "contato",
+      "foto": "proposta-escuro-deitado-contato.png",
+      "problemas": [],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 17
+        },
+        "hero": {
+          "altura": 1135,
+          "pct": 291
+        },
+        "especialidades": {
+          "altura": 1700,
+          "pct": 436
+        },
+        "projetos": {
+          "altura": 1287,
+          "pct": 330
+        },
+        "experiencia": {
+          "altura": 1122,
+          "pct": 288
+        },
+        "contato": {
+          "altura": 920,
+          "pct": 236
+        },
+        "rodape": {
+          "altura": 135,
+          "pct": 35
+        }
+      }
+    },
+    {
+      "janela": "deitado",
+      "largura": 844,
+      "altura": 390,
+      "tema": "escuro",
+      "versao": "proposta",
+      "estado": "glitch",
+      "foto": "proposta-escuro-deitado-glitch.png",
+      "problemas": [],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 17
+        },
+        "hero": {
+          "altura": 1135,
+          "pct": 291
+        },
+        "especialidades": {
+          "altura": 1700,
+          "pct": 436
+        },
+        "projetos": {
+          "altura": 1287,
+          "pct": 330
+        },
+        "experiencia": {
+          "altura": 1122,
+          "pct": 288
+        },
+        "contato": {
+          "altura": 920,
+          "pct": 236
+        },
+        "rodape": {
+          "altura": 135,
+          "pct": 35
+        }
+      }
+    },
+    {
+      "janela": "deitado",
+      "largura": 844,
+      "altura": 390,
+      "tema": "escuro",
+      "versao": "proposta",
+      "estado": "projeto-longo",
+      "foto": "proposta-escuro-deitado-projeto-longo.png",
+      "problemas": [],
+      "medidas": {
+        "nav": {
+          "altura": 65,
+          "pct": 17
+        },
+        "hero": {
+          "altura": 1135,
+          "pct": 291
+        },
+        "especialidades": {
+          "altura": 1700,
+          "pct": 436
+        },
+        "projetos": {
+          "altura": 1338,
+          "pct": 343
+        },
+        "experiencia": {
+          "altura": 1122,
+          "pct": 288
+        },
+        "contato": {
+          "altura": 920,
+          "pct": 236
+        },
+        "rodape": {
+          "altura": 135,
+          "pct": 35
+        }
+      }
+    }
+  ]
+}
