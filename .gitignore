@@ -1,3 +1,6 @@
 # Fotos dos mockups: geradas pelo fotos.mjs e grandes (cerca de 18 MB por mockup).
 # medidas.js e conferencia.json ficam no repositório, porque o index.html do mockup usa as medidas.
 docs/mockups/*/fotos/*.png
+
+# Pasta montada pelo scripts/build-pages.mjs para o Cloudflare Pages.
+publicar/

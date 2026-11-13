@@ -16,6 +16,8 @@ landing-page/
 │   └── afinuvo/
 │       └── index.html  # Landing page do Afinuvo para o cliente, só com o modo teste (/projetos/afinuvo)
 ├── wrangler.toml   # Configuração do Wrangler (deploy na Cloudflare)
+├── scripts/
+│   └── build-pages.mjs  # Monta a pasta publicar/ para o Cloudflare Pages (seção 1.4)
 ├── assets/
 │   └── img/
 │       ├── perfil.jpg           # Foto de perfil otimizada, usada na página (320×320, ~16 KB)
@@ -31,10 +33,10 @@ Arquivos e pastas apenas locais (não versionados):
 
 | Item | Para que serve |
 |---|---|
-| `index.local.js` + `wrangler.local.toml` | Worker de teste que serve o `index.html` sem cache (`cache-control: no-store`) |
-| `.claude/launch.json` | Atalho para subir o servidor local de teste na porta 8788 |
+| `.claude/launch.json` | Atalho para subir o servidor local (`npm run dev`) na porta 8788 |
 | `index-new.html`, `layout-new/` | Versões anteriores de layout, mantidas como referência |
 | `node_modules/`, `.wrangler/`, `package-lock.json` | Gerados pelo `npm install` e pelo Wrangler |
+| `publicar/` | Gerada pelo `npm run build:pages` (seção 1.4) |
 
 ### 1.1 `index.js` — o servidor
 
@@ -48,14 +50,17 @@ Worker no formato ES Module. O `index.html` é importado como texto e a foto `as
 | `GET /projetos/afinuvo/` | `301` para `/projetos/afinuvo` |
 | Qualquer outro caminho | `404 Not found` |
 
-> O Worker só atende as rotas acima. Qualquer outra imagem, favicon ou arquivo adicionado ao projeto precisa de um `import` e de uma rota nova no `index.js` (e no `index.local.js`, para testes). Por isso os ícones estão embutidos no próprio HTML.
+No servidor local (`localhost`, `127.0.0.1` ou `[::1]`), todas as respostas saem com `cache-control: no-store`, para cada alteração aparecer no próximo carregamento. Em produção, valem os caches acima.
+
+> O Worker só atende as rotas acima. Qualquer outra imagem, favicon ou arquivo adicionado ao projeto precisa de um `import` e de uma rota nova no `index.js`. Por isso os ícones estão embutidos no próprio HTML.
 
 ### 1.2 `wrangler.toml` — configuração
 
-- `name = "lucas-soares-site"` — nome do Worker na Cloudflare.
+- `name = "landing-page"` — nome do Worker na Cloudflare, o mesmo de `landing-page.code-soareslucas.workers.dev`. É o único Worker do projeto: o mesmo `index.js` serve o teste local e a produção.
 - `main = "index.js"` — ponto de entrada.
+- `[dev] port = 8788` — porta do servidor local.
 - Regra `[[rules]] type = "Text"` para `**/*.html` — é o que permite fazer `import page from "./index.html"` como string.
-- Regra `[[rules]] type = "Data"` para `**/*.jpg` — permite importar a foto como `ArrayBuffer`. A mesma regra foi adicionada ao `wrangler.local.toml`.
+- Regra `[[rules]] type = "Data"` para `**/*.jpg` — permite importar a foto como `ArrayBuffer`.
 
 ### 1.3 Comandos
 
@@ -68,16 +73,23 @@ npm run dev
 ```
 
 ```bash
-npx wrangler dev -c wrangler.local.toml --port 8788
-```
-
-```bash
 npm run deploy
 ```
 
-- `dev` sobe o Worker de produção localmente (normalmente em `http://localhost:8787`, com cache de 5 minutos).
-- O comando com `-c wrangler.local.toml` sobe o Worker de teste em `http://localhost:8788`, sem cache — melhor para revisar alterações.
+- `dev` sobe o Worker localmente em `http://localhost:8788`, sem cache.
 - `deploy` publica na Cloudflare (requer login com `npx wrangler login`).
+- `build:pages` monta a pasta `publicar/` do Cloudflare Pages (seção 1.4).
+
+### 1.4 Cloudflare Pages — `lucassoares.caslux.com.br`
+
+O site também é publicado pelo Cloudflare Pages, que aceita o subdomínio `lucassoares.caslux.com.br` sem levar o domínio `caslux.com.br` para a Cloudflare: basta um CNAME no Registro.br. O Worker continua no ar em `landing-page.code-soareslucas.workers.dev`.
+
+- **Publicação:** o projeto Pages está ligado ao repositório no GitHub. Cada push na `main` roda o comando de build `npm run build:pages` e publica a pasta `publicar`.
+- **`scripts/build-pages.mjs`:** copia para `publicar/` só os arquivos do site (`index.html`, `assets/img/perfil.jpg` e `projetos/afinuvo/index.html`), para que `docs/`, os mockups e o resto do repositório não fiquem públicos. Também grava o `_headers` (o mesmo cache do Worker: 5 minutos para as páginas, 1 dia para a foto) e um `404.html`, sem o qual o Pages devolveria a página inicial para qualquer endereço.
+- **Arquivo novo no site:** além da rota no `index.js`, precisa entrar na lista `arquivos` do `build-pages.mjs`.
+- **Diferença do Worker:** no Pages a página do Afinuvo fica em `/projetos/afinuvo/`, com barra no fim; `/projetos/afinuvo` redireciona para ela (`308`).
+- **Teste local:** `npm run build:pages` e depois `npx wrangler pages dev publicar --port 8790`.
+- **DNS (Registro.br):** CNAME `lucassoares` → `<projeto>.pages.dev`. Nameservers, DNSSEC e e-mail do `caslux.com.br` não mudam.
 
 ---
 
@@ -435,7 +447,7 @@ Todo o conteúdo está em `index.html`:
 
 **Novo projeto:** copie um `article.card.project`, copie um `dialog.modal` com um novo `id` e aponte os botões `data-modal="…"` para esse `id`.
 
-Depois de editar, teste localmente (seção 1.3) e publique com `npm run deploy`.
+Depois de editar, teste localmente (seção 1.3) e publique com `npm run deploy` (Worker) e um push na `main` (Pages, seção 1.4).
 
 ---
 
@@ -458,6 +470,8 @@ Depois de editar, teste localmente (seção 1.3) e publique com `npm run deploy`
 
 | Data | Mudança | Arquivos |
 |---|---|---|
+| 12/11/2026 | Publicação também pelo Cloudflare Pages, ligado ao GitHub, para servir `lucassoares.caslux.com.br` com um CNAME no Registro.br: `scripts/build-pages.mjs` monta a pasta `publicar/` com os arquivos do site, o `_headers` e um `404.html` | `scripts/build-pages.mjs`, `package.json`, `.gitignore`, `DOCUMENTACAO.md` |
+| 12/11/2026 | Um Worker só: o `index.js` passa a servir sem cache no `localhost` e o `index.local.js` e o `wrangler.local.toml` saem. O `wrangler.toml` passa a usar o nome do Worker publicado, `landing-page` (antes `lucas-soares-site`, um Worker antigo), e a porta local 8788 | `index.js`, `wrangler.toml`, `DOCUMENTACAO.md`, `docs/mockups/README.md` |
 | 05/11/2026 | Movimento dos commits `91e175e` e `b915b92` do `new-landing-page`, em CSS e JS puros: estrelas no hero (Espacial), parallax nos brilhos, no terminal, nos projetos e no contato, seções que surgem ao rolar, glitch nos títulos (Espacial) e hover que cresce e acende nos cards do Espacial. De carona, o e-mail do contato quebra depois do @ em vez de cortar. Decisões D1 a D5 na seção 3.8. Mockup em `docs/mockups/movimento-espacial/` | `index.html` |
 | 04/11/2026 | Projetos ganham o card "Teste ao vivo" com as demos do Contador de Almoço e do Afinuvo em modal, o "Ver mais sobre o projeto" e o Baixar · em breve em todo card. Nova página do Afinuvo para o cliente, só com o modo teste, servida em `/projetos/afinuvo`. Decisões D1 a D16 na seção 2.4.2. Mockup em `docs/mockups/contador-almoco/` | `index.html`, `projetos/afinuvo/index.html`, `index.js`, `index.local.js` |
 | 03/11/2026 | Hero cabe inteiro no celular, de 360px para cima: colunas com `min-width: 0` (D1); até 640px, código do terminal com quebra de linha e abas que descem de linha (D2); botão Executar em `#047857`, hover `#065f46`, contraste de 3,8:1 para 5,5:1 (D3); terminal do Clássico com inclinação 3D, brilho e sombra em verde (D4). Mockup em `docs/mockups/hero-celular/` | `index.html` |

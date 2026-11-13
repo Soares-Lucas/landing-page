@@ -104,6 +104,6 @@ Cada decisão (D1, D2…) tem um nome curto em negrito, a proposta primeiro (é 
 
 1. Registrar as decisões no `DOCUMENTACAO.md`, com a data e o caminho do mockup. O que foi liberado sem escolha entra como "decidido sem perguntar, pela recomendação".
 2. Levar o `proposta.css` para o `<style>` e o `proposta.js` para o `<script>` do `index.html`.
-3. Conferir a página real nas mesmas larguras e temas, pelo servidor local (`npx wrangler dev -c wrangler.local.toml --port 8788`). O mockup é o desenho, não o teste.
+3. Conferir a página real nas mesmas larguras e temas, pelo servidor local (`npm run dev`, em `http://localhost:8788`). O mockup é o desenho, não o teste.
 4. Acrescentar "Implementado em <data>" ao `README.md` do mockup.
 5. Um commit por etapa, com a documentação em dia no mesmo commit.

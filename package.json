@@ -3,7 +3,8 @@
   "private": true,
   "scripts": {
     "dev": "wrangler dev",
-    "deploy": "wrangler deploy"
+    "deploy": "wrangler deploy",
+    "build:pages": "node scripts/build-pages.mjs"
   },
   "devDependencies": {
     "wrangler": "^4.0.0"

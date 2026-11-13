@@ -1,6 +1,10 @@
-name = "lucas-soares-site"
+# Worker de produção: landing-page.code-soareslucas.workers.dev
+name = "landing-page"
 main = "index.js"
 compatibility_date = "2024-01-01"
+
+[dev]
+port = 8788
 
 [[rules]]
 type = "Text"
